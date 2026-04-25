@@ -22,6 +22,12 @@ export type CreditCard = {
   bestFor: string;
   realisticAnnualValue: string;
   avoidIf: string;
+  currentPublicOffer: string;
+  whyValuable: string[];
+  marketingOverstates: string[];
+  keyPerks: string[];
+  honestDrawbacks: string[];
+  moneyFactorVerdict: string;
   goalFit: MainGoal[];
   categoryFit: SpendingCategory[];
   travelFit: TravelFrequency[];

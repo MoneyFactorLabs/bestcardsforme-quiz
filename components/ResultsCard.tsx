@@ -59,7 +59,7 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
         href={`/cards/${card.id}`}
         className="focus-ring mt-5 inline-flex w-full justify-center rounded-md border border-navy px-5 py-3 text-sm font-bold text-navy transition hover:bg-navy hover:text-white sm:w-auto"
       >
-        Review card details
+        Read honest review
       </Link>
     </article>
   );

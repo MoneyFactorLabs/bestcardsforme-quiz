@@ -9,6 +9,27 @@ export const cards: CreditCard[] = [
     bestFor: "Frequent travelers who use travel credits and lounges",
     realisticAnnualValue: "$450-$900 depending on profile",
     avoidIf: "You travel rarely or do not use credits",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "The card can work when travel credits, lounge visits, and flexible travel redemptions are used consistently.",
+      "Frequent travelers may offset a meaningful share of the fee before counting points earned on travel and dining.",
+    ],
+    marketingOverstates: [
+      "Headline benefit totals can assume every credit is used at full face value.",
+      "Premium travel perks are often presented as universal value even when they only matter to frequent travelers.",
+    ],
+    keyPerks: [
+      "Premium travel protections and flexible travel rewards",
+      "Airport lounge access for travelers who use it regularly",
+      "Travel and dining earning categories",
+    ],
+    honestDrawbacks: [
+      "High annual fee creates real break-even pressure",
+      "Credits require attention and may not match every household's habits",
+      "Rare travelers may leave most of the value unused",
+    ],
+    moneyFactorVerdict:
+      "A strong premium travel card only when your real travel behavior supports the credits, lounges, and redemption style.",
     goalFit: ["travel", "hotel", "airline"],
     categoryFit: ["travel", "dining"],
     travelFit: ["3to5", "monthly"],
@@ -24,6 +45,27 @@ export const cards: CreditCard[] = [
     bestFor: "Moderate travelers who want flexible points without a huge fee",
     realisticAnnualValue: "$250-$550",
     avoidIf: "You want premium lounge access",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "The lower annual fee makes the value math easier for occasional and moderate travelers.",
+      "Flexible points can be useful without requiring a full premium travel routine.",
+    ],
+    marketingOverstates: [
+      "Travel-point value can be overstated when users redeem casually instead of strategically.",
+      "The card is sometimes compared to premium cards even though it does not offer the same lounge footprint.",
+    ],
+    keyPerks: [
+      "Flexible travel rewards at a modest annual fee",
+      "Useful dining and travel earning categories",
+      "Good bridge card for people learning transferable points",
+    ],
+    honestDrawbacks: [
+      "No meaningful premium lounge access",
+      "Best value still depends on using points well",
+      "Cash-back seekers may prefer simpler no-fee options",
+    ],
+    moneyFactorVerdict:
+      "A sensible middle-ground travel card for people who want upside without forcing a premium-fee lifestyle.",
     goalFit: ["travel", "hotel", "airline"],
     categoryFit: ["travel", "dining", "onlineShopping", "mixed"],
     travelFit: ["1to2", "3to5"],
@@ -39,6 +81,27 @@ export const cards: CreditCard[] = [
     bestFor: "Travelers who want premium perks at a lower net cost",
     realisticAnnualValue: "$400-$750",
     avoidIf: "You dislike portal bookings",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "The card can deliver premium travel benefits with a lower fee than many ultra-premium competitors.",
+      "Its value is strongest when the annual travel credit and anniversary value are easy for you to use.",
+    ],
+    marketingOverstates: [
+      "Net-cost claims can assume you treat portal credits exactly like cash.",
+      "Premium positioning may hide the fact that some value depends on booking behavior.",
+    ],
+    keyPerks: [
+      "Premium travel perks at a mid-premium annual fee",
+      "Simple earning structure for everyday purchases",
+      "Lounge access that can matter for regular travelers",
+    ],
+    honestDrawbacks: [
+      "Portal booking preference matters",
+      "Less compelling if you do not travel at least occasionally",
+      "Transfer partner strategy may still require learning",
+    ],
+    moneyFactorVerdict:
+      "A compelling premium-value card when portal usage is not a dealbreaker and travel credits feel natural.",
     goalFit: ["travel", "hotel", "airline"],
     categoryFit: ["travel", "mixed"],
     travelFit: ["1to2", "3to5", "monthly"],
@@ -54,6 +117,27 @@ export const cards: CreditCard[] = [
     bestFor: "Frequent travelers who can use many lifestyle credits",
     realisticAnnualValue: "$400-$1,000",
     avoidIf: "You will not track credits",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "The card can be valuable for frequent travelers who actually use lounges and multiple lifestyle credits.",
+      "Its premium service and travel access can matter for people who are in airports often.",
+    ],
+    marketingOverstates: [
+      "Large benefit totals can rely on credits many people would not otherwise buy.",
+      "The card's prestige can distract from the work required to recover the annual fee.",
+    ],
+    keyPerks: [
+      "Broad premium lounge and travel access",
+      "Lifestyle credits that can add up for the right user",
+      "Strong premium travel positioning",
+    ],
+    honestDrawbacks: [
+      "Very high annual fee",
+      "Credit tracking can become a chore",
+      "Poor fit for users who want simple rewards",
+    ],
+    moneyFactorVerdict:
+      "A luxury travel tool, not a default recommendation. It earns its keep only for users who can use many credits without changing behavior.",
     goalFit: ["travel", "hotel", "airline"],
     categoryFit: ["travel"],
     travelFit: ["3to5", "monthly"],
@@ -69,6 +153,27 @@ export const cards: CreditCard[] = [
     bestFor: "Simple flat-rate cash back",
     realisticAnnualValue: "$200-$600",
     avoidIf: "You want premium travel perks",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "A flat-rate cash-back structure is easy to understand and does not require category tracking.",
+      "No annual fee means the card starts from a favorable break-even position.",
+    ],
+    marketingOverstates: [
+      "Simple cards can look less exciting than points cards even when they produce better real value.",
+      "Issuer comparisons may understate how useful cash back is for people who do not want travel complexity.",
+    ],
+    keyPerks: [
+      "No annual fee",
+      "Straightforward flat-rate cash back",
+      "Good fit for mixed spending patterns",
+    ],
+    honestDrawbacks: [
+      "No premium travel benefits",
+      "Category bonus hunters may earn more elsewhere",
+      "Less aspirational value than transferable travel points",
+    ],
+    moneyFactorVerdict:
+      "A clean baseline cash-back card that can beat flashier options when simplicity and no annual fee matter most.",
     goalFit: ["cashBack", "balanceTransfer"],
     categoryFit: ["mixed", "gas", "onlineShopping", "groceries", "dining"],
     travelFit: ["rarely", "1to2", "3to5", "monthly"],
@@ -84,6 +189,27 @@ export const cards: CreditCard[] = [
     bestFor: "Households with high grocery and streaming spend",
     realisticAnnualValue: "$250-$500",
     avoidIf: "Grocery spend is low",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "Households with heavy grocery spend can generate real cash-back value quickly.",
+      "The annual fee can be justified when bonus categories match recurring household expenses.",
+    ],
+    marketingOverstates: [
+      "Category caps and spending limits can reduce value for very high spenders.",
+      "The card is less universal than broad flat-rate cash-back cards.",
+    ],
+    keyPerks: [
+      "Strong grocery-focused cash-back potential",
+      "Useful household spending categories",
+      "Cash-back structure is easier than travel-point optimization",
+    ],
+    honestDrawbacks: [
+      "Annual fee requires enough grocery spend to justify",
+      "Poor fit if grocery spend is low or spread across non-qualifying merchants",
+      "Limited premium travel value",
+    ],
+    moneyFactorVerdict:
+      "A high-quality household cash-back card when grocery spending is genuinely one of your biggest categories.",
     goalFit: ["cashBack"],
     categoryFit: ["groceries", "gas"],
     travelFit: ["rarely", "1to2"],
@@ -99,6 +225,27 @@ export const cards: CreditCard[] = [
     bestFor: "No-fee flexible rewards",
     realisticAnnualValue: "$150-$450",
     avoidIf: "You want premium benefits",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "The no-fee structure makes it approachable for people building a rewards setup.",
+      "It can serve as a flexible everyday card without committing to premium benefits.",
+    ],
+    marketingOverstates: [
+      "The best ecosystem value may require pairing with another card.",
+      "No-fee flexibility should not be confused with premium travel treatment.",
+    ],
+    keyPerks: [
+      "No annual fee",
+      "Flexible everyday rewards",
+      "Accessible starter-friendly positioning",
+    ],
+    honestDrawbacks: [
+      "Limited premium benefits",
+      "May not maximize a single high-spend category",
+      "Advanced travel value often requires a broader card setup",
+    ],
+    moneyFactorVerdict:
+      "A practical no-fee card for everyday rewards, especially when premium cards do not yet pass the math test.",
     goalFit: ["cashBack", "balanceTransfer"],
     categoryFit: ["mixed", "dining", "gas", "onlineShopping", "groceries"],
     travelFit: ["rarely", "1to2", "3to5"],
@@ -114,6 +261,27 @@ export const cards: CreditCard[] = [
     bestFor: "Business owners with travel, ads, shipping, or telecom spend",
     realisticAnnualValue: "$400-$900",
     avoidIf: "You do not have business expenses",
+    currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    whyValuable: [
+      "Business owners with eligible operating expenses can earn meaningful rewards on real recurring spend.",
+      "The moderate annual fee can be easy to justify when business categories align.",
+    ],
+    marketingOverstates: [
+      "Business-card value can be overstated for users without legitimate business expenses.",
+      "Bonus-category appeal depends heavily on whether your actual business spend qualifies.",
+    ],
+    keyPerks: [
+      "Strong business spending category alignment",
+      "Flexible points for owners who travel or reinvest rewards",
+      "Moderate annual fee relative to potential business value",
+    ],
+    honestDrawbacks: [
+      "Not appropriate for users without business activity",
+      "Category fit matters more than the headline offer",
+      "Requires comfort managing a business card",
+    ],
+    moneyFactorVerdict:
+      "A strong business rewards card for real business spend, but not a consumer-card substitute for people without business expenses.",
     goalFit: ["business", "travel"],
     categoryFit: ["travel", "onlineShopping", "mixed"],
     travelFit: ["1to2", "3to5", "monthly"],
