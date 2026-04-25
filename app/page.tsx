@@ -6,11 +6,17 @@ import { EmailCapture } from "@/components/EmailCapture";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { LandingHero } from "@/components/LandingHero";
+import { PopularNonFitCards } from "@/components/PopularNonFitCards";
 import { ProgressBar } from "@/components/ProgressBar";
+import { ProfileSummary } from "@/components/ProfileSummary";
 import { QuizQuestion } from "@/components/QuizQuestion";
 import { ResultsCard } from "@/components/ResultsCard";
 import { quizQuestions } from "@/data/questions";
-import { getRecommendations } from "@/lib/recommendationEngine";
+import {
+  getPopularNonFits,
+  getProfileSummary,
+  getRecommendations,
+} from "@/lib/recommendationEngine";
 import type { QuizAnswers } from "@/types/quiz";
 
 type Screen = "landing" | "quiz" | "results";
@@ -27,6 +33,16 @@ export default function Home() {
   const recommendations = useMemo(() => {
     if (screen !== "results") return [];
     return getRecommendations(answers as QuizAnswers);
+  }, [answers, screen]);
+
+  const popularNonFits = useMemo(() => {
+    if (screen !== "results") return [];
+    return getPopularNonFits(answers as QuizAnswers);
+  }, [answers, screen]);
+
+  const profileSummary = useMemo(() => {
+    if (screen !== "results") return null;
+    return getProfileSummary(answers as QuizAnswers);
   }, [answers, screen]);
 
   function handleStart() {
@@ -73,8 +89,8 @@ export default function Home() {
       {screen === "landing" && <LandingHero onStart={handleStart} />}
 
       {screen === "quiz" && (
-        <section className="mx-auto w-full max-w-3xl px-5 pb-16 pt-8 sm:px-8">
-          <div className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-8">
+        <section className="mx-auto w-full max-w-3xl px-4 pb-12 pt-6 sm:px-8 sm:pb-16 sm:pt-8">
+          <div className="rounded-lg border border-blue-gray/70 bg-white p-4 shadow-soft sm:p-8">
             <ProgressBar currentStep={currentQuestionIndex + 1} totalSteps={quizQuestions.length} />
             <div className="mt-8">
               <QuizQuestion
@@ -83,7 +99,7 @@ export default function Home() {
                 onSelect={handleSelect}
               />
             </div>
-            <div className="mt-8 flex items-center justify-between gap-3">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <button
                 type="button"
                 onClick={handleBack}
@@ -91,7 +107,7 @@ export default function Home() {
               >
                 Back
               </button>
-              <p className="text-right text-sm font-medium text-mid-navy/60">
+              <p className="text-sm font-medium text-mid-navy/60 sm:text-right">
                 Your answers stay on this device for V1.
               </p>
             </div>
@@ -100,15 +116,19 @@ export default function Home() {
       )}
 
       {screen === "results" && (
-        <section className="mx-auto w-full max-w-6xl px-5 pb-16 pt-8 sm:px-8">
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <section className="mx-auto w-full max-w-6xl px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8">
+          <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
                 Your top matches
               </p>
               <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight text-navy sm:text-5xl">
-                Cards ranked by realistic annual value fit.
+                Cards ranked for your actual spending life.
               </h1>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-mid-navy/75">
+                These recommendations are personalized to your fee comfort, travel habits, reward
+                style, and strongest spend category.
+              </p>
             </div>
             <button
               type="button"
@@ -119,7 +139,13 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="grid gap-5">
+          {profileSummary && (
+            <div className="mb-5">
+              <ProfileSummary profile={profileSummary} answers={answers as QuizAnswers} />
+            </div>
+          )}
+
+          <div className="grid gap-4 sm:gap-5">
             {recommendations.map((recommendation, index) => (
               <ResultsCard
                 key={recommendation.card.id}
@@ -129,7 +155,8 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-6 grid gap-5">
+          <div className="mt-5 grid gap-5">
+            <PopularNonFitCards cards={popularNonFits} />
             <EmailCapture />
             <Disclaimer />
           </div>

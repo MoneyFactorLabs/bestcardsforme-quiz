@@ -36,4 +36,5 @@ export type RecommendedCard = {
   score: number;
   explanationBullets: string[];
   cautionBullet: string;
+  lowerFitReason: string;
 };

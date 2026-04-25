@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { RecommendedCard } from "@/types/card";
 
 type ResultsCardProps = {
@@ -14,7 +15,9 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">#{rank} match</p>
           <h3 className="mt-2 text-2xl font-semibold text-navy">{card.name}</h3>
-          <p className="mt-1 text-sm font-medium text-mid-navy/70">Best for: {card.bestFor}</p>
+          <p className="mt-1 text-sm font-medium text-mid-navy/70">
+            Best for someone like you when: {card.bestFor.toLowerCase()}
+          </p>
         </div>
         <div className="rounded-md bg-navy px-4 py-3 text-white">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-gray">Score</p>
@@ -36,7 +39,7 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
       </div>
 
       <div className="mt-5">
-        <p className="font-semibold text-navy">Why it fits</p>
+        <p className="font-semibold text-navy">Why it fits your answers</p>
         <ul className="mt-3 space-y-2 text-sm leading-6 text-mid-navy/80">
           {recommendation.explanationBullets.map((bullet) => (
             <li key={bullet} className="flex gap-2">
@@ -52,12 +55,12 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
         <p className="mt-1 text-sm leading-6 text-mid-navy/75">{recommendation.cautionBullet}</p>
       </div>
 
-      <button
-        type="button"
-        className="focus-ring mt-5 w-full rounded-md border border-navy px-5 py-3 text-sm font-bold text-navy transition hover:bg-navy hover:text-white sm:w-auto"
+      <Link
+        href={`/cards/${card.id}`}
+        className="focus-ring mt-5 inline-flex w-full justify-center rounded-md border border-navy px-5 py-3 text-sm font-bold text-navy transition hover:bg-navy hover:text-white sm:w-auto"
       >
         Review card details
-      </button>
+      </Link>
     </article>
   );
 }

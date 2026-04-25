@@ -13,14 +13,23 @@ export function EmailCapture() {
   }
 
   return (
-    <section className="rounded-lg bg-navy p-5 text-white shadow-soft sm:p-7">
-      <div className="grid gap-5 lg:grid-cols-[1fr_1.15fr] lg:items-end">
+    <section className="overflow-hidden rounded-lg bg-navy text-white shadow-soft">
+      <div className="border-b border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-blue-gray sm:px-7">
+        Premium report preview
+      </div>
+      <div className="grid gap-5 p-5 sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Detailed comparison</p>
-          <h2 className="mt-2 text-2xl font-semibold">Want the full honest-math breakdown?</h2>
+          <h2 className="mt-2 text-2xl font-semibold leading-tight sm:text-3xl">
+            Want the full honest-math comparison and today's strongest public offers?
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-blue-gray">
+            Get the side-by-side value logic, offer-check reminders, and the caveats that matter
+            before you apply.
+          </p>
         </div>
         {submitted ? (
-          <p className="rounded-md bg-white/10 px-4 py-3 text-sm font-semibold text-blue-gray">
+          <p className="rounded-md border border-gold/40 bg-white/10 px-4 py-3 text-sm font-semibold text-blue-gray">
             Thanks. Your V1 placeholder request was captured locally.
           </p>
         ) : (
