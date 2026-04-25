@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { Disclaimer } from "@/components/Disclaimer";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { cards } from "@/data/cards";
 
 type CardDetailsPageProps = {
@@ -184,9 +185,19 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
             >
               <p className="text-sm font-semibold text-navy">Offer updates placeholder</p>
               <p className="mt-2 text-sm leading-6 text-mid-navy/70">
-                Email capture remains local-only until a real provider and consent language are
-                added.
+                Join the offer-watch list for this card. We will store the request securely and
+                connect real sends after the email provider workflow is approved.
               </p>
+              <div className="mt-4">
+                <LeadCaptureForm
+                  sourcePage="card_detail"
+                  sourceCard={card.id}
+                  inputId={`${card.id}-offer-email`}
+                  buttonLabel="Get offer updates"
+                  successMessage={`You're on the offer-watch list for ${card.name}.`}
+                  variant="light"
+                />
+              </div>
             </div>
           </aside>
         </div>
