@@ -9,9 +9,13 @@ import type {
 export type CardType =
   | "travel"
   | "travel/lounge"
+  | "travel/dining"
+  | "travel/hotel"
+  | "travel/airline"
   | "cash back"
   | "groceries/cash back"
   | "cash back / starter"
+  | "business cash back"
   | "business";
 
 export type CreditCard = {
@@ -25,6 +29,7 @@ export type CreditCard = {
   realisticAnnualValue: string;
   avoidIf: string;
   currentPublicOffer: string;
+  issuerTermsUrl?: string;
   whyValuable: string[];
   marketingOverstates: string[];
   keyPerks: string[];
