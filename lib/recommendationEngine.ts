@@ -206,6 +206,66 @@ function buildLowerFitReason(card: CreditCard, answers: QuizAnswers) {
   return "It ranked lower because the winning cards produced a cleaner value fit for your answers.";
 }
 
+function buildProfileCaution(card: CreditCard, answers: QuizAnswers) {
+  const capturedValue = getCapturedAnnualValue(card, answers);
+  const userCreditRank = creditScoreRank[answers.creditScore];
+  const requiredCreditRank = creditScoreRank[card.minimumCreditScore];
+
+  if (userCreditRank < requiredCreditRank) {
+    return `Your stated credit range may be below this card's typical approval profile, so verify eligibility before treating it as a near-term option.`;
+  }
+
+  if (card.businessOnly && answers.businessCards === "no") {
+    return "This only makes sense if you have legitimate business expenses; your answers suggest a consumer card is cleaner.";
+  }
+
+  if (card.businessOnly && answers.businessCards === "notSure") {
+    return "The value can be strong, but the business-card fit needs confirmation before it should outrank consumer options.";
+  }
+
+  if (answers.annualFeeComfort === "zero" && card.annualFee > 0) {
+    return `The $${card.annualFee} annual fee conflicts with your $0-fee preference, even if the headline rewards look attractive.`;
+  }
+
+  if (answers.travelFrequency === "rarely" && card.annualFee >= 395) {
+    return "Your rare-travel profile makes the premium travel credits and perks harder to convert into real household value.";
+  }
+
+  if (answers.loungeAccess === "no" && card.loungeValue === "high") {
+    return "A meaningful share of this card's premium value comes from lounge access, which you said is not a priority.";
+  }
+
+  if (answers.loungeAccess === "yes" && card.loungeValue === "low" && card.type.includes("travel")) {
+    return "This may be a useful rewards card, but it does not solve the premium lounge-access need you highlighted.";
+  }
+
+  if (answers.simplicity === "simple" && card.annualFee >= 395) {
+    return "The card asks for more credit tracking and perk management than a simplicity-first setup usually supports.";
+  }
+
+  if (capturedValue < 0 && card.annualFee > 0) {
+    return `Our estimate does not clearly recover the $${card.annualFee} fee from your answers, so the value case needs closer review.`;
+  }
+
+  if (!card.goalFit.includes(answers.mainGoal)) {
+    return `The card is not primarily built around your stated ${goalLabels[answers.mainGoal]} goal, so it is more of a secondary fit.`;
+  }
+
+  if (!card.categoryFit.includes(answers.topCategory)) {
+    return `Your strongest spend signal is ${categoryLabels[answers.topCategory]}, and this card's best economics are elsewhere.`;
+  }
+
+  if (
+    answers.simplicity !== "simple" &&
+    answers.monthlySpend === "6000plus" &&
+    card.annualFee === 0
+  ) {
+    return "This is clean and low-risk, but an affluent high-spend household may leave premium upside uncaptured.";
+  }
+
+  return "The main watch-out is execution: this card works best only if you use the specific rewards and benefits reflected in the estimate.";
+}
+
 function scoreCard(card: CreditCard, answers: QuizAnswers) {
   let score = 40;
 
@@ -267,20 +327,40 @@ function scoreCard(card: CreditCard, answers: QuizAnswers) {
   return Math.max(0, Math.round(score));
 }
 
+function withNormalizedFitScores(
+  rankedRecommendations: (Omit<RecommendedCard, "score"> & { rawScore: number })[]
+): RecommendedCard[] {
+  const topRawScore = Math.max(1, rankedRecommendations[0]?.rawScore ?? 1);
+  const topFitScore = Math.max(85, Math.min(98, Math.round(86 + topRawScore * 0.045)));
+
+  return rankedRecommendations.map(({ rawScore, ...recommendation }, index) => {
+    const gapPenalty = Math.max(0, topRawScore - rawScore) * 0.32;
+    const rankPenalty = index * 2;
+    const score = Math.max(35, Math.min(topFitScore, Math.round(topFitScore - gapPenalty - rankPenalty)));
+
+    return {
+      ...recommendation,
+      score,
+    };
+  });
+}
+
 export function getRecommendations(answers: QuizAnswers): RecommendedCard[] {
   return getRankedRecommendations(answers).slice(0, 3);
 }
 
 export function getRankedRecommendations(answers: QuizAnswers): RecommendedCard[] {
-  return cards
+  const rankedRecommendations = cards
     .map((card) => ({
       card,
-      score: scoreCard(card, answers),
+      rawScore: scoreCard(card, answers),
       explanationBullets: buildExplanation(card, answers),
-      cautionBullet: card.avoidIf,
+      cautionBullet: buildProfileCaution(card, answers),
       lowerFitReason: buildLowerFitReason(card, answers),
     }))
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => b.rawScore - a.rawScore);
+
+  return withNormalizedFitScores(rankedRecommendations);
 }
 
 export function getPopularNonFits(answers: QuizAnswers): RecommendedCard[] {
@@ -329,7 +409,7 @@ export function getProfileSummary(answers: QuizAnswers) {
             ? "Disciplined simplicity-first household"
             : "Premium-value rewards household";
 
-  const summary = `Based on your answers, you look like a ${title.toLowerCase()}: your priority is ${goalLabels[answers.mainGoal]}, your highest spend is ${categoryLabels[answers.topCategory]}, and ${feeLanguage[answers.annualFeeComfort]}. The best-fit cards below favor ${optimizerLanguage} over flashy issuer marketing.`;
+  const summary = `You read as a ${title.toLowerCase()}: ${goalLabels[answers.mainGoal]} matter most, ${categoryLabels[answers.topCategory]} is the clearest spend signal, and ${feeLanguage[answers.annualFeeComfort]}. The ranking favors ${optimizerLanguage} and net value you are likely to capture.`;
 
   const signals = [
     `Primary goal: ${goalLabels[answers.mainGoal]}`,

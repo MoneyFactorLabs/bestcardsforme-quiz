@@ -20,8 +20,10 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
           </p>
         </div>
         <div className="rounded-md bg-navy px-4 py-3 text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-gray">Score</p>
-          <p className="text-2xl font-semibold">{recommendation.score}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-gray">
+            MoneyFactor Fit Score
+          </p>
+          <p className="text-2xl font-semibold">{recommendation.score}/100</p>
         </div>
       </div>
 

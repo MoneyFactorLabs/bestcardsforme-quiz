@@ -12,10 +12,10 @@ type ProfileSummaryProps = {
 export function ProfileSummary({ profile, answers }: ProfileSummaryProps) {
   const loungeCopy =
     answers.loungeAccess === "yes"
-      ? "Lounge access is treated as real value only when your travel frequency supports it."
+      ? "Lounge access is counted only where your travel pattern can turn it into real value."
       : answers.loungeAccess === "maybe"
-        ? "Lounge access gets partial credit because you said it only matters if the math works."
-        : "Premium lounge-heavy cards are discounted because you said lounges are not a priority.";
+        ? "Lounge access receives partial credit because you only value it when the math holds."
+        : "Lounge-heavy cards are discounted because that benefit is not central to your profile.";
 
   return (
     <section className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-6">
