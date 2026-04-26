@@ -49,6 +49,22 @@ const travelLabels: Record<TravelFrequency, string> = {
   monthly: "frequent travel",
 };
 
+function isTravelGoal(goal: MainGoal) {
+  return ["travel", "hotel", "airline"].includes(goal);
+}
+
+function isTravelCard(card: CreditCard) {
+  return card.type.includes("travel");
+}
+
+function isPlainCashBackCard(card: CreditCard) {
+  return (
+    !isTravelCard(card) &&
+    !card.businessOnly &&
+    ["cash back", "groceries/cash back", "cash back / starter"].includes(card.type)
+  );
+}
+
 function getCapturedAnnualValue(card: CreditCard, answers: QuizAnswers) {
   const midpoint = (card.valueEstimateLow + card.valueEstimateHigh) / 2;
   let captureRate = 0.48;
@@ -120,6 +136,49 @@ function feeAndUtilizationScore(card: CreditCard, answers: QuizAnswers) {
     if (supportedByPerks) score += 10;
     if (supportedByOptimization) score += 8;
     if (!supportedByTravel && !supportedByPerks) score -= 18;
+  }
+
+  return score;
+}
+
+function goalAlignmentScore(card: CreditCard, answers: QuizAnswers) {
+  const directGoalMatch = card.goalFit.includes(answers.mainGoal);
+  let score = directGoalMatch ? 34 : -8;
+
+  if (isTravelGoal(answers.mainGoal)) {
+    if (isTravelCard(card)) score += 18;
+
+    if (answers.mainGoal === "hotel" && card.type === "travel/hotel") score += 16;
+    if (answers.mainGoal === "airline" && card.type === "travel/airline") score += 16;
+    if (answers.mainGoal === "travel" && ["travel", "travel/lounge", "travel/dining"].includes(card.type)) {
+      score += 12;
+    }
+
+    if (isPlainCashBackCard(card)) {
+      const feeMismatchJustifiesCashBack =
+        answers.annualFeeComfort === "zero" ||
+        (answers.annualFeeComfort === "under100" && answers.travelFrequency === "rarely");
+
+      score -= feeMismatchJustifiesCashBack ? 8 : 34;
+    }
+  }
+
+  if (answers.mainGoal === "cashBack") {
+    if (card.goalFit.includes("cashBack")) score += 18;
+
+    if (card.annualFee >= 395 && isTravelCard(card)) {
+      score -= answers.annualFeeComfort === "400plus" && answers.simplicity !== "simple" ? 14 : 34;
+    } else if (isTravelCard(card) && !card.goalFit.includes("cashBack")) {
+      score -= 16;
+    }
+  }
+
+  if (answers.mainGoal === "business") {
+    score += card.businessOnly ? 26 : -18;
+  }
+
+  if (answers.mainGoal === "balanceTransfer") {
+    score += card.annualFee === 0 ? 18 : -10;
   }
 
   return score;
@@ -269,7 +328,7 @@ function buildProfileCaution(card: CreditCard, answers: QuizAnswers) {
 function scoreCard(card: CreditCard, answers: QuizAnswers) {
   let score = 40;
 
-  if (card.goalFit.includes(answers.mainGoal)) score += 28;
+  score += goalAlignmentScore(card, answers);
   if (answers.mainGoal === "balanceTransfer" && card.annualFee === 0) score += 14;
   if (answers.mainGoal === "business" && card.businessOnly) score += 22;
 
