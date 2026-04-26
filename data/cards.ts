@@ -12,6 +12,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$450-$900 depending on profile",
     avoidIf: "You travel rarely or do not use credits",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "chase-sapphire-reserve",
+    affiliateDestinationUrl: "/cards/chase-sapphire-reserve#issuer-terms-placeholder",
     whyValuable: [
       "The card can work when travel credits, lounge visits, and flexible travel redemptions are used consistently.",
       "Frequent travelers may offset a meaningful share of the fee before counting points earned on travel and dining.",
@@ -50,6 +52,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$250-$550",
     avoidIf: "You want premium lounge access",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "chase-sapphire-preferred",
+    affiliateDestinationUrl: "/cards/chase-sapphire-preferred#issuer-terms-placeholder",
     whyValuable: [
       "The lower annual fee makes the value math easier for occasional and moderate travelers.",
       "Flexible points can be useful without requiring a full premium travel routine.",
@@ -88,6 +92,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$400-$750",
     avoidIf: "You dislike portal bookings",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "capital-one-venture-x",
+    affiliateDestinationUrl: "/cards/capital-one-venture-x#issuer-terms-placeholder",
     whyValuable: [
       "The card can deliver premium travel benefits with a lower fee than many ultra-premium competitors.",
       "Its value is strongest when the annual travel credit and anniversary value are easy for you to use.",
@@ -126,6 +132,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$400-$1,000",
     avoidIf: "You will not track credits",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "amex-platinum",
+    affiliateDestinationUrl: "/cards/amex-platinum#issuer-terms-placeholder",
     whyValuable: [
       "The card can be valuable for frequent travelers who actually use lounges and multiple lifestyle credits.",
       "Its premium service and travel access can matter for people who are in airports often.",
@@ -164,6 +172,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$300-$700 depending on dining and grocery spend",
     avoidIf: "You will not use the credits or prefer simple flat-rate rewards",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "amex-gold",
+    affiliateDestinationUrl: "/cards/amex-gold#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "High dining and grocery spend can create meaningful annual value for households that naturally use those categories.",
@@ -203,6 +213,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$200-$600",
     avoidIf: "You want premium travel perks",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "citi-double-cash",
+    affiliateDestinationUrl: "/cards/citi-double-cash#issuer-terms-placeholder",
     whyValuable: [
       "A flat-rate cash-back structure is easy to understand and does not require category tracking.",
       "No annual fee means the card starts from a favorable break-even position.",
@@ -241,6 +253,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$200-$600",
     avoidIf: "You want premium travel perks or category-maximizing upside",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "wells-fargo-active-cash",
+    affiliateDestinationUrl: "/cards/wells-fargo-active-cash#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "Flat-rate cash back can be a strong baseline when spending is mixed across many categories.",
@@ -280,6 +294,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$250-$500",
     avoidIf: "Grocery spend is low",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "blue-cash-preferred",
+    affiliateDestinationUrl: "/cards/blue-cash-preferred#issuer-terms-placeholder",
     whyValuable: [
       "Households with heavy grocery spend can generate real cash-back value quickly.",
       "The annual fee can be justified when bonus categories match recurring household expenses.",
@@ -318,6 +334,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$150-$400",
     avoidIf: "Your grocery spend is high enough to justify a stronger paid grocery card",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "blue-cash-everyday",
+    affiliateDestinationUrl: "/cards/blue-cash-everyday#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "It can capture useful household cash-back value without introducing an annual fee.",
@@ -357,6 +375,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$150-$450",
     avoidIf: "You want premium benefits",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "chase-freedom-unlimited",
+    affiliateDestinationUrl: "/cards/chase-freedom-unlimited#issuer-terms-placeholder",
     whyValuable: [
       "The no-fee structure makes it approachable for people building a rewards setup.",
       "It can serve as a flexible everyday card without committing to premium benefits.",
@@ -395,6 +415,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$150-$500",
     avoidIf: "You do not want to activate or track rotating categories",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "chase-freedom-flex",
+    affiliateDestinationUrl: "/cards/chase-freedom-flex#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "Rotating categories can create strong no-fee value when the quarterly categories match real spend.",
@@ -434,6 +456,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$150-$600 depending on rent and redemption behavior",
     avoidIf: "You do not rent or do not want to manage points redemptions",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "bilt-mastercard",
+    affiliateDestinationUrl: "/cards/bilt-mastercard#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "Rent payment rewards can create value in a category many cards do not cover.",
@@ -473,6 +497,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$450-$950 depending on Hilton usage",
     avoidIf: "You do not stay with Hilton or dislike managing travel credits",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "hilton-aspire",
+    affiliateDestinationUrl: "/cards/hilton-aspire#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "The card can be powerful for travelers who already stay at Hilton properties and can use the premium credits.",
@@ -512,6 +538,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$400-$900 depending on Marriott usage",
     avoidIf: "You are not loyal to Marriott or want simple cash-like rewards",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "marriott-bonvoy-brilliant",
+    affiliateDestinationUrl: "/cards/marriott-bonvoy-brilliant#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "The card can work when Marriott stays are already part of the household's travel pattern.",
@@ -551,6 +579,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$200-$550 depending on United flight activity",
     avoidIf: "You rarely fly United or prefer fully flexible travel rewards",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "united-explorer",
+    affiliateDestinationUrl: "/cards/united-explorer#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "Checked-bag and boarding benefits can justify the modest fee for households that fly United a few times per year.",
@@ -590,6 +620,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$250-$650 depending on Southwest flight activity",
     avoidIf: "You do not fly Southwest or need premium international travel perks",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "southwest-rapid-rewards-priority",
+    affiliateDestinationUrl: "/cards/southwest-rapid-rewards-priority#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "For Southwest loyalists, annual credits and boarding-related perks can offset much of the fee.",
@@ -629,6 +661,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$400-$900",
     avoidIf: "You do not have business expenses",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "ink-business-preferred",
+    affiliateDestinationUrl: "/cards/ink-business-preferred#issuer-terms-placeholder",
     whyValuable: [
       "Business owners with eligible operating expenses can earn meaningful rewards on real recurring spend.",
       "The moderate annual fee can be easy to justify when business categories align.",
@@ -668,6 +702,8 @@ export const cards: CreditCard[] = [
     realisticAnnualValue: "$250-$750 depending on business category spend",
     avoidIf: "You do not have business expenses or want premium travel benefits",
     currentPublicOffer: "Public offer placeholder - verify directly with issuer before applying",
+    affiliateSlug: "ink-business-cash",
+    affiliateDestinationUrl: "/cards/ink-business-cash#issuer-terms-placeholder",
     issuerTermsUrl: "#issuer-terms-placeholder",
     whyValuable: [
       "No annual fee makes it a low-friction business rewards tool when categories match actual operating expenses.",

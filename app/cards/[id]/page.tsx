@@ -155,7 +155,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
 
             <div className="mt-5 grid gap-3">
               <Link
-                href="#issuer-terms-placeholder"
+                href={`/go/${card.affiliateSlug}`}
                 className="focus-ring inline-flex justify-center rounded-md bg-gold px-5 py-3 text-sm font-bold text-navy transition hover:bg-[#caa42f]"
               >
                 Read issuer terms
@@ -174,8 +174,9 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
             >
               <p className="text-sm font-semibold text-navy">Issuer terms placeholder</p>
               <p className="mt-2 text-sm leading-6 text-mid-navy/70">
-                No affiliate or issuer link is connected yet. This slot is reserved for compliant
-                terms routing.
+                This button now routes through the centralized MoneyFactor redirect layer. No
+                affiliate destination is connected yet; the current destination is a safe internal
+                placeholder reserved for compliant terms routing.
               </p>
             </div>
 

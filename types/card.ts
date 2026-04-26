@@ -29,6 +29,8 @@ export type CreditCard = {
   realisticAnnualValue: string;
   avoidIf: string;
   currentPublicOffer: string;
+  affiliateSlug: string;
+  affiliateDestinationUrl: string;
   issuerTermsUrl?: string;
   whyValuable: string[];
   marketingOverstates: string[];
