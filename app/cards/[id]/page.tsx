@@ -149,8 +149,8 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Next step</p>
             <h2 className="mt-2 text-2xl font-semibold text-navy">Check terms before you apply</h2>
             <p className="mt-3 text-sm leading-6 text-mid-navy/75">
-              Offers, fees, credits, and eligibility rules can change. V2 keeps these actions as
-              placeholders until affiliate and issuer compliance workflows are ready.
+              Offers, fees, credits, and eligibility rules can change. Review the issuer's current
+              terms before making an application decision.
             </p>
 
             <div className="mt-5 grid gap-3">
@@ -161,7 +161,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
                 Read issuer terms
               </Link>
               <Link
-                href="#offer-updates-placeholder"
+                href="#offer-updates"
                 className="focus-ring inline-flex justify-center rounded-md border border-navy px-5 py-3 text-sm font-bold text-navy transition hover:bg-navy hover:text-white"
               >
                 Get offer updates by email
@@ -169,25 +169,24 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
             </div>
 
             <div
-              id="issuer-terms-placeholder"
+              id="issuer-terms"
               className="mt-6 rounded-md border border-blue-gray/70 bg-[#f5f8fb] p-4"
             >
-              <p className="text-sm font-semibold text-navy">Issuer terms placeholder</p>
+              <p className="text-sm font-semibold text-navy">Issuer terms and offer details</p>
               <p className="mt-2 text-sm leading-6 text-mid-navy/70">
-                This button now routes through the centralized MoneyFactor redirect layer. No
-                affiliate destination is connected yet; the current destination is a safe internal
-                placeholder reserved for compliant terms routing.
+                The terms link is managed through MoneyFactor's centralized redirect system so
+                issuer destinations can be reviewed consistently before publication.
               </p>
             </div>
 
             <div
-              id="offer-updates-placeholder"
+              id="offer-updates"
               className="mt-3 rounded-md border border-blue-gray/70 bg-[#f5f8fb] p-4"
             >
-              <p className="text-sm font-semibold text-navy">Offer updates placeholder</p>
+              <p className="text-sm font-semibold text-navy">Offer updates</p>
               <p className="mt-2 text-sm leading-6 text-mid-navy/70">
-                Join the offer-watch list for this card. We will store the request securely and
-                connect real sends after the email provider workflow is approved.
+                Join the offer-watch list for this card. We use this request to understand which
+                reviews readers want kept closest to current public terms.
               </p>
               <div className="mt-4">
                 <LeadCaptureForm

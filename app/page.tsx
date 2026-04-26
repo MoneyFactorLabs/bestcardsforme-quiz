@@ -108,7 +108,7 @@ export default function Home() {
                 Back
               </button>
               <p className="text-sm font-medium text-mid-navy/60 sm:text-right">
-                Your answers stay on this device for V1.
+                Your answers are used only to calculate this recommendation session.
               </p>
             </div>
           </div>

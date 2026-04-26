@@ -21,7 +21,7 @@ export function EmailCapture() {
           sourcePage="quiz_results"
           inputId="quiz-report-email"
           buttonLabel="Send me the detailed comparison"
-          successMessage="You're on the list. We'll send the detailed comparison and offer-watch updates when the report workflow is live."
+          successMessage="You're on the list. We'll send the detailed comparison when the next report update is available."
         />
       </div>
     </section>

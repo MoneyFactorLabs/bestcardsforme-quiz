@@ -28,7 +28,7 @@ export const trustPages: TrustPage[] = [
         heading: "We estimate net annual value",
         body: [
           "Our card pages use realistic annual value ranges instead of treating every issuer credit as cash. Credits, lounge access, and transfer-point upside are valuable only when they match actual behavior.",
-          "V2.5 uses static editorial assumptions. Future versions may add offer freshness checks, richer redemption assumptions, and clearer household-spend modeling.",
+          "Our assumptions are intentionally conservative. We would rather understate a benefit than imply a household should count value it is unlikely to capture.",
         ],
       },
       {
@@ -71,21 +71,21 @@ export const trustPages: TrustPage[] = [
   {
     slug: "affiliate-disclosure",
     eyebrow: "Affiliate Disclosure",
-    title: "How future affiliate relationships will be handled",
+    title: "How compensation and editorial independence work",
     summary:
-      "BestCardsForMe may use affiliate relationships in the future, but rankings are designed around fit and realistic annual value, not payout.",
+      "BestCardsForMe may receive compensation from partners, but rankings are designed around fit and realistic annual value, not payout.",
     sections: [
       {
-        heading: "Affiliate links are not active in V2.5",
+        heading: "Compensation disclosure",
         body: [
-          "The current app uses placeholder buttons for issuer terms and offer updates. No real affiliate links are connected yet.",
-          "When affiliate links are added, pages should clearly disclose that BestCardsForMe may receive compensation if a user applies through certain links.",
+          "BestCardsForMe may receive compensation when readers interact with certain partner offers or apply through eligible links. Compensation can help support the publication, but it should not determine which cards rank well for a user's profile.",
+          "Offer availability, eligibility rules, fees, rewards, and credits can change. Readers should review current issuer terms before applying.",
         ],
       },
       {
         heading: "Compensation should not control rankings",
         body: [
-          "The recommendation engine is structured to score cards by user answers: fee tolerance, lifestyle fit, travel behavior, spending categories, and credit profile. Future affiliate relationships should not override that ranking logic.",
+          "The recommendation engine is structured to score cards by user answers: fee tolerance, lifestyle fit, travel behavior, spending categories, and credit profile. Commercial relationships should not override that ranking logic.",
           "If a non-affiliate card is the better fit for a user's profile, the product should be able to recommend it.",
         ],
       },
@@ -120,7 +120,7 @@ export const trustPages: TrustPage[] = [
       {
         heading: "Where this product is going",
         body: [
-          "This is the first MoneyFactor decision engine. Future versions can add more card inventory, refreshed public offers, richer scoring assumptions, and stronger editorial workflows while preserving the same honest-math foundation.",
+          "BestCardsForMe is designed to grow into a deeper consumer finance publisher while preserving the same honest-math foundation: realistic annual value, transparent tradeoffs, and recommendations that respect the reader's actual life.",
         ],
       },
     ],
