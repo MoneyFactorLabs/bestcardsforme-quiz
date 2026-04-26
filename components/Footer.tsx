@@ -14,11 +14,17 @@ export function Footer() {
       <div className="grid gap-6 border-t border-blue-gray/70 pt-7 md:grid-cols-[1fr_auto] md:items-start">
         <div>
           <p className="text-lg font-semibold text-navy">BestCardsForMe by MoneyFactor</p>
-          <p className="mt-1 font-medium">Independent credit card analysis built on realistic annual-value math.</p>
+          <p className="mt-1 font-medium">
+            A MoneyFactor analytical property for independent credit card decision math.
+          </p>
           <p className="mt-3 text-xs leading-5 text-mid-navy/55">
             BestCardsForMe may receive compensation from partners. Editorial rankings are based on
             MoneyFactor scoring, consumer fit, and net value estimates. Verify current issuer terms
             before applying.
+          </p>
+          <p className="mt-3 text-xs leading-5 text-mid-navy/55">
+            MoneyFactor is building a broader family of financial optimization tools around one
+            promise: the real math behind every money decision.
           </p>
         </div>
         <nav

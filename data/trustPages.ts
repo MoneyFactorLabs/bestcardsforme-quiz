@@ -13,14 +13,14 @@ export const trustPages: TrustPage[] = [
   {
     slug: "methodology",
     eyebrow: "Our Methodology",
-    title: "How BestCardsForMe ranks credit cards",
+    title: "How BestCardsForMe by MoneyFactor ranks credit cards",
     summary:
       "Our recommendations start with realistic annual value: the rewards, credits, and perks a person is likely to use after accounting for annual fees and lifestyle fit.",
     sections: [
       {
         heading: "We score fit before flash",
         body: [
-          "BestCardsForMe is built around the idea that the best card is not always the card with the biggest advertised bonus or longest list of benefits. The quiz weighs goal fit, annual fee comfort, spending level, top spending category, travel frequency, lounge preference, reward simplicity, business-card openness, and credit profile.",
+          "BestCardsForMe by MoneyFactor is built around the idea that the best card is not always the card with the biggest advertised bonus or longest list of benefits. The quiz weighs goal fit, annual fee comfort, spending level, top spending category, travel frequency, lounge preference, reward simplicity, business-card openness, and credit profile.",
           "That means a no-fee cash-back card can beat a premium travel card when the premium benefits are unlikely to be used. It also means a high-fee travel card can rank well when a user's travel behavior gives the credits and perks real economic value.",
         ],
       },
@@ -49,7 +49,7 @@ export const trustPages: TrustPage[] = [
       {
         heading: "We write for decision quality",
         body: [
-          "BestCardsForMe reviews are designed to help people make better decisions, not to make every card sound attractive. We highlight annual fees, friction, credit tracking, portal restrictions, category limits, and the risk of overvaluing benefits.",
+          "BestCardsForMe reviews are part of MoneyFactor's broader consumer decision work: help people make better decisions, not make every card sound attractive. We highlight annual fees, friction, credit tracking, portal restrictions, category limits, and the risk of overvaluing benefits.",
           "Every review includes positive use cases and honest drawbacks. If a card only works for a narrow type of user, the page should say that plainly.",
         ],
       },
@@ -63,7 +63,7 @@ export const trustPages: TrustPage[] = [
       {
         heading: "We keep disclaimers visible",
         body: [
-          "Card terms change frequently. BestCardsForMe is educational and does not provide financial advice. Users should verify current issuer terms before applying.",
+          "Card terms change frequently. BestCardsForMe by MoneyFactor is educational and does not provide financial advice. Users should verify current issuer terms before applying.",
         ],
       },
     ],
@@ -73,12 +73,12 @@ export const trustPages: TrustPage[] = [
     eyebrow: "Affiliate Disclosure",
     title: "How compensation and editorial independence work",
     summary:
-      "BestCardsForMe may receive compensation from partners, but rankings are designed around fit and realistic annual value, not payout.",
+      "BestCardsForMe by MoneyFactor may receive compensation from partners, but rankings are designed around fit and realistic annual value, not payout.",
     sections: [
       {
         heading: "Compensation disclosure",
         body: [
-          "BestCardsForMe may receive compensation when readers interact with certain partner offers or apply through eligible links. Compensation can help support the publication, but it should not determine which cards rank well for a user's profile.",
+          "BestCardsForMe by MoneyFactor may receive compensation when readers interact with certain partner offers or apply through eligible links. Compensation can help support the publication, but it should not determine which cards rank well for a user's profile.",
           "Offer availability, eligibility rules, fees, rewards, and credits can change. Readers should review current issuer terms before applying.",
         ],
       },
@@ -108,7 +108,7 @@ export const trustPages: TrustPage[] = [
         heading: "Why BestCardsForMe exists",
         body: [
           "Credit cards are often marketed through bonuses, status signals, and long benefit lists. That can make a card look better than it is for a person's actual life.",
-          "BestCardsForMe starts with the user's spending pattern and preferences, then estimates which cards are most likely to produce real net value.",
+          "BestCardsForMe is MoneyFactor's credit card decision property. It starts with the user's spending pattern and preferences, then estimates which cards are most likely to produce real net value.",
         ],
       },
       {
@@ -120,7 +120,7 @@ export const trustPages: TrustPage[] = [
       {
         heading: "Where this product is going",
         body: [
-          "BestCardsForMe is designed to grow into a deeper consumer finance publisher while preserving the same honest-math foundation: realistic annual value, transparent tradeoffs, and recommendations that respect the reader's actual life.",
+          "BestCardsForMe is one expression of the broader MoneyFactor platform: decision tools that use realistic annual value, transparent tradeoffs, and recommendations that respect the reader's actual life.",
         ],
       },
     ],

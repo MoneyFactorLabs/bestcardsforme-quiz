@@ -7,7 +7,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
     <section className="mx-auto grid w-full max-w-6xl gap-10 px-4 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:pb-20 lg:pt-12">
       <div>
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-gold">
-          MoneyFactor decision engine
+          A MoneyFactor decision engine
         </p>
         <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-navy sm:text-5xl lg:text-6xl">
           Find the credit card that actually fits you.
@@ -47,6 +47,15 @@ export function LandingHero({ onStart }: LandingHeroProps) {
           <p className="mt-2 text-sm leading-6 text-mid-navy/75">
             The engine weighs fee tolerance, likely perk usage, spending categories, and realistic
             annual value before ranking a card.
+          </p>
+        </div>
+        <div className="mt-3 rounded-lg border border-blue-gray/70 bg-white/70 p-4">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-mid-navy/55">
+            MoneyFactor ecosystem
+          </p>
+          <p className="mt-2 text-sm leading-6 text-mid-navy/75">
+            BestCardsForMe is one analytical property inside MoneyFactor's broader work to make
+            household financial decisions clearer, more quantitative, and less marketing-driven.
           </p>
         </div>
       </div>
