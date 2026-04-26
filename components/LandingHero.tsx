@@ -4,7 +4,7 @@ type LandingHeroProps = {
 
 export function LandingHero({ onStart }: LandingHeroProps) {
   return (
-    <section className="mx-auto grid w-full max-w-6xl gap-10 px-5 pb-12 pt-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pb-20 lg:pt-14">
+    <section className="mx-auto grid w-full max-w-6xl gap-10 px-4 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:pb-20 lg:pt-12">
       <div>
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-gold">
           MoneyFactor decision engine
@@ -33,34 +33,68 @@ export function LandingHero({ onStart }: LandingHeroProps) {
             (item) => (
               <div
                 key={item}
-                className="rounded-md border border-blue-gray/70 bg-white/85 px-3 py-2 text-sm font-semibold text-mid-navy shadow-sm"
+                className="rounded-md border border-blue-gray/70 bg-white/90 px-3 py-2 text-sm font-semibold text-mid-navy shadow-sm"
               >
                 {item}
               </div>
             )
           )}
         </div>
-      </div>
-      <div className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft">
-        <div className="rounded-md bg-navy p-6 text-white">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-gray">
-            Honest annual value
+        <div className="mt-5 rounded-lg border border-blue-gray/70 bg-white/80 p-4 shadow-sm">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-mid-navy/55">
+            Independent scoring
           </p>
-          <div className="mt-8 space-y-5">
+          <p className="mt-2 text-sm leading-6 text-mid-navy/75">
+            The engine weighs fee tolerance, likely perk usage, spending categories, and realistic
+            annual value before ranking a card.
+          </p>
+        </div>
+      </div>
+      <div className="rounded-lg border border-blue-gray/70 bg-white p-3 shadow-soft sm:p-5">
+        <div className="overflow-hidden rounded-md bg-navy text-white">
+          <div className="border-b border-white/10 px-5 py-4 sm:px-6">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold">
+              Recommendation framework
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold">Premium value, not card hype.</h2>
+          </div>
+          <div className="grid gap-px bg-white/10 sm:grid-cols-3">
             {[
-              ["Travel credits used", "$300"],
-              ["Estimated rewards earned", "$420"],
-              ["Annual fee drag", "-$95"],
+              ["Likely value captured", "$625/yr"],
+              ["Annual fee test", "Pass"],
+              ["Perk utilization", "High"],
             ].map(([label, value]) => (
-              <div key={label} className="flex items-center justify-between border-b border-white/15 pb-4">
-                <span className="text-sm text-blue-gray">{label}</span>
-                <span className="text-lg font-semibold">{value}</span>
+              <div key={label} className="bg-navy px-5 py-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-gray">
+                  {label}
+                </p>
+                <p className="mt-2 text-2xl font-semibold text-white">{value}</p>
               </div>
             ))}
           </div>
-          <div className="mt-7 rounded-md bg-white/10 p-4">
-            <p className="text-sm text-blue-gray">Estimated net value</p>
-            <p className="mt-1 text-3xl font-semibold text-white">$625/year</p>
+          <div className="p-5 sm:p-6">
+            <div className="rounded-md border border-white/10 bg-white/10 p-4">
+              <p className="text-sm font-semibold text-white">Methodology note</p>
+              <p className="mt-2 text-sm leading-6 text-blue-gray">
+                We discount credits and perks when the user's answers suggest they are unlikely to
+                be used. Terms can change, so final issuer details should always be verified.
+              </p>
+            </div>
+            <div className="mt-4 space-y-3">
+              {[
+                ["Travel credits likely used", "$300"],
+                ["Rewards from actual spend", "$420"],
+                ["Annual fee drag", "-$95"],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="flex items-center justify-between border-b border-white/10 pb-3 last:border-b-0 last:pb-0"
+                >
+                  <span className="text-sm text-blue-gray">{label}</span>
+                  <span className="text-lg font-semibold">{value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
         <h1 className="mt-3 text-3xl font-semibold leading-tight text-navy sm:text-5xl">
           {page.title}
         </h1>
-        <p className="mt-4 text-base leading-8 text-mid-navy/78 sm:text-lg">{page.summary}</p>
+        <p className="mt-4 text-base leading-8 text-mid-navy/75 sm:text-lg">{page.summary}</p>
       </header>
 
       <div className="mt-5 grid gap-5">
@@ -22,7 +22,7 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
             className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-6"
           >
             <h2 className="text-xl font-semibold text-navy">{section.heading}</h2>
-            <div className="mt-3 space-y-4 text-sm leading-7 text-mid-navy/78">
+            <div className="mt-3 space-y-4 text-sm leading-7 text-mid-navy/75">
               {section.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

@@ -10,7 +10,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="mx-auto w-full max-w-6xl px-4 py-10 text-sm text-mid-navy/68 sm:px-8">
+    <footer className="mx-auto w-full max-w-6xl px-4 py-10 text-sm text-mid-navy/70 sm:px-8">
       <div className="grid gap-6 border-t border-blue-gray/70 pt-7 md:grid-cols-[1fr_auto] md:items-start">
         <div>
           <p className="text-lg font-semibold text-navy">BestCardsForMe by MoneyFactor</p>
