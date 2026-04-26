@@ -17,6 +17,7 @@ import {
   getProfileSummary,
   getRecommendations,
 } from "@/lib/recommendationEngine";
+import { trackEvent } from "@/lib/analyticsClient";
 import type { QuizAnswers } from "@/types/quiz";
 
 type Screen = "landing" | "quiz" | "results";
@@ -58,6 +59,21 @@ export default function Home() {
     setAnswers(nextAnswers);
 
     if (isLastQuestion) {
+      const completedAnswers = nextAnswers as QuizAnswers;
+      const topRecommendations = getRecommendations(completedAnswers);
+
+      trackEvent({
+        eventName: "quiz_completed",
+        sourcePage: "quiz",
+        metadata: {
+          main_goal: completedAnswers.mainGoal,
+          annual_fee_comfort: completedAnswers.annualFeeComfort,
+          monthly_spend: completedAnswers.monthlySpend,
+          top_category: completedAnswers.topCategory,
+          travel_frequency: completedAnswers.travelFrequency,
+          top_cards: topRecommendations.map((recommendation) => recommendation.card.id),
+        },
+      });
       setScreen("results");
       return;
     }

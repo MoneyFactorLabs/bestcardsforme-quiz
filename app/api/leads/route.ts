@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { recordAnalyticsEvent } from "@/lib/analyticsServer";
 import { getSupabaseServerClient } from "@/lib/supabaseServer";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,6 +49,15 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
+
+  await recordAnalyticsEvent({
+    eventName: "email_capture_submit",
+    sourcePage,
+    sourceCard,
+    metadata: {
+      capture_type: sourceCard ? "card_offer_updates" : "quiz_report",
+    },
+  });
 
   return NextResponse.json({ ok: true });
 }

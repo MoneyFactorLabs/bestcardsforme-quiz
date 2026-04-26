@@ -5,6 +5,8 @@ import { Disclaimer } from "@/components/Disclaimer";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { CardPageAnalytics } from "@/components/analytics/CardPageAnalytics";
+import { CardReviewActions } from "@/components/analytics/CardReviewActions";
 import { cards } from "@/data/cards";
 
 type CardDetailsPageProps = {
@@ -74,6 +76,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
 
   return (
     <main className="min-h-screen">
+      <CardPageAnalytics cardId={card.id} />
       <Header />
       <article className="mx-auto w-full max-w-6xl px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-10">
         <Link
@@ -179,18 +182,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
             </div>
 
             <div className="grid gap-3 p-5">
-              <Link
-                href={`/go/${card.affiliateSlug}`}
-                className="focus-ring inline-flex justify-center rounded-md bg-gold px-5 py-3 text-sm font-bold text-navy transition hover:bg-[#caa42f]"
-              >
-                Read issuer terms
-              </Link>
-              <Link
-                href="#offer-updates"
-                className="focus-ring inline-flex justify-center rounded-md border border-navy px-5 py-3 text-sm font-bold text-navy transition hover:bg-navy hover:text-white"
-              >
-                Get offer updates by email
-              </Link>
+              <CardReviewActions cardId={card.id} affiliateSlug={card.affiliateSlug} />
 
               <div id="issuer-terms" className="rounded-md border border-blue-gray/70 bg-[#f5f8fb] p-4">
                 <p className="text-sm font-semibold text-navy">Issuer terms and offer details</p>
