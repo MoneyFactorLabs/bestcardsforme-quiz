@@ -18,6 +18,8 @@ export type CreditCard = {
   id: string;
   name: string;
   annualFee: number;
+  valueEstimateLow: number;
+  valueEstimateHigh: number;
   type: CardType;
   bestFor: string;
   realisticAnnualValue: string;

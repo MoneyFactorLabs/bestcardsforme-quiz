@@ -19,8 +19,8 @@ const creditScoreRank: Record<CreditScoreRange, number> = {
 
 const spendScore: Record<MonthlySpend, number> = {
   under1500: 0,
-  "1500to3000": 8,
-  "3000to6000": 16,
+  "1500to3000": 7,
+  "3000to6000": 15,
   "6000plus": 24,
 };
 
@@ -49,17 +49,86 @@ const travelLabels: Record<TravelFrequency, string> = {
   monthly: "frequent travel",
 };
 
-function feeScore(annualFee: number, comfort: AnnualFeeComfort) {
-  if (comfort === "zero") return annualFee === 0 ? 22 : -36;
-  if (comfort === "under100") return annualFee <= 100 ? 20 : annualFee <= 400 ? -10 : -30;
-  if (comfort === "100to400") return annualFee <= 400 ? 18 : -12;
-  return annualFee >= 400 ? 14 : 10;
+function getCapturedAnnualValue(card: CreditCard, answers: QuizAnswers) {
+  const midpoint = (card.valueEstimateLow + card.valueEstimateHigh) / 2;
+  let captureRate = 0.48;
+
+  if (answers.monthlySpend === "1500to3000") captureRate += 0.08;
+  if (answers.monthlySpend === "3000to6000") captureRate += 0.18;
+  if (answers.monthlySpend === "6000plus") captureRate += 0.28;
+
+  if (card.goalFit.includes(answers.mainGoal)) captureRate += 0.12;
+  if (card.categoryFit.includes(answers.topCategory)) captureRate += 0.1;
+  if (card.travelFit.includes(answers.travelFrequency)) captureRate += 0.1;
+
+  if (answers.simplicity === "optimizeIfHigh") captureRate += 0.1;
+  if (answers.simplicity === "pointsStrategy") captureRate += 0.16;
+  if (answers.simplicity === "simple" && card.annualFee >= 400) captureRate -= 0.18;
+
+  if (answers.loungeAccess === "yes" && card.loungeValue === "high") captureRate += 0.13;
+  if (answers.loungeAccess === "maybe" && card.loungeValue === "high") captureRate += 0.06;
+  if (answers.loungeAccess === "no" && card.loungeValue === "high") captureRate -= 0.14;
+
+  if (answers.travelFrequency === "rarely" && card.annualFee >= 400) captureRate -= 0.28;
+  if (answers.travelFrequency === "monthly" && card.type.includes("travel")) captureRate += 0.14;
+
+  const boundedRate = Math.max(0.22, Math.min(1.08, captureRate));
+  return Math.round(midpoint * boundedRate - card.annualFee);
+}
+
+function valueCaptureScore(card: CreditCard, answers: QuizAnswers) {
+  const capturedValue = getCapturedAnnualValue(card, answers);
+
+  if (capturedValue >= 350) return 32;
+  if (capturedValue >= 200) return 24;
+  if (capturedValue >= 100) return 16;
+  if (capturedValue >= 0) return 8;
+  if (answers.annualFeeComfort === "zero") return -18;
+  return -8;
+}
+
+function feeAndUtilizationScore(card: CreditCard, answers: QuizAnswers) {
+  const isPremium = card.annualFee >= 395;
+  const isLowFee = card.annualFee > 0 && card.annualFee < 150;
+
+  if (answers.annualFeeComfort === "zero") return card.annualFee === 0 ? 20 : -42;
+
+  let score = 0;
+
+  if (answers.annualFeeComfort === "under100") {
+    if (card.annualFee === 0) score += 12;
+    else if (card.annualFee <= 100) score += 18;
+    else if (card.annualFee <= 400) score -= 6;
+    else score -= 24;
+  }
+
+  if (answers.annualFeeComfort === "100to400") {
+    if (card.annualFee <= 400) score += isLowFee ? 15 : 18;
+    else score -= 10;
+  }
+
+  if (answers.annualFeeComfort === "400plus") {
+    score += isPremium ? 16 : 8;
+  }
+
+  if (isPremium) {
+    const supportedByTravel = ["3to5", "monthly"].includes(answers.travelFrequency);
+    const supportedByPerks = answers.loungeAccess !== "no" && card.loungeValue === "high";
+    const supportedByOptimization = answers.simplicity !== "simple";
+
+    if (supportedByTravel) score += 10;
+    if (supportedByPerks) score += 10;
+    if (supportedByOptimization) score += 8;
+    if (!supportedByTravel && !supportedByPerks) score -= 18;
+  }
+
+  return score;
 }
 
 function getSpendMultiplier(answers: QuizAnswers, card: CreditCard) {
-  if (answers.monthlySpend === "under1500" && card.annualFee >= 400) return -8;
-  if (answers.monthlySpend === "6000plus" && card.annualFee > 0) return 8;
-  if (answers.monthlySpend === "3000to6000" && card.annualFee > 0) return 5;
+  if (answers.monthlySpend === "under1500" && card.annualFee >= 400) return -10;
+  if (answers.monthlySpend === "6000plus" && card.annualFee > 0) return 12;
+  if (answers.monthlySpend === "3000to6000" && card.annualFee > 0) return 8;
   return 0;
 }
 
@@ -67,7 +136,7 @@ function explainFee(card: CreditCard, comfort: AnnualFeeComfort) {
   if (card.annualFee === 0) return "No annual fee keeps the math simple and low-risk.";
   if (comfort === "zero") return "The annual fee is above your stated comfort zone, so the score is penalized.";
   if (comfort === "400plus" && card.annualFee >= 400) {
-    return "You are open to premium fees, so the engine focuses on whether perks can offset the cost.";
+    return "You are open to premium fees, so the engine tests whether your perk usage can capture enough net value.";
   }
   return `The $${card.annualFee} annual fee fits within or near your stated comfort range.`;
 }
@@ -88,15 +157,20 @@ function buildExplanation(card: CreditCard, answers: QuizAnswers): string[] {
   }
 
   if (answers.loungeAccess !== "no" && card.loungeValue === "high") {
-    bullets.push("Lounge access meaningfully improves the estimated value for your profile.");
+    bullets.push("Premium lounge access is treated as captured value because your answers support using it.");
   }
 
   if (card.simplicityFit.includes(answers.simplicity)) {
     bullets.push(
       answers.simplicity === "simple"
         ? "The rewards structure can work without heavy points optimization."
-        : "The card has enough upside for someone willing to optimize rewards."
+        : "The card has enough premium upside for a household willing to optimize rewards."
     );
+  }
+
+  const capturedValue = getCapturedAnnualValue(card, answers);
+  if (capturedValue > 0) {
+    bullets.push(`Estimated captured net value clears the annual fee by about $${capturedValue}.`);
   }
 
   bullets.push(explainFee(card, answers.annualFeeComfort));
@@ -136,10 +210,11 @@ function scoreCard(card: CreditCard, answers: QuizAnswers) {
   let score = 40;
 
   if (card.goalFit.includes(answers.mainGoal)) score += 28;
-  if (answers.mainGoal === "balanceTransfer" && card.annualFee === 0) score += 10;
+  if (answers.mainGoal === "balanceTransfer" && card.annualFee === 0) score += 14;
   if (answers.mainGoal === "business" && card.businessOnly) score += 22;
 
-  score += feeScore(card.annualFee, answers.annualFeeComfort);
+  score += feeAndUtilizationScore(card, answers);
+  score += valueCaptureScore(card, answers);
   score += spendScore[answers.monthlySpend];
   score += getSpendMultiplier(answers, card);
 
@@ -148,15 +223,21 @@ function scoreCard(card: CreditCard, answers: QuizAnswers) {
 
   if (card.travelFit.includes(answers.travelFrequency)) score += 18;
   if (answers.travelFrequency === "rarely" && card.annualFee >= 400) score -= 24;
-  if (["3to5", "monthly"].includes(answers.travelFrequency) && card.type.includes("travel")) score += 10;
+  if (["3to5", "monthly"].includes(answers.travelFrequency) && card.type.includes("travel")) score += 16;
 
-  if (answers.loungeAccess === "yes") score += card.loungeValue === "high" ? 20 : -10;
-  if (answers.loungeAccess === "maybe") score += card.loungeValue === "high" ? 8 : 2;
+  if (answers.loungeAccess === "yes") score += card.loungeValue === "high" ? 26 : -10;
+  if (answers.loungeAccess === "maybe") score += card.loungeValue === "high" ? 12 : 2;
   if (answers.loungeAccess === "no" && card.loungeValue === "high") score -= 8;
 
   if (card.simplicityFit.includes(answers.simplicity)) score += 12;
   if (answers.simplicity === "simple" && card.annualFee >= 400) score -= 12;
-  if (answers.simplicity === "pointsStrategy" && card.type.includes("travel")) score += 8;
+  if (answers.simplicity === "pointsStrategy" && card.type.includes("travel")) score += 16;
+  if (answers.simplicity !== "simple" && answers.monthlySpend === "6000plus" && card.annualFee === 0) {
+    score -= 12;
+  }
+  if (answers.simplicity !== "simple" && answers.annualFeeComfort === "400plus" && card.annualFee === 0) {
+    score -= 14;
+  }
 
   if (card.businessOnly) {
     if (answers.businessCards === "yes") score += 18;
@@ -172,6 +253,15 @@ function scoreCard(card: CreditCard, answers: QuizAnswers) {
     score += 12;
   } else {
     score -= (requiredCreditRank - userCreditRank) * 22;
+  }
+
+  if (
+    answers.creditScore === "excellent" &&
+    answers.monthlySpend === "6000plus" &&
+    answers.simplicity !== "simple" &&
+    card.annualFee >= 395
+  ) {
+    score += 12;
   }
 
   return Math.max(0, Math.round(score));
@@ -229,13 +319,15 @@ export function getProfileSummary(answers: QuizAnswers) {
   }[answers.simplicity];
 
   const title =
-    answers.mainGoal === "cashBack" || answers.travelFrequency === "rarely"
-      ? "Practical value seeker"
+    answers.mainGoal === "business"
+      ? "Executive business rewards operator"
       : answers.loungeAccess === "yes" && ["3to5", "monthly"].includes(answers.travelFrequency)
-        ? "Premium travel optimizer"
-        : answers.mainGoal === "business"
-          ? "Business rewards builder"
-          : "Flexible rewards strategist";
+        ? "Premium travel value strategist"
+        : answers.simplicity === "pointsStrategy" && answers.monthlySpend !== "under1500"
+          ? "Affluent points optimizer"
+          : answers.annualFeeComfort === "zero" || answers.simplicity === "simple"
+            ? "Disciplined simplicity-first household"
+            : "Premium-value rewards household";
 
   const summary = `Based on your answers, you look like a ${title.toLowerCase()}: your priority is ${goalLabels[answers.mainGoal]}, your highest spend is ${categoryLabels[answers.topCategory]}, and ${feeLanguage[answers.annualFeeComfort]}. The best-fit cards below favor ${optimizerLanguage} over flashy issuer marketing.`;
 
