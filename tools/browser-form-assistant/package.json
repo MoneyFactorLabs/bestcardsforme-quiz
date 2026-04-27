@@ -1,0 +1,13 @@
+{
+  "name": "@moneyfactor/browser-form-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "harvest": "node src/assistant.mjs",
+    "check": "node --check src/assistant.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0"
+  }
+}

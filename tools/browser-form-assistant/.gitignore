@@ -1,0 +1,5 @@
+.browser-profile/
+config.local.json
+outputs/*.md
+!outputs/.gitkeep
+node_modules/
