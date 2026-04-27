@@ -6,7 +6,7 @@ export function Footer() {
     ["Editorial Standards", "/editorial-standards"],
     ["Affiliate Disclosure", "/affiliate-disclosure"],
     ["About MoneyFactor", "/about"],
-    ["Contact", "mailto:editorial@moneyfactor.io"],
+    ["Contact", "/contact"],
   ];
 
   return (
