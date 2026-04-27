@@ -145,6 +145,10 @@ export default function Home() {
                 These recommendations are personalized to your fee comfort, travel habits, reward
                 style, and strongest spend category.
               </p>
+              <p className="mt-2 max-w-2xl text-sm font-medium leading-6 text-mid-navy/60">
+                Independently scored and periodically re-verified against current public terms and
+                MoneyFactor methodology.
+              </p>
             </div>
             <button
               type="button"

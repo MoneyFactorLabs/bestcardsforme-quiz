@@ -96,6 +96,9 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.22em] text-blue-gray">
                   by MoneyFactor
                 </p>
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-blue-gray">
+                  Reviewed & updated April 2026
+                </p>
                 <h1 className="mt-5 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
                   {card.name}
                 </h1>

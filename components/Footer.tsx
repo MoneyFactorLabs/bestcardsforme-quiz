@@ -15,7 +15,7 @@ export function Footer() {
         <div>
           <p className="text-lg font-semibold text-navy">BestCardsForMe by MoneyFactor</p>
           <p className="mt-1 font-medium">
-            A MoneyFactor analytical property for independent credit card decision math.
+            Independent credit card recommendations built on real financial math.
           </p>
           <p className="mt-3 text-xs leading-5 text-mid-navy/55">
             BestCardsForMe may receive compensation from partners. Editorial rankings are based on
@@ -23,8 +23,8 @@ export function Footer() {
             before applying.
           </p>
           <p className="mt-3 text-xs leading-5 text-mid-navy/55">
-            MoneyFactor is building a broader family of financial optimization tools around one
-            promise: the real math behind every money decision.
+            MoneyFactor is building financial optimization tools around one promise: the real math
+            behind every money decision.
           </p>
         </div>
         <nav

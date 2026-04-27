@@ -16,6 +16,9 @@ export function EmailCapture() {
             Get the side-by-side value logic, offer-check reminders, and the caveats that matter
             before you apply.
           </p>
+          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-gray/85">
+            No spam. Used only for BestCardsForMe report and offer-update requests.
+          </p>
         </div>
         <LeadCaptureForm
           sourcePage="quiz_results"

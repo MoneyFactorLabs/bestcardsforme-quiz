@@ -54,8 +54,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
             MoneyFactor ecosystem
           </p>
           <p className="mt-2 text-sm leading-6 text-mid-navy/75">
-            BestCardsForMe is one analytical property inside MoneyFactor's broader work to make
-            household financial decisions clearer, more quantitative, and less marketing-driven.
+            Independent credit card recommendations built on real financial math.
           </p>
         </div>
       </div>
