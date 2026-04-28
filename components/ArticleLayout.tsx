@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cards } from "@/data/cards";
 import type { CreditCard } from "@/types/card";
-import type { EditorialArticle } from "@/types/article";
+import type { ArticleTable, EditorialArticle } from "@/types/article";
 
 type ArticleLayoutProps = {
   article: EditorialArticle;
@@ -107,6 +107,46 @@ function renderInlineText(text: string): ReactNode[] {
   return nodes;
 }
 
+function ArticleDataTable({ table }: { table: ArticleTable }) {
+  return (
+    <div className="mt-4 overflow-hidden rounded-lg border border-blue-gray/70 bg-white">
+      <div className="overflow-x-auto">
+        <table className="min-w-full divide-y divide-blue-gray/70 text-left text-sm">
+          <thead className="bg-navy text-white">
+            <tr>
+              {table.columns.map((column) => (
+                <th
+                  key={column}
+                  scope="col"
+                  className="px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-gray"
+                >
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-blue-gray/60">
+            {table.rows.map((row) => (
+              <tr key={row.join("|")} className="bg-white even:bg-[#f8fafc]">
+                {row.map((cell, index) => (
+                  <td
+                    key={`${row.join("|")}-${index}`}
+                    className={`px-4 py-4 align-top leading-7 text-mid-navy/90 ${
+                      index === 0 ? "font-bold text-navy" : "font-medium"
+                    }`}
+                  >
+                    {renderInlineText(cell)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 export function ArticleLayout({ article }: ArticleLayoutProps) {
   const cardCtas = article.cardCtas
     ?.map((cta) => ({
@@ -199,6 +239,40 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                 {section.body.map((paragraph) => (
                   <p key={paragraph}>{renderInlineText(paragraph)}</p>
                 ))}
+                {section.table && <ArticleDataTable table={section.table} />}
+                {section.subsections && (
+                  <div className="grid gap-5 pt-1">
+                    {section.subsections.map((subsection) => (
+                      <div
+                        key={subsection.heading}
+                        className="rounded-lg border border-blue-gray/70 bg-[#f8fafc] p-4 sm:p-5"
+                      >
+                        <h3 className="text-lg font-semibold text-navy">{subsection.heading}</h3>
+                        {subsection.body && (
+                          <div className="mt-3 space-y-3 text-[0.98rem] font-medium leading-8 text-mid-navy/90">
+                            {subsection.body.map((paragraph) => (
+                              <p key={paragraph}>{renderInlineText(paragraph)}</p>
+                            ))}
+                          </div>
+                        )}
+                        {subsection.table && <ArticleDataTable table={subsection.table} />}
+                        {subsection.bullets && (
+                          <ul className="mt-4 grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                            {subsection.bullets.map((bullet) => (
+                              <li
+                                key={bullet}
+                                className="flex gap-3 rounded-md border border-blue-gray/60 bg-white p-3 sm:p-4"
+                              >
+                                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                                <span>{renderInlineText(bullet)}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {section.bullets && (
                   <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
                     {section.bullets.map((bullet) => (

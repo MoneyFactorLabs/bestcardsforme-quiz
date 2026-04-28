@@ -418,6 +418,302 @@ export const articles: EditorialArticle[] = [
       href: "/affiliate-disclosure",
     },
   },
+  {
+    slug: "best-grocery-credit-card-high-spend-households-2026",
+    eyebrow: "Grocery Rewards Analysis",
+    title: "Best Grocery Credit Card for High-Spend Households in 2026",
+    metaDescription:
+      "A MoneyFactor honest-math comparison of the best grocery credit cards for high-spend households in 2026, including spend tiers, caps, net value math, and FAQs.",
+    dek: "The best grocery card is not one-size-fits-all. The right answer changes at $500, $1,500, and $3,000+ in monthly grocery spend.",
+    category: "Cash back and grocery rewards",
+    updatedAt: "2026-04-27",
+    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    readingTime: "12 min read",
+    comparisonMetrics: [
+      {
+        label: "Low-spend winner",
+        value: "Blue Cash Preferred around $500/month grocery spend",
+      },
+      {
+        label: "Family-spend winner",
+        value: "Amex Gold around $1,500/month grocery spend",
+      },
+      {
+        label: "Very high-spend answer",
+        value: "Amex Gold narrowly, with Citi Strata Premier as a simpler no-cap alternative",
+      },
+      {
+        label: "MoneyFactor lens",
+        value: "Cap-aware grocery math, conservative point values, and Year-2 economics",
+      },
+    ],
+    sections: [
+      {
+        heading: "Why grocery rewards need household math",
+        body: [
+          "For an affluent household, grocery spending is one of the most underrated credit-card categories on the wallet. A family spending **$1,500 a month** at the supermarket - well within range for households earning $250,000+ - runs **$18,000 a year** through one merchant category, year after year, without thinking about it.",
+          "Pick the right card and that spending throws off **$700 to $1,200 in real annual rewards.** Pick the wrong one and the same spending generates $180 in cash back and a vague sense that points are nice.",
+          "Most listicles pick a single winner - usually Amex Gold or Blue Cash Preferred - and call it the answer. Both are good cards. Neither is the right answer for every household. The decision turns on a single variable competitors gloss over: **how much your household actually spends on groceries each month.**",
+          "This piece compares the four cards that matter for affluent households at the grocery decision: the [Amex Gold](/cards/amex-gold), the [Amex Blue Cash Preferred](/cards/blue-cash-preferred), the Citi Strata Premier, and the Capital One Savor. We use conservative point valuations consistent with [our methodology](/methodology). We do not anchor on welcome bonuses; they are one-time and change quarterly. And we segment recommendations by spending tier, because that is the only way to get the answer right.",
+        ],
+      },
+      {
+        heading: "The four contenders, at a glance",
+        body: [
+          "Before the math, the specs. Every fee, cap, and rate below is current as of April 2026 - verify on the issuer site before applying.",
+        ],
+        bullets: [
+          "**American Express Gold Card - $325 annual fee.** Earns 4x Membership Rewards points at U.S. supermarkets, capped at **$25,000 in annual spending** before the rate drops to 1x. Also earns 4x on dining worldwide and 3x on flights booked direct. Includes lifestyle credits that require enrollment and tracking.",
+          "**American Express Blue Cash Preferred - $95 annual fee.** Earns **6% cash back at U.S. supermarkets, capped at $6,000 in annual spending** before the rate drops to 1%. Also earns on select streaming, transit, and U.S. gas stations. Cash back, not points.",
+          "**Citi Strata Premier - $95 annual fee.** Earns 3x ThankYou Points on supermarkets with **no annual cap.** Also earns on restaurants, gas, air travel, and hotels. ThankYou Points transfer to a smaller but useful airline partner network.",
+          "**Capital One Savor - about $95 annual fee.** Earns **3% cash back on groceries** but excludes warehouse clubs and superstores like Walmart and Target. Also earns on dining, entertainment, and popular streaming.",
+          "Two of these cards cap their grocery rate. Two do not. One excludes superstores. Annual fees range from $95 to $325. The right card depends on which constraint binds your household.",
+        ],
+      },
+      {
+        heading: "Why competitor reviews get this wrong",
+        body: [
+          "Most major-publisher reviews of best grocery credit cards do one of two things. They pick Amex Gold and stop, because Gold earns the highest raw multiplier. Or they pick Blue Cash Preferred and stop, because 6% is the highest stated cash-back rate at U.S. supermarkets. Both pieces of analysis are right at one specific spending level. Both are wrong at others.",
+          "The trap is that grocery spending varies wildly by household. A single professional buying lunch ingredients might spend $300/month. A family of four with a Whole Foods habit and weekend cooking traditions can spend $2,500/month or more. The card that wins at one tier loses at the next, because the Blue Cash Preferred $6,000 cap binds at exactly **$500/month** and the Amex Gold $25,000 cap binds at **$2,083/month.**",
+          "The second trap is point valuation. Some reviews use aspirational valuations for Amex Membership Rewards or Citi ThankYou Points. Others implicitly value points at 1.0 cent, equivalent to cash. We use **1.7 cents per Membership Rewards point** and **1.5 cents per ThankYou Point** for an engaged-but-not-obsessive cardholder, documented in [our methodology](/methodology).",
+          "The third trap is ignoring the lifestyle credit stack on Amex Gold. Gold's stated $325 fee is offset by roughly $200 in dining credits if a household uses them, making the effective fee closer to $200-$225 for engaged users and the full $325 for users who do not track them. We discount these credits by realistic utilization, not face value.",
+        ],
+      },
+      {
+        heading: "Captured value by grocery spending tier",
+        body: [
+          "Here is the realistic captured value at three household spending tiers, using MoneyFactor's conservative point valuations, published caps and exclusions, and a moderate engagement assumption for lifestyle credits.",
+        ],
+        subsections: [
+          {
+            heading: "Tier 1: $500/month grocery spending ($6,000/year)",
+            body: [
+              "This is the tier where an affluent single, or a couple eating out frequently, lands. It is below the Blue Cash Preferred $6,000 cap.",
+            ],
+            table: {
+              columns: ["Card", "Math", "Captured value", "Net after fee"],
+              rows: [
+                [
+                  "Blue Cash Preferred",
+                  "6% x $6,000 = $360 cash back",
+                  "$360",
+                  "**+$265**",
+                ],
+                [
+                  "Amex Gold",
+                  "4x MR x $6,000 x 1.7 cents = $408, plus about $100 captured lifestyle credits",
+                  "$508",
+                  "+$183",
+                ],
+                [
+                  "Citi Strata Premier",
+                  "3x TY x $6,000 x 1.5 cents = $270",
+                  "$270",
+                  "+$175",
+                ],
+                [
+                  "Capital One Savor",
+                  "3% x $6,000 = $180, lower if some grocery is at Walmart or Target",
+                  "About $150-$180",
+                  "+$55-$85",
+                ],
+              ],
+            },
+            bullets: [
+              "**Tier 1 winner: Blue Cash Preferred.** At this volume, the 6% rate captures the most cash back and the $95 fee is the smallest hurdle.",
+              "Amex Gold can capture more total value if its lifestyle credits land, but for grocery alone at $500/month, Blue Cash Preferred is the clean answer.",
+            ],
+          },
+          {
+            heading: "Tier 2: $1,500/month grocery spending ($18,000/year)",
+            body: [
+              "This is where most affluent families with active kitchens land: well above the Blue Cash Preferred cap, but below the Amex Gold cap.",
+            ],
+            table: {
+              columns: ["Card", "Math", "Captured value", "Net after fee"],
+              rows: [
+                [
+                  "Amex Gold",
+                  "4x MR x $18,000 x 1.7 cents = $1,224, plus about $100 captured lifestyle credits",
+                  "$1,324",
+                  "**+$999**",
+                ],
+                [
+                  "Citi Strata Premier",
+                  "3x TY x $18,000 x 1.5 cents = $810",
+                  "$810",
+                  "+$715",
+                ],
+                [
+                  "Capital One Savor",
+                  "3% x $18,000 = $540, lower if some grocery is at superstores",
+                  "About $450-$540",
+                  "+$355-$445",
+                ],
+                [
+                  "Blue Cash Preferred",
+                  "6% x $6,000 + 1% x $12,000 = $360 + $120",
+                  "$480",
+                  "+$385",
+                ],
+              ],
+            },
+            bullets: [
+              "**Tier 2 winner: Amex Gold, decisively.** Once grocery spending crosses about $700/month, the Blue Cash Preferred 1% post-cap rate kills its advantage.",
+              "Gold's 4x rate continues up to $25,000, generating substantially more captured value even at our conservative 1.7 cent MR valuation.",
+              "For most affluent families, this is the relevant tier and Gold is the right card.",
+            ],
+          },
+          {
+            heading: "Tier 3: $3,000+/month grocery spending ($36,000+/year)",
+            body: [
+              "This is where Amex Gold's $25,000 cap starts to bind, and the no-cap cards become more interesting.",
+            ],
+            table: {
+              columns: ["Card", "Math", "Captured value", "Net after fee"],
+              rows: [
+                [
+                  "Amex Gold",
+                  "(4x x $25,000 x 1.7 cents) + (1x x $11,000 x 1.7 cents) = $1,887, plus about $100 captured lifestyle credits",
+                  "$1,987",
+                  "**+$1,662**",
+                ],
+                [
+                  "Citi Strata Premier",
+                  "3x TY x $36,000 x 1.5 cents = $1,620",
+                  "$1,620",
+                  "+$1,525",
+                ],
+                [
+                  "Capital One Savor",
+                  "3% x $36,000 = $1,080, lower if some grocery is at superstores",
+                  "About $900-$1,080",
+                  "+$805-$985",
+                ],
+                [
+                  "Blue Cash Preferred",
+                  "6% x $6,000 + 1% x $30,000 = $360 + $300",
+                  "$660",
+                  "+$565",
+                ],
+              ],
+            },
+            bullets: [
+              "**Tier 3 winner: Amex Gold by a hair, with Citi Strata Premier as a serious alternative.**",
+              "Even though Gold's 4x rate caps at $25,000, its captured value at our 1.7 cent MR valuation barely edges Strata Premier's uncapped 3x at 1.5 cents.",
+              "Households at this tier should pick based on secondary categories and whether they value Amex transfer partners.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Which card wins for which household",
+        body: [
+          "Quick reference, by household profile:",
+        ],
+        bullets: [
+          "**Single or couple with $300-$700/month grocery, dining-light:** Blue Cash Preferred. The 6% rate within the $6,000 cap is hard to beat and the $95 fee is small.",
+          "**Single or couple with $300-$700/month grocery, dining-heavy:** Amex Gold. The 4x dining bonus on top of the 4x grocery shifts the math even at lower grocery volumes.",
+          "**Family of three or four, $1,000-$2,500/month grocery:** Amex Gold, almost without exception. The math is decisive at this tier and the lifestyle credits add value when households engage.",
+          "**High-volume household, $2,500-$4,000/month grocery, prefers simplicity:** Citi Strata Premier. No cap, no superstore-style exclusion, $95 fee, and a useful point currency.",
+          "**High-volume household, $2,500+/month grocery, dining-heavy and travels frequently:** Amex Gold remains the right answer despite the cap because dining and earning multipliers offset the post-cap drop.",
+          "**Household that prefers cash back over points and shops Walmart or Target heavily:** Blue Cash Preferred is often cleaner than Savor because Savor's superstore exclusion can materially reduce captured value.",
+          "**Household with no grocery interest in points, prefers cash, and does not want fees over $100:** Blue Cash Preferred is the default no-fluff answer.",
+        ],
+      },
+      {
+        heading: "The wallet-stack consideration",
+        body: [
+          "The right grocery card is sometimes part of a two-card stack rather than a single answer. Stack thinking can add value, but only for households comfortable managing multiple annual fees and remembering which card to use.",
+        ],
+        bullets: [
+          "**Amex Gold + Blue Cash Preferred:** Gold handles grocery and dining at 4x; Blue Cash Preferred handles select streaming, transit, and gas categories. Combined annual fees are $420, so the stack only works when the household uses both cards heavily.",
+          "**Amex Gold + Sapphire Preferred:** Gold handles grocery and dining; [Sapphire Preferred](/cards/chase-sapphire-preferred) handles travel and adds Chase Ultimate Rewards transfer-partner exposure. This can work well for households with grocery spend plus moderate travel.",
+          "We do not recommend wallet stacks reflexively. Two cards mean twice the calendar burden and twice the chance of forgetting which card to pull at the register.",
+        ],
+      },
+      {
+        heading: "Bottom line",
+        body: [
+          "The best grocery credit card for an affluent household is not a single answer. At low spending volumes (**$300-$700/month**), the Blue Cash Preferred 6% rate within its cap is the hardest to beat.",
+          "At family-typical volumes (**$1,000-$2,500/month**), the Amex Gold 4x Membership Rewards rate wins decisively, especially for households that also eat out frequently.",
+          "At very high volumes (**$3,000+/month**), Amex Gold still narrowly leads, but Citi Strata Premier becomes a credible alternative on simplicity and lower fee.",
+          "We do not recommend by reflex. We recommend by household. If you want a profile-specific answer that uses your actual grocery spend, dining habits, travel pattern, and household size, take [the BestCardsForMe quiz](/).",
+          "If your math points to one of these cards, [check current terms on the issuer site](/go/amex-gold) before applying. Caps, fees, exclusions, and earning rates change without notice - verify what is published when you apply, not when this article was written.",
+        ],
+      },
+    ],
+    cardCtas: [
+      {
+        cardId: "amex-gold",
+        headline: "Read the Amex Gold review",
+        body: "A high-value grocery and dining card when Membership Rewards points match how your household travels.",
+      },
+      {
+        cardId: "blue-cash-preferred",
+        headline: "Compare Blue Cash Preferred",
+        body: "A strong cash-back answer for lower grocery spend where the 6% supermarket cap does not punish the household.",
+      },
+      {
+        cardId: "chase-sapphire-preferred",
+        headline: "Consider the travel-pairing card",
+        body: "Sapphire Preferred can pair with Amex Gold for households balancing grocery, dining, and moderate travel.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the best credit card for groceries in 2026?",
+        answer:
+          "It depends on monthly spend. Below about $700/month, the Amex Blue Cash Preferred wins on a 6% cash back rate within its $6,000 cap. Between $700/month and about $2,000/month, the Amex Gold dominates on its 4x Membership Rewards multiplier. Above $2,000/month, Amex Gold still wins narrowly while Citi Strata Premier becomes a strong simpler alternative thanks to no cap and a lower $95 fee.",
+      },
+      {
+        question: "Does Amex Gold's 4x supermarket cap apply per year?",
+        answer:
+          "Yes. The 4x Membership Rewards rate applies to the first $25,000 in U.S. supermarket purchases each calendar year. Spending above that threshold reverts to 1x. For grocery spending under about $2,083/month, the cap never binds.",
+      },
+      {
+        question: "Does Blue Cash Preferred earn 6% on warehouse clubs like Costco?",
+        answer:
+          "No. Amex's U.S. supermarket definition excludes warehouse clubs, superstores like Walmart and Target, and specialty grocery stores in some cases. Spending at those merchants generally earns the base rate, not 6%. Verify your typical grocery store qualifies before relying on the 6% rate.",
+      },
+      {
+        question: "Is Capital One Savor good for groceries?",
+        answer:
+          "It can be, because it earns 3% cash back on groceries, but it explicitly excludes warehouse clubs and superstores like Walmart and Target. For households that shop at standalone supermarkets, Savor can work. For households that buy a meaningful portion of groceries at Walmart or Target, the exclusion materially reduces captured value.",
+      },
+      {
+        question: "Should I get Amex Gold or Blue Cash Preferred?",
+        answer:
+          "If your household spends under $700/month on groceries, Blue Cash Preferred captures more cash back at a lower fee. If you spend $700/month or more, [Amex Gold](/cards/amex-gold) captures more value via its 4x multiplier, and its dining 4x adds additional value if you eat out regularly.",
+      },
+      {
+        question: "What is the best no-cap grocery card?",
+        answer:
+          "Citi Strata Premier is the cleanest no-cap option among major issuers, with 3x ThankYou Points on supermarkets and a $95 fee. Capital One Savor is comparable for cash-back households but excludes superstores. For very high spenders, these no-cap cards become competitive once Amex Gold's $25,000 cap binds.",
+      },
+      {
+        question: "How much can a household earn from groceries in a year?",
+        answer:
+          "A household spending $1,500/month, or $18,000/year, on groceries can realistically capture $700-$1,300 per year in rewards depending on card choice and how points are valued. A $3,000/month household can capture $1,500-$2,000. These figures use conservative point valuations and exclude welcome bonuses.",
+      },
+      {
+        question: "Are point valuations realistic at 1.7 cents per Membership Rewards point?",
+        answer:
+          "For a household that occasionally transfers Membership Rewards points to airline or hotel partners on intentional trips, 1.7 cents is realistic. Households that redeem only for statement credit or basic Amex Travel value capture closer to 1.0-1.2 cents per point. Our [methodology page](/methodology) documents the full reasoning.",
+      },
+      {
+        question: "Should I worry about the Blue Cash Preferred $6,000 cap?",
+        answer:
+          "Yes, if you spend more than $500/month on groceries. The 1% post-cap rate is the same as a basic low-rate card, which means Blue Cash Preferred value compresses for high-spending households. Above about $700/month, switching to Amex Gold or a no-cap points card can capture meaningfully more.",
+      },
+    ],
+    disclosureCta: {
+      heading: "Editorial disclosure",
+      body: "This article is general informational content, not personalized financial advice. BestCardsForMe by MoneyFactor may receive compensation from issuer programs we cover; editorial standards are designed to keep rankings focused on consumer value.",
+      label: "Read our disclosure",
+      href: "/affiliate-disclosure",
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string) {

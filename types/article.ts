@@ -1,7 +1,21 @@
+export type ArticleTable = {
+  columns: string[];
+  rows: string[][];
+};
+
+export type ArticleSubsection = {
+  heading: string;
+  body?: string[];
+  table?: ArticleTable;
+  bullets?: string[];
+};
+
 export type ArticleSection = {
   heading: string;
   body: string[];
   bullets?: string[];
+  table?: ArticleTable;
+  subsections?: ArticleSubsection[];
 };
 
 export type ArticleFaq = {
