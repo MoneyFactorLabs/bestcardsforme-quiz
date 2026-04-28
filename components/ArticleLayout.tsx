@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { cards } from "@/data/cards";
 import type { CreditCard } from "@/types/card";
 import type { EditorialArticle } from "@/types/article";
@@ -12,11 +13,64 @@ type ResolvedCardCta = NonNullable<EditorialArticle["cardCtas"]>[number] & {
 };
 
 function formatDate(value: string) {
+  const [year, month, day] = value.split("-").map(Number);
+
   return new Intl.DateTimeFormat("en", {
     month: "long",
     day: "numeric",
     year: "numeric",
-  }).format(new Date(value));
+  }).format(new Date(year, month - 1, day));
+}
+
+function renderInlineText(text: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const pattern = /(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index));
+    }
+
+    const token = match[0];
+
+    if (token.startsWith("**")) {
+      nodes.push(
+        <strong key={`${token}-${match.index}`} className="font-semibold text-navy">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith("*")) {
+      nodes.push(
+        <em key={`${token}-${match.index}`} className="italic">
+          {token.slice(1, -1)}
+        </em>
+      );
+    } else {
+      const linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        const [, label, href] = linkMatch;
+        nodes.push(
+          <Link
+            key={`${href}-${match.index}`}
+            href={href}
+            className="font-semibold text-mid-navy underline decoration-gold/60 underline-offset-4 transition hover:text-navy"
+          >
+            {label}
+          </Link>
+        );
+      }
+    }
+
+    lastIndex = pattern.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes;
 }
 
 export function ArticleLayout({ article }: ArticleLayoutProps) {
@@ -109,14 +163,14 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
               <div className="mt-3 space-y-4 text-base leading-8 text-mid-navy/75">
                 {section.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>{renderInlineText(paragraph)}</p>
                 ))}
                 {section.bullets && (
                   <ul className="space-y-3 pt-1 text-sm leading-7">
                     {section.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-3">
                         <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                        <span>{bullet}</span>
+                        <span>{renderInlineText(bullet)}</span>
                       </li>
                     ))}
                   </ul>
@@ -162,7 +216,9 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                 {article.faqs.map((faq) => (
                   <div key={faq.question} className="py-4 first:pt-0 last:pb-0">
                     <h3 className="text-base font-semibold text-navy">{faq.question}</h3>
-                    <p className="mt-2 text-sm leading-7 text-mid-navy/75">{faq.answer}</p>
+                    <p className="mt-2 text-sm leading-7 text-mid-navy/75">
+                      {renderInlineText(faq.answer)}
+                    </p>
                   </div>
                 ))}
               </div>

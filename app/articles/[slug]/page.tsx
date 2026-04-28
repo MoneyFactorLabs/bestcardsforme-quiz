@@ -23,7 +23,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   return {
     title: article ? `${article.title} | BestCardsForMe` : "Article | BestCardsForMe",
-    description: article?.dek || "BestCardsForMe credit card comparison article.",
+    description:
+      article?.metaDescription || article?.dek || "BestCardsForMe credit card comparison article.",
   };
 }
 

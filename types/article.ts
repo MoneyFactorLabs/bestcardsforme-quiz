@@ -32,6 +32,7 @@ export type EditorialArticle = {
   slug: string;
   eyebrow: string;
   title: string;
+  metaDescription?: string;
   dek: string;
   category: string;
   updatedAt: string;
