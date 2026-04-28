@@ -14,6 +14,10 @@ placeholder content.
 
 Add an `EditorialArticle` object to `data/articles.ts`.
 
+Before drafting the first Batch 1 articles, read:
+
+- `content-research/Content_Research_Harvest_Batch1.md`
+
 Required fields:
 
 - `slug`
