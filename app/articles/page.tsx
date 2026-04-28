@@ -25,7 +25,7 @@ export default function ArticlesIndexPage() {
     <main className="min-h-screen">
       <Header />
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 pt-8 sm:px-8 sm:pb-16 sm:pt-12">
-        <header className="overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft">
+        <header className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
           <div className="bg-navy px-5 py-8 text-white sm:px-8 sm:py-10">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
               BestCardsForMe Articles
@@ -33,18 +33,18 @@ export default function ArticlesIndexPage() {
             <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
               Credit card comparisons built on real financial math.
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-blue-gray sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-blue-gray sm:text-lg sm:leading-8">
               Premium editorial analysis for readers who want net value, break-even math, and
               honest tradeoffs before choosing a card.
             </p>
           </div>
         </header>
 
-        <div className="mt-6 grid gap-5">
+        <div className="mt-7 grid gap-6">
           {articles.map((article) => (
             <article
               key={article.slug}
-              className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-6"
+              className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"
             >
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                 <div>
@@ -56,11 +56,11 @@ export default function ArticlesIndexPage() {
                       {article.title}
                     </Link>
                   </h2>
-                  <p className="mt-3 max-w-3xl text-sm leading-7 text-mid-navy/75">
+                  <p className="mt-3 max-w-3xl text-sm font-medium leading-7 text-mid-navy/90">
                     {article.dek}
                   </p>
                 </div>
-                <div className="shrink-0 rounded-md border border-blue-gray/70 bg-[#f8fafc] px-4 py-3 text-sm text-mid-navy/70 md:max-w-52">
+                <div className="shrink-0 rounded-md border border-blue-gray/70 bg-[#f8fafc] px-4 py-3 text-sm font-medium text-mid-navy/85 md:max-w-52">
                   <p className="font-semibold text-navy">{formatDate(article.updatedAt)}</p>
                   <p className="mt-1">{article.readingTime}</p>
                 </div>
