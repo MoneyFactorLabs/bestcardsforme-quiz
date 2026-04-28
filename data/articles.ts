@@ -1,4 +1,5 @@
 import type { EditorialArticle } from "@/types/article";
+import { articleBatch10To14 } from "@/data/articlesBatch10To14";
 
 export const articles: EditorialArticle[] = [
   {
@@ -2468,6 +2469,7 @@ export const articles: EditorialArticle[] = [
       href: "/affiliate-disclosure"
     }
   },
+  ...articleBatch10To14,
 ];
 
 export function getArticleBySlug(slug: string) {
