@@ -21,6 +21,10 @@ function formatDate(value: string) {
 }
 
 export default function ArticlesIndexPage() {
+  const [featuredArticle, ...otherArticles] = articles;
+  const spotlightArticles = otherArticles.slice(0, 2);
+  const latestArticles = otherArticles.slice(2);
+
   return (
     <main className="min-h-screen">
       <Header />
@@ -37,11 +41,130 @@ export default function ArticlesIndexPage() {
               Premium editorial analysis for readers who want net value, break-even math, and
               honest tradeoffs before choosing a card.
             </p>
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              {[
+                ["Live guides", `${articles.length}`],
+                ["Review standard", "Net annual value"],
+                ["Editorial lens", "Independent scoring"],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-md border border-white/10 bg-white/10 p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-gray">
+                    {label}
+                  </p>
+                  <p className="mt-1 text-xl font-semibold text-white">{value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </header>
 
+        {featuredArticle && (
+          <article className="mt-7 overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="p-5 sm:p-7">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
+                  Featured honest-math analysis
+                </p>
+                <h2 className="mt-3 text-3xl font-semibold leading-tight text-navy sm:text-4xl">
+                  <Link
+                    href={`/articles/${featuredArticle.slug}`}
+                    className="transition hover:text-mid-navy"
+                  >
+                    {featuredArticle.title}
+                  </Link>
+                </h2>
+                <p className="mt-4 max-w-3xl text-base font-medium leading-7 text-mid-navy/85">
+                  {featuredArticle.dek}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {featuredArticle.comparisonMetrics?.slice(0, 3).map((metric) => (
+                    <span
+                      key={metric.label}
+                      className="rounded-md border border-blue-gray/70 bg-[#f8fafc] px-3 py-2 text-xs font-bold uppercase tracking-[0.14em] text-mid-navy/70"
+                    >
+                      {metric.label}: {metric.value}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href={`/articles/${featuredArticle.slug}`}
+                  className="focus-ring mt-6 inline-flex rounded-md bg-navy px-5 py-3 text-sm font-bold text-white transition hover:bg-mid-navy"
+                >
+                  Read featured analysis
+                </Link>
+              </div>
+              <div className="border-t border-blue-gray/70 bg-[#f8fafc] p-5 sm:p-7 lg:border-l lg:border-t-0">
+                <p className="text-sm font-semibold text-navy">MoneyFactor editorial promise</p>
+                <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/80">
+                  Articles prioritize renewal economics, realistic benefit capture, and profile fit
+                  over issuer-stated headline value or short-lived welcome offers.
+                </p>
+                <div className="mt-5 grid gap-3">
+                  {["Break-even math", "FAQ clarity", "Internal card profiles"].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-md border border-blue-gray/70 bg-white px-4 py-3 text-sm font-semibold text-mid-navy"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+        )}
+
+        {spotlightArticles.length > 0 && (
+          <div className="mt-7 grid gap-5 lg:grid-cols-2">
+            {spotlightArticles.map((article) => (
+              <article
+                key={article.slug}
+                className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-6"
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
+                  {article.category}
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold leading-tight text-navy">
+                  <Link href={`/articles/${article.slug}`} className="transition hover:text-mid-navy">
+                    {article.title}
+                  </Link>
+                </h2>
+                <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/85">
+                  {article.dek}
+                </p>
+                <div className="mt-5 flex items-center justify-between gap-4 border-t border-blue-gray/70 pt-4">
+                  <p className="text-sm font-semibold text-mid-navy/70">
+                    {formatDate(article.updatedAt)} - {article.readingTime}
+                  </p>
+                  <Link
+                    href={`/articles/${article.slug}`}
+                    className="focus-ring rounded-md border border-navy px-4 py-2 text-sm font-bold text-navy transition hover:bg-navy hover:text-white"
+                  >
+                    Read
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-7 flex flex-col gap-3 rounded-lg border border-gold/40 bg-gold/10 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-navy">Want a personalized answer first?</p>
+            <p className="mt-1 text-sm leading-6 text-mid-navy/75">
+              The quiz ranks cards against your answers, then the articles explain the broader math.
+            </p>
+          </div>
+          <Link
+            href="/"
+            className="focus-ring rounded-md bg-navy px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-mid-navy"
+          >
+            Start the quiz
+          </Link>
+        </div>
+
         <div className="mt-7 grid gap-6">
-          {articles.map((article) => (
+          {latestArticles.map((article) => (
             <article
               key={article.slug}
               className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"

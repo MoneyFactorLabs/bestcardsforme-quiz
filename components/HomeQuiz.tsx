@@ -105,7 +105,15 @@ export function HomeQuiz() {
       {screen === "landing" && <LandingHero onStart={handleStart} />}
 
       {screen === "quiz" && (
-        <section className="mx-auto w-full max-w-3xl px-4 pb-12 pt-6 sm:px-8 sm:pb-16 sm:pt-8">
+        <section className="mx-auto w-full max-w-4xl px-4 pb-12 pt-6 sm:px-8 sm:pb-16 sm:pt-8">
+          <div className="mb-4 grid gap-3 rounded-lg border border-blue-gray/70 bg-white/85 p-4 shadow-sm sm:grid-cols-3">
+            {["Profile-fit ranking", "Annual-fee math", "No credit pull"].map((item) => (
+              <div key={item}>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Quiz lens</p>
+                <p className="mt-1 text-sm font-semibold text-navy">{item}</p>
+              </div>
+            ))}
+          </div>
           <div className="rounded-lg border border-blue-gray/70 bg-white p-4 shadow-soft sm:p-8">
             <ProgressBar currentStep={currentQuestionIndex + 1} totalSteps={quizQuestions.length} />
             <div className="mt-8">
@@ -133,30 +141,42 @@ export function HomeQuiz() {
 
       {screen === "results" && (
         <section className="mx-auto w-full max-w-6xl px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8">
-          <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-6 overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft sm:mb-8">
+            <div className="flex flex-col gap-5 bg-navy px-5 py-6 text-white sm:px-7 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
-                Your top matches
+                Your personalized card shortlist
               </p>
-              <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight text-navy sm:text-5xl">
+              <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight sm:text-5xl">
                 Cards ranked for your actual spending life.
               </h1>
-              <p className="mt-3 max-w-2xl text-base leading-7 text-mid-navy/75">
+              <p className="mt-3 max-w-2xl text-base leading-7 text-blue-gray">
                 These recommendations are personalized to your fee comfort, travel habits, reward
                 style, and strongest spend category.
-              </p>
-              <p className="mt-2 max-w-2xl text-sm font-medium leading-6 text-mid-navy/60">
-                Independently scored and periodically re-verified against current public terms and
-                MoneyFactor methodology.
               </p>
             </div>
             <button
               type="button"
               onClick={handleRestart}
-              className="focus-ring rounded-md border border-navy px-5 py-3 text-sm font-bold text-navy transition hover:bg-navy hover:text-white"
+              className="focus-ring rounded-md border border-white/30 px-5 py-3 text-sm font-bold text-white transition hover:border-white hover:bg-white hover:text-navy"
             >
               Restart quiz
             </button>
+            </div>
+            <div className="grid gap-px bg-blue-gray/70 sm:grid-cols-3">
+              {[
+                ["Scoring basis", "Fit, net value, usage"],
+                ["Review standard", "Independent MoneyFactor methodology"],
+                ["Maintenance", "Periodically re-verified"],
+              ].map(([label, value]) => (
+                <div key={label} className="bg-white px-5 py-4 sm:px-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-mid-navy/55">
+                    {label}
+                  </p>
+                  <p className="mt-1 text-sm font-semibold leading-6 text-navy">{value}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {profileSummary && (

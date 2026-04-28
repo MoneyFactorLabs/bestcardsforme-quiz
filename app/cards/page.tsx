@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ProductIndexLayout } from "@/components/platform/ProductIndexLayout";
-import { creditCardProfiles } from "@/data/creditCardProfiles";
+import {
+  getAllCreditCardProfileSlugs,
+  getCreditCardProfileBySlug,
+} from "@/data/creditCardProfiles";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -19,6 +22,10 @@ function formatAnnualFee(annualFee: number) {
 }
 
 export default function CardsIndexPage() {
+  const profiles = getAllCreditCardProfileSlugs()
+    .map((slug) => getCreditCardProfileBySlug(slug))
+    .filter((profile): profile is NonNullable<typeof profile> => Boolean(profile));
+
   return (
     <main className="min-h-screen">
       <Header />
@@ -26,7 +33,7 @@ export default function CardsIndexPage() {
         eyebrow="Credit card profiles"
         title="Structured card reviews built for real-life fit."
         description="Compare premium and everyday cards through annual fees, realistic rewards, perks, skip conditions, and MoneyFactor scores."
-        items={creditCardProfiles.map((profile) => ({
+        items={profiles.map((profile) => ({
           title: profile.cardName,
           href: `/cards/${profile.slug}`,
           eyebrow: profile.issuer,

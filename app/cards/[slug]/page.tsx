@@ -143,6 +143,15 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
             </div>
 
             <div className="grid gap-3 p-5">
+              <div className="rounded-md border border-gold/50 bg-gold/10 p-4">
+                <p className="text-sm font-semibold text-navy">Profile decision checks</p>
+                <ul className="mt-3 space-y-2 text-sm leading-6 text-mid-navy/75">
+                  <li>Annual fee clears realistic usage</li>
+                  <li>Perks match your travel or spending pattern</li>
+                  <li>Drawbacks are visible before you apply</li>
+                </ul>
+              </div>
+
               <CardReviewActions cardId={profile.slug} affiliateSlug={profile.slug} />
 
               <div id="issuer-terms" className="rounded-md border border-blue-gray/70 bg-[#f5f8fb] p-4">

@@ -18,7 +18,22 @@ export function ProfileSummary({ profile, answers }: ProfileSummaryProps) {
         : "Lounge-heavy cards are discounted because that benefit is not central to your profile.";
 
   return (
-    <section className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-6">
+    <section className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
+      <div className="grid gap-px bg-blue-gray/70 sm:grid-cols-3">
+        {[
+          ["Primary lens", "Your stated goal"],
+          ["Fee lens", "Annual value after friction"],
+          ["Usage lens", "Perks you are likely to use"],
+        ].map(([label, value]) => (
+          <div key={label} className="bg-[#f8fafc] px-5 py-3">
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-mid-navy/55">
+              {label}
+            </p>
+            <p className="mt-1 text-sm font-semibold text-navy">{value}</p>
+          </div>
+        ))}
+      </div>
+      <div className="p-5 sm:p-6">
       <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Your profile</p>
@@ -36,6 +51,7 @@ export function ProfileSummary({ profile, answers }: ProfileSummaryProps) {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

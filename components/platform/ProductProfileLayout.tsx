@@ -81,6 +81,18 @@ export function ProductProfileLayout({
               {subtitle}
             </p>
           )}
+          <div className="mt-6 flex flex-wrap gap-2">
+            {["Reviewed & updated April 2026", "Independent MoneyFactor scoring", "Issuer terms can change"].map(
+              (item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-blue-gray"
+                >
+                  {item}
+                </span>
+              )
+            )}
+          </div>
         </div>
 
         <div className="grid gap-px bg-blue-gray/70 sm:grid-cols-2 lg:grid-cols-4">
@@ -94,6 +106,23 @@ export function ProductProfileLayout({
           ))}
         </div>
       </header>
+
+      <section className="mt-5 rounded-lg border border-gold/40 bg-gold/10 p-5">
+        <div className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+              MoneyFactor review posture
+            </p>
+            <h2 className="mt-2 text-xl font-semibold text-navy">
+              We review the card as a household decision, not a marketing offer.
+            </h2>
+          </div>
+          <p className="text-sm font-medium leading-7 text-mid-navy/80">
+            The scorecard below weighs rewards, annual-fee justification, travel utility, everyday
+            usefulness, and management complexity before the call-to-action appears.
+          </p>
+        </div>
+      </section>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px] lg:items-start">
         <div className="grid gap-5">

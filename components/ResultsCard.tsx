@@ -8,23 +8,40 @@ type ResultsCardProps = {
 
 export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
   const { card } = recommendation;
+  const scoreBand =
+    recommendation.score >= 90
+      ? "Exceptional fit"
+      : recommendation.score >= 82
+        ? "Strong fit"
+        : "Qualified fit";
 
   return (
     <article className="overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft">
       <div className="border-b border-blue-gray/60 bg-[#f8fafc] px-5 py-4 sm:px-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">#{rank} match</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">#{rank} match</p>
+              <span className="rounded-full border border-blue-gray/70 bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-mid-navy/70">
+                {scoreBand}
+              </span>
+            </div>
             <h3 className="mt-2 text-2xl font-semibold text-navy sm:text-3xl">{card.name}</h3>
             <p className="mt-2 max-w-2xl text-sm font-medium leading-6 text-mid-navy/70">
               Best for someone like you when: {card.bestFor.toLowerCase()}
             </p>
           </div>
-          <div className="rounded-md bg-navy px-4 py-3 text-white shadow-sm sm:min-w-36">
+          <div className="rounded-md bg-navy px-4 py-3 text-white shadow-sm sm:min-w-40">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-gray">
               MoneyFactor Fit Score
             </p>
             <p className="mt-1 text-3xl font-semibold">{recommendation.score}/100</p>
+            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/20">
+              <div
+                className="h-full rounded-full bg-gold"
+                style={{ width: `${recommendation.score}%` }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -57,9 +74,20 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
               ))}
             </ul>
           </div>
-          <div className="rounded-md border border-blue-gray/70 bg-white p-4">
-            <p className="text-sm font-semibold text-navy">Terms can change</p>
-            <p className="mt-2 text-sm leading-6 text-mid-navy/75">{recommendation.cautionBullet}</p>
+          <div className="grid gap-3">
+            <div className="rounded-md border border-blue-gray/70 bg-white p-4">
+              <p className="text-sm font-semibold text-navy">Profile-specific caution</p>
+              <p className="mt-2 text-sm leading-6 text-mid-navy/75">
+                {recommendation.cautionBullet}
+              </p>
+            </div>
+            <div className="rounded-md border border-gold/50 bg-gold/10 p-4">
+              <p className="text-sm font-semibold text-navy">Decision-engine read</p>
+              <p className="mt-2 text-sm leading-6 text-mid-navy/75">
+                This card made the shortlist because its likely utility clears enough of the annual
+                fee, rewards, and complexity tests for your profile.
+              </p>
+            </div>
           </div>
         </div>
 

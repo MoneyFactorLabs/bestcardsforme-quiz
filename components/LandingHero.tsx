@@ -3,8 +3,15 @@ type LandingHeroProps = {
 };
 
 export function LandingHero({ onStart }: LandingHeroProps) {
+  const trustSignals = [
+    "No signup required",
+    "No credit pull",
+    "Updated 2026 assumptions",
+    "Honest methodology",
+  ];
+
   return (
-    <section className="mx-auto grid w-full max-w-6xl gap-10 px-4 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:pb-20 lg:pt-12">
+    <section className="mx-auto grid w-full max-w-6xl gap-8 px-4 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:pb-20 lg:pt-10">
       <div>
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-gold">
           A MoneyFactor decision engine
@@ -28,34 +35,34 @@ export function LandingHero({ onStart }: LandingHeroProps) {
             No signup required. No credit check. No issuer bias.
           </p>
         </div>
-        <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-          {["No signup required", "No credit pull", "Updated 2026 assumptions", "Honest methodology"].map(
-            (item) => (
-              <div
-                key={item}
-                className="rounded-md border border-blue-gray/70 bg-white/90 px-3 py-2 text-sm font-semibold text-mid-navy shadow-sm"
-              >
-                {item}
-              </div>
-            )
-          )}
+        <div className="mt-6 grid gap-2 sm:grid-cols-2">
+          {trustSignals.map((item) => (
+            <div
+              key={item}
+              className="rounded-md border border-blue-gray/70 bg-white/90 px-4 py-3 text-sm font-semibold text-mid-navy shadow-sm"
+            >
+              {item}
+            </div>
+          ))}
         </div>
-        <div className="mt-5 rounded-lg border border-blue-gray/70 bg-white/80 p-4 shadow-sm">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-mid-navy/55">
-            Independent scoring
-          </p>
-          <p className="mt-2 text-sm leading-6 text-mid-navy/75">
-            The engine weighs fee tolerance, likely perk usage, spending categories, and realistic
-            annual value before ranking a card.
-          </p>
-        </div>
-        <div className="mt-3 rounded-lg border border-blue-gray/70 bg-white/70 p-4">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-mid-navy/55">
-            MoneyFactor ecosystem
-          </p>
-          <p className="mt-2 text-sm leading-6 text-mid-navy/75">
-            Independent credit card recommendations built on real financial math.
-          </p>
+        <div className="mt-5 grid gap-3 rounded-lg border border-blue-gray/70 bg-white/80 p-4 shadow-sm sm:grid-cols-2">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-mid-navy/55">
+              Independent scoring
+            </p>
+            <p className="mt-2 text-sm leading-6 text-mid-navy/75">
+              Fee tolerance, perk usage, spending categories, and realistic annual value are weighed
+              before any card is ranked.
+            </p>
+          </div>
+          <div className="border-t border-blue-gray/60 pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-mid-navy/55">
+              MoneyFactor platform
+            </p>
+            <p className="mt-2 text-sm leading-6 text-mid-navy/75">
+              Independent credit card recommendations built on real financial math.
+            </p>
+          </div>
         </div>
       </div>
       <div className="rounded-lg border border-blue-gray/70 bg-white p-3 shadow-soft sm:p-5">
@@ -65,6 +72,10 @@ export function LandingHero({ onStart }: LandingHeroProps) {
               Recommendation framework
             </p>
             <h2 className="mt-2 text-2xl font-semibold">Premium value, not card hype.</h2>
+            <p className="mt-2 text-sm leading-6 text-blue-gray">
+              The quiz turns lifestyle answers into a ranked card shortlist with the fee drag and
+              usage friction kept visible.
+            </p>
           </div>
           <div className="grid gap-px bg-white/10 sm:grid-cols-3">
             {[
@@ -88,7 +99,11 @@ export function LandingHero({ onStart }: LandingHeroProps) {
                 be used. Terms can change, so final issuer details should always be verified.
               </p>
             </div>
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 rounded-md border border-white/10 bg-[#0b1726] p-4">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">
+                Example value bridge
+              </p>
+              <div className="mt-4 space-y-3">
               {[
                 ["Travel credits likely used", "$300"],
                 ["Rewards from actual spend", "$420"],
@@ -102,6 +117,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
                   <span className="text-lg font-semibold">{value}</span>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </div>
