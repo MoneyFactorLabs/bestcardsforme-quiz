@@ -1,5 +1,9 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ArticleAffiliateCta } from "@/components/ArticleAffiliateCta";
+import { ArticleMoneyFactorScorecard } from "@/components/ArticleMoneyFactorScorecard";
+import { RelatedArticles } from "@/components/RelatedArticles";
+import { articles } from "@/data/articles";
 import { cards } from "@/data/cards";
 import type { CreditCard } from "@/types/card";
 import type { ArticleTable, EditorialArticle } from "@/types/article";
@@ -109,9 +113,9 @@ function renderInlineText(text: string): ReactNode[] {
 
 function ArticleDataTable({ table }: { table: ArticleTable }) {
   return (
-    <div className="mt-4 overflow-hidden rounded-lg border border-blue-gray/70 bg-white">
-      <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-blue-gray/70 text-left text-sm">
+    <div className="mt-4 min-w-0 w-full max-w-full overflow-hidden rounded-lg border border-blue-gray/70 bg-white">
+      <div className="min-w-0 w-full max-w-full overflow-x-auto">
+        <table className="w-full min-w-[720px] divide-y divide-blue-gray/70 text-left text-sm">
           <thead className="bg-navy text-white">
             <tr>
               {table.columns.map((column) => (
@@ -194,9 +198,9 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
         </div>
       </header>
 
-      <div className="mt-7 grid gap-7 lg:grid-cols-[1fr_320px] lg:items-start">
-        <div className="grid gap-6 sm:gap-7">
-          <section className="rounded-lg border border-blue-gray/80 bg-[#f8fafc] p-5 shadow-soft sm:p-6">
+      <div className="mt-7 grid min-w-0 gap-7 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <div className="grid min-w-0 gap-6 sm:gap-7">
+          <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-[#f8fafc] p-5 shadow-soft sm:p-6">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
               Editorial standard
             </p>
@@ -208,7 +212,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
           </section>
 
           {article.comparisonMetrics && article.comparisonMetrics.length > 0 && (
-            <section className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
+            <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
               <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">
                 Comparison snapshot
@@ -228,10 +232,12 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             </section>
           )}
 
+          {article.scorecard && <ArticleMoneyFactorScorecard scorecard={article.scorecard} />}
+
           {article.sections.map((section) => (
             <section
               key={section.heading}
-              className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"
+              className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"
             >
               <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
@@ -290,8 +296,12 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             </section>
           ))}
 
+          {article.recommendationCta && (
+            <ArticleAffiliateCta recommendation={article.recommendationCta} />
+          )}
+
           {cardCtas && cardCtas.length > 0 && (
-            <section className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
+            <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
               <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">
                 Related card reviews
@@ -319,8 +329,12 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             </section>
           )}
 
+          {article.relatedArticles && article.relatedArticles.length > 0 && (
+            <RelatedArticles suggestions={article.relatedArticles} articles={articles} />
+          )}
+
           {article.faqs && article.faqs.length > 0 && (
-            <section className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
+            <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
               <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">FAQ</h2>
               <div className="mt-4 grid gap-3">

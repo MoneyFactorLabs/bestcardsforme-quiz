@@ -11,6 +11,58 @@ export type TrustPage = {
 
 export const trustPages: TrustPage[] = [
   {
+    slug: "how-we-review-credit-cards",
+    eyebrow: "How We Review",
+    title: "How We Review Credit Cards at BestCardsForMe",
+    summary:
+      "BestCardsForMe by MoneyFactor reviews credit cards through realistic annual value, annual-fee math, practical reward usage, travel-perk utility, and editorial independence.",
+    sections: [
+      {
+        heading: "Our scoring methodology",
+        body: [
+          "We review credit cards by asking a simple question first: what value can a real household reasonably capture after annual fees, category limits, credit friction, and redemption behavior are considered?",
+          "The MoneyFactor scorecard is designed to make that judgment visible. Rewards Value looks at earning rates and realistic point or cash value. Fee Justification asks whether the annual fee can be defended by benefits a reader is likely to use. Travel Utility evaluates lounge access, credits, protections, and travel-specific flexibility. Everyday Use evaluates whether the card is useful outside a narrow travel or merchant scenario. Beginner Friendliness evaluates complexity, tracking burden, and how easy it is to avoid mistakes.",
+          "No single score is meant to replace judgment. A card can be excellent for frequent travelers and poor for simple cash-back users. Our scoring exists to explain fit, not to create a universal trophy list.",
+        ],
+      },
+      {
+        heading: "How we evaluate annual fees",
+        body: [
+          "Annual fees are treated as real household costs. We do not excuse a high fee because a card sounds premium or because issuer marketing lists a large theoretical benefit total.",
+          "A fee is justified only when the likely captured value exceeds the fee by enough to compensate for friction, complexity, and opportunity cost. A $95 fee can be a bargain when the card earns well on real spending. A $795 or $895 fee can be rational when the household travels often, uses credits naturally, and redeems points intentionally. The same high fee can be a mistake for a household that travels rarely or dislikes tracking credits.",
+        ],
+      },
+      {
+        heading: "How we analyze rewards",
+        body: [
+          "Rewards analysis starts with actual spending categories, not headline multipliers. A 4x grocery card matters only if the household has meaningful grocery spend and the stores qualify. A premium travel card matters only if the household books enough travel for the multiplier and protections to show up in real life.",
+          "When points are involved, we use conservative household-realistic valuations instead of aspirational edge-case redemptions. Transferable points can be valuable, but not every reader will redeem them at peak travel-blog values. Cash back is simpler and easier to value, but it may not always maximize net value for engaged travelers.",
+        ],
+      },
+      {
+        heading: "How we value travel perks",
+        body: [
+          "Travel perks are valued only when they match behavior. Lounge access has meaningful value for a frequent traveler who arrives early, flies through airports with accessible lounges, and would otherwise buy food or a quiet workspace. It has little value for someone who flies once a year.",
+          "Statement credits are discounted when they require enrollment, portal booking, monthly or quarterly tracking, or spending with a partner the household would not normally use. A credit is not worth face value unless it replaces money the reader would have spent anyway.",
+        ],
+      },
+      {
+        heading: "Editorial independence",
+        body: [
+          "BestCardsForMe may receive compensation from partners, but compensation should not control the recommendation logic or editorial conclusion. A card should rank well because it fits the reader's answers and captures realistic net value, not because it is commercially convenient.",
+          "We disclose affiliate potential clearly and keep issuer-term caveats visible. If a non-affiliate card is the better answer for a profile, the review system should be able to say so.",
+        ],
+      },
+      {
+        heading: "Offers and terms can change",
+        body: [
+          "Credit card offers, annual fees, earning categories, statement credits, eligibility rules, and welcome bonuses can change frequently. BestCardsForMe reviews are educational analysis, not financial advice or an approval prediction.",
+          "Readers should verify current issuer terms before applying. When our pages discuss public offers, fee levels, or perk structures, the issuer's current terms remain the source of truth.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "methodology",
     eyebrow: "Our Methodology",
     title: "How BestCardsForMe by MoneyFactor ranks credit cards",

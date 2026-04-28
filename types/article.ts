@@ -42,6 +42,35 @@ export type ArticleDisclosureCta = {
   href: string;
 };
 
+export type ArticleScorecard = {
+  rewardsValue: number;
+  feeJustification: number;
+  travelUtility: number;
+  everydayUse: number;
+  beginnerFriendliness: number;
+  overallScore: number;
+  summary?: string;
+};
+
+export type ArticleRecommendationCta = {
+  cardId?: string;
+  cardName: string;
+  whyWeLikeIt: string;
+  annualFee: string;
+  bestFor: string;
+  buttonLabel?: string;
+  href?: string;
+  disclosure?: string;
+};
+
+export type ArticleRelatedSuggestion = {
+  slug?: string;
+  title?: string;
+  dek?: string;
+  label?: string;
+  href?: string;
+};
+
 export type EditorialArticle = {
   slug: string;
   eyebrow: string;
@@ -53,8 +82,11 @@ export type EditorialArticle = {
   reviewedBy: string;
   readingTime: string;
   comparisonMetrics?: ArticleMetric[];
+  scorecard?: ArticleScorecard;
   sections: ArticleSection[];
+  recommendationCta?: ArticleRecommendationCta;
   cardCtas?: ArticleCardCta[];
+  relatedArticles?: ArticleRelatedSuggestion[];
   faqs?: ArticleFaq[];
   disclosureCta?: ArticleDisclosureCta;
 };

@@ -3,6 +3,7 @@ import Link from "next/link";
 export function Footer() {
   const links = [
     ["Our Methodology", "/methodology"],
+    ["How We Review", "/how-we-review-credit-cards"],
     ["Editorial Standards", "/editorial-standards"],
     ["Affiliate Disclosure", "/affiliate-disclosure"],
     ["About MoneyFactor", "/about"],

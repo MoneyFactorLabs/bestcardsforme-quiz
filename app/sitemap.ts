@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
-import { cards } from "@/data/cards";
 import { articles } from "@/data/articles";
+import { getAllCreditCardProfileSlugs } from "@/data/creditCardProfiles";
 import { absoluteUrl } from "@/lib/site";
 
 const staticRoutes = [
   "/",
   "/articles",
+  "/cards",
   "/about",
   "/methodology",
+  "/how-we-review-credit-cards",
   "/editorial-standards",
   "/affiliate-disclosure",
   "/contact",
@@ -25,8 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(`/articles/${article.slug}`),
       lastModified: article.updatedAt,
     })),
-    ...cards.map((card) => ({
-      url: absoluteUrl(`/cards/${card.id}`),
+    ...getAllCreditCardProfileSlugs().map((slug) => ({
+      url: absoluteUrl(`/cards/${slug}`),
       lastModified: now,
     })),
   ];
