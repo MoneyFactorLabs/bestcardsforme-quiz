@@ -1,0 +1,223 @@
+import Link from "next/link";
+import { cards } from "@/data/cards";
+import type { CreditCard } from "@/types/card";
+import type { EditorialArticle } from "@/types/article";
+
+type ArticleLayoutProps = {
+  article: EditorialArticle;
+};
+
+type ResolvedCardCta = NonNullable<EditorialArticle["cardCtas"]>[number] & {
+  card: CreditCard;
+};
+
+function formatDate(value: string) {
+  return new Intl.DateTimeFormat("en", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(value));
+}
+
+export function ArticleLayout({ article }: ArticleLayoutProps) {
+  const cardCtas = article.cardCtas
+    ?.map((cta) => ({
+      ...cta,
+      card: cards.find((card) => card.id === cta.cardId),
+    }))
+    .filter((cta): cta is ResolvedCardCta => Boolean(cta.card));
+
+  return (
+    <article className="mx-auto w-full max-w-6xl px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-10">
+      <Link
+        href="/"
+        className="focus-ring inline-flex rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+      >
+        Back to BestCardsForMe
+      </Link>
+
+      <header className="mt-5 overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft">
+        <div className="bg-navy px-5 py-8 text-white sm:px-8 sm:py-10">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
+            {article.eyebrow}
+          </p>
+          <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
+            {article.title}
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-7 text-blue-gray sm:text-lg sm:leading-8">
+            {article.dek}
+          </p>
+        </div>
+
+        <div className="grid gap-px bg-blue-gray/70 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["Category", article.category],
+            ["Updated", formatDate(article.updatedAt)],
+            ["Reviewed by", article.reviewedBy],
+            ["Read time", article.readingTime],
+          ].map(([label, value]) => (
+            <div key={label} className="bg-white p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-mid-navy/60">
+                {label}
+              </p>
+              <p className="mt-2 text-lg font-semibold leading-6 text-navy">{value}</p>
+            </div>
+          ))}
+        </div>
+      </header>
+
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px] lg:items-start">
+        <div className="grid gap-5">
+          <section className="rounded-lg border border-blue-gray/70 bg-[#f8fafc] p-5 shadow-soft sm:p-6">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+              Editorial standard
+            </p>
+            <p className="mt-2 text-sm leading-7 text-mid-navy/75">
+              BestCardsForMe articles are built around realistic annual value, fit, issuer-term
+              caveats, and plain-English tradeoffs. Compensation may exist, but editorial judgment
+              is designed around consumer value.
+            </p>
+          </section>
+
+          {article.comparisonMetrics && article.comparisonMetrics.length > 0 && (
+            <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-6">
+              <div className="mb-3 h-1 w-12 rounded-full bg-gold" />
+              <h2 className="text-xl font-semibold text-navy sm:text-2xl">
+                Comparison snapshot
+              </h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {article.comparisonMetrics.map((metric) => (
+                  <div key={metric.label} className="rounded-md border border-blue-gray/70 p-4">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-mid-navy/55">
+                      {metric.label}
+                    </p>
+                    <p className="mt-2 text-base font-semibold leading-6 text-navy">
+                      {metric.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {article.sections.map((section) => (
+            <section
+              key={section.heading}
+              className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-6"
+            >
+              <div className="mb-3 h-1 w-12 rounded-full bg-gold" />
+              <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
+              <div className="mt-3 space-y-4 text-base leading-8 text-mid-navy/75">
+                {section.body.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+                {section.bullets && (
+                  <ul className="space-y-3 pt-1 text-sm leading-7">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet} className="flex gap-3">
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </section>
+          ))}
+
+          {cardCtas && cardCtas.length > 0 && (
+            <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-6">
+              <div className="mb-3 h-1 w-12 rounded-full bg-gold" />
+              <h2 className="text-xl font-semibold text-navy sm:text-2xl">
+                Related card reviews
+              </h2>
+              <div className="mt-4 grid gap-4">
+                {cardCtas.map(({ card, headline, body, label }) => (
+                  <div
+                    key={card.id}
+                    className="rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4"
+                  >
+                    <p className="text-base font-semibold text-navy">{headline}</p>
+                    <p className="mt-2 text-sm leading-6 text-mid-navy/70">{body}</p>
+                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="text-sm font-semibold text-mid-navy/65">{card.name}</p>
+                      <Link
+                        href={`/cards/${card.id}`}
+                        className="focus-ring rounded-md bg-navy px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-mid-navy"
+                      >
+                        {label || "Read honest review"}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {article.faqs && article.faqs.length > 0 && (
+            <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-6">
+              <div className="mb-3 h-1 w-12 rounded-full bg-gold" />
+              <h2 className="text-xl font-semibold text-navy sm:text-2xl">FAQ</h2>
+              <div className="mt-4 divide-y divide-blue-gray/70">
+                {article.faqs.map((faq) => (
+                  <div key={faq.question} className="py-4 first:pt-0 last:pb-0">
+                    <h3 className="text-base font-semibold text-navy">{faq.question}</h3>
+                    <p className="mt-2 text-sm leading-7 text-mid-navy/75">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+
+        <aside className="overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft lg:sticky lg:top-5">
+          <div className="bg-navy p-5 text-white">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+              MoneyFactor lens
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold">Read for net value</h2>
+            <p className="mt-3 text-sm leading-6 text-blue-gray">
+              The strongest card is the one whose benefits are likely to be used after fees,
+              restrictions, and redemption friction.
+            </p>
+          </div>
+          <div className="grid gap-3 p-5">
+            <Link
+              href="/"
+              className="focus-ring rounded-md bg-gold px-4 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+            >
+              Take the card quiz
+            </Link>
+            <Link
+              href="/methodology"
+              className="focus-ring rounded-md border border-blue-gray px-4 py-3 text-center text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+            >
+              View methodology
+            </Link>
+            {article.disclosureCta && (
+              <div className="rounded-md border border-blue-gray/70 bg-[#f5f8fb] p-4">
+                <p className="text-sm font-semibold text-navy">{article.disclosureCta.heading}</p>
+                <p className="mt-2 text-sm leading-6 text-mid-navy/70">
+                  {article.disclosureCta.body}
+                </p>
+                <Link
+                  href={article.disclosureCta.href}
+                  className="mt-3 inline-flex text-sm font-bold text-mid-navy transition hover:text-navy"
+                >
+                  {article.disclosureCta.label}
+                </Link>
+              </div>
+            )}
+            <div className="rounded-md border border-blue-gray/70 bg-[#f5f8fb] p-4">
+              <p className="text-sm font-semibold text-navy">Terms can change</p>
+              <p className="mt-2 text-sm leading-6 text-mid-navy/70">
+                Issuer terms, public offers, fees, credits, and eligibility rules should be
+                verified before any application decision.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </article>
+  );
+}
