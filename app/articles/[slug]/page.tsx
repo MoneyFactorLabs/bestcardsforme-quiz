@@ -4,6 +4,7 @@ import { ArticleLayout } from "@/components/ArticleLayout";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { articles, getArticleBySlug } from "@/data/articles";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 import type { EditorialArticle } from "@/types/article";
 
 type ArticlePageProps = {
@@ -12,10 +13,8 @@ type ArticlePageProps = {
   }>;
 };
 
-const siteUrl = "https://www.bestcardsforme.com";
-
 function getArticleUrl(slug: string) {
-  return `${siteUrl}/articles/${slug}`;
+  return absoluteUrl(`/articles/${slug}`);
 }
 
 function getArticleDescription(article: EditorialArticle) {
@@ -49,17 +48,17 @@ function buildArticleStructuredData(article: EditorialArticle) {
       author: {
         "@type": "Person",
         name: "Tim Finiki",
-        url: `${siteUrl}/about`,
+        url: absoluteUrl("/about"),
       },
       publisher: {
         "@type": "Organization",
         name: "MoneyFactor",
-        url: siteUrl,
+        url: siteConfig.url,
       },
       isPartOf: {
         "@type": "WebSite",
-        name: "BestCardsForMe by MoneyFactor",
-        url: siteUrl,
+        name: siteConfig.name,
+        url: siteConfig.url,
       },
     },
   ];

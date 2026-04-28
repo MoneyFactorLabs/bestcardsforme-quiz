@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "BestCardsForMe Quiz by MoneyFactor",
-  description:
-    "Find the credit card that actually fits your lifestyle using honest annual-value math.",
+  description: siteConfig.description,
   verification: {
     google: "wGAUXA7ZlmxxBFfmgzhvF0Lyt280_MY9BcVqyDyBgLY",
     other: {
