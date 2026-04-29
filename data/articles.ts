@@ -161,9 +161,9 @@ export const articles: EditorialArticle[] = [
         "A strong fit for frequent travelers who can use the flexible travel credit, lounge access, travel protections, and Chase Ultimate Rewards transfer options enough to justify the high annual fee.",
       annualFee: "$795",
       bestFor: "Frequent travelers who actively use premium travel benefits",
-      buttonLabel: "Apply Now",
+      buttonLabel: "Check current terms",
       disclosure:
-        "This is a placeholder offer module for future monetization. BestCardsForMe may receive compensation from partners, but recommendations are based on MoneyFactor scoring and editorial review.",
+        "BestCardsForMe may receive compensation from partners, but recommendations are based on MoneyFactor scoring and editorial review.",
     },
     cardCtas: [
       {
@@ -936,7 +936,7 @@ export const articles: EditorialArticle[] = [
       whyWeLikeIt: "A low-fee gateway into Chase Ultimate Rewards for households that travel occasionally, dine out regularly, and want flexible points without paying for lounge access they may not use.",
       annualFee: "$95",
       bestFor: "Occasional travelers and Sapphire Reserve downgrade candidates",
-      buttonLabel: "Apply Now",
+      buttonLabel: "Check current terms",
       href: "/go/chase-sapphire-preferred",
       disclosure: "Placeholder offer module. BestCardsForMe may receive compensation from partners, but recommendations are based on MoneyFactor scoring and editorial review."
     },
@@ -1230,7 +1230,7 @@ export const articles: EditorialArticle[] = [
       whyWeLikeIt: "A lower-fee premium travel card for households that can use the Capital One Travel credit, value simple 2x earning, and want premium travel benefits without a larger lifestyle-credit calendar.",
       annualFee: "$395",
       bestFor: "Travelers who want premium perks with lower calendar burden",
-      buttonLabel: "Apply Now",
+      buttonLabel: "Check current terms",
       href: "/go/capital-one-venture-x",
       disclosure: "Placeholder offer module. BestCardsForMe may receive compensation from partners, but recommendations are based on MoneyFactor scoring and editorial review."
     },
@@ -1801,7 +1801,7 @@ export const articles: EditorialArticle[] = [
       whyWeLikeIt: "A high-utility business card when an LLC has meaningful travel, shipping, telecom, or advertising spend and wants transferable Chase Ultimate Rewards at a $95 fee tier.",
       annualFee: "$95",
       bestFor: "LLC owners with travel, ads, shipping, or telecom spend",
-      buttonLabel: "Apply Now",
+      buttonLabel: "Check current terms",
       href: "/go/ink-business-preferred",
       disclosure: "Placeholder offer module. BestCardsForMe may receive compensation from partners, but recommendations are based on MoneyFactor scoring and editorial review."
     },
@@ -2088,7 +2088,7 @@ export const articles: EditorialArticle[] = [
       whyWeLikeIt: "A brand-loyal hotel card that can justify its fee when Hilton Diamond status, resort credits, and annual hotel benefits replace spending the household already planned.",
       annualFee: "$550",
       bestFor: "Hilton loyalists with repeat stays and status value",
-      buttonLabel: "Apply Now",
+      buttonLabel: "Check current terms",
       href: "/go/hilton-aspire",
       disclosure: "Placeholder offer module. BestCardsForMe may receive compensation from partners, but recommendations are based on MoneyFactor scoring and editorial review."
     },
@@ -2386,7 +2386,7 @@ export const articles: EditorialArticle[] = [
       whyWeLikeIt: "A premium Marriott card for households that can use the 85,000-point certificate, value Platinum Elite status, and already choose Marriott properties often enough for the benefits to compound.",
       annualFee: "$650",
       bestFor: "Marriott loyalists with planned premium hotel stays",
-      buttonLabel: "Apply Now",
+      buttonLabel: "Check current terms",
       href: "/go/marriott-bonvoy-brilliant",
       disclosure: "Placeholder offer module. BestCardsForMe may receive compensation from partners, but recommendations are based on MoneyFactor scoring and editorial review."
     },

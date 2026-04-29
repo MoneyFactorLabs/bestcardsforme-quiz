@@ -124,8 +124,8 @@ export function ProductProfileLayout({
         </div>
       </section>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px] lg:items-start">
-        <div className="grid gap-5">
+      <div className="mt-6 grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <div className="grid min-w-0 gap-5">
           <Scorecard {...scorecard} />
 
           {sections.map((section) => (
@@ -141,7 +141,7 @@ export function ProductProfileLayout({
           {children}
         </div>
 
-        {sidebar}
+        {sidebar && <div className="min-w-0 w-full">{sidebar}</div>}
       </div>
     </article>
   );

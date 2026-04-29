@@ -98,7 +98,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
           { label: "Issuer", value: profile.issuer },
           { label: "Annual fee", value: formatAnnualFee(profile.annualFee) },
           { label: "Best for", value: profile.bestFor },
-          { label: "Affiliate status", value: profile.affiliateStatus.replace("_", " ") },
+          { label: "Terms status", value: "Verify before applying" },
         ]}
         scorecard={getScorecard(profile)}
         sections={[
@@ -127,12 +127,10 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
           bestFor: profile.bestFor,
           href: profile.affiliateUrlPlaceholder,
           buttonLabel: "Check current terms →",
-          disclosure:
-            "Placeholder CTA only. No live affiliate link is active here; verify current issuer terms before applying.",
         }}
         relatedArticles={getRelatedArticleItems(profile)}
         sidebar={
-          <aside className="overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft lg:sticky lg:top-5">
+          <aside className="w-full overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft lg:sticky lg:top-5">
             <div className="bg-navy p-5 text-white">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Next step</p>
               <h2 className="mt-2 text-2xl font-semibold">Verify terms before applying</h2>
@@ -155,7 +153,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
               <CardReviewActions cardId={profile.slug} affiliateSlug={profile.slug} />
 
               <div id="issuer-terms" className="rounded-md border border-blue-gray/70 bg-[#f5f8fb] p-4">
-                <p className="text-sm font-semibold text-navy">Issuer terms placeholder</p>
+                <p className="text-sm font-semibold text-navy">Issuer terms</p>
                 <p className="mt-2 text-sm leading-6 text-mid-navy/70">
                   Future affiliate or issuer URLs should be routed through the centralized `/go/`
                   path after compliance review.

@@ -79,7 +79,7 @@ export const trustPages: TrustPage[] = [
         "blocks": [
           {
             "type": "paragraph",
-            "text": "BestCardsForMe is operated by Tim Finiki, founder of MoneyFactor. Tim has been personally optimizing credit card portfolios, points, miles, and travel rewards for over fifteen years and writes the site directly. Reviews and recommendations reflect his analysis applied through a consistent editorial methodology, not the views of any issuer or affiliate network."
+            "text": "BestCardsForMe is operated by the founder and editor of BestCardsForMe. The site reflects more than fifteen years of personal optimization across credit card portfolios, points, miles, and travel rewards, with reviews and recommendations applied through a consistent editorial methodology, not the views of any issuer or affiliate network."
           },
           {
             "type": "paragraph",
@@ -142,7 +142,7 @@ export const trustPages: TrustPage[] = [
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Editorial questions, methodology feedback, corrections, and partnership inquiries should be sent to **editorial@moneyfactor.io**. We respond to substantive correspondence within five to ten business days."
+            "text": "Editorial questions, methodology feedback, corrections, and partnership inquiries should be sent to **tim@moneyfactor.io**. We respond to substantive correspondence within five to ten business days."
           },
           {
             "type": "paragraph",
@@ -338,7 +338,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "To send substantive methodology feedback or critique, email **editorial@moneyfactor.io**. We read it."
+            "text": "To send substantive methodology feedback or critique, email **tim@moneyfactor.io**. We read it."
           },
           {
             "type": "paragraph",
@@ -452,7 +452,7 @@ export const trustPages: TrustPage[] = [
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The site's editorial decisions are made independently of affiliate negotiations. The same person who writes the reviews (Tim Finiki, founder) is the same person who corresponds with affiliate networks and issuer partnership teams. We don't pretend the firewall is between two separate departments. It's a self-imposed editorial discipline, codified in our [Methodology](/methodology) and [Editorial Standards](/editorial-standards)."
+            "text": "The site's editorial decisions are made independently of affiliate negotiations. The same person who writes the reviews (the founder and editor of BestCardsForMe) is the same person who corresponds with affiliate networks and issuer partnership teams. We don't pretend the firewall is between two separate departments. It's a self-imposed editorial discipline, codified in our [Methodology](/methodology) and [Editorial Standards](/editorial-standards)."
           },
           {
             "type": "paragraph",
@@ -503,7 +503,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "If you believe a specific page on the site has inadequate disclosure, please email **editorial@moneyfactor.io** and we will review and correct."
+            "text": "If you believe a specific page on the site has inadequate disclosure, please email **tim@moneyfactor.io** and we will review and correct."
           }
         ]
       },
@@ -539,18 +539,18 @@ export const trustPages: TrustPage[] = [
     "slug": "contact",
     "title": "Contact and Editorial Standards",
     "eyebrow": "Contact",
-    "summary": "The fastest way to contact BestCardsForMe is email: **editorial@moneyfactor.io**.",
+    "summary": "The fastest way to contact BestCardsForMe is email: [tim@moneyfactor.io](mailto:tim@moneyfactor.io)",
     "sections": [
       {
         "heading": "How to reach us",
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The fastest way to contact BestCardsForMe is email: **editorial@moneyfactor.io**."
+            "text": "The fastest way to contact BestCardsForMe is email: [tim@moneyfactor.io](mailto:tim@moneyfactor.io)"
           },
           {
             "type": "paragraph",
-            "text": "Tim Finiki, the founder and editor of BestCardsForMe, reads every legitimate inbound message and responds personally where appropriate. We do not have a support team, a chat widget, or an automated ticket system. We are an independent publication and we operate accordingly."
+            "text": "The founder and editor of BestCardsForMe reads every legitimate inbound message and responds personally where appropriate. We do not have a support team, a chat widget, or an automated ticket system. We are an independent publication and we operate accordingly."
           },
           {
             "type": "paragraph",
@@ -644,7 +644,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "Tim Finiki personally holds and uses several of the credit cards covered on the site. This is normal for a credit-card publisher — useful coverage requires actual product knowledge — and is the source of most of our methodology-grounded experience. Personal cardholding does not influence editorial recommendations beyond contributing to first-hand product familiarity."
+            "text": "The founder and editor of BestCardsForMe personally holds and uses several of the credit cards covered on the site. This is normal for a credit-card publisher — useful coverage requires actual product knowledge — and is the source of most of our methodology-grounded experience. Personal cardholding does not influence editorial recommendations beyond contributing to first-hand product familiarity."
           },
           {
             "type": "paragraph",
@@ -656,7 +656,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "We use AI tooling (large language models) to assist with research, drafting, fact-checking, and editorial review. Every article published on the site is reviewed by Tim Finiki, applies the documented methodology consistently, and is subject to the corrections policy below. AI is a tool that accelerates the editorial process; it does not replace editorial judgment, methodology adherence, or factual review."
+            "text": "We use AI tooling (large language models) to assist with research, drafting, fact-checking, and editorial review. Every article published on the site is reviewed by the founder and editor of BestCardsForMe, applies the documented methodology consistently, and is subject to the corrections policy below. AI is a tool that accelerates the editorial process; it does not replace editorial judgment, methodology adherence, or factual review."
           },
           {
             "type": "paragraph",
@@ -693,7 +693,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "To report a correction, email **editorial@moneyfactor.io** with:"
+            "text": "To report a correction, email **tim@moneyfactor.io** with:"
           },
           {
             "type": "bullets",
@@ -728,7 +728,7 @@ export const trustPages: TrustPage[] = [
         "blocks": [
           {
             "type": "paragraph",
-            "text": "We do not publish a physical mailing address on this page. If you require one for legal correspondence, please email **editorial@moneyfactor.io** and we will provide a current address through a registered channel."
+            "text": "We do not publish a physical mailing address on this page. If you require one for legal correspondence, please email **tim@moneyfactor.io** and we will provide a current address through a registered channel."
           }
         ]
       },
@@ -920,7 +920,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "To send substantive methodology feedback or critique, email **editorial@moneyfactor.io**. We read it."
+            "text": "To send substantive methodology feedback or critique, email **tim@moneyfactor.io**. We read it."
           },
           {
             "type": "paragraph",
@@ -989,7 +989,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "Tim Finiki personally holds and uses several of the credit cards covered on the site. This is normal for a credit-card publisher — useful coverage requires actual product knowledge — and is the source of most of our methodology-grounded experience. Personal cardholding does not influence editorial recommendations beyond contributing to first-hand product familiarity."
+            "text": "The founder and editor of BestCardsForMe personally holds and uses several of the credit cards covered on the site. This is normal for a credit-card publisher — useful coverage requires actual product knowledge — and is the source of most of our methodology-grounded experience. Personal cardholding does not influence editorial recommendations beyond contributing to first-hand product familiarity."
           },
           {
             "type": "paragraph",
@@ -1001,7 +1001,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "We use AI tooling (large language models) to assist with research, drafting, fact-checking, and editorial review. Every article published on the site is reviewed by Tim Finiki, applies the documented methodology consistently, and is subject to the corrections policy below. AI is a tool that accelerates the editorial process; it does not replace editorial judgment, methodology adherence, or factual review."
+            "text": "We use AI tooling (large language models) to assist with research, drafting, fact-checking, and editorial review. Every article published on the site is reviewed by the founder and editor of BestCardsForMe, applies the documented methodology consistently, and is subject to the corrections policy below. AI is a tool that accelerates the editorial process; it does not replace editorial judgment, methodology adherence, or factual review."
           },
           {
             "type": "paragraph",
@@ -1038,7 +1038,7 @@ export const trustPages: TrustPage[] = [
           },
           {
             "type": "paragraph",
-            "text": "To report a correction, email **editorial@moneyfactor.io** with:"
+            "text": "To report a correction, email **tim@moneyfactor.io** with:"
           },
           {
             "type": "bullets",
@@ -1073,7 +1073,7 @@ export const trustPages: TrustPage[] = [
         "blocks": [
           {
             "type": "paragraph",
-            "text": "We do not publish a physical mailing address on this page. If you require one for legal correspondence, please email **editorial@moneyfactor.io** and we will provide a current address through a registered channel."
+            "text": "We do not publish a physical mailing address on this page. If you require one for legal correspondence, please email **tim@moneyfactor.io** and we will provide a current address through a registered channel."
           }
         ]
       },

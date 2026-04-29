@@ -56,10 +56,9 @@ export function RecommendationCTA({
           >
             {buttonLabel}
           </Link>
-          <p className="text-xs font-medium leading-5 text-mid-navy/60">
-            {disclosure ||
-              "This module is a placeholder for future monetization. BestCardsForMe may receive compensation from partners, but recommendations are driven by fit, net value, and editorial review."}
-          </p>
+          {disclosure && (
+            <p className="text-xs font-medium leading-5 text-mid-navy/60">{disclosure}</p>
+          )}
         </div>
       </div>
     </section>
