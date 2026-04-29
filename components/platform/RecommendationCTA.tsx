@@ -17,7 +17,7 @@ export function RecommendationCTA({
   whyWeLikeIt,
   annualFee,
   bestFor,
-  buttonLabel = "Apply Now",
+  buttonLabel = "Check current terms →",
   href = "#",
   disclosure,
 }: RecommendationCTAProps) {

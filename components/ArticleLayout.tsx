@@ -1,12 +1,13 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArticleAffiliateCta } from "@/components/ArticleAffiliateCta";
+import { ArticleDecisionPaths } from "@/components/ArticleDecisionPaths";
 import { ArticleMoneyFactorScorecard } from "@/components/ArticleMoneyFactorScorecard";
+import { ArticleRecommendedCards } from "@/components/ArticleRecommendedCards";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { articles } from "@/data/articles";
 import { cards } from "@/data/cards";
 import type { CreditCard } from "@/types/card";
-import type { ArticleTable, EditorialArticle } from "@/types/article";
+import type { ArticleSection, ArticleTable, EditorialArticle } from "@/types/article";
 
 type ArticleLayoutProps = {
   article: EditorialArticle;
@@ -151,6 +152,74 @@ function ArticleDataTable({ table }: { table: ArticleTable }) {
   );
 }
 
+function isRecommendedCardsSection(section: ArticleSection) {
+  return section.heading.toLowerCase().trim() === "recommended cards";
+}
+
+function isTrustFooterSection(section: ArticleSection) {
+  const heading = section.heading.toLowerCase();
+
+  return heading.includes("trust") || heading.includes("compliance");
+}
+
+function ArticleIntroCta() {
+  return (
+    <section className="min-w-0 rounded-lg border border-gold/40 bg-gold/10 p-5 shadow-soft sm:p-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-navy">Want your card ranked against your profile?</p>
+          <p className="mt-1 text-sm font-medium leading-6 text-mid-navy/80">
+            The quiz applies the same MoneyFactor lens to your spending, travel pattern, fee
+            tolerance, and rewards style.
+          </p>
+        </div>
+        <Link
+          href="/"
+          className="focus-ring shrink-0 rounded-md bg-navy px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-mid-navy"
+        >
+          Start the quiz
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+function ArticleFinalRecommendation({ article }: { article: EditorialArticle }) {
+  const cardName = article.recommendationCta?.cardName;
+  const href =
+    article.recommendationCta?.href ||
+    (article.recommendationCta?.cardId ? `/go/${article.recommendationCta.cardId}` : "/");
+
+  return (
+    <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-[#f8fafc] p-5 shadow-soft sm:p-6">
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Final check</p>
+      <h2 className="mt-2 text-xl font-semibold text-navy">
+        Verify fit before you apply
+      </h2>
+      <p className="mt-2 text-sm font-medium leading-7 text-mid-navy/85">
+        {cardName
+          ? `${cardName} can be worth checking when the fit signals above match your actual household behavior.`
+          : "The right card should clear the fee math, category fit, and redemption-friction checks above."}{" "}
+        Reconfirm current issuer terms and use the quiz if you want a profile-specific ranking.
+      </p>
+      <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+        <Link
+          href={href}
+          className="focus-ring rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+        >
+          Verify current offer →
+        </Link>
+        <Link
+          href="/"
+          className="focus-ring rounded-md border border-navy px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-navy hover:text-white"
+        >
+          Start the quiz
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 export function ArticleLayout({ article }: ArticleLayoutProps) {
   const cardCtas = article.cardCtas
     ?.map((cta) => ({
@@ -158,6 +227,10 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
       card: cards.find((card) => card.id === cta.cardId),
     }))
     .filter((cta): cta is ResolvedCardCta => Boolean(cta.card));
+  const analysisSections = article.sections.filter(
+    (section) => !isRecommendedCardsSection(section) && !isTrustFooterSection(section),
+  );
+  const trustFooterSections = article.sections.filter(isTrustFooterSection);
 
   return (
     <article className="mx-auto w-full max-w-6xl px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-10">
@@ -211,6 +284,8 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             </p>
           </section>
 
+          <ArticleIntroCta />
+
           {article.comparisonMetrics && article.comparisonMetrics.length > 0 && (
             <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
               <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
@@ -234,7 +309,9 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
 
           {article.scorecard && <ArticleMoneyFactorScorecard scorecard={article.scorecard} />}
 
-          {article.sections.map((section) => (
+          <ArticleDecisionPaths article={article} articles={articles} />
+
+          {analysisSections.map((section) => (
             <section
               key={section.heading}
               className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"
@@ -296,38 +373,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             </section>
           ))}
 
-          {article.recommendationCta && (
-            <ArticleAffiliateCta recommendation={article.recommendationCta} />
-          )}
-
-          {cardCtas && cardCtas.length > 0 && (
-            <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
-              <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
-              <h2 className="text-xl font-semibold text-navy sm:text-2xl">
-                Related card reviews
-              </h2>
-              <div className="mt-4 grid gap-4">
-                {cardCtas.map(({ card, headline, body, label }) => (
-                  <div
-                    key={card.id}
-                    className="rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4"
-                  >
-                    <p className="text-base font-semibold text-navy">{headline}</p>
-                    <p className="mt-2 text-sm font-medium leading-6 text-mid-navy/85">{body}</p>
-                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                      <p className="text-sm font-semibold text-mid-navy/80">{card.name}</p>
-                      <Link
-                        href={`/cards/${card.id}`}
-                        className="focus-ring rounded-md bg-navy px-4 py-2 text-center text-sm font-bold text-white transition hover:bg-mid-navy"
-                      >
-                        {label || "Read honest review"}
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
+          <ArticleRecommendedCards article={article} cardCtas={cardCtas} />
 
           {article.relatedArticles && article.relatedArticles.length > 0 && (
             <RelatedArticles suggestions={article.relatedArticles} articles={articles} />
@@ -352,6 +398,37 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
               </div>
             </section>
           )}
+
+          <ArticleFinalRecommendation article={article} />
+
+          {trustFooterSections.map((section) => (
+            <section
+              key={section.heading}
+              className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"
+            >
+              <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+              <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
+              <div className="mt-4 space-y-5 text-[1.02rem] font-medium leading-8 text-mid-navy/90">
+                {section.body.map((paragraph) => (
+                  <p key={paragraph}>{renderInlineText(paragraph)}</p>
+                ))}
+                {section.table && <ArticleDataTable table={section.table} />}
+                {section.bullets && (
+                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                    {section.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="flex gap-3 rounded-md border border-blue-gray/60 bg-[#f8fafc] p-3 sm:p-4"
+                      >
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                        <span>{renderInlineText(bullet)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </section>
+          ))}
         </div>
 
         <aside className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft lg:sticky lg:top-5">

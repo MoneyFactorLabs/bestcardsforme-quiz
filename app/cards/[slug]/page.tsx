@@ -126,7 +126,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
           annualFee: formatAnnualFee(profile.annualFee),
           bestFor: profile.bestFor,
           href: profile.affiliateUrlPlaceholder,
-          buttonLabel: "Apply Now",
+          buttonLabel: "Check current terms →",
           disclosure:
             "Placeholder CTA only. No live affiliate link is active here; verify current issuer terms before applying.",
         }}
