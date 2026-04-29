@@ -1,6 +1,7 @@
 import type { EditorialArticle } from "@/types/article";
 import { articleBatch10To14 } from "@/data/articlesBatch10To14";
 import { articleBatch15To19 } from "@/data/articlesBatch15To19";
+import { articleBatch20To24 } from "@/data/articlesBatch20To24";
 
 export const articles: EditorialArticle[] = [
   {
@@ -2472,6 +2473,7 @@ export const articles: EditorialArticle[] = [
   },
   ...articleBatch10To14,
   ...articleBatch15To19,
+  ...articleBatch20To24,
 ];
 
 export function getArticleBySlug(slug: string) {
