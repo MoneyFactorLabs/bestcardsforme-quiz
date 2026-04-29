@@ -15,21 +15,25 @@ const staticRoutes = [
   "/contact",
 ];
 
+function sitemapEntry(url: string, lastModified?: string | Date): MetadataRoute.Sitemap[number] {
+  return {
+    url: absoluteUrl(url),
+    ...(lastModified ? { lastModified } : {}),
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-
-  return [
-    ...staticRoutes.map((route) => ({
-      url: absoluteUrl(route),
-      lastModified: now,
-    })),
-    ...articles.map((article) => ({
-      url: absoluteUrl(`/articles/${article.slug}`),
-      lastModified: article.updatedAt,
-    })),
-    ...getAllCreditCardProfileSlugs().map((slug) => ({
-      url: absoluteUrl(`/cards/${slug}`),
-      lastModified: now,
-    })),
+  const entries = [
+    ...staticRoutes.map((route) => sitemapEntry(route, now)),
+    ...articles.map((article) => sitemapEntry(`/articles/${article.slug}`, article.updatedAt)),
+    ...getAllCreditCardProfileSlugs().map((slug) => sitemapEntry(`/cards/${slug}`, now)),
   ];
+  const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
+
+  entries.forEach((entry) => {
+    uniqueEntries.set(entry.url, entry);
+  });
+
+  return Array.from(uniqueEntries.values());
 }
