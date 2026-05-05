@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="BestCardsForMe">
+  <rect width="512" height="512" rx="96" fill="#0F1F33"/>
+  <rect x="104" y="148" width="304" height="216" rx="28" fill="#FFFFFF"/>
+  <rect x="104" y="148" width="304" height="62" rx="28" fill="#D4AF37"/>
+  <rect x="104" y="184" width="304" height="26" fill="#D4AF37"/>
+  <text
+    x="256"
+    y="306"
+    fill="#0F1F33"
+    font-family="Inter, Arial, sans-serif"
+    font-size="84"
+    font-weight="800"
+    letter-spacing="4"
+    text-anchor="middle"
+  >
+    BCFM
+  </text>
+</svg>
