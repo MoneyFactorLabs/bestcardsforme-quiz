@@ -1310,8 +1310,8 @@ export const articles: EditorialArticle[] = [
   {
     slug: "hilton-aspire-vs-marriott-bonvoy-brilliant-2026",
     eyebrow: "Luxury Hotel Card Comparison",
-    title: "Hilton Honors Aspire vs Marriott Bonvoy Brilliant: Which Luxury Hotel Card Wins in 2026?",
-    metaDescription: "MoneyFactor comparison of Hilton Honors Aspire vs Marriott Bonvoy Brilliant in 2026, including hotel status, free-night certificates, annual fees, captured value, and FAQs.",
+    title: "Hilton Aspire vs. Marriott Bonvoy Brilliant 2026: Which Wins?",
+    metaDescription: "Hilton Aspire ($550) vs. Marriott Bonvoy Brilliant ($650) in 2026: which Amex hotel card wins on perks, points, and free nights?",
     dek: "The right luxury hotel card depends less on headline perks and more on which hotel brand your household already uses enough to capture status, credits, and free-night value.",
     category: "Hotel credit cards",
     updatedAt: "2026-04-27",
