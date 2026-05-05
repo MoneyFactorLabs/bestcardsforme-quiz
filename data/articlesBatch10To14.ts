@@ -328,9 +328,9 @@ export const articleBatch10To14: EditorialArticle[] = [
   {
     "slug": "amex-platinum-vs-chase-sapphire-reserve-2026",
     "eyebrow": "Ultra-Premium Card Comparison",
-    "title": "Amex Platinum vs Chase Sapphire Reserve in 2026: Which Premium Card Is Actually Worth It?",
-    "metaDescription": "A MoneyFactor honest-math comparison of Amex Platinum vs Chase Sapphire Reserve in 2026, including credits, lounges, fee math, and which profile should pick each card.",
-    "dek": "Most households should hold one of these cards, not both. The **Amex Platinum at $895** wins for affluent households that fly through airports with Centurion Lounges, book at least one Fine Hotels + Resorts property per year, and naturally engage with Amex's lifestyle partner stack (Equinox, Uber, Walmart+, Saks). The **Chase Sapphire Reserve at $795** wins for households committed to the Ultimate Rewards transfer-partner ecosystem (especially Hyatt and United), who value a more flexible $300 travel credit, and who prefer a lighter calendar burden than the Platinum demands.",
+    "title": "Amex Platinum vs Chase Sapphire Reserve (2026): Which Is Actually Worth It?",
+    "metaDescription": "Amex Platinum vs Chase Sapphire Reserve in 2026: which is better after real fee math, credits, lounges, rewards, and travel habits? The answer may surprise you.",
+    "dek": "The **Amex Platinum** and **Chase Sapphire Reserve** are both ultra-premium travel cards, but the better 2026 choice depends on how you actually travel: Amex Platinum wins for luxury travel households that use Centurion Lounges, Fine Hotels + Resorts, and Amex credits; Chase Sapphire Reserve wins for travelers who want simpler value, a flexible $300 travel credit, and Ultimate Rewards partners. Most households should choose one, not both, because the overlap is expensive and the winner changes by lounge access, booking habits, and credit-calendar tolerance.",
     "category": "Premium travel cards",
     "updatedAt": "2026-04-27",
     "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
@@ -366,8 +366,12 @@ export const articleBatch10To14: EditorialArticle[] = [
       {
         "heading": "Quick answer",
         "body": [
-          "Most households should hold one of these cards, not both. The **Amex Platinum at $895** wins for affluent households that fly through airports with Centurion Lounges, book at least one Fine Hotels + Resorts property per year, and naturally engage with Amex's lifestyle partner stack (Equinox, Uber, Walmart+, Saks). The **Chase Sapphire Reserve at $795** wins for households committed to the Ultimate Rewards transfer-partner ecosystem (especially Hyatt and United), who value a more flexible $300 travel credit, and who prefer a lighter calendar burden than the Platinum demands.",
-          "The fee gap is $100 — small in absolute terms, decisive in profile fit. Below, the full math."
+          "The **Amex Platinum** is better than the **Chase Sapphire Reserve** for luxury travelers who can capture Centurion Lounge access, Fine Hotels + Resorts value, and Amex's lifestyle credits. The **Chase Sapphire Reserve** is better for travelers who want simpler premium value, a more flexible $300 travel credit, Ultimate Rewards partners such as Hyatt and United, and less monthly credit tracking.",
+          "The fee gap is $100 — small in absolute terms, decisive in profile fit. If neither card feels simple enough, compare the lower-fee [Chase Sapphire Reserve vs Capital One Venture X](/articles/chase-sapphire-reserve-vs-capital-one-venture-x-2026); if this is part of a larger wallet strategy, see our [high-income household card strategy](/articles/best-credit-card-high-income-households-2026)."
+        ],
+        "bullets": [
+          "**Best for luxury travel:** Amex Platinum — strongest when Centurion Lounges, FHR hotel bookings, and Amex lifestyle credits are already part of your normal spending.",
+          "**Best for simplicity/value:** Chase Sapphire Reserve — stronger when you want premium travel benefits with a more flexible travel credit and less issuer-specific credit management."
         ]
       },
       {
@@ -392,6 +396,21 @@ export const articleBatch10To14: EditorialArticle[] = [
               "**Stated annual benefit value**",
               "$3,500+",
               "$3,000+"
+            ],
+            [
+              "**Credits summary**",
+              "Larger but more restrictive hotel, airline, and lifestyle credit stack",
+              "Smaller but more flexible travel credit plus partner credits"
+            ],
+            [
+              "**Rewards summary**",
+              "Strongest on flights and prepaid Amex Travel bookings; weak 1x base",
+              "Stronger for Chase Travel, dining, and Ultimate Rewards transfer strategy"
+            ],
+            [
+              "**Best use case**",
+              "Luxury travelers who use Centurion Lounges, FHR, and Amex credits naturally",
+              "Travelers who want flexible credits, Chase partners, and simpler premium value"
             ],
             [
               "**Lounge access**",
@@ -624,6 +643,22 @@ export const articleBatch10To14: EditorialArticle[] = [
       }
     ],
     "faqs": [
+      {
+        "question": "Which is better: Amex Platinum or CSR?",
+        "answer": "Amex Platinum is better for luxury travelers who use Centurion Lounges, Fine Hotels + Resorts, and Amex lifestyle credits. Chase Sapphire Reserve is better for travelers who want a more flexible $300 travel credit, Ultimate Rewards partners, and less monthly credit tracking."
+      },
+      {
+        "question": "Is Amex Platinum worth the fee vs CSR?",
+        "answer": "Amex Platinum is worth the higher fee vs CSR only when the household captures Platinum-specific benefits such as Centurion Lounge access, FHR hotel credits, CLEAR+, and lifestyle credits. Without those, the Sapphire Reserve often produces cleaner after-fee value."
+      },
+      {
+        "question": "Do most people get more value from CSR or Amex Platinum?",
+        "answer": "Most casual premium travelers are more likely to get usable value from Chase Sapphire Reserve because the travel credit is more flexible and the credit calendar is lighter. Amex Platinum can deliver more total value, but only for households that naturally use its luxury travel and lifestyle benefits."
+      },
+      {
+        "question": "Which card is better for travel rewards?",
+        "answer": "Chase Sapphire Reserve is often better for travel rewards if you value Hyatt, United, Southwest, and a flexible travel credit. Amex Platinum is better if your travel rewards strategy centers on premium flights, Centurion Lounges, Fine Hotels + Resorts, and Membership Rewards transfer partners."
+      },
       {
         "question": "Is the Amex Platinum or Chase Sapphire Reserve better in 2026?",
         "answer": "For households deep in the Amex ecosystem, fly through Centurion airports, book FHR hotels, and engage with Amex's lifestyle partner stack — Platinum wins. For households that book travel direct, value the UR transfer partner network (especially Hyatt and United), and prefer a lighter credit calendar — Reserve wins. There's no universal answer."
