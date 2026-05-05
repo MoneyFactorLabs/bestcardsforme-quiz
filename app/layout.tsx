@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     google: "wGAUXA7ZlmxxBFfmgzhvF0Lyt280_MY9BcVqyDyBgLY",
     other: {
       "fo-verify": "86008206-2347-4347-8999-caf367b26c87",
+      "google-site-verification": "iBdgn43Q3dR5_VzVct8bAqsJrEeD_KeKYfQIFRqBcTI",
     },
   },
 };
