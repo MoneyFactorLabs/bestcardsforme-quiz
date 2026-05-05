@@ -13,7 +13,7 @@ export const articles: EditorialArticle[] = [
     dek: "Chase markets more than $3,000 in annual benefits. The real question is how much of that value your household will actually capture after fees, friction, credits, and redemption habits.",
     category: "Premium travel cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "13 min read",
     comparisonMetrics: [
       {
@@ -256,7 +256,7 @@ export const articles: EditorialArticle[] = [
     dek: "American Express markets more than $3,500 in combined annual benefits. The real question is whether your household will actually capture enough value to clear the $895 fee.",
     category: "Premium travel cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "13 min read",
     comparisonMetrics: [
       {
@@ -470,7 +470,7 @@ export const articles: EditorialArticle[] = [
     dek: "The best grocery card is not one-size-fits-all. The right answer changes at $500, $1,500, and $3,000+ in monthly grocery spend.",
     category: "Cash back and grocery rewards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "12 min read",
     comparisonMetrics: [
       {
@@ -773,7 +773,7 @@ export const articles: EditorialArticle[] = [
     dek: "The Sapphire Preferred remains one of the strongest $95 travel cards, but the right answer now depends on transfer-partner usage, grocery-heavy spending, and whether it is a standalone card or a Sapphire Reserve downgrade path.",
     category: "Travel credit cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "11 min read",
     comparisonMetrics: [
       {
@@ -1021,7 +1021,7 @@ export const articles: EditorialArticle[] = [
     dek: "For most affluent households that travel four or more times a year, the Capital One Venture X can still justify its $395 annual fee, but the real answer depends on portal-credit usage, lounge value, and Year-2 renewal math.",
     category: "Premium travel cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "12 min read",
     comparisonMetrics: [
       {
@@ -1315,7 +1315,7 @@ export const articles: EditorialArticle[] = [
     dek: "The right luxury hotel card depends less on headline perks and more on which hotel brand your household already uses enough to capture status, credits, and free-night value.",
     category: "Hotel credit cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "11 min read",
     comparisonMetrics: [
       {
@@ -1590,7 +1590,7 @@ export const articles: EditorialArticle[] = [
     dek: "The best business credit card for an LLC owner depends on the spending pattern behind the business: advertising, travel, telecom, shipping, diversified spend, or simple cash flow.",
     category: "Business credit cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "12 min read",
     comparisonMetrics: [
       {
@@ -1882,7 +1882,7 @@ export const articles: EditorialArticle[] = [
     dek: "Hilton Aspire can clear its $550 annual fee for households with real Hilton loyalty, but the math falls apart quickly when Diamond status, resort credits, and certificates do not match actual travel behavior.",
     category: "Hotel credit cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "12 min read",
     comparisonMetrics: [
       {
@@ -2177,7 +2177,7 @@ export const articles: EditorialArticle[] = [
     dek: "Marriott Bonvoy Brilliant can work for committed Marriott households that redeem the 85,000-point certificate well, but it is a poor fit for travelers who cannot plan around brand-specific benefits.",
     category: "Hotel credit cards",
     updatedAt: "2026-04-27",
-    reviewedBy: "Tim Finiki, Founder, MoneyFactor",
+    reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "12 min read",
     comparisonMetrics: [
       {

@@ -79,7 +79,11 @@ export const trustPages: TrustPage[] = [
         "blocks": [
           {
             "type": "paragraph",
-            "text": "BestCardsForMe is operated by the founder and editor of BestCardsForMe. The site reflects more than fifteen years of personal optimization across credit card portfolios, points, miles, and travel rewards, with reviews and recommendations applied through a consistent editorial methodology, not the views of any issuer or affiliate network."
+            "text": "Tim is the founder and editor of BestCardsForMe. The site uses conservative rewards math, realistic benefit capture, and transparent tradeoffs to evaluate credit cards."
+          },
+          {
+            "type": "paragraph",
+            "text": "The site reflects more than fifteen years of personal optimization across credit card portfolios, points, miles, and travel rewards, with reviews and recommendations applied through a consistent editorial methodology, not the views of any issuer or affiliate network."
           },
           {
             "type": "paragraph",

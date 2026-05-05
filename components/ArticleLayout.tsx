@@ -249,6 +249,15 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
             {article.title}
           </h1>
+          <p className="mt-3 text-sm font-semibold text-blue-gray">
+            By{" "}
+            <Link
+              href="/about"
+              className="text-white underline decoration-gold/70 underline-offset-4 transition hover:text-blue-gray"
+            >
+              Tim, founder and editor of BestCardsForMe
+            </Link>
+          </p>
           <p className="mt-5 max-w-3xl text-base font-medium leading-7 text-blue-gray sm:text-lg sm:leading-8">
             {article.dek}
           </p>

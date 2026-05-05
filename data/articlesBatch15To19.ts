@@ -9,7 +9,7 @@ export const articleBatch15To19: EditorialArticle[] = [
     "dek": "The right hotel credit card in 2026 depends almost entirely on which hotel chain your travel pattern naturally favors. The **Hilton Honors Aspire ($550)** wins for Hilton-loyal households thanks to its automatic Hilton Diamond status — a benefit no other consumer card includes. The **Marriott Bonvoy Brilliant ($650)** wins for Marriott-loyal households who can use the annual 85,000-point free night certificate at high-tier properties. The **IHG One Rewards Premier ($99)** is the best value-per-dollar pick for IHG-loyal households thanks to a low fee, automatic Platinum Elite status, and a strong free night certificate at any property up to 40,000 points. Households without clear brand loyalty should hold none of these and use a flexible-points card instead.",
     "category": "Hotel credit cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "11 min read",
     "comparisonMetrics": [
       {
@@ -303,7 +303,7 @@ export const articleBatch15To19: EditorialArticle[] = [
     "dek": "The best airline credit card for U.S. domestic travel in 2026 depends on which airline you fly most. For travelers loyal to **Delta**, the **Delta SkyMiles Platinum or Reserve** card pairs best with the Delta network. For **United**, the **United Explorer or Quest** cards. For **American**, the **Citi/AAdvantage Executive** for premium benefits or **Citi/AAdvantage Platinum Select** for mid-tier. For **Southwest**, the **Southwest Rapid Rewards Priority** card, especially for households chasing the Companion Pass. For travelers who don't fly any single airline regularly, a **flexible-points card** like the [Chase Sapphire Reserve](/cards/chase-sapphire-reserve) or [Capital One Venture X](/cards/capital-one-venture-x) often wins because points transfer to multiple airline programs as needed.",
     "category": "Airline credit cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "10 min read",
     "comparisonMetrics": [
       {
@@ -641,7 +641,7 @@ export const articleBatch15To19: EditorialArticle[] = [
     "dek": "For most affluent households traveling internationally in 2026, the **Capital One Venture X ($395)** is the strongest single international travel card thanks to no foreign transaction fees, 2x miles flat earning anywhere in the world, and primary rental car coverage internationally. The **Chase Sapphire Reserve ($795)** wins for households who want premium travel insurance and broader transfer partner access for international award redemptions. The **Chase Sapphire Preferred ($95)** is the best entry-tier choice — strong international travel insurance, no foreign transaction fees, and access to Chase Ultimate Rewards transfer partners. The **Amex Platinum ($895)** wins for households who fly through Centurion Lounges and book Fine Hotels + Resorts internationally.",
     "category": "Travel card comparisons",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "11 min read",
     "comparisonMetrics": [
       {
@@ -932,7 +932,7 @@ export const articleBatch15To19: EditorialArticle[] = [
     "dek": "For households earning $200,000 or more annually, the question isn't \"what's the single best credit card\" — at this income level, household spending is high enough and diverse enough that a **premium card stack** of two or three coordinated cards almost always captures more value than any single card. The strongest setups for $200k+ households in 2026 are: **Amex Gold + Amex Platinum** for households deep in the Amex ecosystem; **Chase Sapphire Reserve + Freedom Unlimited + Freedom Flex** for households committed to Chase Ultimate Rewards; or **Capital One Venture X + Savor + Quicksilver** for households that prefer simplicity and lower combined fees. Below, the strategy.",
     "category": "Card stack strategy",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {
@@ -1230,7 +1230,7 @@ export const articleBatch15To19: EditorialArticle[] = [
     "dek": "The best 2-card credit card setup in 2026 depends on your household's spending pattern and travel volume. The strongest setups: **Chase Sapphire Preferred + Chase Freedom Unlimited** ($95 combined) for affluent households committed to the Chase Ultimate Rewards ecosystem with diversified spending; **Amex Gold + Amex Platinum** ($1,220 combined) for dining-and-grocery-heavy households who travel premium and engage with Amex's lifestyle partners; **Capital One Venture X + Capital One Savor** ($490 combined) for households that want premium-tier benefits at a lower combined fee with simpler earning. The right pair depends entirely on your actual spending.",
     "category": "Card stack strategy",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "14 min read",
     "comparisonMetrics": [
       {

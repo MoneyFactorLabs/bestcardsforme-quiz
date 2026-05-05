@@ -9,7 +9,7 @@ export const articleBatch20To24: EditorialArticle[] = [
     "dek": "For most U.S. households, the best gas credit card in 2026 is the **Citi Custom Cash** at $0 annual fee — it earns 5% cash back on the top spending category each cycle (capped at $500 monthly spend, ~$25 max cash back per month). For households where gas isn't always the top category, the **Wells Fargo Autograph** ($0) earns 3x flat on gas with no caps. For higher-volume drivers running $400+/month in fuel, the **PenFed Platinum Rewards Visa** ($0) earns 5x on gas at all stations — the strongest standalone gas earning rate among major cards. For households who want gas earning bundled with broader travel rewards, the **Citi Strata Premier** ($95) earns 3x on gas with no cap and access to ThankYou Points transfer partners.",
     "category": "Gas credit cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "11 min read",
     "comparisonMetrics": [
       {
@@ -328,7 +328,7 @@ export const articleBatch20To24: EditorialArticle[] = [
     "dek": "For Amazon-heavy households with a Prime membership, the **Amazon Prime Rewards Visa** ($0 fee, requires Prime) earns 5% cash back at Amazon and Whole Foods — the strongest single retailer bonus available. For broader online shopping across multiple retailers, the **Citi Custom Cash** ($0) earns 5% on top monthly category (often online retail for households who shop online heavily). For households doing diversified online shopping, the **Capital One Venture Rewards** ($95) at 2x miles flat captures consistent value without category management. For households doing a mix of Amazon, retail, and travel, the **Chase Sapphire Preferred** ($95) earns 3x on online groceries (eligible Chase merchants) and 5x on Chase Travel — useful for households whose online spending blends groceries and travel.",
     "category": "Online shopping credit cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {
@@ -647,7 +647,7 @@ export const articleBatch20To24: EditorialArticle[] = [
     "dek": "For business owners running operations beyond the basic LLC stage — multi-million-dollar revenue, dedicated employees, multi-category spending — the right credit card setup is rarely a single card. The strongest configurations in 2026: **Amex Business Platinum + Amex Business Gold + Chase Ink Business Preferred** as a three-card stack for growth-stage operators, **Capital One Spark Cash Plus alongside category-specialist cards** for high-volume diversified businesses, or a **single industry-specific co-branded card** (Marriott Bonvoy Business, Delta SkyMiles Reserve Business, Hilton Honors Business) for owners whose business spending concentrates in hotel or airline travel. Below, the strategies.",
     "category": "Business credit cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "13 min read",
     "comparisonMetrics": [
       {
@@ -920,7 +920,7 @@ export const articleBatch20To24: EditorialArticle[] = [
     "dek": "For most U.S. households, the best no-annual-fee credit card in 2026 is the **Citi Double Cash** — earns 2% cash back on every purchase (1% when you buy, 1% when you pay) with no caps and no category management. For households that want broader category coverage at $0 fee, the **Wells Fargo Autograph** earns 3x on dining, travel, transit, streaming, and phone bills. For Chase ecosystem households, the **Chase Freedom Unlimited** earns 1.5% (or 1.5x UR when paired with a Sapphire card) on every purchase. For households who want rotating category bonuses, the **Discover It Cash Back** or **Chase Freedom Flex** earns 5% on rotating categories quarterly.",
     "category": "No annual fee credit cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {
@@ -1268,7 +1268,7 @@ export const articleBatch20To24: EditorialArticle[] = [
     "dek": "For households new to travel points and rewards optimization, the best entry-tier card in 2026 is the **Chase Sapphire Preferred** ($95) — strong earning structure, deep transfer-partner network, no foreign transaction fees, and primary rental car coverage internationally. The **Capital One Venture Rewards** ($95) is the simplest beginner card thanks to 2x flat earning with no bonus categories to track. The **Amex Gold** ($325) is the right step-up for households whose dining and grocery spending dominates. The **Wells Fargo Autograph** ($0) is the entry-level option for households not ready to commit to any annual fee. Below, the framework for choosing.",
     "category": "Beginner travel rewards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {

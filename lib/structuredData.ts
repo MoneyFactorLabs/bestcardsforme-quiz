@@ -81,7 +81,7 @@ export function buildArticleStructuredData(article: EditorialArticle) {
       dateModified: article.updatedAt,
       author: {
         "@type": "Person",
-        name: "Tim Finiki",
+        name: "Tim",
         url: absoluteUrl("/about"),
       },
       publisher: {

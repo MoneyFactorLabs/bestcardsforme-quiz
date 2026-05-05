@@ -9,7 +9,7 @@ export const articleBatch10To14: EditorialArticle[] = [
     "dek": "For most affluent households in 2026, the **Capital One Venture X at $395** wins this comparison on after-fee value, simplicity, and total calendar burden — the lower fee, flat 2x earning, and predictable benefit stack make it the cleanest premium-tier hold for the largest share of profiles. The **Chase Sapphire Reserve at $795** wins for households deeply committed to the Ultimate Rewards transfer-partner ecosystem, who actively engage with the post-2025-refresh credit calendar, and who value the Reserve's more flexible $300 travel credit and Sapphire Lounge access with a guest-friendly policy. The fee gap is $400 — that's the value the Reserve has to clear in *Reserve-only* benefits to win.",
     "category": "Premium travel cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {
@@ -333,7 +333,7 @@ export const articleBatch10To14: EditorialArticle[] = [
     "dek": "The **Amex Platinum** and **Chase Sapphire Reserve** are both ultra-premium travel cards, but the better 2026 choice depends on how you actually travel: Amex Platinum wins for luxury travel households that use Centurion Lounges, Fine Hotels + Resorts, and Amex credits; Chase Sapphire Reserve wins for travelers who want simpler value, a flexible $300 travel credit, and Ultimate Rewards partners. Most households should choose one, not both, because the overlap is expensive and the winner changes by lounge access, booking habits, and credit-calendar tolerance.",
     "category": "Premium travel cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {
@@ -715,7 +715,7 @@ export const articleBatch10To14: EditorialArticle[] = [
     "dek": "For most affluent households that spend at least $1,000 per month on dining and groceries combined, the **Amex Gold at $325** is one of the strongest single-card holds available — Year-2 captured value typically clears the fee by $400–$1,200, and the card earns Membership Rewards points without the calendar burden of an Amex Platinum. For households whose spending doesn't concentrate in dining and grocery, or who won't engage with Gold's lifestyle credit stack, the Amex Blue Cash Preferred at $95 or a no-fee 2% cashback card likely captures more after-fee value.",
     "category": "Dining and grocery cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "13 min read",
     "comparisonMetrics": [
       {
@@ -999,7 +999,7 @@ export const articleBatch10To14: EditorialArticle[] = [
     "dek": "For most affluent households spending $300+/month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
     "category": "Dining and grocery cards",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {
@@ -1324,7 +1324,7 @@ export const articleBatch10To14: EditorialArticle[] = [
     "dek": "Both cards carry a $95 annual fee and target affluent households at the entry-tier travel card decision. They earn rewards in fundamentally different ways: the **Chase Sapphire Preferred** uses bonus categories (3x dining, 3x online groceries, 3x streaming, 5x Chase Travel, 2x other travel, 1x base) and earns Chase Ultimate Rewards. The **Capital One Venture Rewards** uses 2x miles flat on every purchase with no bonus categories. For households whose spending concentrates in Sapphire Preferred's bonus categories, the Preferred captures more value. For households with diversified spending across many non-bonus categories, the simpler Venture often wins. Below, the math.",
     "category": "Travel card comparisons",
     "updatedAt": "2026-04-27",
-    "reviewedBy": "Tim Finiki, Founder, MoneyFactor",
+    "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
       {
