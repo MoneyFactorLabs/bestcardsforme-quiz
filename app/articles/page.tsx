@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { articles } from "@/data/articles";
+import { buildArticlesIndexStructuredData } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Credit Card Articles | BestCardsForMe by MoneyFactor",
@@ -27,6 +29,7 @@ export default function ArticlesIndexPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd data={buildArticlesIndexStructuredData(articles)} />
       <Header />
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 pt-8 sm:px-8 sm:pb-16 sm:pt-12">
         <header className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">

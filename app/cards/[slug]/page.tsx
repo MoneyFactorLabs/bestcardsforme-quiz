@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Disclaimer } from "@/components/Disclaimer";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { CardPageAnalytics } from "@/components/analytics/CardPageAnalytics";
 import { CardReviewActions } from "@/components/analytics/CardReviewActions";
@@ -13,6 +14,7 @@ import {
   getCreditCardProfileBySlug,
 } from "@/data/creditCardProfiles";
 import { absoluteUrl } from "@/lib/site";
+import { buildCardProfileStructuredData } from "@/lib/structuredData";
 import type { CreditCardProfile } from "@/types/creditCardProfile";
 
 type CardDetailsPageProps = {
@@ -86,6 +88,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
 
   return (
     <main className="min-h-screen">
+      <JsonLd data={buildCardProfileStructuredData(profile)} />
       <CardPageAnalytics cardId={profile.slug} />
       <Header />
       <ProductProfileLayout

@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import { ArticleLayout } from "@/components/ArticleLayout";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { articles, getArticleBySlug } from "@/data/articles";
-import { absoluteUrl, siteConfig } from "@/lib/site";
-import type { EditorialArticle } from "@/types/article";
+import { absoluteUrl } from "@/lib/site";
+import { buildArticleStructuredData } from "@/lib/structuredData";
 
 type ArticlePageProps = {
   params: Promise<{
@@ -15,73 +16,6 @@ type ArticlePageProps = {
 
 function getArticleUrl(slug: string) {
   return absoluteUrl(`/articles/${slug}`);
-}
-
-function getArticleDescription(article: EditorialArticle) {
-  return article.metaDescription || article.dek;
-}
-
-function stripArticleMarkup(value: string) {
-  return value
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
-    .replace(/\*([^*]+)\*/g, "$1")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function buildArticleStructuredData(article: EditorialArticle) {
-  const url = getArticleUrl(article.slug);
-  const description = getArticleDescription(article);
-  const graph: Record<string, unknown>[] = [
-    {
-      "@type": "BlogPosting",
-      "@id": `${url}#article`,
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": url,
-      },
-      headline: article.title,
-      description,
-      datePublished: article.updatedAt,
-      dateModified: article.updatedAt,
-      author: {
-        "@type": "Person",
-        name: "Tim Finiki",
-        url: absoluteUrl("/about"),
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "MoneyFactor",
-        url: siteConfig.url,
-      },
-      isPartOf: {
-        "@type": "WebSite",
-        name: siteConfig.name,
-        url: siteConfig.url,
-      },
-    },
-  ];
-
-  if (article.faqs && article.faqs.length > 0) {
-    graph.push({
-      "@type": "FAQPage",
-      "@id": `${url}#faq`,
-      mainEntity: article.faqs.map((faq) => ({
-        "@type": "Question",
-        name: stripArticleMarkup(faq.question),
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: stripArticleMarkup(faq.answer),
-        },
-      })),
-    });
-  }
-
-  return {
-    "@context": "https://schema.org",
-    "@graph": graph,
-  };
 }
 
 export function generateStaticParams() {
@@ -114,12 +48,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <main className="min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(buildArticleStructuredData(article)),
-        }}
-      />
+      <JsonLd data={buildArticleStructuredData(article)} />
       <Header />
       <ArticleLayout article={article} />
       <Footer />

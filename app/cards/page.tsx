@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { ProductIndexLayout } from "@/components/platform/ProductIndexLayout";
 import {
   getAllCreditCardProfileSlugs,
   getCreditCardProfileBySlug,
 } from "@/data/creditCardProfiles";
 import { absoluteUrl } from "@/lib/site";
+import { buildCardsIndexStructuredData } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Credit Card Profiles | BestCardsForMe by MoneyFactor",
@@ -28,6 +30,7 @@ export default function CardsIndexPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd data={buildCardsIndexStructuredData(profiles)} />
       <Header />
       <ProductIndexLayout
         eyebrow="Credit card profiles"
