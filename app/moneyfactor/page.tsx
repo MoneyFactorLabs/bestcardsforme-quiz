@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MoneyFactor — Financial Decision Engines",
+  title: "MoneyFactor — The Real Math Behind Every Money Decision",
   description:
-    "MoneyFactor builds plain-English financial decision engines that help consumers compare credit cards, leases, home costs, and other major financial choices using transparent math.",
+    "MoneyFactor builds financial decision engines that help consumers compare credit cards, leases, home costs, and other major financial choices using transparent math.",
   alternates: {
     canonical: "https://moneyfactor.io",
   },
@@ -41,11 +41,12 @@ export default function MoneyFactorLandingPage() {
               Parent company
             </p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight sm:text-6xl">
-              MoneyFactor builds plain-English financial decision engines.
+              The Real Math Behind Every Money Decision
             </h1>
             <p className="mt-6 max-w-3xl text-lg font-medium leading-8 text-mid-navy/80">
-              We help consumers make high-intent financial decisions using transparent math,
-              structured comparisons, and practical recommendations.
+              MoneyFactor builds financial decision engines that help consumers compare credit
+              cards, leases, home costs, and other major financial choices using transparent math
+              and practical recommendations.
             </p>
           </div>
         </header>
@@ -106,6 +107,31 @@ export default function MoneyFactorLandingPage() {
                     {engine.description}
                   </p>
                 </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-7">
+            <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+            <h2 className="text-2xl font-semibold">Trust & methodology</h2>
+            <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/75">
+              MoneyFactor uses conservative assumptions, realistic benefit capture, and transparent
+              tradeoffs instead of headline marketing value.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {[
+                ["Methodology", "https://bestcardsforme.com/methodology"],
+                ["How We Review", "https://bestcardsforme.com/how-we-review-credit-cards"],
+                ["Affiliate Disclosure", "https://bestcardsforme.com/affiliate-disclosure"],
+                ["About MoneyFactor", "https://bestcardsforme.com/about"],
+              ].map(([label, href]) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="focus-ring rounded-md border border-blue-gray bg-[#f8fafc] px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+                >
+                  {label}
+                </a>
               ))}
             </div>
           </section>
