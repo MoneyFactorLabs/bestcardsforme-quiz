@@ -88,6 +88,20 @@ export default function MoneyFactorLandingPage() {
                 Visit BestCardsForMe
               </a>
             </div>
+            <div className="border-t border-blue-gray/70 bg-[#f8fafc] p-5 sm:p-7">
+              <h3 className="text-xl font-semibold">Which credit card is best for you?</h3>
+              <p className="mt-3 max-w-3xl text-sm font-medium leading-7 text-mid-navy/80">
+                BestCardsForMe is MoneyFactor's active credit card decision engine. It helps
+                consumers compare premium cards, annual fees, rewards value, and realistic benefit
+                usage to find the card that actually fits their spending and travel habits.
+              </p>
+              <a
+                href="https://bestcardsforme.com"
+                className="focus-ring mt-4 inline-flex rounded-md border border-navy px-5 py-3 text-sm font-bold text-navy transition hover:bg-navy hover:text-white"
+              >
+                Find your best card →
+              </a>
+            </div>
           </section>
 
           <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-7">
