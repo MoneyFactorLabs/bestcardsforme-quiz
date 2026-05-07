@@ -505,7 +505,7 @@ export const articleBatch10To14: EditorialArticle[] = [
               "$600 hotel credit (FHR) at near face value: **+$500–$600**",
               "$200 airline credit captured: **+$150–$200**",
               "$209 CLEAR+: **+$209**",
-              "Centurion Lounge × 12 visits @ ~$50/visit: **+$600**",
+              "Centurion Lounge × 12 visits @ ~$50 per visit: **+$600**",
               "Lifestyle credits at 60% utilization (Equinox, Uber, Saks, Walmart+, entertainment): **+$700–$900**",
               "5x earning advantage on $15,000 of flight/prepaid hotel spend at 1.7¢ MR: **+$510**",
               "1x base on $35,000 at 1.7¢: **+$595**"
@@ -728,7 +728,7 @@ export const articleBatch10To14: EditorialArticle[] = [
       },
       {
         "label": "Break-even driver",
-        "value": "$700+/month combined dining and grocery spend"
+        "value": "$700+ per month combined dining and grocery spend"
       },
       {
         "label": "MoneyFactor lens",
@@ -764,8 +764,8 @@ export const articleBatch10To14: EditorialArticle[] = [
           "**4x points** on dining worldwide, including takeout and delivery",
           "**3x points** on flights booked direct or via Amex Travel",
           "**1x points** on other categories",
-          "**$120 dining credit** ($10/month at GrubHub, Goldbelly, Cheesecake Factory, Five Guys, Wine.com — verify current participating restaurants)",
-          "**$84 Dunkin' credit** ($7/month)",
+          "**$120 dining credit** ($10 per month at GrubHub, Goldbelly, Cheesecake Factory, Five Guys, Wine.com — verify current participating restaurants)",
+          "**$84 Dunkin' credit** ($7 per month)",
           "**$100 Resy credit** ($50 twice annually for Resy-eligible restaurants)",
           "**Hotel collection benefits** on prepaid bookings via Amex Travel",
           "**No foreign transaction fees**",
@@ -776,15 +776,15 @@ export const articleBatch10To14: EditorialArticle[] = [
         "heading": "What households actually capture",
         "body": [
           "Our [methodology](/methodology) values Membership Rewards at **1.7¢ per point** for an engaged-but-not-obsessive cardholder. Lifestyle credits are discounted by realistic engagement (typically 50–80% utilization for affluent households with calendar discipline; lower for households who don't track monthly resets).",
-          "**4x dining bonus.** For a household spending $400/month on restaurants ($4,800/year), the Gold earns 19,200 MR = **$326 captured value at 1.7¢**. At $600/month dining ($7,200/year), captured value is $490. This is the highest-yield earning category on the card and the structural reason Gold beats most competitors for dining-heavy households.",
-          "**4x supermarket bonus** (capped at $25,000/year). For a household spending $1,000/month on groceries ($12,000/year), the Gold earns 48,000 MR = **$816 captured value at 1.7¢**. The cap binds at $2,083/month — relevant for very high spenders. (See our dedicated piece on [the best grocery card by spending tier](/articles/best-grocery-credit-card-high-spend-households-2026) for a deeper comparison vs Blue Cash Preferred and Citi Strata Premier.)",
+          "**4x dining bonus.** For a household spending $400 per month on restaurants ($4,800/year), the Gold earns 19,200 MR = **$326 captured value at 1.7¢**. At $600 per month dining ($7,200/year), captured value is $490. This is the highest-yield earning category on the card and the structural reason Gold beats most competitors for dining-heavy households.",
+          "**4x supermarket bonus** (capped at $25,000/year). For a household spending $1,000 per month on groceries ($12,000/year), the Gold earns 48,000 MR = **$816 captured value at 1.7¢**. The cap binds at $2,083 per month — relevant for very high spenders. (See our dedicated piece on [the best grocery card by spending tier](/articles/best-grocery-credit-card-high-spend-households-2026) for a deeper comparison vs Blue Cash Preferred and Citi Strata Premier.)",
           "**$120 dining credit.** At ~70% utilization (households eat out monthly, occasionally forget the GrubHub/Goldbelly window), captures **$84 annually**. Households with high engagement capture closer to $120; low engagement closer to $40.",
           "**$84 Dunkin' credit.** For households that drink Dunkin' coffee routinely, captures at 80%+ utilization = $67. For households without nearby Dunkin' locations or who don't drink Dunkin', captures closer to zero.",
           "**$100 Resy credit** ($50 × 2). Captures at 60–90% utilization for households dining out at Resy-eligible restaurants. Realistic capture: **$60–$90**.",
           "**Hotel collection benefits.** Captures only on FHR/HC bookings via Amex Travel — most Gold holders don't book here regularly. Realistic capture for non-FHR-bookers: **$0**.",
-          "For a moderately engaged household running $400/month dining, $1,000/month groceries, and capturing the bulk of lifestyle credits:",
+          "For a moderately engaged household running $400 per month dining, $1,000 per month groceries, and capturing the bulk of lifestyle credits:",
           "Total realistic Year-2 captured value: **$1,848.** Net after $325 fee: **+$1,523 per year.**",
-          "For a moderate household running lower volumes ($300/month dining, $600/month groceries, partial credit utilization):",
+          "For a moderate household running lower volumes ($300 per month dining, $600 per month groceries, partial credit utilization):",
           "Total realistic Year-2 captured value: **$1,155.** Net after $325 fee: **+$830 per year.**",
           "For a casual household with low dining and grocery spend:",
           "Total realistic Year-2 captured value: **$683.** Net after $325 fee: **+$358 per year.** Still positive, but margin is tight enough that a no-fee 2% cashback card likely captures comparable after-fee value with less friction.",
@@ -815,7 +815,7 @@ export const articleBatch10To14: EditorialArticle[] = [
           "[Take the BestCardsForMe quiz](/) for a profile-specific recommendation."
         ],
         "bullets": [
-          "**Your household spends $700+/month on dining and groceries combined.** This is the threshold where the 4x earning structure produces enough captured value to clearly exceed the fee.",
+          "**Your household spends $700+ per month on dining and groceries combined.** This is the threshold where the 4x earning structure produces enough captured value to clearly exceed the fee.",
           "**You'll engage with the lifestyle credit calendar.** GrubHub/Goldbelly $10 monthly credits and Dunkin' $7 monthly credits both reset monthly with no rollover. Captured value drops sharply for households that won't track them.",
           "**You redeem Membership Rewards strategically.** Households that occasionally transfer MR to airline or hotel partners capture the 1.7¢ valuation. Households that redeem only for statement credit (0.6¢) capture meaningfully less, and the Gold's earning advantage over a no-fee 2% cashback card collapses.",
           "**You don't want the calendar burden of an Amex Platinum.** Gold's credit stack is real but lighter than Platinum's. The friction is moderate, not extreme.",
@@ -829,7 +829,7 @@ export const articleBatch10To14: EditorialArticle[] = [
           "The Gold at $325 is *not* the right pick when:"
         ],
         "bullets": [
-          "**Your household spends under $500/month on dining and groceries combined.** At this volume, captured value gets thin and a no-fee or lower-fee alternative likely produces more after-fee value.",
+          "**Your household spends under $500 per month on dining and groceries combined.** At this volume, captured value gets thin and a no-fee or lower-fee alternative likely produces more after-fee value.",
           "**You shop at Walmart, Target, or warehouse clubs (Costco) for groceries.** Amex's \"U.S. supermarket\" definition excludes these merchants. Households whose grocery spend routes through Walmart or Target capture base 1x, not 4x — collapsing the card's structural advantage.",
           "**You won't track the dining and Dunkin' credit resets.** A $204 stated monthly credit stack drops to $80 of captured value for households that forget about it. The fee becomes harder to justify.",
           "**You don't transfer MR points strategically.** Households that redeem only via statement credit at 0.6¢ effectively use the Gold like a 2.4% dining/grocery card — usable, but a Blue Cash Preferred at $95 likely captures more after-fee value.",
@@ -844,7 +844,7 @@ export const articleBatch10To14: EditorialArticle[] = [
           "For an engaged household (described above): realistic Year-2 captured value $1,848, net positive **+$1,523 per year**. Strong return for a $325 fee.",
           "For a moderate household: realistic Year-2 captured value $1,155, net positive **+$830 per year**. Comfortable return.",
           "For a casual household: realistic Year-2 captured value $683, net positive **+$358 per year**. Marginal return; the Blue Cash Preferred at $95 likely captures more after-fee value at this engagement level.",
-          "The single biggest variable: dining + grocery volume combined. The Gold pays for itself comfortably above $700/month combined. Below $500/month, the card is the wrong fit."
+          "The single biggest variable: dining + grocery volume combined. The Gold pays for itself comfortably above $700 per month combined. Below $500 per month, the card is the wrong fit."
         ]
       },
       {
@@ -865,13 +865,13 @@ export const articleBatch10To14: EditorialArticle[] = [
               "**Amex Blue Cash Preferred**",
               "$95",
               "Lower-volume grocery households",
-              "Wins below $500/month grocery; loses above $700/month"
+              "Wins below $500 per month grocery; loses above $700 per month"
             ],
             [
               "**Citi Strata Premier**",
               "$95",
               "Multi-category households (groceries, gas, restaurants, travel)",
-              "Wins on uncapped grocery for very high spenders ($3,000+/month grocery alone); broader bonus categories"
+              "Wins on uncapped grocery for very high spenders ($3,000+ per month grocery alone); broader bonus categories"
             ],
             [
               "**Capital One Savor**",
@@ -897,7 +897,7 @@ export const articleBatch10To14: EditorialArticle[] = [
       {
         "heading": "Bottom line",
         "body": [
-          "The **Amex Gold at $325** is one of the strongest mid-tier cards on the market for affluent households whose spending concentrates in dining and groceries. The Year-2 economics work decisively above $700/month combined dining-and-grocery spend, and the card sits comfortably between the Blue Cash Preferred (lower volumes) and the Amex Platinum (higher fee, travel focus) as a natural hold.",
+          "The **Amex Gold at $325** is one of the strongest mid-tier cards on the market for affluent households whose spending concentrates in dining and groceries. The Year-2 economics work decisively above $700 per month combined dining-and-grocery spend, and the card sits comfortably between the Blue Cash Preferred (lower volumes) and the Amex Platinum (higher fee, travel focus) as a natural hold.",
           "For households whose spending doesn't concentrate in these categories, a $95-fee alternative captures more after-fee value with less calendar burden.",
           "If you want a profile-specific recommendation matched to your actual spending, take [the BestCardsForMe quiz](/).",
           "If your math says yes, [check current terms on the issuer's site](/go/amex-gold) before applying. The credit stack and bonus categories have shifted across recent refreshes — verify which credits are currently published."
@@ -945,11 +945,11 @@ export const articleBatch10To14: EditorialArticle[] = [
     "faqs": [
       {
         "question": "Is the Amex Gold worth $325 in 2026?",
-        "answer": "For most affluent households spending $700+/month on dining and groceries combined, yes — Year-2 captured value typically clears the fee comfortably. For households with lower dining or grocery spend, or who won't engage with the credit calendar, the answer is more nuanced and a $95-fee alternative may be the better hold."
+        "answer": "For most affluent households spending $700+ per month on dining and groceries combined, yes — Year-2 captured value typically clears the fee comfortably. For households with lower dining or grocery spend, or who won't engage with the credit calendar, the answer is more nuanced and a $95-fee alternative may be the better hold."
       },
       {
         "question": "What's the cap on Amex Gold's 4x supermarket rate?",
-        "answer": "The 4x Membership Rewards rate at U.S. supermarkets caps at $25,000 in annual purchases. Spending above the cap reverts to 1x base. The cap binds at roughly $2,083/month — relevant only for very high grocery spenders."
+        "answer": "The 4x Membership Rewards rate at U.S. supermarkets caps at $25,000 in annual purchases. Spending above the cap reverts to 1x base. The cap binds at roughly $2,083 per month — relevant only for very high grocery spenders."
       },
       {
         "question": "Does Amex Gold's 4x rate include Walmart, Target, or Costco?",
@@ -957,7 +957,7 @@ export const articleBatch10To14: EditorialArticle[] = [
       },
       {
         "question": "Is Amex Gold better than Blue Cash Preferred for groceries?",
-        "answer": "Above $700/month grocery spend, Amex Gold captures more value despite the higher fee. Below $500/month, Blue Cash Preferred wins via its 6% rate on the first $6,000/year. Between $500 and $700, the answer depends on whether you prefer points (transferable, higher ceiling) or cash back (simpler)."
+        "answer": "Above $700 per month grocery spend, Amex Gold captures more value despite the higher fee. Below $500 per month, Blue Cash Preferred wins via its 6% rate on the first $6,000/year. Between $500 and $700, the answer depends on whether you prefer points (transferable, higher ceiling) or cash back (simpler)."
       },
       {
         "question": "How much are Membership Rewards points worth?",
@@ -969,7 +969,7 @@ export const articleBatch10To14: EditorialArticle[] = [
       },
       {
         "question": "What lifestyle credits does Amex Gold include?",
-        "answer": "Currently a $120 GrubHub/Goldbelly/Cheesecake Factory/Five Guys/Wine.com credit ($10/month), an $84 Dunkin' credit ($7/month), and a $100 Resy credit ($50 twice annually). Verify the current participating partners and amounts on Amex's site as the credit stack has shifted across recent refreshes."
+        "answer": "Currently a $120 GrubHub/Goldbelly/Cheesecake Factory/Five Guys/Wine.com credit ($10 per month), an $84 Dunkin' credit ($7 per month), and a $100 Resy credit ($50 twice annually). Verify the current participating partners and amounts on Amex's site as the credit stack has shifted across recent refreshes."
       },
       {
         "question": "Does Amex Gold include lounge access?",
@@ -996,7 +996,7 @@ export const articleBatch10To14: EditorialArticle[] = [
     "eyebrow": "Dining Card Comparison",
     "title": "Best Credit Card for Dining and Restaurants in 2026",
     "metaDescription": "A MoneyFactor comparison of the best credit cards for dining and restaurants in 2026, including Amex Gold, Sapphire Preferred, Sapphire Reserve, and cash-back alternatives.",
-    "dek": "For most affluent households spending $300+/month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
+    "dek": "For most affluent households spending $300+ per month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
     "category": "Dining and grocery cards",
     "updatedAt": "2026-04-27",
     "reviewedBy": "Tim, founder and editor of BestCardsForMe",
@@ -1032,7 +1032,7 @@ export const articleBatch10To14: EditorialArticle[] = [
       {
         "heading": "Quick answer",
         "body": [
-          "For most affluent households spending $300+/month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
+          "For most affluent households spending $300+ per month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
           "This piece walks the comparisons that matter and segments recommendations by household profile."
         ]
       },
@@ -1100,7 +1100,7 @@ export const articleBatch10To14: EditorialArticle[] = [
         "heading": "Why Amex Gold dominates per-dollar dining capture",
         "body": [
           "Three factors drive Gold's leading position for dining-heavy households:",
-          "The $325 fee, however, must be cleared. For a household spending $300/month ($3,600/year) on dining alone, captured value is $245 — below the fee on dining alone. Gold's case requires either higher dining volume or capturing the card's grocery 4x and lifestyle credit stack as well. (See our [Amex Gold deep-dive](/cards/amex-gold) for full Year-2 math.)"
+          "The $325 fee, however, must be cleared. For a household spending $300 per month ($3,600/year) on dining alone, captured value is $245 — below the fee on dining alone. Gold's case requires either higher dining volume or capturing the card's grocery 4x and lifestyle credit stack as well. (See our [Amex Gold deep-dive](/cards/amex-gold) for full Year-2 math.)"
         ],
         "bullets": [
           "**The 4x rate is uncapped on dining.** Unlike the supermarket rate (capped at $25,000/year), the dining bonus has no annual ceiling. Households spending $10,000+ at restaurants annually capture proportionally more.",
@@ -1113,7 +1113,7 @@ export const articleBatch10To14: EditorialArticle[] = [
         "body": [],
         "subsections": [
           {
-            "heading": "Tier 1: $200–$400/month dining ($2,400–$4,800/year)",
+            "heading": "Tier 1: $200–$400 per month dining ($2,400–$4,800/year)",
             "body": [
               "Single professional or couple who dines out moderately.",
               "**Tier 1 winner for dining alone:** Sapphire Preferred at $95 — modest captured value on dining, but no fee penalty and broader travel benefits. **Amex Gold becomes the right pick only when grocery spending also concentrates in 4x territory** or lifestyle credits capture cleanly."
@@ -1126,7 +1126,7 @@ export const articleBatch10To14: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Tier 2: $400–$700/month dining ($4,800–$8,400/year)",
+            "heading": "Tier 2: $400–$700 per month dining ($4,800–$8,400/year)",
             "body": [
               "Affluent household that eats out routinely — multiple meals out per week.",
               "**Tier 2 winner on dining alone:** Sapphire Preferred or Citi Strata Premier. Amex Gold pulls ahead when the grocery 4x and lifestyle credits also capture — typical realistic Year-2 net for an engaged Gold household at this dining tier is $500–$900 above fee, factoring in groceries."
@@ -1139,7 +1139,7 @@ export const articleBatch10To14: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Tier 3: $700+/month dining ($8,400+/year)",
+            "heading": "Tier 3: $700+ per month dining ($8,400+/year)",
             "body": [
               "Frequent diner; routinely entertains; high-volume restaurant spending.",
               "**Tier 3 winner on dining alone:** Surprisingly, Sapphire Preferred at $95 nearly matches Amex Gold on dining-only capture, while Gold pulls clearly ahead once grocery and lifestyle credits factor in. **For dining-only optimization, Preferred wins.** For combined dining + grocery + travel optimization, Gold dominates."
@@ -1169,7 +1169,7 @@ export const articleBatch10To14: EditorialArticle[] = [
           "[Take the BestCardsForMe quiz](/) for a profile-specific recommendation."
         ],
         "bullets": [
-          "**Your household spends $300+/month at restaurants** AND $500+/month on groceries. The combined dining + grocery 4x earnings clear the fee comfortably.",
+          "**Your household spends $300+ per month at restaurants** AND $500+ per month on groceries. The combined dining + grocery 4x earnings clear the fee comfortably.",
           "**You'll engage with the lifestyle credit stack.** GrubHub, Dunkin', and Resy credits add captured value when used; nothing when forgotten.",
           "**You redeem MR strategically.** Households that transfer MR to airline and hotel partners (a few times a year on intentional trips) capture the 1.7¢ valuation.",
           "**You eat at restaurants in the Resy network routinely.** The $100 Resy credit captures cleanly for users of the Resy app.",
@@ -1184,7 +1184,7 @@ export const articleBatch10To14: EditorialArticle[] = [
             "heading": "Choose Sapphire Preferred over Amex Gold when",
             "body": [],
             "bullets": [
-              "Your dining is moderate ($300–$500/month) and you also travel multiple times a year",
+              "Your dining is moderate ($300–$500 per month) and you also travel multiple times a year",
               "You prefer the lower fee tier and don't need Gold's lifestyle credits",
               "You're committed to the Chase ecosystem (Sapphire family, multiple Chase cards)",
               "You want to start with a $95 card and potentially upgrade to Reserve later"
@@ -1204,7 +1204,7 @@ export const articleBatch10To14: EditorialArticle[] = [
             "body": [],
             "bullets": [
               "Your spending spans many bonus categories (groceries, gas, travel, restaurants, streaming) without concentrating heavily in any one",
-              "You spend $3,000+/month on groceries and need uncapped supermarket earning",
+              "You spend $3,000+ per month on groceries and need uncapped supermarket earning",
               "You're happy with ThankYou Points' transfer partner network"
             ]
           },
@@ -1298,7 +1298,7 @@ export const articleBatch10To14: EditorialArticle[] = [
       },
       {
         "question": "Does Amex Gold include any restaurant-related credits?",
-        "answer": "Yes — currently a $120 dining credit ($10/month at GrubHub, Goldbelly, Cheesecake Factory, Five Guys, Wine.com), an $84 Dunkin' credit ($7/month), and a $100 Resy credit ($50 twice annually). Captured value depends on engagement; lifestyle-credit utilization typically lands at 50–80% for affluent households."
+        "answer": "Yes — currently a $120 dining credit ($10 per month at GrubHub, Goldbelly, Cheesecake Factory, Five Guys, Wine.com), an $84 Dunkin' credit ($7 per month), and a $100 Resy credit ($50 twice annually). Captured value depends on engagement; lifestyle-credit utilization typically lands at 50–80% for affluent households."
       },
       {
         "question": "Should I hold both Amex Gold and Sapphire Preferred?",
@@ -1436,7 +1436,7 @@ export const articleBatch10To14: EditorialArticle[] = [
             "heading": "Spending allocation",
             "body": [],
             "bullets": [
-              "$4,000 dining ($333/month)",
+              "$4,000 dining ($333 per month)",
               "$1,500 online groceries (eligible Chase merchants)",
               "$600 streaming (multiple services)",
               "$4,000 travel (mix of direct and Chase Travel)",
@@ -1478,7 +1478,7 @@ export const articleBatch10To14: EditorialArticle[] = [
           "The Sapphire Preferred wins when bonus-category spending dominates:"
         ],
         "bullets": [
-          "**Households spending $700+/month on dining** capture meaningful additional value from the 3x rate. At $1,000/month dining, the Preferred earns 36,000 UR/year on dining alone = $576 captured value — vs $336 on Venture's 2x flat.",
+          "**Households spending $700+ per month on dining** capture meaningful additional value from the 3x rate. At $1,000 per month dining, the Preferred earns 36,000 UR/year on dining alone = $576 captured value — vs $336 on Venture's 2x flat.",
           "**Households who book travel through Chase Travel.** The 5x rate on Chase Travel direct bookings produces high-tier captured value for households that route flights and hotels through the portal.",
           "**Households who use UR transfer partners.** Hyatt, United, and Southwest are three of the highest-value transfer partners in the industry. Capital One miles do not transfer to Hyatt or United. For households with specific Hyatt or United redemption goals, Preferred wins on transfer-partner value alone.",
           "**Streaming-heavy and online-grocery-heavy households.** The 3x rate on these specific bonus categories adds captured value Venture cannot match."

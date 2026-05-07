@@ -6,7 +6,7 @@ export const articleBatch20To24: EditorialArticle[] = [
     "eyebrow": "Gas Card Comparison",
     "title": "Best Credit Card for Gas in 2026",
     "metaDescription": "A MoneyFactor honest-math guide to the best credit cards for gas in 2026, including gas spend tiers, caps, no-fee options, and realistic captured value.",
-    "dek": "For most U.S. households, the best gas credit card in 2026 is the **Citi Custom Cash** at $0 annual fee — it earns 5% cash back on the top spending category each cycle (capped at $500 monthly spend, ~$25 max cash back per month). For households where gas isn't always the top category, the **Wells Fargo Autograph** ($0) earns 3x flat on gas with no caps. For higher-volume drivers running $400+/month in fuel, the **PenFed Platinum Rewards Visa** ($0) earns 5x on gas at all stations — the strongest standalone gas earning rate among major cards. For households who want gas earning bundled with broader travel rewards, the **Citi Strata Premier** ($95) earns 3x on gas with no cap and access to ThankYou Points transfer partners.",
+    "dek": "For most U.S. households, the best gas credit card in 2026 is the **Citi Custom Cash** at $0 annual fee — it earns 5% cash back on the top spending category each cycle (capped at $500 monthly spend, ~$25 max cash back per month). For households where gas isn't always the top category, the **Wells Fargo Autograph** ($0) earns 3x flat on gas with no caps. For higher-volume drivers running $400+ per month in fuel, the **PenFed Platinum Rewards Visa** ($0) earns 5x on gas at all stations — the strongest standalone gas earning rate among major cards. For households who want gas earning bundled with broader travel rewards, the **Citi Strata Premier** ($95) earns 3x on gas with no cap and access to ThankYou Points transfer partners.",
     "category": "Gas credit cards",
     "updatedAt": "2026-04-27",
     "reviewedBy": "Tim, founder and editor of BestCardsForMe",
@@ -42,7 +42,7 @@ export const articleBatch20To24: EditorialArticle[] = [
       {
         "heading": "Quick answer",
         "body": [
-          "For most U.S. households, the best gas credit card in 2026 is the **Citi Custom Cash** at $0 annual fee — it earns 5% cash back on the top spending category each cycle (capped at $500 monthly spend, ~$25 max cash back per month). For households where gas isn't always the top category, the **Wells Fargo Autograph** ($0) earns 3x flat on gas with no caps. For higher-volume drivers running $400+/month in fuel, the **PenFed Platinum Rewards Visa** ($0) earns 5x on gas at all stations — the strongest standalone gas earning rate among major cards. For households who want gas earning bundled with broader travel rewards, the **Citi Strata Premier** ($95) earns 3x on gas with no cap and access to ThankYou Points transfer partners.",
+          "For most U.S. households, the best gas credit card in 2026 is the **Citi Custom Cash** at $0 annual fee — it earns 5% cash back on the top spending category each cycle (capped at $500 monthly spend, ~$25 max cash back per month). For households where gas isn't always the top category, the **Wells Fargo Autograph** ($0) earns 3x flat on gas with no caps. For higher-volume drivers running $400+ per month in fuel, the **PenFed Platinum Rewards Visa** ($0) earns 5x on gas at all stations — the strongest standalone gas earning rate among major cards. For households who want gas earning bundled with broader travel rewards, the **Citi Strata Premier** ($95) earns 3x on gas with no cap and access to ThankYou Points transfer partners.",
           "Below, the comparisons that matter."
         ]
       },
@@ -55,7 +55,7 @@ export const articleBatch20To24: EditorialArticle[] = [
         "bullets": [
           "**Station-specific exclusions.** Some \"5% on gas\" promotions exclude warehouse club gas (Costco, Sam's Club) and gas purchases combined with grocery items. Always verify per-card terms.",
           "**Quarterly rotating categories.** Cards like Chase Freedom Flex and Discover It Cash Back rotate 5% categories quarterly — sometimes including gas, sometimes not. Captured value depends on activation discipline.",
-          "**Spending caps.** Even cards with strong stated rates often cap the bonus. Citi Custom Cash caps at $500/month; Chase Freedom Flex's quarterly bonus typically caps at $1,500 per quarter.",
+          "**Spending caps.** Even cards with strong stated rates often cap the bonus. Citi Custom Cash caps at $500 per month; Chase Freedom Flex's quarterly bonus typically caps at $1,500 per quarter.",
           "**EV households.** As more households switch to EVs, traditional gas-card optimization matters less. EV charging at home is typically not a card-bonus category; charging on the road earns at base rates on most cards."
         ]
       },
@@ -82,7 +82,7 @@ export const articleBatch20To24: EditorialArticle[] = [
               "**Citi Custom Cash**",
               "$0",
               "5% on top spending category",
-              "$500/month spend cap (top category)",
+              "$500 per month spend cap (top category)",
               "Earns 5% only when gas is your top category"
             ],
             [
@@ -135,7 +135,7 @@ export const articleBatch20To24: EditorialArticle[] = [
         "body": [],
         "subsections": [
           {
-            "heading": "Tier 1: $150–$250/month gas spend ($1,800–$3,000/year)",
+            "heading": "Tier 1: $150–$250 per month gas spend ($1,800–$3,000/year)",
             "body": [
               "Typical for households with one driver or short commutes.",
               "**Tier 1 winner:** Citi Custom Cash or PenFed Platinum Rewards. Both deliver ~$90 in captured value at no fee. Pick Custom Cash if you don't want PenFed membership; pick PenFed if you do."
@@ -148,7 +148,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Tier 2: $300–$450/month gas spend ($3,600–$5,400/year)",
+            "heading": "Tier 2: $300–$450 per month gas spend ($3,600–$5,400/year)",
             "body": [
               "Higher-volume household — multi-driver or longer commutes.",
               "**Tier 2 winner:** Citi Custom Cash if gas stays your top category, PenFed otherwise. For households who can predict gas as their dominant category every month, the Custom Cash 5% rate captures the most value."
@@ -161,7 +161,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Tier 3: $500+/month gas spend ($6,000+/year)",
+            "heading": "Tier 3: $500+ per month gas spend ($6,000+/year)",
             "body": [
               "Heavy driver — multi-vehicle households, long-distance commuters, road-trip families.",
               "**Tier 3 winner:** PenFed Platinum Rewards (5x uncapped) or Citi Strata Premier (3x uncapped + bundled categories), depending on whether you want a single dedicated gas card or a multi-category travel card."
@@ -182,8 +182,8 @@ export const articleBatch20To24: EditorialArticle[] = [
           "For households with these characteristics, the captured-value advantage of a 3–5x rate over a flat 1–2x card is meaningful — typically $150–$300 per year in additional rewards."
         ],
         "bullets": [
-          "**You spend $200+/month on gas reliably**, year-round.",
-          "**You drive multiple vehicles** in the household, putting gas spend in the $400+/month range.",
+          "**You spend $200+ per month on gas reliably**, year-round.",
+          "**You drive multiple vehicles** in the household, putting gas spend in the $400+ per month range.",
           "**You prefer a no-fee setup** with a single card optimized for one bonus category.",
           "**You're already managing a multi-card stack** and adding a $0 dedicated gas card produces marginal captured-value improvement without complexity."
         ]
@@ -195,7 +195,7 @@ export const articleBatch20To24: EditorialArticle[] = [
           "[Take the BestCardsForMe quiz](/) for a profile-specific recommendation."
         ],
         "bullets": [
-          "**Your gas spend is under $150/month.** The captured-value uplift of a bonus rate is too small to bother.",
+          "**Your gas spend is under $150 per month.** The captured-value uplift of a bonus rate is too small to bother.",
           "**You drive an EV and charge primarily at home.** Home electricity isn't a card-bonus category on most cards. EV-driving households should optimize around their other major spending categories instead.",
           "**You'd rather hold one all-purpose card.** A 2x flat card (Capital One Venture, Citi Double Cash) captures decent value across all categories with zero category management.",
           "**You already have a multi-category card** like the Citi Strata Premier or Wells Fargo Autograph that includes gas as one of several bonus categories — the dedicated gas card is redundant."
@@ -211,7 +211,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Best Overall Pick — Citi Custom Cash",
             "body": [
               "**Annual fee:** $0",
-              "For households where gas is consistently the top spending category each month, Citi Custom Cash earns 5% cash back on the first $500 of monthly spend in your top category. At $300–$500/month gas spend, this captures $180–$300 in annual cash back at no fee.",
+              "For households where gas is consistently the top spending category each month, Citi Custom Cash earns 5% cash back on the first $500 of monthly spend in your top category. At $300–$500 per month gas spend, this captures $180–$300 in annual cash back at no fee.",
               "**Best for:** Households who can predict gas as their dominant card category each month.",
               "**Trigger:** Choose Custom Cash when your monthly gas spend is between $200 and $500 and you don't want category management complexity.",
               "Verify current issuer terms for Citi Custom Cash before applying; rewards rates, caps, and eligibility rules can change."
@@ -221,7 +221,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Best for High-Volume Drivers — PenFed Platinum Rewards Visa",
             "body": [
               "**Annual fee:** $0",
-              "PenFed's 5x rate on gas stations has no cap — making it the strongest dedicated gas card for households running $500+/month through fuel. Requires PenFed credit union membership (open to most U.S. households).",
+              "PenFed's 5x rate on gas stations has no cap — making it the strongest dedicated gas card for households running $500+ per month through fuel. Requires PenFed credit union membership (open to most U.S. households).",
               "**Best for:** Multi-vehicle households or long-distance commuters with high gas volume.",
               "**Trigger:** Choose PenFed when your monthly gas spend exceeds $500 and you're willing to join PenFed credit union.",
               "Verify current issuer terms for PenFed Platinum Rewards Visa before applying; rewards rates, caps, and eligibility rules can change."
@@ -446,19 +446,19 @@ export const articleBatch20To24: EditorialArticle[] = [
         "body": [],
         "subsections": [
           {
-            "heading": "Profile 1: Amazon-heavy household ($200+/month at Amazon)",
+            "heading": "Profile 1: Amazon-heavy household ($200+ per month at Amazon)",
             "body": [
               "For households doing a meaningful share of household purchasing through Amazon — toilet paper, household goods, Whole Foods groceries, gifts, electronics — the Amazon Prime Rewards Visa is structurally the right card.",
               "**Profile 1 winner:** Amazon Prime Rewards Visa for steady Amazon volume, Citi Custom Cash for households who consolidate spending in one category."
             ],
             "bullets": [
               "**Amazon Prime Rewards Visa (5% Amazon, 2% restaurants/gas/drugstores):** $200/mo × 12 × 5% = $120/year on Amazon alone. Add Whole Foods purchases at 5%, captured value can easily reach $200–$400/year for active Amazon households. Requires Prime membership ($139/year), which most Amazon-heavy households already pay.",
-              "**Citi Custom Cash:** If Amazon (or a broader online retail category) is your top monthly category, 5% on the first $500/month = up to $300/year. Comparable to Amazon Prime Rewards at the same volume.",
+              "**Citi Custom Cash:** If Amazon (or a broader online retail category) is your top monthly category, 5% on the first $500 per month = up to $300/year. Comparable to Amazon Prime Rewards at the same volume.",
               "**Chase Freedom Flex / Discover It:** When Amazon appears in the rotating 5% list (typically once per year), captures up to $75 per quarter on $1,500 of spending. Outside those quarters, drops to base rate."
             ]
           },
           {
-            "heading": "Profile 2: Multi-retailer online shopper ($500+/month across many sites)",
+            "heading": "Profile 2: Multi-retailer online shopper ($500+ per month across many sites)",
             "body": [
               "Households spending across Amazon, direct-to-consumer brands, online retailers, and various e-commerce platforms benefit from broader earning structures.",
               "**Profile 2 winner:** Capital One Venture Rewards for simplicity and consistent capture; Citi Custom Cash for households who can predict online retail as dominant category."
@@ -476,8 +476,8 @@ export const articleBatch20To24: EditorialArticle[] = [
               "**Profile 3 winner:** Whichever co-branded card matches your retailer of choice. These cards are narrowly useful but capture decisively for committed shoppers."
             ],
             "bullets": [
-              "**Capital One Walmart Rewards:** 5% Walmart.com + 2% Walmart in-store. For households spending $300+/month at Walmart.com, captures $180+/year at no fee.",
-              "**Target REDcard:** 5% at Target (online and in-store), free shipping on Target.com. For households spending $200+/month at Target, captures $120+/year.",
+              "**Capital One Walmart Rewards:** 5% Walmart.com + 2% Walmart in-store. For households spending $300+ per month at Walmart.com, captures $180+/year at no fee.",
+              "**Target REDcard:** 5% at Target (online and in-store), free shipping on Target.com. For households spending $200+ per month at Target, captures $120+/year.",
               "**Sam's Club Mastercard:** For Sam's Club shoppers, 5% on gas + bonus rates on Sam's Club purchases."
             ]
           }
@@ -486,8 +486,8 @@ export const articleBatch20To24: EditorialArticle[] = [
       {
         "heading": "Comparison: dedicated retail card vs flexible-points card",
         "body": [
-          "For Amazon-heavy households spending $300+/month, the Amazon Prime Rewards Visa captures more than any flexible-points card on Amazon spending alone. But the dedicated retail card has limits — it earns 1% (or 2% on some categories) outside Amazon. A flexible-points card like Sapphire Preferred or Venture Rewards captures less on Amazon but more across the rest of your household spending.",
-          "Worked example: a household spending $2,400/year at Amazon ($200/month) and $30,000/year on other spending.",
+          "For Amazon-heavy households spending $300+ per month, the Amazon Prime Rewards Visa captures more than any flexible-points card on Amazon spending alone. But the dedicated retail card has limits — it earns 1% (or 2% on some categories) outside Amazon. A flexible-points card like Sapphire Preferred or Venture Rewards captures less on Amazon but more across the rest of your household spending.",
+          "Worked example: a household spending $2,400/year at Amazon ($200 per month) and $30,000/year on other spending.",
           "For most households, Sapphire Preferred or Venture Rewards captures more total household value than Amazon Prime Visa unless Amazon is a very dominant share of spending. For Amazon-extreme households (40%+ of card spending at Amazon), the dedicated Amazon card wins.",
           "A common stack: **Amazon Prime Visa for Amazon, plus a flexible-points card for everything else.** Combined fee: $0 (Amazon Prime Visa is free with Prime). The pair captures the Amazon 5% bonus while preserving full earning across other spending."
         ],
@@ -502,7 +502,7 @@ export const articleBatch20To24: EditorialArticle[] = [
           "Worth holding when:"
         ],
         "bullets": [
-          "**You spend $200+/month at one specific online retailer** (Amazon, Walmart, Target).",
+          "**You spend $200+ per month at one specific online retailer** (Amazon, Walmart, Target).",
           "**You're already paying for the relevant membership** (Amazon Prime, Sam's Club, etc.) — so the card's eligibility doesn't add new annual cost.",
           "**You want a low-friction setup** — co-branded retail cards are typically $0 fee with simple bonus structures.",
           "**You're building a multi-card stack** and a specialized card fills a specific gap (Amazon spending) that other cards capture poorly."
@@ -530,9 +530,9 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Best Overall Pick — Amazon Prime Rewards Visa",
             "body": [
               "**Annual fee:** $0 (requires Prime membership)",
-              "For households spending $150+/month at Amazon (a very low bar for affluent Prime members), Prime Rewards Visa's 5% earning at Amazon and Whole Foods is unbeatable on a per-dollar basis. The Prime membership cost is already sunk for most Amazon-heavy households.",
+              "For households spending $150+ per month at Amazon (a very low bar for affluent Prime members), Prime Rewards Visa's 5% earning at Amazon and Whole Foods is unbeatable on a per-dollar basis. The Prime membership cost is already sunk for most Amazon-heavy households.",
               "**Best for:** Households doing meaningful Amazon volume with active Prime membership.",
-              "**Trigger:** Choose Amazon Prime Rewards Visa when Amazon is a consistent ($150+/month) part of your household spending and you already have Prime.",
+              "**Trigger:** Choose Amazon Prime Rewards Visa when Amazon is a consistent ($150+ per month) part of your household spending and you already have Prime.",
               "Verify current issuer terms for Amazon Prime Rewards Visa before applying; rewards rates, caps, and eligibility rules can change."
             ]
           },
@@ -550,7 +550,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Best for Single-Category Maximizers — Citi Custom Cash",
             "body": [
               "**Annual fee:** $0",
-              "For households who can predict online retail as their top monthly category, Custom Cash's 5% rate on the first $500/month produces up to $300/year in cash back at no fee. The card auto-detects your top category and applies the bonus.",
+              "For households who can predict online retail as their top monthly category, Custom Cash's 5% rate on the first $500 per month produces up to $300/year in cash back at no fee. The card auto-detects your top category and applies the bonus.",
               "**Best for:** Households with concentrated online spending (especially during seasonal periods like holiday shopping).",
               "**Trigger:** Choose Custom Cash when online retail consistently exceeds your other monthly spending categories.",
               "Verify current issuer terms for Citi Custom Cash before applying; rewards rates, caps, and eligibility rules can change."
@@ -1097,7 +1097,7 @@ export const articleBatch20To24: EditorialArticle[] = [
               "**Profile 4 winner:** Custom Cash for households with one consistent dominant category. Cash+ for households with two co-dominant categories."
             ],
             "bullets": [
-              "**Citi Custom Cash (5% on top category, $500/month cap):** Up to **$300/year** in the top category.",
+              "**Citi Custom Cash (5% on top category, $500 per month cap):** Up to **$300/year** in the top category.",
               "**U.S. Bank Cash+ Visa (5% on 2 chosen categories):** $1,500 × 5% × 2 categories = **$150 each quarter**, $600/year max."
             ]
           },
@@ -1181,9 +1181,9 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Best Low / No Fee Specialty Option — Bilt Mastercard",
             "body": [
               "**Annual fee:** $0",
-              "For renters, Bilt is the only card that earns rewards on rent payments through Bilt's payment system without fees. Households paying $1,500+/month rent capture meaningful rewards on a category no other card touches.",
+              "For renters, Bilt is the only card that earns rewards on rent payments through Bilt's payment system without fees. Households paying $1,500+ per month rent capture meaningful rewards on a category no other card touches.",
               "**Best for:** Renters who want to earn rewards on their largest fixed monthly expense.",
-              "**Trigger:** Choose Bilt when you rent rather than own and pay $1,500+/month in rent.",
+              "**Trigger:** Choose Bilt when you rent rather than own and pay $1,500+ per month in rent.",
               "[Read the full review →](/cards/bilt-mastercard) · [Check current terms →](/go/bilt-mastercard)",
               "*Recommendations reflect BestCardsForMe's editorial methodology applied to $0-fee profiles. For a profile-specific recommendation, [take the BestCardsForMe quiz](/).*"
             ]
@@ -1339,7 +1339,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Amex Gold — $325",
             "body": [
               "The right step up for households whose dining and grocery spending dominates. Earns 4x MR on dining worldwide and U.S. supermarkets ($25k cap). Includes lifestyle credits (dining, Dunkin', Resy) that effectively reduce the fee for engaged users. Transfers MR to a strong international airline network (ANA, Singapore, Cathay, Air France/KLM).",
-              "The $325 fee is higher than most beginner cards, but for households running $700+/month in dining + groceries, captured value typically exceeds $1,000/year — comfortably above the fee. Beginners with concentrated spending in those categories often skip the $95 tier and start at Gold. [Read the full Amex Gold review →](/cards/amex-gold)"
+              "The $325 fee is higher than most beginner cards, but for households running $700+ per month in dining + groceries, captured value typically exceeds $1,000/year — comfortably above the fee. Beginners with concentrated spending in those categories often skip the $95 tier and start at Gold. [Read the full Amex Gold review →](/cards/amex-gold)"
             ]
           },
           {
@@ -1451,7 +1451,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Best for Travel Maximizers — Amex Gold (Step-Up)",
             "body": [
               "**Annual fee:** $325",
-              "For dining-heavy and grocery-heavy beginner households, Amex Gold's 4x MR rate captures more per dollar than most $95-tier cards. The higher fee earns out comfortably for households spending $700+/month in those categories combined. Builds toward the Amex Platinum upgrade path if travel patterns develop.",
+              "For dining-heavy and grocery-heavy beginner households, Amex Gold's 4x MR rate captures more per dollar than most $95-tier cards. The higher fee earns out comfortably for households spending $700+ per month in those categories combined. Builds toward the Amex Platinum upgrade path if travel patterns develop.",
               "**Best for:** Beginner households whose spending concentrates in dining and groceries and who want strongest per-dollar earning.",
               "**Trigger:** Choose Amex Gold when your monthly dining + grocery spend exceeds $700 and you're committed to engaging with the lifestyle credit calendar.",
               "[Read the full review →](/cards/amex-gold) · [Check current terms →](/go/amex-gold)"

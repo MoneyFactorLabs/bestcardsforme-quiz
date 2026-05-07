@@ -123,7 +123,7 @@ export const articleBatch15To19: EditorialArticle[] = [
       {
         "heading": "Marriott Bonvoy Brilliant — when it wins",
         "body": [
-          "The Brilliant's flagship benefit is the annual 85,000-point free night certificate. At our 0.7¢ Bonvoy valuation, the certificate captures roughly $595 — covering nearly the entire $650 annual fee on its own when redeemed strategically at a high-rate property. The card also grants Marriott Platinum Elite status (with $25,000 spending or automatic at issuance — verify), a $300 dining credit ($25/month), 25 elite night credits annually toward Titanium or Ambassador status, and 6x earning at Marriott.",
+          "The Brilliant's flagship benefit is the annual 85,000-point free night certificate. At our 0.7¢ Bonvoy valuation, the certificate captures roughly $595 — covering nearly the entire $650 annual fee on its own when redeemed strategically at a high-rate property. The card also grants Marriott Platinum Elite status (with $25,000 spending or automatic at issuance — verify), a $300 dining credit ($25 per month), 25 elite night credits annually toward Titanium or Ambassador status, and 6x earning at Marriott.",
           "Marriott has the largest global footprint of any major hotel chain, making the Brilliant particularly strong for international travelers. The breadth includes Marriott, Sheraton, Westin, Le Méridien, Renaissance, St. Regis, Ritz-Carlton, W, JW Marriott, Courtyard, Residence Inn, and many more.",
           "For a Marriott household staying 8+ nights a year and using the free night certificate at a Category 6+ property, realistic Year-2 captured value clears the fee by $850–$1,450 per [our deep-dive Brilliant review](/cards/marriott-bonvoy-brilliant). For 1–4 stays a year, the Bonvoy Bevy at $250 is usually a better hold.",
           "**Best for:** Households staying at Marriott 2+ times a year and able to use the 85k-point certificate strategically at premium properties."
@@ -975,7 +975,7 @@ export const articleBatch15To19: EditorialArticle[] = [
           "The $200k+ framework isn't about finding a card; it's about building a stack."
         ],
         "bullets": [
-          "**Bonus-category caps bind earlier.** A $25,000-per-year supermarket cap on Amex Gold is meaningful for a $1,500/month grocery household; for a $3,000/month grocery household, it caps half their spending in that category.",
+          "**Bonus-category caps bind earlier.** A $25,000-per-year supermarket cap on Amex Gold is meaningful for a $1,500 per month grocery household; for a $3,000 per month grocery household, it caps half their spending in that category.",
           "**Single-card answers leave money on the table.** A 2x flat card earning across all $120,000 of annual spending captures $1,920–$2,400 in cash-equivalent value (depending on point valuation). A two-card stack with bonus categories matched to actual spending typically captures $3,500–$5,500 — adding $1,500–$3,000 in net captured value annually.",
           "**Premium-tier cards can be justified more easily.** Annual fees of $395–$895 are smaller relative to typical $200k+ household spending volume. Captured value clears these fees comfortably for engaged households.",
           "**Lifestyle credits map better to higher-income spending patterns.** Equinox memberships, Walmart+ subscriptions, Saks shopping, FHR hotel bookings — these credits capture more value when the household already routes spending through these merchants.",
@@ -989,10 +989,10 @@ export const articleBatch15To19: EditorialArticle[] = [
           "These aren't universal; every household differs. But the structural truth is that $200k+ households route enough spending through cards that bonus-category optimization meaningfully shifts captured value."
         ],
         "bullets": [
-          "**Dining out:** $400–$1,000+/month",
-          "**Groceries:** $1,000–$3,000+/month",
+          "**Dining out:** $400–$1,000+ per month",
+          "**Groceries:** $1,000–$3,000+ per month",
           "**Travel (flights + hotels + ground):** $5,000–$25,000+/year",
-          "**Streaming, subscriptions, entertainment:** $200–$500/month",
+          "**Streaming, subscriptions, entertainment:** $200–$500 per month",
           "**Discretionary retail and services:** $20,000–$50,000+/year",
           "**Total card-route spending:** $80,000–$150,000+/year"
         ]
@@ -1385,7 +1385,7 @@ export const articleBatch15To19: EditorialArticle[] = [
           {
             "heading": "Setup 7: Bilt Mastercard + Chase Sapphire Preferred ($95 combined fee)",
             "body": [
-              "**For:** Renters paying $1,500+/month rent who also want travel benefits.",
+              "**For:** Renters paying $1,500+ per month rent who also want travel benefits.",
               "**How it works:** Bilt Mastercard ($0 fee) earns 1x on rent paid through Bilt's payment system — uniquely, no other card lets you pay rent on Mastercard rails without fees. Bilt also earns 3x dining, 2x travel. Sapphire Preferred handles other travel and bonus-category spending.",
               "**Captured value example** (household paying $24,000/year in rent, $4,000 dining, $30,000 other):",
               "**Net after fees:** $600 - $95 = **$505 per year.** Lower than other setups, but Bilt earns rewards on rent — a category no other card touches.",
@@ -1544,7 +1544,7 @@ export const articleBatch15To19: EditorialArticle[] = [
       },
       {
         "question": "What's the best 2-card setup for renters?",
-        "answer": "Bilt Mastercard ($0) + Chase Sapphire Preferred ($95). Bilt is the only card that earns rewards on rent through Bilt's payment system without fees. For renters paying $1,500+/month rent, this is the only way to earn meaningful rewards on the largest fixed expense."
+        "answer": "Bilt Mastercard ($0) + Chase Sapphire Preferred ($95). Bilt is the only card that earns rewards on rent through Bilt's payment system without fees. For renters paying $1,500+ per month rent, this is the only way to earn meaningful rewards on the largest fixed expense."
       },
       {
         "question": "Will applying for two cards hurt my credit score?",

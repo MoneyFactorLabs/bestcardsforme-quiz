@@ -370,7 +370,7 @@ export const articles: EditorialArticle[] = [
         ],
         bullets: [
           "Travel-locked credits captured: **+$900 to +$1,100**",
-          "Centurion Lounge access at roughly $50/visit x 12 visits/year: **+$600**",
+          "Centurion Lounge access at roughly $50 per visit x 12 visits/year: **+$600**",
           "Lifestyle credits at 60-70% utilization: **+$700 to +$900**",
           "5x earning advantage on $20,000 of flight/prepaid hotel spending at 1.7 cents MR: **+$680**",
           "Total realistic Year-2 captured value: **$2,880 to $3,280.** Subtract the $895 fee. Net positive: **$1,985 to $2,385 per year.**",
@@ -475,11 +475,11 @@ export const articles: EditorialArticle[] = [
     comparisonMetrics: [
       {
         label: "Low-spend winner",
-        value: "Blue Cash Preferred around $500/month grocery spend",
+        value: "Blue Cash Preferred around $500 per month grocery spend",
       },
       {
         label: "Family-spend winner",
-        value: "Amex Gold around $1,500/month grocery spend",
+        value: "Amex Gold around $1,500 per month grocery spend",
       },
       {
         label: "Very high-spend answer",
@@ -517,7 +517,7 @@ export const articles: EditorialArticle[] = [
         heading: "Why competitor reviews get this wrong",
         body: [
           "Most major-publisher reviews of best grocery credit cards do one of two things. They pick Amex Gold and stop, because Gold earns the highest raw multiplier. Or they pick Blue Cash Preferred and stop, because 6% is the highest stated cash-back rate at U.S. supermarkets. Both pieces of analysis are right at one specific spending level. Both are wrong at others.",
-          "The trap is that grocery spending varies wildly by household. A single professional buying lunch ingredients might spend $300/month. A family of four with a Whole Foods habit and weekend cooking traditions can spend $2,500/month or more. The card that wins at one tier loses at the next, because the Blue Cash Preferred $6,000 cap binds at exactly **$500/month** and the Amex Gold $25,000 cap binds at **$2,083/month.**",
+          "The trap is that grocery spending varies wildly by household. A single professional buying lunch ingredients might spend $300 per month. A family of four with a Whole Foods habit and weekend cooking traditions can spend $2,500 per month or more. The card that wins at one tier loses at the next, because the Blue Cash Preferred $6,000 cap binds at exactly **$500 per month** and the Amex Gold $25,000 cap binds at **$2,083 per month.**",
           "The second trap is point valuation. Some reviews use aspirational valuations for Amex Membership Rewards or Citi ThankYou Points. Others implicitly value points at 1.0 cent, equivalent to cash. We use **1.7 cents per Membership Rewards point** and **1.5 cents per ThankYou Point** for an engaged-but-not-obsessive cardholder, documented in [our methodology](/methodology).",
           "The third trap is ignoring the lifestyle credit stack on Amex Gold. Gold's stated $325 fee is offset by roughly $200 in dining credits if a household uses them, making the effective fee closer to $200-$225 for engaged users and the full $325 for users who do not track them. We discount these credits by realistic utilization, not face value.",
         ],
@@ -529,7 +529,7 @@ export const articles: EditorialArticle[] = [
         ],
         subsections: [
           {
-            heading: "Tier 1: $500/month grocery spending ($6,000/year)",
+            heading: "Tier 1: $500 per month grocery spending ($6,000/year)",
             body: [
               "This is the tier where an affluent single, or a couple eating out frequently, lands. It is below the Blue Cash Preferred $6,000 cap.",
             ],
@@ -564,11 +564,11 @@ export const articles: EditorialArticle[] = [
             },
             bullets: [
               "**Tier 1 winner: Blue Cash Preferred.** At this volume, the 6% rate captures the most cash back and the $95 fee is the smallest hurdle.",
-              "Amex Gold can capture more total value if its lifestyle credits land, but for grocery alone at $500/month, Blue Cash Preferred is the clean answer.",
+              "Amex Gold can capture more total value if its lifestyle credits land, but for grocery alone at $500 per month, Blue Cash Preferred is the clean answer.",
             ],
           },
           {
-            heading: "Tier 2: $1,500/month grocery spending ($18,000/year)",
+            heading: "Tier 2: $1,500 per month grocery spending ($18,000/year)",
             body: [
               "This is where most affluent families with active kitchens land: well above the Blue Cash Preferred cap, but below the Amex Gold cap.",
             ],
@@ -602,13 +602,13 @@ export const articles: EditorialArticle[] = [
               ],
             },
             bullets: [
-              "**Tier 2 winner: Amex Gold, decisively.** Once grocery spending crosses about $700/month, the Blue Cash Preferred 1% post-cap rate kills its advantage.",
+              "**Tier 2 winner: Amex Gold, decisively.** Once grocery spending crosses about $700 per month, the Blue Cash Preferred 1% post-cap rate kills its advantage.",
               "Gold's 4x rate continues up to $25,000, generating substantially more captured value even at our conservative 1.7 cent MR valuation.",
               "For most affluent families, this is the relevant tier and Gold is the right card.",
             ],
           },
           {
-            heading: "Tier 3: $3,000+/month grocery spending ($36,000+/year)",
+            heading: "Tier 3: $3,000+ per month grocery spending ($36,000+/year)",
             body: [
               "This is where Amex Gold's $25,000 cap starts to bind, and the no-cap cards become more interesting.",
             ],
@@ -655,11 +655,11 @@ export const articles: EditorialArticle[] = [
           "Quick reference, by household profile:",
         ],
         bullets: [
-          "**Single or couple with $300-$700/month grocery, dining-light:** Blue Cash Preferred. The 6% rate within the $6,000 cap is hard to beat and the $95 fee is small.",
-          "**Single or couple with $300-$700/month grocery, dining-heavy:** Amex Gold. The 4x dining bonus on top of the 4x grocery shifts the math even at lower grocery volumes.",
-          "**Family of three or four, $1,000-$2,500/month grocery:** Amex Gold, almost without exception. The math is decisive at this tier and the lifestyle credits add value when households engage.",
-          "**High-volume household, $2,500-$4,000/month grocery, prefers simplicity:** Citi Strata Premier. No cap, no superstore-style exclusion, $95 fee, and a useful point currency.",
-          "**High-volume household, $2,500+/month grocery, dining-heavy and travels frequently:** Amex Gold remains the right answer despite the cap because dining and earning multipliers offset the post-cap drop.",
+          "**Single or couple with $300-$700 per month grocery, dining-light:** Blue Cash Preferred. The 6% rate within the $6,000 cap is hard to beat and the $95 fee is small.",
+          "**Single or couple with $300-$700 per month grocery, dining-heavy:** Amex Gold. The 4x dining bonus on top of the 4x grocery shifts the math even at lower grocery volumes.",
+          "**Family of three or four, $1,000-$2,500 per month grocery:** Amex Gold, almost without exception. The math is decisive at this tier and the lifestyle credits add value when households engage.",
+          "**High-volume household, $2,500-$4,000 per month grocery, prefers simplicity:** Citi Strata Premier. No cap, no superstore-style exclusion, $95 fee, and a useful point currency.",
+          "**High-volume household, $2,500+ per month grocery, dining-heavy and travels frequently:** Amex Gold remains the right answer despite the cap because dining and earning multipliers offset the post-cap drop.",
           "**Household that prefers cash back over points and shops Walmart or Target heavily:** Blue Cash Preferred is often cleaner than Savor because Savor's superstore exclusion can materially reduce captured value.",
           "**Household with no grocery interest in points, prefers cash, and does not want fees over $100:** Blue Cash Preferred is the default no-fluff answer.",
         ],
@@ -678,9 +678,9 @@ export const articles: EditorialArticle[] = [
       {
         heading: "Bottom line",
         body: [
-          "The best grocery credit card for an affluent household is not a single answer. At low spending volumes (**$300-$700/month**), the Blue Cash Preferred 6% rate within its cap is the hardest to beat.",
-          "At family-typical volumes (**$1,000-$2,500/month**), the Amex Gold 4x Membership Rewards rate wins decisively, especially for households that also eat out frequently.",
-          "At very high volumes (**$3,000+/month**), Amex Gold still narrowly leads, but Citi Strata Premier becomes a credible alternative on simplicity and lower fee.",
+          "The best grocery credit card for an affluent household is not a single answer. At low spending volumes (**$300-$700 per month**), the Blue Cash Preferred 6% rate within its cap is the hardest to beat.",
+          "At family-typical volumes (**$1,000-$2,500 per month**), the Amex Gold 4x Membership Rewards rate wins decisively, especially for households that also eat out frequently.",
+          "At very high volumes (**$3,000+ per month**), Amex Gold still narrowly leads, but Citi Strata Premier becomes a credible alternative on simplicity and lower fee.",
           "We do not recommend by reflex. We recommend by household. If you want a profile-specific answer that uses your actual grocery spend, dining habits, travel pattern, and household size, take [the BestCardsForMe quiz](/).",
           "If your math points to one of these cards, [check current terms on the issuer site](/go/amex-gold) before applying. Caps, fees, exclusions, and earning rates change without notice - verify what is published when you apply, not when this article was written.",
         ],
@@ -715,12 +715,12 @@ export const articles: EditorialArticle[] = [
       {
         question: "What is the best credit card for groceries in 2026?",
         answer:
-          "It depends on monthly spend. Below about $700/month, the Amex Blue Cash Preferred wins on a 6% cash back rate within its $6,000 cap. Between $700/month and about $2,000/month, the Amex Gold dominates on its 4x Membership Rewards multiplier. Above $2,000/month, Amex Gold still wins narrowly while Citi Strata Premier becomes a strong simpler alternative thanks to no cap and a lower $95 fee.",
+          "It depends on monthly spend. Below about $700 per month, the Amex Blue Cash Preferred wins on a 6% cash back rate within its $6,000 cap. Between $700 per month and about $2,000 per month, the Amex Gold dominates on its 4x Membership Rewards multiplier. Above $2,000 per month, Amex Gold still wins narrowly while Citi Strata Premier becomes a strong simpler alternative thanks to no cap and a lower $95 fee.",
       },
       {
         question: "Does Amex Gold's 4x supermarket cap apply per year?",
         answer:
-          "Yes. The 4x Membership Rewards rate applies to the first $25,000 in U.S. supermarket purchases each calendar year. Spending above that threshold reverts to 1x. For grocery spending under about $2,083/month, the cap never binds.",
+          "Yes. The 4x Membership Rewards rate applies to the first $25,000 in U.S. supermarket purchases each calendar year. Spending above that threshold reverts to 1x. For grocery spending under about $2,083 per month, the cap never binds.",
       },
       {
         question: "Does Blue Cash Preferred earn 6% on warehouse clubs like Costco?",
@@ -735,7 +735,7 @@ export const articles: EditorialArticle[] = [
       {
         question: "Should I get Amex Gold or Blue Cash Preferred?",
         answer:
-          "If your household spends under $700/month on groceries, Blue Cash Preferred captures more cash back at a lower fee. If you spend $700/month or more, [Amex Gold](/cards/amex-gold) captures more value via its 4x multiplier, and its dining 4x adds additional value if you eat out regularly.",
+          "If your household spends under $700 per month on groceries, Blue Cash Preferred captures more cash back at a lower fee. If you spend $700 per month or more, [Amex Gold](/cards/amex-gold) captures more value via its 4x multiplier, and its dining 4x adds additional value if you eat out regularly.",
       },
       {
         question: "What is the best no-cap grocery card?",
@@ -745,7 +745,7 @@ export const articles: EditorialArticle[] = [
       {
         question: "How much can a household earn from groceries in a year?",
         answer:
-          "A household spending $1,500/month, or $18,000/year, on groceries can realistically capture $700-$1,300 per year in rewards depending on card choice and how points are valued. A $3,000/month household can capture $1,500-$2,000. These figures use conservative point valuations and exclude welcome bonuses.",
+          "A household spending $1,500 per month, or $18,000/year, on groceries can realistically capture $700-$1,300 per year in rewards depending on card choice and how points are valued. A $3,000 per month household can capture $1,500-$2,000. These figures use conservative point valuations and exclude welcome bonuses.",
       },
       {
         question: "Are point valuations realistic at 1.7 cents per Membership Rewards point?",
@@ -755,7 +755,7 @@ export const articles: EditorialArticle[] = [
       {
         question: "Should I worry about the Blue Cash Preferred $6,000 cap?",
         answer:
-          "Yes, if you spend more than $500/month on groceries. The 1% post-cap rate is the same as a basic low-rate card, which means Blue Cash Preferred value compresses for high-spending households. Above about $700/month, switching to Amex Gold or a no-cap points card can capture meaningfully more.",
+          "Yes, if you spend more than $500 per month on groceries. The 1% post-cap rate is the same as a basic low-rate card, which means Blue Cash Preferred value compresses for high-spending households. Above about $700 per month, switching to Amex Gold or a no-cap points card can capture meaningfully more.",
       },
     ],
     disclosureCta: {
@@ -886,7 +886,7 @@ export const articles: EditorialArticle[] = [
           "The Sapphire Preferred is *not* the obvious winner anymore — for some households — when any of the following are true:"
         ],
         bullets: [
-          "**Your spending is grocery-heavy at standalone supermarkets.** The Sapphire Preferred excludes Walmart, Target, and warehouse clubs from its 3x online grocery bonus. The Citi Strata Premier earns 3x at all supermarkets (in person and online), with no caps. For a $1,500/month grocery household, Strata Premier captures roughly $810/year on grocery alone — vs. Sapphire Preferred's much smaller online-only capture. This is the single biggest competitive shift in the $95 tier in 2026.",
+          "**Your spending is grocery-heavy at standalone supermarkets.** The Sapphire Preferred excludes Walmart, Target, and warehouse clubs from its 3x online grocery bonus. The Citi Strata Premier earns 3x at all supermarkets (in person and online), with no caps. For a $1,500 per month grocery household, Strata Premier captures roughly $810/year on grocery alone — vs. Sapphire Preferred's much smaller online-only capture. This is the single biggest competitive shift in the $95 tier in 2026.",
           "**You travel six or more times a year.** At this volume, the [Capital One Venture X at $395](/cards/capital-one-venture-x) becomes a serious upgrade consideration. Its $300 travel credit alone covers most of the fee delta vs Sapphire Preferred, and its Priority Pass access plus 10,000-mile anniversary bonus add real value. A household at six trips/year often does better at the $395 tier than holding two $95 cards or staying at a single $95 card.",
           "**You don't transfer points to airline/hotel partners.** If your typical UR redemption is via Chase Pay Yourself Back (1.0¢) or Chase Travel portal (~1.25–1.5¢ per point), your effective UR valuation collapses below 1.6¢. At those redemption habits, a no-fee 2% cashback card captures more *after-fee* net value than the Sapphire Preferred. Chase UR points only carry their premium when transferred strategically.",
           "**You're already deep in another ecosystem.** Households committed to the Amex Membership Rewards ecosystem (via Gold or Platinum) typically don't add Sapphire Preferred — the redemption complexity of two transferable currencies isn't worth it for most users. Pick one transferable-points stack and go deep.",
@@ -1204,13 +1204,13 @@ export const articles: EditorialArticle[] = [
           "2x earning on $40,000 of spending at 1.4¢ per mile: **+$1,120**",
           "10,000-mile anniversary bonus at 1.4¢: **+$140**",
           "$300 travel credit captured at ~85% of face value: **+$255**",
-          "Lounge access value (cardholder only) at $30/visit × 8 visits: **+$240**",
+          "Lounge access value (cardholder only) at $30 per visit × 8 visits: **+$240**",
           "$120 Global Entry credit amortized over four years: **+$30**",
           "Travel protections (probabilistic): **+$0 to +$200**",
           "2x earning at 1.4¢: **+$560**",
           "Anniversary bonus: **+$140**",
           "$300 travel credit captured at ~70% (only sometimes used): **+$210**",
-          "Lounge access at $30/visit × 2 visits: **+$60**",
+          "Lounge access at $30 per visit × 2 visits: **+$60**",
           "Global Entry amortized: **+$30**"
         ]
       },
@@ -1400,7 +1400,7 @@ export const articles: EditorialArticle[] = [
             [
               "Statement credit stack",
               "$400 Hilton resort credit; $200 airline incidentals; $189 CLEAR+; $200 Hilton resort experiences credit (verify current breakdown)",
-              "$300 dining credit ($25/month); $189 CLEAR+; varies by recent refresh"
+              "$300 dining credit at $25 per month; $189 CLEAR+; varies by recent refresh"
             ],
             [
               "Lounge access",
@@ -1450,7 +1450,7 @@ export const articles: EditorialArticle[] = [
         bullets: [
           "**Marriott Platinum Elite status value.** Free breakfast at most Marriott brands, room upgrades subject to availability, late checkout, 50% bonus on points earned at properties. Realistic captured value: **$250–$500** for households that stay at Marriott six or more times a year; less for occasional Marriott guests.",
           "**Annual free night certificate up to 85,000 Bonvoy points.** This is the Brilliant's flagship recurring benefit. At ~$0.70 valuation per Bonvoy point, the certificate is worth approximately **$595 in captured value** when used at a Category 6 (or equivalent) property where the standard rate aligns with 85,000 points. For households that can use it strategically at a high-value property, the certificate alone covers nearly the entire annual fee.",
-          "**$300 dining credit ($25/month).** Captures cleanly for households that dine out monthly at qualifying restaurants. Monthly resets create some breakage; we capture this credit at **70–90% of face value** = roughly $210–$270.",
+          "**$300 dining credit ($25 per month).** Captures cleanly for households that dine out monthly at qualifying restaurants. Monthly resets create some breakage; we capture this credit at **70–90% of face value** = roughly $210–$270.",
           "**$189 CLEAR+ credit** captures at face value if used.",
           "**6x Marriott earning** on Marriott stays. For a household running $5,000/year through Marriott bookings, that's 30,000 Bonvoy points = $210 captured value at 0.7¢ valuation.",
           "**25 elite night credits annually**, helping households reach higher status thresholds.",
@@ -1479,7 +1479,7 @@ export const articles: EditorialArticle[] = [
         bullets: [
           "**You stay at Marriott brands two or more times a year, ideally at properties that hit the 85k-point free-night certificate ceiling.** That certificate is the single largest benefit on the card; if it routinely sits unused or you can't use it at properties where it shines, the math weakens significantly.",
           "**Marriott Platinum status compounds value across many stays.** Marriott's footprint is larger than Hilton's globally, so for international travelers Marriott's coverage often wins.",
-          "**You eat out monthly at qualifying restaurants.** The $300 dining credit ($25/month) only captures for households that have routine restaurant spending. Households that don't dine out lose this credit.",
+          "**You eat out monthly at qualifying restaurants.** The $300 dining credit ($25 per month) only captures for households that have routine restaurant spending. Households that don't dine out lose this credit.",
           "**Marriott Bonvoy is your existing points currency** and you redeem strategically at high-value properties."
         ]
       },
@@ -1947,7 +1947,7 @@ export const articles: EditorialArticle[] = [
           "**$200 airline incidental credit.** Same constraint as the Amex Platinum's airline credit: pick one airline annually, covers baggage and other incidentals only — not airfare. Captures cleanly for households that fly the chosen airline regularly.",
           "**$189 CLEAR+ credit.** Captures at face value if you use CLEAR.",
           "**14x Hilton earning.** For a household running $3,000/year through Hilton stays on the card, that's 42,000 Hilton points = **$210 captured value** at our 0.5¢ valuation.",
-          "**Priority Pass Select.** Captures roughly $30/visit × actual lounge visits. For an engaged traveler with 6+ visits/year, $180–$240 captured.",
+          "**Priority Pass Select.** Captures roughly $30 per visit × actual lounge visits. For an engaged traveler with 6+ visits/year, $180–$240 captured.",
           "**Travel protections.** Pay out probabilistically — most years zero, occasional years several hundred.",
           "For an engaged Hilton-loyal household (6+ Hilton nights/year, books one resort stay, uses CLEAR, uses airline credit, redeems free weekend night strategically): realistic Year-2 captured value lands at **$1,400–$2,100.** Against the $550 fee, **net positive $850–$1,550 per year.**",
           "For an occasional Hilton guest (1–2 stays/year, captures resort credit only sometimes): realistic Year-2 captured value falls to **$500–$900.** Against the $550 fee, the math is **negative to barely break-even** — and a flexible-points card likely captures more.",
@@ -2004,7 +2004,7 @@ export const articles: EditorialArticle[] = [
           "$200 airline credit captured: **+$150 to +$200**",
           "$189 CLEAR+ credit: **+$189**",
           "14x earning on $3,000 Hilton spending at 0.5¢: **+$210**",
-          "Priority Pass at $30/visit × 6 visits: **+$180**",
+          "Priority Pass at $30 per visit × 6 visits: **+$180**",
           "Diamond status value across 3 stays: **+$200 to +$350**",
           "$400 resort credit (only sometimes used): **+$200**",
           "Free weekend night at a Category 5-6 property: **+$200 to +$350**",
@@ -2223,7 +2223,7 @@ export const articles: EditorialArticle[] = [
         bullets: [
           "**Marriott Platinum Elite status** — granted with $25,000 of annual spending on the card (some current offers grant Platinum automatically; verify at application).",
           "**Annual free night certificate** — redeemable at any Marriott property requiring up to 85,000 Bonvoy points per night.",
-          "**$300 dining credit** — $25/month, applied at qualifying restaurants worldwide.",
+          "**$300 dining credit** — $25 per month, applied at qualifying restaurants worldwide.",
           "**$189 CLEAR+ credit** — captures at face value if used.",
           "**$100 property credit** on Marriott stays of two or more nights at participating Ritz-Carlton or St. Regis properties when booked through certain channels (verify current terms).",
           "**6x Marriott Bonvoy points** per dollar at Marriott properties.",
@@ -2240,11 +2240,11 @@ export const articles: EditorialArticle[] = [
           "Our [methodology](/methodology) applies four adjustments to issuer-stated value: an unused-credit discount, a friction discount, a partner-locked discount, and conservative point valuations. For Marriott Bonvoy points, we use **0.7¢ per point** for an engaged-but-not-obsessive cardholder.",
           "**The 85,000-point annual free night certificate.** This is the Brilliant's structural cornerstone. At our 0.7¢ valuation, the certificate is worth approximately **$595 in captured value** when used at a property where the standard rate aligns with 85,000 points. Strategic redemption at higher-tier properties where standard pricing exceeds 85k points yields 1.0¢+ per point and pushes the certificate's captured value above $700–$850. For households that can plan one strategic redemption a year, the certificate alone covers nearly the entire fee. For households that don't redeem the certificate or use it at low-cost properties where it's effectively wasted, captured value collapses to $200–$300.",
           "**Marriott Platinum Elite status value.** Platinum benefits include free breakfast at most Marriott brands (with regional variations), room upgrades subject to availability, 4 PM late checkout, 50% bonus on points earned at stays, and access to executive lounges at certain brands. Realistic captured value depends entirely on Marriott stay volume:",
-          "**$300 dining credit ($25/month).** Captures at high utilization (80–95%) for households that dine out routinely at qualifying restaurants. Monthly resets create modest breakage. Realistic captured value: **$210–$285 annually** for engaged users; under $150 for users who don't routinely dine out and forget the monthly reset.",
+          "**$300 dining credit ($25 per month).** Captures at high utilization (80–95%) for households that dine out routinely at qualifying restaurants. Monthly resets create modest breakage. Realistic captured value: **$210–$285 annually** for engaged users; under $150 for users who don't routinely dine out and forget the monthly reset.",
           "**$189 CLEAR+ credit.** Captures at face value if you use CLEAR.",
           "**$100 property credit on premium stays.** Useful only for households that book 2+-night stays at participating Ritz-Carlton or St. Regis properties. Captures at face value when used; zero otherwise.",
           "**6x Marriott earning.** For a household running $4,000/year through Marriott bookings, that's 24,000 Bonvoy points = **$168 captured value** at 0.7¢.",
-          "**Priority Pass Select.** $30/visit × actual lounge usage. For 6+ visits, $180+ captured.",
+          "**Priority Pass Select.** $30 per visit × actual lounge usage. For 6+ visits, $180+ captured.",
           "**Travel protections.** Probabilistic; most households extract zero, occasional households several hundred.",
           "For an engaged Marriott-loyal household (8+ Marriott nights/year, redeems free night strategically, dines monthly, uses CLEAR): realistic Year-2 captured value lands at **$1,500–$2,100.** Against the $650 fee, **net positive $850–$1,450 per year.**",
           "For an occasional Marriott guest (1–2 stays/year, captures dining credit modestly): realistic Year-2 captured value falls to **$700–$1,100.** Net positive $50–$450 — marginal, and easily beaten by lower-fee alternatives.",
@@ -2266,7 +2266,7 @@ export const articles: EditorialArticle[] = [
           "**You stay at Marriott brands two or more times a year**, ideally six or more nights total.",
           "**Marriott Platinum Elite compounds value across your stays.** Marriott has the largest global footprint of any major hotel chain, so for international travelers and frequent business travelers Marriott's coverage often justifies the loyalty.",
           "**You can use the 85k-point certificate strategically.** A household traveling once a year to a property where 85k points buys a $500+ standard rate captures the certificate's full value. A household using the certificate at a 35k-point property captures less than half its value.",
-          "**You eat out monthly at qualifying restaurants.** The $25/month dining credit only captures for households with routine restaurant spending.",
+          "**You eat out monthly at qualifying restaurants.** The $25 per month dining credit only captures for households with routine restaurant spending.",
           "**Marriott Bonvoy is your existing or aspirational points currency.** Households building toward big Marriott redemptions — especially leisure trips at Ritz-Carlton or St. Regis properties — get outsized value.",
           "**You'd benefit from elite night credits.** The 25 annual elite night credits help households reach Marriott Titanium or Ambassador status faster, especially for travelers close to those thresholds."
         ]
@@ -2280,7 +2280,7 @@ export const articles: EditorialArticle[] = [
           "**You stay at Marriott properties one or fewer times a year.** Status doesn't compound at this volume; the free night certificate captures lower value when redeemed at low-tier properties.",
           "**You stay primarily at Hilton, Hyatt, IHG, or boutique hotels.** Co-branded cards reward brand commitment. Without Marriott routing, the captured value collapses regardless of the card's stated benefits.",
           "**You won't use the 85k-point certificate strategically.** This certificate is the single biggest benefit on the card. A household that lets it expire — or redeems it at a 30k-point property — captures less than half its theoretical value, and the math suffers.",
-          "**You don't dine out monthly.** The $25/month dining credit is the second-largest recurring credit on the card. Households that forget monthly resets lose $200+ in stated value.",
+          "**You don't dine out monthly.** The $25 per month dining credit is the second-largest recurring credit on the card. Households that forget monthly resets lose $200+ in stated value.",
           "**You already have a similar premium-tier card.** Households with an Amex Platinum already get Priority Pass and CLEAR+ credits — Brilliant adds limited marginal value if you're not specifically Marriott-loyal.",
           "**You won't track the credit calendar.** Brilliant's monthly dining credit and other partner-specific credits require routine engagement. Calendar-averse households lose meaningful captured value."
         ]
@@ -2303,7 +2303,7 @@ export const articles: EditorialArticle[] = [
           "$189 CLEAR+ credit captured: **+$189**",
           "$100 property credit (one Ritz/St. Regis stay): **+$100**",
           "6x earning on $4,000 Marriott spending: **+$168**",
-          "Priority Pass at $30/visit × 6 visits: **+$180**",
+          "Priority Pass at $30 per visit × 6 visits: **+$180**",
           "Status value across 4 stays: **+$150 to +$300**",
           "85k certificate at moderate property: **+$300 to +$500**",
           "Dining credit at 60% utilization: **+$180**",
