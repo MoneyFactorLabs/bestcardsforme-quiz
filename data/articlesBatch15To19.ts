@@ -393,7 +393,7 @@ export const articleBatch15To19: EditorialArticle[] = [
           {
             "heading": "United — Explorer for most, Quest for premium",
             "body": [
-              "**United Explorer** is the best-value United card for most households flying United 2–4 times per year. **United Quest at $250** is the right step up for households booking 4+ trips and willing to use the United purchase credit. **United Club Infinite** is the premium-tier choice for frequent flyers who use United Club lounges."
+              "[United Explorer](/cards/united-explorer) is the best-value United card for most households flying United 2–4 times per year. **United Quest at $250** is the right step up for households booking 4+ trips and willing to use the United purchase credit. **United Club Infinite** is the premium-tier choice for frequent flyers who use United Club lounges."
             ],
             "table": {
               "columns": [
@@ -462,7 +462,7 @@ export const articleBatch15To19: EditorialArticle[] = [
           {
             "heading": "Southwest — Priority is the standard",
             "body": [
-              "**Southwest Rapid Rewards Priority** is the strongest standalone Southwest card. The bigger play, however, is the Southwest **Companion Pass** — earned by accumulating 135,000 qualifying points in a calendar year. The Companion Pass lets a designated person fly free (paying only taxes/fees) on any Southwest flight for the rest of that year and the next full year. For households that earn the Pass, the captured value is substantial — often $1,500+ per year in companion travel."
+              "[Southwest Rapid Rewards Priority](/cards/southwest-rapid-rewards-priority) is the strongest standalone Southwest card. The bigger play, however, is the Southwest **Companion Pass** — earned by accumulating 135,000 qualifying points in a calendar year. The Companion Pass lets a designated person fly free (paying only taxes/fees) on any Southwest flight for the rest of that year and the next full year. For households that earn the Pass, the captured value is substantial — often $1,500+ per year in companion travel."
             ],
             "table": {
               "columns": [
@@ -544,9 +544,9 @@ export const articleBatch15To19: EditorialArticle[] = [
         ],
         "bullets": [
           "**Delta:** SkyMiles Reserve ($650) for premium / SkyMiles Platinum ($350) for mid-tier / SkyMiles Gold ($150) for entry",
-          "**United:** United Club Infinite ($695) for premium / United Quest ($250) for mid-tier / United Explorer ($0–$150) for entry",
+          "**United:** United Club Infinite ($695) for premium / United Quest ($250) for mid-tier / [United Explorer](/cards/united-explorer) ($0–$150) for entry",
           "**American:** Executive ($595) for premium / Platinum Select ($99) for mid-tier",
-          "**Southwest:** Rapid Rewards Priority ($149) plus Companion Pass strategy"
+          "**Southwest:** [Rapid Rewards Priority](/cards/southwest-rapid-rewards-priority) ($149) plus Companion Pass strategy"
         ]
       }
     ],
@@ -819,6 +819,7 @@ export const articleBatch15To19: EditorialArticle[] = [
         "bullets": [
           "**Cards with foreign transaction fees.** The 2.7–3% fee compounds across every international purchase. On a $5,000 trip, that's $135–$150 in pure waste. Avoid Citi Premier (verify; many Citi cards include FTFs), most basic cash-back cards, and any card not explicitly marketed for travel.",
           "**Cards with secondary-only rental car coverage abroad.** International rental rules vary by country; primary coverage protects you without involving your personal auto policy. Sapphire Preferred and Venture X include primary; many cards don't.",
+          "**Airline cards used as all-purpose international cards.** A co-branded card like [United Explorer](/cards/united-explorer) can help United loyalists with checked bags and boarding, but it is not a replacement for a flexible travel card when routes, hotels, and rental cars vary by trip.",
           "**Cards earning bonuses only on U.S. merchants.** Some bonus categories (e.g., Amex Gold's 4x supermarkets) are explicitly U.S.-only. Verify before relying on bonus rates abroad."
         ]
       },
@@ -1467,8 +1468,8 @@ export const articleBatch15To19: EditorialArticle[] = [
         "bullets": [
           "**Add a no-fee Freedom Flex** to a Chase setup for 5% rotating quarterly bonuses",
           "**Add a co-branded hotel card** (Hilton Aspire, Marriott Brilliant) if hotel stays concentrate at one chain",
-          "**Add a co-branded airline card** (Delta SkyMiles Reserve, United Quest) if flights concentrate on one airline",
-          "**Add a Capital One Quicksilver** or no-fee card to capture spending categories not covered by the primary stack"
+          "**Add a co-branded airline card** (Delta SkyMiles Reserve, United Quest, or [Southwest Priority](/cards/southwest-rapid-rewards-priority)) if flights concentrate on one airline",
+          "**Add a specialty no-fee or category card** only when the gap is clear — for example, after checking the [gas-card guide](/articles/best-credit-card-for-gas-2026) or [online-shopping guide](/articles/best-credit-card-for-online-shopping-2026)."
         ]
       },
       {

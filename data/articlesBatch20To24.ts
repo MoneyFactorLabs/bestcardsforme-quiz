@@ -374,7 +374,7 @@ export const articleBatch20To24: EditorialArticle[] = [
         "bullets": [
           "**Amazon (and Whole Foods)** — typically a single-merchant bonus; only Amazon-branded cards earn elevated rates here.",
           "**Walmart.com / Target.com** — separate merchant codes from Walmart/Target physical stores; typically earn at 1x base on most cards (with exceptions like Capital One Walmart Rewards or Target REDcard).",
-          "**Online groceries** (Instacart, AmazonFresh, Peapod, etc.) — sometimes earn under \"online grocery\" bonuses on Chase Sapphire Preferred and similar cards.",
+          "**Online groceries** (Instacart, AmazonFresh, Peapod, etc.) — sometimes earn under \"online grocery\" bonuses on Chase Sapphire Preferred and similar cards; no-fee cash-back households can also compare [Blue Cash Everyday](/cards/blue-cash-everyday).",
           "**General e-commerce / direct-to-consumer brands** — typically 1x base on most cards. Some \"rotating 5%\" cards (Chase Freedom Flex, Discover It) include broad e-commerce in certain quarters.",
           "**Subscription services** — Netflix, Spotify, etc. typically code as \"streaming\" and earn under streaming-specific bonuses."
         ]
@@ -517,7 +517,7 @@ export const articleBatch20To24: EditorialArticle[] = [
         "bullets": [
           "**You shop across many retailers** without one dominant choice.",
           "**You don't want another card application** in your portfolio (each app affects credit; co-branded retail cards add little portfolio value beyond the specific retailer).",
-          "**You're already using a 2x flat card** that captures online spending at a reasonable rate without the retailer lock-in."
+          "**You're already using a 2x flat card** like [Wells Fargo Active Cash](/cards/wells-fargo-active-cash) that captures online spending at a reasonable rate without the retailer lock-in."
         ]
       },
       {
@@ -1059,7 +1059,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             "heading": "Profile 1: Simple flat-rate household",
             "body": [
               "Household running $35,000/year through their card across diverse categories. Wants no category management.",
-              "**Profile 1 winner:** Citi Double Cash or Wells Fargo Active Cash. The 2% rate exceeds Quicksilver's 1.5% by a meaningful margin. Either works; pick on issuer relationship preference."
+              "**Profile 1 winner:** Citi Double Cash or [Wells Fargo Active Cash](/cards/wells-fargo-active-cash). The 2% rate exceeds Quicksilver's 1.5% by a meaningful margin. Either works; pick on issuer relationship preference."
             ],
             "bullets": [
               "**Citi Double Cash (2%):** $35,000 × 2% = **$700/year cash back**.",
@@ -1138,6 +1138,8 @@ export const articleBatch20To24: EditorialArticle[] = [
           "**Spending is genuinely diversified** across many non-bonus categories.",
           "**You don't want lounge access, travel credits, or premium benefits.**",
           "**You're new to credit card optimization** and want a baseline before committing to fees.",
+          "**You want simple category-free cash back** but prefer Wells Fargo's flat-rate structure; compare [Wells Fargo Active Cash](/cards/wells-fargo-active-cash) before settling on a 2% card.",
+          "**You want no-fee Amex supermarket and online-retail exposure** without Blue Cash Preferred's annual fee; compare [Blue Cash Everyday](/cards/blue-cash-everyday).",
           "**You're filling a gap in a multi-card stack.** (e.g., adding Freedom Unlimited to a Sapphire setup)"
         ]
       },
@@ -1193,7 +1195,7 @@ export const articleBatch20To24: EditorialArticle[] = [
       {
         "heading": "Bottom line",
         "body": [
-          "The best no-annual-fee credit card in 2026 depends on your spending pattern. **Citi Double Cash** wins for most households on simplicity and 2% flat earning. **Wells Fargo Autograph** wins for multi-category households. **Chase Freedom Unlimited** wins for Chase ecosystem households. **Bilt Mastercard** wins for renters.",
+          "The best no-annual-fee credit card in 2026 depends on your spending pattern. **Citi Double Cash** wins for most households on simplicity and 2% flat earning. **Wells Fargo Autograph** wins for multi-category households. **Chase Freedom Unlimited** wins for Chase ecosystem households. **Bilt Mastercard** wins for renters. For category-specific no-fee decisions, compare the [gas-card guide](/articles/best-credit-card-for-gas-2026) and [online-shopping guide](/articles/best-credit-card-for-online-shopping-2026).",
           "If you want a profile-specific recommendation, take [the BestCardsForMe quiz](/)."
         ]
       },
@@ -1345,7 +1347,7 @@ export const articleBatch20To24: EditorialArticle[] = [
           {
             "heading": "Wells Fargo Autograph — $0",
             "body": [
-              "The no-fee entry option. Earns 3x on dining, travel, transit, streaming, and phone bills. No transferable-points access (cash back instead), but the $0 fee makes it risk-free for households unsure whether they want to commit to a fee-based card. Often used as a starting card before stepping up to Sapphire Preferred or Venture Rewards once travel-rewards optimization clicks."
+              "The no-fee entry option. Earns 3x on dining, travel, transit, streaming, and phone bills. No transferable-points access (cash back instead), but the $0 fee makes it risk-free for households unsure whether they want to commit to a fee-based card. If you prefer a flat 2% card over bonus categories, compare [Wells Fargo Active Cash](/cards/wells-fargo-active-cash). Often used as a starting card before stepping up to Sapphire Preferred or Venture Rewards once travel-rewards optimization clicks."
             ]
           }
         ]
@@ -1417,7 +1419,7 @@ export const articleBatch20To24: EditorialArticle[] = [
           "**Year 1:** Apply for Chase Sapphire Preferred or Capital One Venture Rewards. Use the card actively, capture the welcome bonus, learn to think about category bonuses and transfer partners.",
           "**Year 2:** Add a no-fee complement card. For Chase: Freedom Unlimited (1.5x UR pooled with Sapphire). For Capital One: Quicksilver or Savor. The pair captures broader earning with minimal added complexity.",
           "**Year 3:** Evaluate whether premium tier benefits (lounge access, $300 travel credits) match your travel pattern. Households traveling 4+ times a year typically upgrade to Sapphire Reserve or Venture X. Households below that threshold stay at the $95 tier.",
-          "**Year 4+:** Build a multi-card stack matched to your specific spending and travel pattern. Add co-branded hotel or airline cards if loyalty has developed; add a business card if applicable; add specialty cards (Bilt for rent, Amazon Prime Visa for Amazon-heavy spending).",
+          "**Year 4+:** Build a multi-card stack matched to your specific spending and travel pattern. Add co-branded hotel or airline cards if loyalty has developed — Southwest loyalists can start with [Southwest Priority](/cards/southwest-rapid-rewards-priority) — add a business card if applicable, then compare specialty categories like [gas](/articles/best-credit-card-for-gas-2026) and [online shopping](/articles/best-credit-card-for-online-shopping-2026).",
           "This progression isn't required — many households are happy at one card indefinitely — but it's the typical path for households who become engaged with credit-card optimization."
         ]
       },

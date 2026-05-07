@@ -660,7 +660,7 @@ export const articles: EditorialArticle[] = [
           "**Family of three or four, $1,000-$2,500 per month grocery:** Amex Gold, almost without exception. The math is decisive at this tier and the lifestyle credits add value when households engage.",
           "**High-volume household, $2,500-$4,000 per month grocery, prefers simplicity:** Citi Strata Premier. No cap, no superstore-style exclusion, $95 fee, and a useful point currency.",
           "**High-volume household, $2,500+ per month grocery, dining-heavy and travels frequently:** Amex Gold remains the right answer despite the cap because dining and earning multipliers offset the post-cap drop.",
-          "**Household that prefers cash back over points and shops Walmart or Target heavily:** Blue Cash Preferred is often cleaner than Savor because Savor's superstore exclusion can materially reduce captured value.",
+          "**Household that prefers cash back over points and shops Walmart or Target heavily:** Blue Cash Preferred is often cleaner than Savor because Savor's superstore exclusion can materially reduce captured value; lower-spend no-fee households should also compare [Blue Cash Everyday](/cards/blue-cash-everyday).",
           "**Household with no grocery interest in points, prefers cash, and does not want fees over $100:** Blue Cash Preferred is the default no-fluff answer.",
         ],
       },
@@ -1789,7 +1789,7 @@ export const articles: EditorialArticle[] = [
       {
         heading: "Bottom line",
         body: [
-          "The best business credit card for an LLC owner in 2026 is the one whose bonus structure matches the LLC's actual spending pattern. Chase Ink Business Preferred wins for ad-heavy and shipping-heavy service businesses. Amex Business Platinum wins for travel-heavy owners willing to engage with a premium credit stack. Amex Business Gold wins for owners whose top two spending categories map to its six-category bonus list. Capital One Spark Cash Plus wins for highly diversified spenders who want simplicity. No-fee Ink Cash and Ink Unlimited round out the lineup for modest-spend LLCs.",
+          "The best business credit card for an LLC owner in 2026 is the one whose bonus structure matches the LLC's actual spending pattern. Chase Ink Business Preferred wins for ad-heavy and shipping-heavy service businesses. Amex Business Platinum wins for travel-heavy owners willing to engage with a premium credit stack. Amex Business Gold wins for owners whose top two spending categories map to its six-category bonus list. Capital One Spark Cash Plus wins for highly diversified spenders who want simplicity. No-fee Ink Cash and Ink Unlimited round out the lineup for modest-spend LLCs. If the business has moved beyond owner-operated LLC scale, compare the broader [business-owner card strategy](/articles/best-credit-card-for-business-owners-2026).",
           "If you want a profile-specific recommendation matched to your specific LLC spending, take [the BestCardsForMe quiz](/).",
           "Once you've identified the right pick, [check current terms with the issuer](/go/ink-business-preferred) before applying. Welcome offers, fee tiers, and bonus categories change without notice."
         ]
