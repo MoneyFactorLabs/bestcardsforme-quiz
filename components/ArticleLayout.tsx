@@ -288,7 +288,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             </p>
             <p className="mt-2 text-sm font-medium leading-7 text-mid-navy/85">
               BestCardsForMe articles are built around realistic annual value, fit, issuer-term
-              caveats, and plain-English tradeoffs. Compensation may exist, but editorial judgment
+              caveats, and real-world tradeoffs. Compensation may exist, but editorial judgment
               is designed around consumer value.
             </p>
           </section>
