@@ -9,7 +9,7 @@ export const articles: EditorialArticle[] = [
     eyebrow: "Premium Travel Card Analysis",
     title: "Is Chase Sapphire Reserve Still Worth the $795 Annual Fee in 2026?",
     metaDescription:
-      "A MoneyFactor honest-math review of whether Chase Sapphire Reserve is worth its $795 annual fee in 2026, including realistic Year-2 value, downgrade math, and FAQs.",
+      "Honest-math breakdown of whether Chase Sapphire Reserve is worth the $795 fee in 2026, with realistic Year-2 value, the new credits, and downgrade math.",
     dek: "Chase markets more than $3,000 in annual benefits. The real question is how much of that value your household will actually capture after fees, friction, credits, and redemption habits.",
     category: "Premium travel cards",
     updatedAt: "2026-04-27",
