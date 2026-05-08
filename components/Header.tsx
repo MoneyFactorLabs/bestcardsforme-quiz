@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+const navLinkBase =
+  "focus-ring flex h-11 w-full items-center justify-center rounded-md border px-4 py-2 text-center text-sm font-bold leading-5 transition";
+
 export function Header() {
   return (
     <header>
@@ -17,23 +20,23 @@ export function Header() {
         <div className="flex w-full flex-col gap-3 md:w-auto md:items-end">
           <nav
             aria-label="Primary navigation"
-            className="flex flex-wrap gap-2 md:justify-end"
+            className="grid w-full grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] gap-2 md:w-[31rem] md:grid-cols-3 md:justify-end"
           >
             <Link
               href="/#quiz"
-              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 text-sm font-bold text-navy transition hover:border-[#caa42f] hover:bg-[#caa42f]"
+              className={`${navLinkBase} border-gold bg-gold text-navy hover:border-[#caa42f] hover:bg-[#caa42f]`}
             >
               Start Quiz
             </Link>
             <Link
               href="/articles"
-              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+              className={`${navLinkBase} border-blue-gray bg-white text-mid-navy hover:border-navy hover:text-navy`}
             >
               Browse Articles
             </Link>
             <Link
               href="/cards"
-              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+              className={`${navLinkBase} border-blue-gray bg-white text-mid-navy hover:border-navy hover:text-navy`}
             >
               Explore Cards
             </Link>
