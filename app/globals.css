@@ -33,3 +33,15 @@ input {
 .focus-ring {
   @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-white;
 }
+
+h1 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.eyebrow-wrap {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  line-height: 1.6;
+}

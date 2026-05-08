@@ -44,7 +44,6 @@ export default function CardsIndexPage() {
           meta: [
             { label: "Fee", value: formatAnnualFee(profile.annualFee) },
             { label: "Score", value: `${profile.moneyFactorScores.overall.toFixed(1)}/10` },
-            { label: "Status", value: profile.affiliateStatus.replace("_", " ") },
           ],
           ctaLabel: "View card profile",
         }))}

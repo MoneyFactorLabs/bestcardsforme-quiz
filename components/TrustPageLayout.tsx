@@ -65,7 +65,7 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
       <JsonLd data={buildTrustPageStructuredData(page)} />
       <section className="mx-auto w-full max-w-4xl px-4 pb-14 pt-8 sm:px-8 sm:pb-16 sm:pt-12">
         <header className="rounded-lg border border-blue-gray/70 bg-white p-6 shadow-soft sm:p-8">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">{page.eyebrow}</p>
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">{page.eyebrow}</p>
           <h1 className="mt-3 break-words text-3xl font-semibold leading-[1.15] text-navy sm:text-5xl">
             {page.title}
           </h1>

@@ -24,7 +24,7 @@ export function RecommendationCTA({
   return (
     <section className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
       <div className="bg-navy px-5 py-5 text-white sm:px-7">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">{eyebrow}</p>
+        <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.2em] text-gold">{eyebrow}</p>
         <h2 className="mt-2 text-2xl font-semibold">{productName}</h2>
       </div>
       {(annualFee || bestFor) && (

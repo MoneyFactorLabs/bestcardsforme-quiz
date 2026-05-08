@@ -33,7 +33,11 @@ export function Footer() {
           className="flex max-w-md flex-wrap gap-x-4 gap-y-2 md:justify-end md:text-right"
         >
           {links.map(([label, href]) => (
-            <Link key={href} href={href} className="font-semibold text-mid-navy transition hover:text-navy">
+            <Link
+              key={href}
+              href={href}
+              className="inline-flex min-h-11 items-center py-2 font-semibold text-mid-navy transition hover:text-navy"
+            >
               {label}
             </Link>
           ))}

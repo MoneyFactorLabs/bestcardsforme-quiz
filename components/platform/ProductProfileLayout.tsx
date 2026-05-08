@@ -72,7 +72,7 @@ export function ProductProfileLayout({
 
       <header className="mt-5 overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft">
         <div className="bg-navy px-5 py-7 text-white sm:px-8 sm:py-9">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">{eyebrow}</p>
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">{eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
             {title}
           </h1>

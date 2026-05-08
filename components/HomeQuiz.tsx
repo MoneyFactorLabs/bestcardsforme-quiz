@@ -144,7 +144,7 @@ export function HomeQuiz() {
           <div className="mb-6 overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft sm:mb-8">
             <div className="flex flex-col gap-5 bg-navy px-5 py-6 text-white sm:px-7 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
+              <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">
                 Your personalized card shortlist
               </p>
               <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight sm:text-5xl">

@@ -29,7 +29,7 @@ export function Scorecard({
       <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
       <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-start">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">{eyebrow}</p>
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.2em] text-gold">{eyebrow}</p>
           <h2 className="mt-2 text-xl font-semibold text-navy sm:text-2xl">{title}</h2>
           {summary && (
             <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/85">{summary}</p>

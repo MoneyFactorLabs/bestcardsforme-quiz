@@ -13,7 +13,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
   return (
     <section className="mx-auto grid w-full max-w-6xl gap-8 px-4 pb-12 pt-6 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:pb-20 lg:pt-10">
       <div>
-        <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-gold">
+        <p className="eyebrow-wrap mb-4 text-sm font-bold uppercase tracking-[0.24em] text-gold">
           A MoneyFactor decision engine
         </p>
         <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-navy sm:text-5xl lg:text-6xl">

@@ -30,7 +30,7 @@ function formatDate(value: string) {
 function renderPlainText(text: string, keyPrefix: string): ReactNode[] {
   const nodes: ReactNode[] = [];
   const financialPattern =
-    /([-+]?\$\d+(?:,\d{3})*(?:\s*(?:-|to)\s*[-+]?\$?\d+(?:,\d{3})*)?(?:\s*(?:per year|annually))?|\d{1,3}(?:-\d{1,3})%)/g;
+    /([-+]?\$\d+(?:,\d{3})*(?:\s*(?:-|to)\s*[-+]?\$?\d+(?:,\d{3})*)?(?:-tier)?(?:\s*(?:per year|annually))?|\d{1,3}(?:-\d{1,3})%)/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
@@ -243,7 +243,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
 
       <header className="mt-5 overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
         <div className="bg-navy px-5 py-8 text-white sm:px-8 sm:py-10">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">
             {article.eyebrow}
           </p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
