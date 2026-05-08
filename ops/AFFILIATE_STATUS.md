@@ -15,14 +15,25 @@ Notes:
 - monitor for response
 
 ## CJ Affiliate
-Status: Not yet submitted.
+Status: Publisher account active; BestCardsForMe property active.
 Notes:
-- possible next setup
-- not urgent today
+- Batch 1 advertiser applications submitted:
+  - Luxury Card — pending manual review
+  - Experian.com — pending manual review
+  - LifeLock — pending manual review
+  - SmartCredit — pending manual review
+  - Venmo Credit Card — pending manual review
+  - PayPal Cashback Mastercard — pending manual review
+- no more CJ applications today
+- wait for responses before Batch 2
+- Capital Bank not applied yet
+- banking/deposit programs held for later
+- continue monitoring CJ approvals
 - use BCFM_Affiliate_Application_Package_v2.md as the current source for CJ setup/application language
 
 ## Current affiliate rule
 Do not shotgun applications.
 Do not apply to Amex direct, Chase direct, Bankrate, or premium direct programs yet.
 Wait for stronger traffic, clicks, and/or acceptance from CardRatings/CJ.
+Continue monitoring CardRatings and CJ approvals.
 Use BCFM_Affiliate_Application_Package_v2.md as the current source of truth for affiliate positioning language.
