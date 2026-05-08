@@ -9,6 +9,11 @@
 - Qwoted active
 - Featured/HARO profile setup in progress
 
+## Active operating assets
+- BCFM_Source_Response_Library.md is the current source-response drafting library for journalist/source opportunities.
+- BCFM_Reddit_Response_Bank.md is the current no-link Reddit response bank for low-volume, non-promotional replies.
+- BCFM_Affiliate_Application_Package_v2.md is the current commercialization language package for affiliate applications and reapply prep.
+
 ## Qwoted submissions
 Submitted:
 - Domestic vs international travel credit card strategy
@@ -26,6 +31,7 @@ Submitted:
 - no promotional language
 - 1 reply every 1–2 days max
 - focus on Amex vs CSR, CSR annual fee, Venture X vs CSR, Amex Gold, balance transfers, flat-rate vs bonus-category
+- use BCFM_Reddit_Response_Bank.md as the source for draft patterns and tone
 
 ## Rule
 Authority work should be high-fit and low-volume.
