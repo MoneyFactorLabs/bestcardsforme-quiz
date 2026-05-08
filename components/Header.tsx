@@ -21,19 +21,19 @@ export function Header() {
           >
             <Link
               href="/#quiz"
-              className="focus-ring inline-flex min-h-11 items-center rounded-md bg-gold px-4 py-2 text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 text-sm font-bold text-navy transition hover:border-[#caa42f] hover:bg-[#caa42f]"
             >
               Start Quiz
             </Link>
             <Link
               href="/articles"
-              className="focus-ring inline-flex min-h-11 items-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
             >
               Browse Articles
             </Link>
             <Link
               href="/cards"
-              className="focus-ring inline-flex min-h-11 items-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
             >
               Explore Cards
             </Link>
