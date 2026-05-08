@@ -8,26 +8,32 @@ export function Header() {
         independent MoneyFactor scoring and editorial review.
       </div>
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 py-5 sm:px-8 md:flex-row md:items-center md:justify-between">
-        <div>
+        <Link href="/" className="focus-ring rounded-sm transition hover:text-mid-navy">
           <p className="text-xl font-semibold tracking-[0.02em] text-navy">BestCardsForMe</p>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid-navy/70">
             by MoneyFactor
           </p>
-        </div>
+        </Link>
         <div className="flex w-full flex-col gap-3 md:w-auto md:items-end">
           <nav
             aria-label="Primary navigation"
             className="flex flex-wrap gap-2 md:justify-end"
           >
             <Link
+              href="/#quiz"
+              className="focus-ring inline-flex min-h-11 items-center rounded-md bg-gold px-4 py-2 text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+            >
+              Start Quiz
+            </Link>
+            <Link
               href="/articles"
-              className="focus-ring rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+              className="focus-ring inline-flex min-h-11 items-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
             >
               Browse Articles
             </Link>
             <Link
               href="/cards"
-              className="focus-ring rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
+              className="focus-ring inline-flex min-h-11 items-center rounded-md border border-blue-gray bg-white px-4 py-2 text-sm font-bold text-mid-navy transition hover:border-navy hover:text-navy"
             >
               Explore Cards
             </Link>

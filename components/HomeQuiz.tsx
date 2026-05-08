@@ -105,14 +105,20 @@ export function HomeQuiz() {
       {screen === "landing" && <LandingHero onStart={handleStart} />}
 
       {screen === "quiz" && (
-        <section className="mx-auto w-full max-w-4xl px-4 pb-12 pt-6 sm:px-8 sm:pb-16 sm:pt-8">
-          <div className="mb-4 grid gap-3 rounded-lg border border-blue-gray/70 bg-white/85 p-4 shadow-sm sm:grid-cols-3">
-            {["Profile-fit ranking", "Annual-fee math", "No credit pull"].map((item) => (
-              <div key={item}>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Quiz lens</p>
-                <p className="mt-1 text-sm font-semibold text-navy">{item}</p>
-              </div>
-            ))}
+        <section
+          id="quiz"
+          className="scroll-mt-6 mx-auto w-full max-w-4xl px-4 pb-12 pt-6 sm:px-8 sm:pb-16 sm:pt-8"
+        >
+          <div className="mb-4 rounded-lg border border-blue-gray/70 bg-white/85 p-4 shadow-sm">
+            <p className="text-sm font-semibold text-navy">How the quiz thinks</p>
+            <ul className="mt-3 grid gap-2 text-sm font-semibold text-mid-navy/80 sm:grid-cols-3">
+              {["Profile-fit ranking", "Annual-fee math", "No credit pull"].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="rounded-lg border border-blue-gray/70 bg-white p-4 shadow-soft sm:p-8">
             <ProgressBar currentStep={currentQuestionIndex + 1} totalSteps={quizQuestions.length} />
