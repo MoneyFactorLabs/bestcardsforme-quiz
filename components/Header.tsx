@@ -20,7 +20,7 @@ export function Header() {
         <div className="flex w-full flex-col gap-3 md:w-auto md:items-end">
           <nav
             aria-label="Primary navigation"
-            className="grid w-full grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] gap-2 md:w-[31rem] md:grid-cols-3 md:justify-end"
+            className="grid w-full grid-cols-1 gap-2 md:w-[31rem] md:grid-cols-3 md:justify-end"
           >
             <Link
               href="/#quiz"
