@@ -43,6 +43,16 @@
 - Action: title/meta tuned toward high-income households, premium/luxury rewards cards, and $200k+ earners.
 - No article rewrite, new section, affiliate-disclosure change, new article, annual-fee page, calculator, redesign, or LeaseFactor work.
 
+## May 9, 2026 MoneyFactor.io indexing hygiene check
+- Property: https://moneyfactor.io/.
+- 7-day signal: 0 clicks, 2 impressions, average position 2.0.
+- Indexing status: 0 indexed, 1 not indexed.
+- GSC reason: Crawled - currently not indexed.
+- Sitemap status: 0 submitted sitemaps and 0 discovered pages.
+- Finding: MoneyFactor.io served the shared BestCardsForMe sitemap and robots file, so the MoneyFactor GSC property did not expose a MoneyFactor-specific sitemap URL set.
+- Action: added MoneyFactor host-specific robots and sitemap rewrites. `https://moneyfactor.io/sitemap.xml` now serves a one-URL sitemap for `https://moneyfactor.io/`, and `https://moneyfactor.io/robots.txt` points Google to that sitemap while allowing crawling.
+- No new MoneyFactor pages, LeaseFactor pages, content cluster, or design changes were made.
+
 ## Milestones
 - sitemap submitted and processed
 - 28 pages indexed
