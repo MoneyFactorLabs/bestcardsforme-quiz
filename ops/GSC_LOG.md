@@ -22,6 +22,18 @@
 - Sitewide data indicates the click was likely US/mobile, but not confirmed at page level.
 - Do not optimize the page yet; watch for repeat clicks or 100+ impressions before action.
 
+## May 9, 2026 CTR/snippet optimization brief
+- 7-day window: 1 click, 622 impressions, 0.2% CTR, avg position 12.8.
+- Last 24h: 0 clicks, 104 impressions, avg position 10.2.
+- Desktop is the weak segment: 603 desktop impressions / 0 clicks over 7 days.
+- Rankings are improving, but clicks are not; current read is SERP title/meta appeal rather than indexing or broad content quality.
+- CTR/snippet optimization patch triggered by GSC data for:
+  - /articles/is-chase-sapphire-reserve-worth-it-2026
+  - /articles/amex-platinum-vs-chase-sapphire-reserve-2026
+  - /articles/best-credit-card-for-dining-restaurants-2026
+  - /articles/hilton-aspire-vs-marriott-bonvoy-brilliant-2026
+- Do not create a dedicated Chase Sapphire Reserve annual-fee page yet; watch post-patch CTR first.
+
 ## Milestones
 - sitemap submitted and processed
 - 28 pages indexed

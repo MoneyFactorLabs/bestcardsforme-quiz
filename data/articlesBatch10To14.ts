@@ -328,8 +328,8 @@ export const articleBatch10To14: EditorialArticle[] = [
   {
     "slug": "amex-platinum-vs-chase-sapphire-reserve-2026",
     "eyebrow": "Ultra-Premium Card Comparison",
-    "title": "Amex Platinum vs Chase Sapphire Reserve (2026): Which Is Actually Worth It?",
-    "metaDescription": "Amex Platinum vs Chase Sapphire Reserve in 2026: which is better after real fee math, credits, lounges, rewards, and travel habits? The answer may surprise you.",
+    "title": "Amex Platinum vs Chase Sapphire Reserve 2026: Which Premium Card Wins?",
+    "metaDescription": "Compare Amex Platinum and Chase Sapphire Reserve for 2026 by annual fee, travel credits, lounge access, dining, rewards, and real-world value.",
     "dek": "The **Amex Platinum** and **Chase Sapphire Reserve** are both ultra-premium travel cards, but the better 2026 choice depends on how you actually travel: Amex Platinum wins for luxury travel households that use Centurion Lounges, Fine Hotels + Resorts, and Amex credits; Chase Sapphire Reserve wins for travelers who want simpler value, a flexible $300 travel credit, and Ultimate Rewards partners. Most households should choose one, not both, because the overlap is expensive and the winner changes by lounge access, booking habits, and credit-calendar tolerance.",
     "category": "Premium travel cards",
     "updatedAt": "2026-04-27",
@@ -994,8 +994,8 @@ export const articleBatch10To14: EditorialArticle[] = [
   {
     "slug": "best-credit-card-for-dining-restaurants-2026",
     "eyebrow": "Dining Card Comparison",
-    "title": "Best Credit Card for Dining and Restaurants in 2026",
-    "metaDescription": "A MoneyFactor comparison of the best credit cards for dining and restaurants in 2026, including Amex Gold, Sapphire Preferred, Sapphire Reserve, and cash-back alternatives.",
+    "title": "Best Credit Cards for Dining 2026: Amex Gold vs Chase vs Cash Back",
+    "metaDescription": "Compare the best credit cards for dining and restaurants in 2026 by rewards rate, annual fee, travel perks, cash back, and real-world value.",
     "dek": "For most affluent households spending $300+ per month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
     "category": "Dining and grocery cards",
     "updatedAt": "2026-04-27",

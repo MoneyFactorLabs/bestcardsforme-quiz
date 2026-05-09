@@ -7,9 +7,9 @@ export const articles: EditorialArticle[] = [
   {
     slug: "is-chase-sapphire-reserve-worth-it-2026",
     eyebrow: "Premium Travel Card Analysis",
-    title: "Is Chase Sapphire Reserve Still Worth the $795 Annual Fee in 2026?",
+    title: "Chase Sapphire Reserve Annual Fee 2026: Is It Still Worth It?",
     metaDescription:
-      "Honest-math breakdown of whether Chase Sapphire Reserve is worth the $795 fee in 2026, with realistic Year-2 value, the new credits, and downgrade math.",
+      "See the Chase Sapphire Reserve annual fee for 2026, what changed, which benefits matter, and when the card is worth keeping versus downgrading.",
     dek: "Chase markets more than $3,000 in annual benefits. The real question is how much of that value your household will actually capture after fees, friction, credits, and redemption habits.",
     category: "Premium travel cards",
     updatedAt: "2026-04-27",
@@ -1310,8 +1310,8 @@ export const articles: EditorialArticle[] = [
   {
     slug: "hilton-aspire-vs-marriott-bonvoy-brilliant-2026",
     eyebrow: "Luxury Hotel Card Comparison",
-    title: "Hilton Aspire vs. Marriott Bonvoy Brilliant 2026: Which Wins?",
-    metaDescription: "Hilton Aspire ($550) vs. Marriott Bonvoy Brilliant ($650) in 2026: which Amex hotel card wins on perks, points, and free nights?",
+    title: "Hilton Aspire vs Marriott Bonvoy Brilliant 2026: Which Hotel Card Wins?",
+    metaDescription: "Compare Hilton Aspire and Marriott Bonvoy Brilliant for 2026 by annual fee, hotel credits, elite status, free nights, points, and real-world value.",
     dek: "The right luxury hotel card depends less on headline perks and more on which hotel brand your household already uses enough to capture status, credits, and free-night value.",
     category: "Hotel credit cards",
     updatedAt: "2026-04-27",
