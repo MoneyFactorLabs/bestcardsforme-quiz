@@ -61,6 +61,14 @@
 - Action: added MoneyFactor host-specific robots and sitemap rewrites. `https://moneyfactor.io/sitemap.xml` now serves a one-URL sitemap for `https://moneyfactor.io/`, and `https://moneyfactor.io/robots.txt` points Google to that sitemap while allowing crawling.
 - No new MoneyFactor pages, LeaseFactor pages, content cluster, or design changes were made.
 
+## May 9, 2026 MoneyFactor.io GSC follow-up result
+- MoneyFactor.io sitemap was submitted successfully in Google Search Console.
+- Sitemap status: Success.
+- Discovered pages: 1.
+- Homepage indexing: https://moneyfactor.io/ is indexed.
+- URL Inspection: indexing request accepted into Google's priority crawl queue.
+- Cross-domain sitemap issue resolved: MoneyFactor.io now exposes its own one-URL sitemap at `https://moneyfactor.io/sitemap.xml` instead of relying on the BestCardsForMe sitemap.
+
 ## Milestones
 - sitemap submitted and processed
 - 28 pages indexed
