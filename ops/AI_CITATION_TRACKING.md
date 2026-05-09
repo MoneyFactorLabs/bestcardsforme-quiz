@@ -74,3 +74,70 @@ Production changes require repeated citation gaps and Command Center approval.
 - Repeated absence across 2+ weekly checks: review whether methodology, trust, comparison structure, or brand clarity is weak.
 - Repeated competitor citation gap: identify why competitors are being cited and whether MoneyFactor needs better source structure or authority signals.
 - Any production recommendation requires Command Center approval.
+
+## May 2026 Baseline — AI Citation / SERP Proxy Check
+
+Result:
+A true weekly AI-answer-engine citation run could not be completed from the available environment because the major AI platforms were not reliably accessible as queryable, citable surfaces.
+
+Blocked or unavailable:
+- Perplexity: Cloudflare challenge.
+- Claude: Cloudflare challenge.
+- Gemini: reachable, but no usable unauthenticated/queryable result surface.
+- Google AI Overviews / AI Mode: not machine-readable from available tools.
+- ChatGPT: current thread is context-contaminated by MoneyFactor / BestCardsForMe, so it would bias results.
+
+Valid AI Citation Score:
+N/A — zero valid AI answer-engine checks completed.
+
+Important interpretation:
+Do not treat this as 0 brand visibility. It means the AI platforms were not accessible enough to score cleanly.
+
+SERP proxy findings:
+- BestCardsForMe appears organically for Chase Sapphire Reserve $795 annual-fee intent.
+- BestCardsForMe appears organically for dining-card intent.
+- Google has crawled BCFM snippets that include MoneyFactor editorial positioning and disclosure language.
+- MoneyFactor brand prompts such as “what is MoneyFactor.io?” do not yet show strong brand recognition.
+- LeaseFactor future prompts are dominated by existing lease/math sources.
+- “Best alternatives to NerdWallet” and transparent-methodology prompts remain competitor-heavy.
+
+Competitors most often surfacing:
+
+Credit card / annual-fee prompts:
+- NerdWallet
+- Forbes Advisor
+- Bankrate
+- The Points Guy
+- WalletHub
+- Supapoints
+- LegalClarity
+- BestMoney
+
+LeaseFactor future prompts:
+- Consumer Reports
+- LeaseGuide
+- Edmunds
+- CarWhere
+- Auto Cheat Sheet
+- AutoPremo
+- Autoloanrate
+
+Calculator / value-tool prompts:
+- Wayloft
+- CCVI
+- Crunchly
+- KoKo
+- MaxPoints
+- Zurp
+- CardGenius
+
+Repeated gaps to monitor:
+- MoneyFactor brand recognition is still weak outside exact site/domain searches.
+- AI citation tracking requires logged-in browser/session access for Perplexity, Gemini, Claude, ChatGPT, and Google AI Mode.
+- LeaseFactor topics already have entrenched calculator/guide competitors.
+- BCFM is gaining organic visibility before AI citation visibility, which matches the current doctrine.
+
+Operational conclusion:
+No production changes from this baseline.
+
+Next step is a manual logged-in browser-session AI citation check using Chrome/browser agent.
