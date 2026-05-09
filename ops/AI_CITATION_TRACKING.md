@@ -141,3 +141,75 @@ Operational conclusion:
 No production changes from this baseline.
 
 Next step is a manual logged-in browser-session AI citation check using Chrome/browser agent.
+
+## May 9, 2026 AI Citation Baseline — Google + Perplexity
+
+Platforms covered:
+- Google Search regular web SERP
+- Perplexity
+
+Platforms not fully covered:
+- Google AI Mode / AI Overviews: not accessible or no AI blocks rendered
+- Gemini: login or unusable unauthenticated surface
+- ChatGPT search: skipped due to thread/context contamination
+- Claude: skipped due to login requirement
+
+Scoring:
+- 21 prompts
+- 2 platforms
+- 42 prompt-platform cells
+- Max score: 210
+- Actual score: 28
+- Baseline AI Citation Score: 28 / 210 = 13.3%
+
+Key wins:
+- BestCardsForMe appeared as the #1 Google organic result for “best credit card for high income households 2026.”
+- The Google snippet referenced the MoneyFactor strategy guide.
+- MoneyFactor.io appeared as the #1 Google organic result for “what is MoneyFactor.io.”
+- Google surfaced the BestCardsForMe “How We Review Credit Cards” page for trustworthiness intent.
+- Perplexity cited BestCardsForMe for the “credit card for someone earning over $200k” prompt.
+- Perplexity cited BestCardsForMe for the “stronger dining rewards than Amex Gold” prompt.
+- Perplexity cited MoneyFactor.io as the primary/canonical source for “what is MoneyFactor.io.”
+- Perplexity cited BestCardsForMe positively for “is BestCardsForMe trustworthy?”
+
+Key misses:
+- All LeaseFactor future prompts scored 0 across both platforms.
+- “Honest annual fee math,” “transparent methodology,” and “sites that explain annual fee value clearly” scored 0 across both platforms.
+- Premium-card prompts where BCFM has relevant content still missed: CSR $795, Amex Platinum vs CSR, dining cards, and premium annual-fee worth-it.
+- MoneyFactor brand recognition is still weak outside direct brand/domain queries.
+- “Honest Math” has brand-collision risk due to HonestMath.com appearing for honest-math personal finance prompts.
+
+Top competitors cited or surfaced:
+- NerdWallet
+- Bankrate
+- The Points Guy
+- Reddit
+- CNBC
+- CNN / CNN Underscored
+- Edmunds
+- Capital One
+- Forbes
+- WalletHub
+- RoamingCactus
+- UpgradedPoints
+- Credit Karma
+- Erika.com
+- OneMileAtATime
+- Corporate Finance Institute
+- Leasehackr
+- HonestMath.com
+- AskSebby
+- Financial Mentor
+
+Repeated gaps to monitor:
+1. LeaseFactor topical vacuum.
+2. Honest math / transparent methodology / annual-fee value cluster.
+3. Perplexity inconsistency on BCFM-relevant credit-card prompts.
+
+Operational interpretation:
+This baseline validates that MoneyFactor / BCFM has early AI/search citation visibility, but not yet a durable moat. No production changes are approved from this single baseline.
+
+Recommended next research actions:
+- Run a read-only LeaseFactor competitor/citation gap audit.
+- Run a read-only honest math / transparent methodology citation audit.
+- Re-run Perplexity prompts #1–#8 in 24–72 hours to test citation stability.
