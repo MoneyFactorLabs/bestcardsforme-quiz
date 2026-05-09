@@ -18,6 +18,13 @@ function getArticleUrl(slug: string) {
   return absoluteUrl(`/articles/${slug}`);
 }
 
+const articleSeoTitleOverrides: Record<string, string> = {
+  "amex-platinum-vs-chase-sapphire-reserve-2026":
+    "Amex Platinum vs Chase Sapphire Reserve 2026",
+  "is-chase-sapphire-reserve-worth-it-2026":
+    "Chase Sapphire Reserve $795 Fee 2026: Worth It?",
+};
+
 export function generateStaticParams() {
   return articles.map((article) => ({
     slug: article.slug,
@@ -29,7 +36,9 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const article = getArticleBySlug(slug);
 
   return {
-    title: article ? `${article.title} | BestCardsForMe` : "Article | BestCardsForMe",
+    title: article
+      ? `${articleSeoTitleOverrides[article.slug] || article.title} | BestCardsForMe`
+      : "Article | BestCardsForMe",
     description:
       article?.metaDescription || article?.dek || "BestCardsForMe credit card comparison article.",
     alternates: article

@@ -43,6 +43,14 @@
 - Action: title/meta tuned toward high-income households, premium/luxury rewards cards, and $200k+ earners.
 - No article rewrite, new section, affiliate-disclosure change, new article, annual-fee page, calculator, redesign, or LeaseFactor work.
 
+## May 9, 2026 SERP title cleanup
+- Follow-up read-only SERP audit showed the two highest-priority article titles risk truncation once `| BestCardsForMe` is appended.
+- Metadata-only title overrides shortened:
+  - /articles/amex-platinum-vs-chase-sapphire-reserve-2026
+  - /articles/is-chase-sapphire-reserve-worth-it-2026
+- Chase Sapphire Reserve snippet now includes the $795 annual fee in the SEO title/meta for annual-fee query alignment.
+- H1s, article content, sections, schema, affiliate links, and site design were not changed.
+
 ## May 9, 2026 MoneyFactor.io indexing hygiene check
 - Property: https://moneyfactor.io/.
 - 7-day signal: 0 clicks, 2 impressions, average position 2.0.

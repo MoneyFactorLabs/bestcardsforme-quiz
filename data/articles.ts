@@ -9,7 +9,7 @@ export const articles: EditorialArticle[] = [
     eyebrow: "Premium Travel Card Analysis",
     title: "Chase Sapphire Reserve Annual Fee 2026: Is It Still Worth It?",
     metaDescription:
-      "See the Chase Sapphire Reserve annual fee for 2026, what changed, which benefits matter, and when the card is worth keeping versus downgrading.",
+      "See whether the Chase Sapphire Reserve $795 annual fee is worth it in 2026, what changed, which benefits matter, and when to downgrade.",
     dek: "Chase markets more than $3,000 in annual benefits. The real question is how much of that value your household will actually capture after fees, friction, credits, and redemption habits.",
     category: "Premium travel cards",
     updatedAt: "2026-04-27",
