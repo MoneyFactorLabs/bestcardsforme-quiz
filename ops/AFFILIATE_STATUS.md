@@ -51,3 +51,12 @@ Do not apply to Amex direct, Chase direct, Bankrate, or premium direct programs 
 Wait for stronger traffic, clicks, and/or acceptance from CardRatings/CJ.
 Continue monitoring CardRatings and CJ approvals.
 Use BCFM_Affiliate_Application_Package_v2.md as the current source of truth for affiliate positioning language.
+
+## AI-scaled commercialization rule
+- BestCardsForMe affiliate approval tracking remains the active commercialization focus.
+- CJ and CardRatings outcomes help decide when BCFM has enough signal to support the next vertical deployment.
+- Google organic traffic is the near-term revenue path for affiliate monetization.
+- LeaseFactor affiliate target-list research is allowed as staged build preparation.
+- LeaseFactor affiliate implementation is not allowed before Command Center approval.
+- HomeFactor or any third-vertical affiliate research may be planning-only until LeaseFactor has indexing/impression signal.
+- Do not use AI speed as a reason to shotgun affiliate applications across multiple verticals.

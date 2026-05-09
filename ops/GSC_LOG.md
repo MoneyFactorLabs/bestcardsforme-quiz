@@ -81,3 +81,17 @@
 - CTR on top impression pages
 - 404 validation result
 - discovered-not-indexed count
+
+## AI-scaled vertical GSC doctrine
+- BestCardsForMe remains the active validation engine and the main GSC signal source.
+- Post-snippet monitoring is the current BCFM priority before broad new edits.
+- LeaseFactor may prepare a GSC/sitemap plan, but production submission waits for Command Center approval.
+- HomeFactor or any third vertical remains planning-only until LeaseFactor produces indexing/impression evidence.
+- GSC validation gates deployment sequencing; AI speed does not replace indexing, impression, CTR, or quality signals.
+
+## Google and AI citation doctrine
+- Google organic traffic is the near-term revenue engine.
+- AI citation optimization is the long-term enterprise value path.
+- GSC data controls BCFM production edits: no new BCFM production work unless triggered by GSC data, affiliate requirements, or production issues.
+- AI citation work should compound from methodology pages, calculator/tool IP, structured comparison tables, trust signals, brand mentions, and future citation tracking.
+- AI citation checks are tracked in /ops/AI_CITATION_TRACKING.md and should not trigger production changes from one isolated result.

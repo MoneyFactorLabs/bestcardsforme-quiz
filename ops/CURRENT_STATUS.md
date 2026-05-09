@@ -47,3 +47,45 @@ BCFM is frozen unless:
 - a GSC issue fails validation
 - affiliate/network requirements require a change
 - production issue appears
+
+## AI-scaled vertical strategy
+MoneyFactor is adopting an AI-scaled multi-vertical preparation strategy, but not full chaotic parallel deployment.
+
+Principle: parallel preparation, sequential deployment.
+
+- BestCardsForMe remains the active validation engine.
+- No new BCFM production edits unless triggered by GSC data, affiliate requirements, or production issues.
+- Current BCFM focus is post-snippet GSC monitoring and CJ/CardRatings approval tracking.
+- Google organic traffic is the near-term revenue path.
+- AI citation optimization plus MoneyFactor brand trust is the long-term enterprise value path.
+- MoneyFactor should build toward being the trusted honest financial decision math brand across a small number of high-stakes verticals.
+- LeaseFactor may move from preparation-only to staged build preparation.
+- HomeFactor or any third vertical remains planning-only until LeaseFactor shows its own indexing/impression signal.
+- Do not launch 4+ verticals at once.
+- MoneyFactor’s moat is honest financial decision math, structured methodology, calculators/tools, transparent assumptions, trust pages, and cross-vertical authority — not raw AI content volume.
+
+## Core Strategy
+Google/SEO is the near-term revenue engine.
+
+AI citation + MoneyFactor brand trust is the long-term enterprise value moat.
+
+BCFM remains the active validation engine.
+
+No new BCFM production edits unless triggered by:
+- GSC data
+- affiliate requirements
+- production issues
+
+MoneyFactor should build toward being the trusted “honest financial decision math” brand across a small number of high-stakes personal finance verticals.
+
+The moat is not raw AI content volume. The moat is:
+- honest financial decision math
+- structured methodology
+- transparent assumptions
+- calculators/tools
+- trust pages
+- author credibility
+- affiliate/disclosure clarity
+- cross-vertical authority
+- brand mentions
+- AI citation visibility

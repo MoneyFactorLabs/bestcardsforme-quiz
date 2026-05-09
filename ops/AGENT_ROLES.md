@@ -42,5 +42,43 @@
 - affiliate application submissions
 - strategic decisions
 
+## AI-scaled vertical ownership
+
+## Command Center Ops
+- strategy
+- GSC interpretation
+- ops docs
+- affiliate tracking
+- title/meta decisions
+- AI citation tracking docs
+
+## Core Platform Engineering
+- routing
+- sitemap
+- robots
+- calculators
+- middleware
+- Vercel/build issues
+- production bugs
+- technical schema plumbing
+
+## Claude
+- article drafts
+- outreach drafts
+- methodology drafting
+- editorial frameworks
+
+## Chrome/browser agent
+- GSC checks
+- CJ dashboard checks
+- live SERP audits
+- weekly AI citation checks
+
+## User only
+- tax
+- banking
+- legal agreements
+- final business approvals
+
 ## Rule
 Agents may draft and prepare. Founder approves anything public, irreversible, financial, or account-sensitive.
