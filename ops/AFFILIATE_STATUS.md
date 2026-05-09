@@ -31,6 +31,20 @@ Notes:
 - continue monitoring CJ approvals
 - use BCFM_Affiliate_Application_Package_v2.md as the current source for CJ setup/application language
 
+## CJ Status — May 2026
+Status: Activated
+
+First applications submitted.
+
+| Advertiser / Program | Date applied | Status | Notes | Required site changes | Affiliate link available? | Added to site? |
+| --- | --- | --- | --- | --- | --- | --- |
+| Luxury Card | May 2026 | Pending | Pending manual review. | None identified yet. | No | No |
+| Experian.com | May 2026 | Pending | Pending manual review. | None identified yet. | No | No |
+| LifeLock | May 2026 | Pending | Pending manual review. | None identified yet. | No | No |
+| SmartCredit | May 2026 | Pending | Pending manual review. | None identified yet. | No | No |
+| Venmo Credit Card | May 2026 | Pending | Pending manual review. | None identified yet. | No | No |
+| PayPal Cashback Mastercard | May 2026 | Pending | Pending manual review. | None identified yet. | No | No |
+
 ## Current affiliate rule
 Do not shotgun applications.
 Do not apply to Amex direct, Chase direct, Bankrate, or premium direct programs yet.
