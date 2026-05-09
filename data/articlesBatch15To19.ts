@@ -928,8 +928,8 @@ export const articleBatch15To19: EditorialArticle[] = [
   {
     "slug": "best-credit-card-high-income-households-2026",
     "eyebrow": "High-Income Card Strategy",
-    "title": "Best Credit Card for High-Income Households in 2026 ($200k+ Strategy)",
-    "metaDescription": "A MoneyFactor strategy guide to the best credit card setups for high-income households in 2026, comparing Amex, Chase, and Capital One premium card stacks.",
+    "title": "Best Credit Cards for High-Income Households 2026: Premium Rewards Compared",
+    "metaDescription": "Compare premium credit cards for high-income households in 2026 by annual fee, travel perks, dining rewards, credits, and real-world value for $200k+ earners.",
     "dek": "For households earning $200,000 or more annually, the question isn't \"what's the single best credit card\" — at this income level, household spending is high enough and diverse enough that a **premium card stack** of two or three coordinated cards almost always captures more value than any single card. The strongest setups for $200k+ households in 2026 are: **Amex Gold + Amex Platinum** for households deep in the Amex ecosystem; **Chase Sapphire Reserve + Freedom Unlimited + Freedom Flex** for households committed to Chase Ultimate Rewards; or **Capital One Venture X + Savor + Quicksilver** for households that prefer simplicity and lower combined fees. Below, the strategy.",
     "category": "Card stack strategy",
     "updatedAt": "2026-04-27",

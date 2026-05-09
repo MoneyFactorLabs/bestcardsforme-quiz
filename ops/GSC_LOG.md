@@ -34,6 +34,15 @@
   - /articles/hilton-aspire-vs-marriott-bonvoy-brilliant-2026
 - Do not create a dedicated Chase Sapphire Reserve annual-fee page yet; watch post-patch CTR first.
 
+## May 9, 2026 fifth GSC-backed snippet optimization
+- Page: /articles/best-credit-card-high-income-households-2026.
+- Signal: this page has the only organic click so far.
+- 7-day performance: 1 click, 56 impressions, 1.8% CTR, avg position 12.2.
+- Latest 24h: 10 impressions, avg position 7.1.
+- Relevant query: "how to choose a luxury rewards product if i earn over $200k annually?"
+- Action: title/meta tuned toward high-income households, premium/luxury rewards cards, and $200k+ earners.
+- No article rewrite, new section, affiliate-disclosure change, new article, annual-fee page, calculator, redesign, or LeaseFactor work.
+
 ## Milestones
 - sitemap submitted and processed
 - 28 pages indexed
