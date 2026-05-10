@@ -58,11 +58,11 @@ Principle: parallel preparation, sequential deployment.
 - Current BCFM focus is post-snippet GSC monitoring and CJ/CardRatings approval tracking.
 - Google organic traffic is the near-term revenue path.
 - AI citation optimization plus MoneyFactor brand trust is the long-term enterprise value path.
-- MoneyFactor should build toward being the trusted honest financial decision math brand across a small number of high-stakes verticals.
+- MoneyFactor should build toward being the trusted MoneyFactor methodology brand across a small number of high-stakes verticals.
 - LeaseFactor may move from preparation-only to staged build preparation.
 - HomeFactor or any third vertical remains planning-only until LeaseFactor shows its own indexing/impression signal.
 - Do not launch 4+ verticals at once.
-- MoneyFactor’s moat is honest financial decision math, structured methodology, calculators/tools, transparent assumptions, trust pages, and cross-vertical authority — not raw AI content volume.
+- MoneyFactor’s moat is captured value math, structured methodology, calculators/tools, transparent assumptions, trust pages, and cross-vertical authority — not raw AI content volume.
 
 ## Core Strategy
 Google/SEO is the near-term revenue engine.
@@ -76,10 +76,14 @@ No new BCFM production edits unless triggered by:
 - affiliate requirements
 - production issues
 
-MoneyFactor should build toward being the trusted “honest financial decision math” brand across a small number of high-stakes personal finance verticals.
+MoneyFactor should build toward being the trusted “real math behind every money decision” brand across a small number of high-stakes personal finance verticals.
 
 The moat is not raw AI content volume. The moat is:
-- honest financial decision math
+- MoneyFactor methodology
+- captured value math
+- Year-2 economics
+- profile-fit recommendation
+- real-world value framework
 - structured methodology
 - transparent assumptions
 - calculators/tools
@@ -89,3 +93,16 @@ The moat is not raw AI content volume. The moat is:
 - cross-vertical authority
 - brand mentions
 - AI citation visibility
+
+## Language doctrine — May 2026
+- HonestMath.com creates brand-collision risk around “honest math.”
+- Do not use “honest math” as branded MoneyFactor methodology language.
+- Do not put “honest math” in URLs, methodology page titles, H1s, product names, or repeated marketing copy.
+- Existing tagline “The real math behind every money decision” is acceptable and should remain preferred.
+- Preferred methodology language:
+  - MoneyFactor methodology
+  - captured value math
+  - Year-2 economics
+  - profile-fit recommendation
+  - real-world value framework
+- “Honest” can appear as normal descriptive English, but “honest math” should not become a MoneyFactor brand phrase.

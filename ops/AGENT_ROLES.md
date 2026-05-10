@@ -51,6 +51,8 @@
 - affiliate tracking
 - title/meta decisions
 - AI citation tracking docs
+- methodology language decisions
+- brand-collision risk review
 
 ## Core Platform Engineering
 - routing

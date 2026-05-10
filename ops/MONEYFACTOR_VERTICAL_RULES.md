@@ -15,10 +15,14 @@ No new BCFM production edits unless triggered by:
 - affiliate requirements
 - production issues
 
-MoneyFactor should build toward being the trusted “honest financial decision math” brand across a small number of high-stakes personal finance verticals.
+MoneyFactor should build toward being the trusted “real math behind every money decision” brand across a small number of high-stakes personal finance verticals.
 
 The moat is not raw AI content volume. The moat is:
-- honest financial decision math
+- MoneyFactor methodology
+- captured value math
+- Year-2 economics
+- profile-fit recommendation
+- real-world value framework
 - structured methodology
 - transparent assumptions
 - calculators/tools
@@ -38,7 +42,7 @@ AI can compress production timelines, but editorial quality, methodology consist
 
 Google organic traffic is the near-term revenue engine. AI citation optimization plus MoneyFactor brand trust is the long-term enterprise value path.
 
-MoneyFactor should build toward being the trusted honest financial decision math brand across a small number of high-stakes verticals.
+MoneyFactor should build toward being the trusted MoneyFactor methodology brand across a small number of high-stakes verticals.
 
 MoneyFactor should prove:
 1. BCFM = first validation engine
@@ -48,7 +52,7 @@ MoneyFactor should prove:
 Do not launch 4+ verticals at once.
 
 ## AI/GEO doctrine
-MoneyFactor’s moat is honest financial decision math, structured methodology, calculators/tools, transparent assumptions, trust pages, and cross-vertical authority — not raw AI content volume.
+MoneyFactor’s moat is captured value math, structured methodology, calculators/tools, transparent assumptions, trust pages, and cross-vertical authority — not raw AI content volume.
 
 AI citation moat backlog:
 - methodology pages
@@ -59,6 +63,19 @@ AI citation moat backlog:
 - affiliate/disclosure clarity
 - brand mentions
 - future citation tracking
+
+## Language doctrine
+- HonestMath.com creates brand-collision risk around “honest math.”
+- Do not use “honest math” as branded MoneyFactor methodology language.
+- Do not put “honest math” in URLs, methodology page titles, H1s, product names, or repeated marketing copy.
+- Existing tagline “The real math behind every money decision” is acceptable and should remain preferred.
+- Preferred methodology language:
+  - MoneyFactor methodology
+  - captured value math
+  - Year-2 economics
+  - profile-fit recommendation
+  - real-world value framework
+- “Honest” can appear as normal descriptive English, but “honest math” should not become a MoneyFactor brand phrase.
 
 ## Parent brand
 MoneyFactor.io is the parent brand and hub.
@@ -80,6 +97,20 @@ Not allowed yet:
 - full article publishing
 - affiliate implementation
 - major build work without Command Center approval
+- captured-value calculators from this single research run
+- live methodology-page reframing from this single research run
+
+## LeaseFactor / Leasehackr planning input
+- Leasehackr has a real calculator plus community deal-data moat.
+- LeaseFactor should not assume content production alone can beat that moat.
+- LeaseFactor staged preparation should decide whether to compete on:
+  - methodology depth
+  - explainability
+  - profile-fit scoring
+  - deal-quality framework
+  - calculator clarity
+  - future community/data collection
+- This is planning input only, not production launch approval.
 
 ## Future verticals
 - HomeFactor

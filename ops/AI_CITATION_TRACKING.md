@@ -213,3 +213,116 @@ Recommended next research actions:
 - Run a read-only LeaseFactor competitor/citation gap audit.
 - Run a read-only honest math / transparent methodology citation audit.
 - Re-run Perplexity prompts #1–#8 in 24–72 hours to test citation stability.
+
+## May 2026 Language and Competitor Gap Research
+
+Source:
+Claude COO AI Citation Gap Research.
+
+Status:
+Read-only strategy input. Not a production-change trigger.
+
+### HonestMath.com brand-collision risk
+- HonestMath.com creates brand-collision risk around “honest math.”
+- Do not use “honest math” as branded MoneyFactor methodology language.
+- Do not put “honest math” in URLs, methodology page titles, H1s, product names, or repeated marketing copy.
+- Existing tagline “The real math behind every money decision” is acceptable and should remain preferred.
+- Preferred methodology language:
+  - MoneyFactor methodology
+  - captured value math
+  - Year-2 economics
+  - profile-fit recommendation
+  - real-world value framework
+- “Honest” can appear as normal descriptive English, but “honest math” should not become a MoneyFactor brand phrase.
+
+### LeaseFactor / Leasehackr planning input
+- Leasehackr has a real calculator plus community deal-data moat.
+- LeaseFactor should not assume content production alone can beat that moat.
+- LeaseFactor staged preparation should decide whether to compete on:
+  - methodology depth
+  - explainability
+  - profile-fit scoring
+  - deal-quality framework
+  - calculator clarity
+  - future community/data collection
+- This is not production launch approval.
+
+### Doctrine confirmation
+- BCFM remains the active validation engine.
+- Parallel preparation, sequential deployment remains the rule.
+- LeaseFactor staged prep is allowed, but production launch is not approved.
+- Do not launch HomeFactor, InsuranceFactor, or any third vertical yet.
+- Do not build captured-value calculators yet from this single research run.
+- Do not reframe the live methodology page from this single research run.
+
+### Read-only “honest math” repo audit
+Audit command:
+`rg -n -i "honest math" . --glob '!node_modules/**' --glob '!.next/**' --glob '!out/**' --glob '!dist/**'`
+
+Results:
+- `ops/AI_CITATION_TRACKING.md`: appears in prompt/research/audit language. Recommendation: leave alone where preserving historical query wording or research findings; avoid using it as future branded methodology language.
+- `data/articles.ts`: appears twice in article body copy as normal descriptive English, not URL/title/H1/metadata/product naming. Recommendation: leave alone for now; change later only with Command Center approval if brand-collision evidence repeats.
+
+No “honest math” occurrences were found in URLs, methodology page titles, H1s, product names, or production metadata during this audit.
+
+## May 9, 2026 AI Citation v1.5 Check — Contamination Finding
+
+Status:
+Run partially aborted after account-level contamination was discovered on ChatGPT, Gemini, and Claude.
+
+Critical finding:
+Logged-in AI accounts tied to MoneyFactor / BestCardsForMe are not valid environments for AI citation testing because their responses may use account memory, project history, workspace identity, or prior chat context.
+
+Contaminated / invalid surfaces:
+- ChatGPT: account/project context included MoneyFactor.io Command Center, and responses referenced internal ops context rather than clean web/search results.
+- Claude: account was aware of BCFM/MoneyFactor context and offered BCFM-specific options before a neutral search result.
+- Gemini: account was tied to the moneyfactor.io Workspace account; output may not reflect a neutral consumer environment and returned stale CSR fee data.
+
+Clean or partially clean surfaces checked:
+- Google desktop SERP
+- Bing Copilot logged out
+- Gemini Pro result logged with caveat
+- Google AI Mode not accessible
+- Google AI Overview did not render
+- Google mobile SERP not validly tested
+- Perplexity v1 data remains useful, but v1.5 rerun was not completed after session loss
+
+Clean-score summary:
+- Clean scored cells: 6
+- Max clean score: 30
+- Actual clean score: 8
+- Clean score: 8 / 30 = 26.7%
+- All clean points came from Google desktop:
+  - BestCardsForMe #1 organic for high-income household credit card query
+  - MoneyFactor.io #1 organic for MoneyFactor brand query
+
+Key wins:
+- BestCardsForMe remains #1 organic on Google for “best credit card for high income households 2026.”
+- Google snippet references “MoneyFactor strategy guide.”
+- MoneyFactor.io remains #1 organic on Google for “what is MoneyFactor.io.”
+
+Key misses:
+- Bing Copilot does not recognize MoneyFactor.io and treated it as unclear/unknown.
+- Bing Copilot pointed toward unrelated or adjacent entities rather than MoneyFactor.io.
+- Bing Copilot does not recognize BestCardsForMe as an established credit-card comparison site.
+- Gemini returned stale CSR fee information, suggesting weak or absent live grounding.
+- Google mobile SERP was not validly tested.
+
+Methodology conclusion:
+Future AI citation tests should use brand-anonymous testing environments:
+- clean browser profile
+- logged-out where possible
+- or separate neutral consumer test accounts where allowed
+- no MoneyFactor project history
+- no BCFM browsing history
+- no prior prompts about MoneyFactor
+- no moneyfactor.io Workspace identity
+
+Backlog items:
+1. Create clean/brand-anonymous AI citation testing workflow.
+2. Add Bing Copilot brand-recognition gap as a specific research item.
+3. Add valid Google mobile SERP testing using real mobile device or mobile user-agent emulation.
+4. Do not use “honest math” as branded MoneyFactor language because of HonestMath.com collision risk.
+
+Operational conclusion:
+No production changes are approved from this v1.5 check. BCFM remains the active validation engine. AI citation tracking remains a KPI, but current testing methodology must be cleaned up before scores drive site changes.
