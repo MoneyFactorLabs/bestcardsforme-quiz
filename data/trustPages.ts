@@ -159,15 +159,19 @@ export const trustPages: TrustPage[] = [
         "blocks": [
           {
             "type": "paragraph",
-            "text": "We are not financial advisors. We do not provide personalized financial advice. The articles on this site are general informational content reflecting one editorial methodology applied consistently across credit card products. For decisions specific to your tax situation, credit profile, or financial goals, consult a qualified professional."
+            "text": "MoneyFactor is not a financial advisor, tax advisor, legal advisor, insurance advisor, lender, or broker. We do not provide personalized financial advice or make decisions for you."
           },
           {
             "type": "paragraph",
-            "text": "Card terms change without notice. Annual fees, credits, earning rates, and elite status benefits described in our reviews reflect publicly available information at publication. Always verify current terms directly with the issuer before applying."
+            "text": "Our content is general informational content built around a consistent editorial methodology: showing the real-world costs, tradeoffs, assumptions, and decision factors behind financial products and major money decisions."
           },
           {
             "type": "paragraph",
-            "text": "*BestCardsForMe is the credit-card vertical of [MoneyFactor](https://moneyfactor.io). See also our [Methodology](/methodology), [Editorial Standards](/editorial-standards), [Affiliate Disclosure](/affiliate-disclosure), and [Contact](/contact) pages.*"
+            "text": "Product terms, fees, rates, rewards, credits, eligibility rules, and benefits can change without notice. Always verify current terms directly with the issuer, lender, provider, or official source before applying, buying, leasing, borrowing, or making a financial decision."
+          },
+          {
+            "type": "paragraph",
+            "text": "*BestCardsForMe is currently MoneyFactor’s active credit-card vertical. For more detail, see our [Methodology](/methodology), [Editorial Standards](/editorial-standards), [Affiliate Disclosure](/affiliate-disclosure), and [Contact](/contact) pages.*"
           }
         ]
       }
