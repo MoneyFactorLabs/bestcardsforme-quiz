@@ -333,15 +333,15 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                 ))}
                 {section.table && <ArticleDataTable table={section.table} />}
                 {section.subsections && (
-                  <div className="grid gap-5 pt-1">
+                  <div className="grid min-w-0 gap-5 pt-1">
                     {section.subsections.map((subsection) => (
                       <div
                         key={subsection.heading}
-                        className="rounded-lg border border-blue-gray/70 bg-[#f8fafc] p-4 sm:p-5"
+                        className="min-w-0 rounded-lg border border-blue-gray/70 bg-[#f8fafc] p-4 sm:p-5"
                       >
-                        <h3 className="text-lg font-semibold text-navy">{subsection.heading}</h3>
+                        <h3 className="min-w-0 text-lg font-semibold text-navy">{subsection.heading}</h3>
                         {subsection.body && (
-                          <div className="mt-3 space-y-3 text-[0.98rem] font-medium leading-8 text-mid-navy/90">
+                          <div className="mt-3 min-w-0 space-y-3 text-[0.98rem] font-medium leading-8 text-mid-navy/90">
                             {subsection.body.map((paragraph) => (
                               <p key={paragraph}>{renderInlineText(paragraph)}</p>
                             ))}
