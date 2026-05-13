@@ -1,86 +1,40 @@
-# Agent Roles
+# Agent Roles — MoneyFactor / BestCardsForMe
+_Last updated: 2026-05-12_
 
-## ChatGPT Command Center
-- strategy
-- sequencing
-- valuation
-- prioritization
-- deciding what to do next
-- reviewing outputs from Codex / Claude / browser agents
+Claude (Max) now handles all roles previously split across ChatGPT and Codex.
 
-## Codex
-- repo/code changes
-- deploys
-- production verification
-- technical QA
-- schema/meta/sitemap/internal-link checks
-- updating /ops docs after deploys
+## Claude — All Roles
+- Claude.ai chat: strategy, content, ops, research
+- Claude Code (Desktop): code implementation, repo work
+- Claude Chrome Extension: browser ops, GSC, QA
+- Claude Dispatch: mobile → desktop handoff
 
-## Claude
-- drafting
-- research
-- authority response kits
-- outreach drafts
-- Reddit response banks
-- affiliate application copy
-- vertical launch-kit documents
+## Human / Founder (Tim)
+- Fina
+cd /Users/tim/Documents/bestcardsforme-quiz && mkdir -p ops && cat > ops/AGENT_ROLES.md << 'EOF'
+# Agent Roles — MoneyFactor / BestCardsForMe
+_Last updated: 2026-05-12_
 
-## Claude Chrome / Codex Chrome
-- browser ops
-- GSC checks
-- Vercel/Namecheap inspections
-- Qwoted/Featured/SOS setup
-- Gmail drafts
-- form filling with human approval
+Claude (Max) now handles all roles previously split across ChatGPT and Codex.
 
-## Founder
-- final approvals
-- public submissions
-- DNS saves
-- email sends
-- Reddit posts
-- affiliate application submissions
-- strategic decisions
+## Claude — All Roles
+- Claude.ai chat: strategy, content, ops, research
+- Claude Code (Desktop): code implementation, repo work
+- Claude Chrome Extension: browser ops, GSC, QA
+- Claude Dispatch: mobile → desktop handoff
 
-## AI-scaled vertical ownership
+## Human / Founder (Tim)
+- Final approval on merges and pushes to main
+- Affiliate decisions, strategic direction, content review
 
-## Command Center Ops
-- strategy
-- GSC interpretation
-- ops docs
-- affiliate tracking
-- title/meta decisions
-- AI citation tracking docs
-- methodology language decisions
-- brand-collision risk review
+## ~~ChatGPT~~ Deprecated 2026-05-12
+## ~~Codex~~ Deprecated 2026-05-12
 
-## Core Platform Engineering
-- routing
-- sitemap
-- robots
-- calculators
-- middleware
-- Vercel/build issues
-- production bugs
-- technical schema plumbing
-
-## Claude
-- article drafts
-- outreach drafts
-- methodology drafting
-- editorial frameworks
-
-## Chrome/browser agent
-- GSC checks
-- CJ dashboard checks
-- live SERP audits
-- weekly AI citation checks
-
-## User only
-- tax
-- banking
-- legal agreements
-- final business approvals
-
-## Rule
-Agents may draft and prepare. Founder approves anything public, irreversible, financial, or account-sensitive.
+## Task Routing
+| Task | Tool |
+|---|---|
+| GSC data | Claude chat |
+| Content draft | Claude chat → Claude Code commits |
+| Production bug | Claude Code → Chrome verifies |
+| Browser ops | Chrome extension |
+| Mobile handoff | Dispatch |
