@@ -7,3 +7,6 @@ dist
 .DS_Store
 .env*.local
 *.tsbuildinfo
+
+# Claude Code working directory
+.claude/
