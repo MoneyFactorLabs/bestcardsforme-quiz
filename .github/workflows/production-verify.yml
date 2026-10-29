@@ -1,0 +1,40 @@
+name: Production verify
+
+# Runs when Vercel reports a successful production deployment (so a run is
+# itself proof the deployment finished), or on demand against any URL.
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Site to verify
+        default: https://bestcardsforme.com
+        required: true
+
+jobs:
+  verify:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SITE_URL: ${{ inputs.url || 'https://bestcardsforme.com' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Wait for the production alias to serve the new deployment
+        run: sleep 45
+      - name: Live site validation (status, robots, sitemap, canonicals, links, placeholders, control page, phantom 404s)
+        run: npm run validate:site -- --url "$SITE_URL"
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Live browser smoke test (mobile + desktop, quiz, events intercepted, /go/ redirects)
+        run: npm run test:e2e
+        env:
+          E2E_BASE_URL: ${{ env.SITE_URL }}
