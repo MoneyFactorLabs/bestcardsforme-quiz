@@ -1,0 +1,40 @@
+{
+  "note": "Facts that must appear on (contains) or never return to (absent) specific pages. Checked by validate-site against the build and the live site.",
+  "pages": {
+    "/cards/citi-double-cash": {
+      "contains": ["Issuer Citi", "This card is the baseline", "Alternatives to compare", "Wells Fargo Active Cash ($0 annual fee)"]
+    },
+    "/cards/united-explorer": {
+      "contains": ["Issuer Chase", "$150 ($0 intro first year)", "Difference vs. baseline +$339", "$45 prepaid"]
+    },
+    "/cards/ink-business-preferred": {
+      "contains": ["Issuer Chase", "Difference vs. baseline +$312", "If you cash points out at 1¢"]
+    },
+    "/cards/southwest-rapid-rewards-priority": {
+      "contains": ["Annual fee $229", "Tier Qualifying Points", "$45 first-bag fee"],
+      "absent": ["upgraded boardings", "Annual fee $149"]
+    },
+    "/cards/bilt-mastercard": {
+      "contains": ["Profile status: under re-review", "Bilt Blue ($0)"]
+    },
+    "/cards": {
+      "contains": ["Under review"],
+      "absent": ["Issuer details pending"]
+    },
+    "/articles/best-credit-card-for-dining-restaurants-2026": {
+      "contains": ["$283 a month", "$6,771 /yr of dining + U.S. supermarkets", "+$185", "Capital One Savor"],
+      "absent": ["Savor at $95", "verify exact rate"]
+    },
+    "/articles/best-airline-credit-card-domestic-travel-2026": {
+      "contains": ["$229"],
+      "absent": ["$75 Southwest credit", "4 upgraded boardings"]
+    },
+    "/articles/best-no-annual-fee-credit-card-2026": {
+      "contains": ["Bilt Blue (2026)"],
+      "absent": ["Only card earning rewards on rent", "BestCardsForMe profile: Bilt Mastercard"]
+    },
+    "/articles/best-2-card-credit-card-setup-2026": {
+      "absent": ["$24,000 × 1x rent"]
+    }
+  }
+}

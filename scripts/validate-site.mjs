@@ -124,6 +124,32 @@ for (const [route, html] of pages) {
   }
 }
 
+// Page assertions pin facts that must appear (or must not reappear) on specific
+// pages, e.g. corrected fees and removed claims; see quality/page-assertions.json.
+const assertionsFile = path.join(process.cwd(), "quality/page-assertions.json");
+if (fs.existsSync(assertionsFile)) {
+  const { pages: assertions } = JSON.parse(fs.readFileSync(assertionsFile, "utf8"));
+  const visibleText = (html) =>
+    html
+      .replace(/<script[\s\S]*?<\/script>/g, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&amp;/g, "&")
+      .replace(/&#x27;|&#39;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/\s+/g, " ");
+
+  for (const [route, { contains = [], absent = [] }] of Object.entries(assertions)) {
+    const html = pages.get(route);
+    if (!html) {
+      errors.push(`${route}: asserted page missing`);
+      continue;
+    }
+    const text = visibleText(html);
+    contains.filter((phrase) => !text.includes(phrase)).forEach((phrase) => errors.push(`${route}: missing "${phrase}"`));
+    absent.filter((phrase) => text.includes(phrase)).forEach((phrase) => errors.push(`${route}: still contains "${phrase}"`));
+  }
+}
+
 // Control pages are fingerprinted on visible HTML plus title, meta, canonical,
 // and JSON-LD; build-specific asset hashes and IDs are ignored.
 const controlFile = path.join(process.cwd(), "quality/control-pages.json");
