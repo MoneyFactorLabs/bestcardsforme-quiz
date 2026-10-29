@@ -14,6 +14,7 @@ import {
   getCreditCardProfileBySlug,
 } from "@/data/creditCardProfiles";
 import { describeScoreWeights } from "@/lib/cardProfileBuilder";
+import issuerSources from "@/quality/issuer-sources.json";
 import { absoluteUrl } from "@/lib/site";
 import { buildCardProfileStructuredData } from "@/lib/structuredData";
 import type { ProductProfileSection } from "@/components/platform/ProductProfileLayout";
@@ -48,6 +49,12 @@ function formatCheckedDate(checkedAt: string) {
     parseIsoDate(checkedAt),
   );
 }
+
+type IssuerSourceEntry = {
+  issuerUrl: string;
+  discontinued?: boolean;
+  secondary: { publisher: string; url: string; checkedAt: string; covers: string }[];
+};
 
 const factStatusLabels: Record<FactStatus, string> = {
   verified: "Verified",
@@ -169,6 +176,27 @@ function getProfileSections(profile: CreditCardProfile): ProductProfileSection[]
     body: `Checked ${formatCheckedDate(profile.factCheck.checkedAt)}. ${profile.factCheck.method}`,
     items: profile.factCheck.flags.map((flag) => `${factStatusLabels[flag.status]}: ${flag.note}`),
   });
+
+  const sources = (issuerSources.cards as Record<string, IssuerSourceEntry>)[profile.slug];
+  if (sources) {
+    sections.push({
+      title: "Sources",
+      links: [
+        {
+          href: sources.issuerUrl,
+          label: `${profile.issuer} official card page`,
+          description: sources.discontinued
+            ? "Product discontinued; the issuer page may describe its replacement."
+            : "Primary source for current terms. Our automated check of this page runs weekly.",
+        },
+        ...sources.secondary.map((source) => ({
+          href: source.url,
+          label: source.publisher,
+          description: `Checked ${formatCheckedDate(source.checkedAt)}: ${source.covers}.`,
+        })),
+      ],
+    });
+  }
 
   return sections;
 }

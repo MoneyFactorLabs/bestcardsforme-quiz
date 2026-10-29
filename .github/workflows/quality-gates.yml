@@ -20,6 +20,8 @@ jobs:
         run: npm run typecheck
       - name: Unit tests (value math, profiles, quiz, affiliate routing, analytics API)
         run: npm test
+      - name: Fact sources registered and fresh
+        run: npm run verify:facts
       - name: Build (includes card-profile validation)
         run: npm run build
       - name: Site validation (links, payload URLs, placeholders, canonicals, duplicates)
