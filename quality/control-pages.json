@@ -1,0 +1,6 @@
+{
+  "note": "Pages whose rendered output must not change without founder sign-off. Fingerprints come from `npm run validate:site -- --update-control`.",
+  "pages": {
+    "/articles/best-credit-card-high-income-households-2026": "5b59185000bdd29456752c6314cc5a8c6b41351b4708cbb9ecd838ddd3a5cab4"
+  }
+}

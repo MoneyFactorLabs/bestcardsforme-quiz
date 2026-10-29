@@ -933,7 +933,7 @@ export const articleBatch20To24: EditorialArticle[] = [
       },
       {
         "label": "Best specialty no-fee profile",
-        "value": "Bilt Mastercard for rent rewards"
+        "value": "Bilt Blue for rent payments (under re-review)"
       },
       {
         "label": "MoneyFactor lens",
@@ -1031,10 +1031,10 @@ export const articleBatch20To24: EditorialArticle[] = [
               "Auto-applies to top monthly category"
             ],
             [
-              "**Bilt Mastercard**",
+              "**Bilt Blue (2026)**",
               "$0",
-              "1x rent, 3x dining, 2x travel",
-              "Only card earning rewards on rent"
+              "1x everyday, 4% Bilt Cash; rent points depend on card spend",
+              "Replaced the Wells Fargo Bilt Mastercard"
             ],
             [
               "**Amazon Prime Visa**",
@@ -1180,12 +1180,12 @@ export const articleBatch20To24: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Best Low / No Fee Specialty Option — Bilt Mastercard",
+            "heading": "Best Low / No Fee Specialty Option — Bilt Blue (under re-review)",
             "body": [
               "**Annual fee:** $0",
-              "For renters, Bilt is the only card that earns rewards on rent payments through Bilt's payment system without fees. Households paying $1,500+ per month rent capture meaningful rewards on a category no other card touches.",
-              "**Best for:** Renters who want to earn rewards on their largest fixed monthly expense.",
-              "**Trigger:** Choose Bilt when you rent rather than own and pay $1,500+ per month in rent.",
+              "The Wells Fargo-issued Bilt Mastercard closed to new applicants in October 2025. Its February 2026 replacements (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495) still pay rent with no transaction fee, but rent points now depend on how much you also spend on the card. Bilt Blue is the $0 option: 1x points on everyday spending plus 4% back in Bilt Cash.",
+              "**Best for:** Renters who will also put regular spending on the card, since rent points now depend on it.",
+              "**Trigger:** Consider Bilt Blue when you rent and pay $1,500+ per month, after checking the current rent-earning rules; we are re-verifying them.",
               "[Read the full review →](/cards/bilt-mastercard) · [Check current terms →](/go/bilt-mastercard)",
               "*Recommendations reflect BestCardsForMe's editorial methodology applied to $0-fee profiles. For a profile-specific recommendation, [take the BestCardsForMe quiz](/).*"
             ]
@@ -1195,7 +1195,7 @@ export const articleBatch20To24: EditorialArticle[] = [
       {
         "heading": "Bottom line",
         "body": [
-          "The best no-annual-fee credit card in 2026 depends on your spending pattern. **Citi Double Cash** wins for most households on simplicity and 2% flat earning. **Wells Fargo Autograph** wins for multi-category households. **Chase Freedom Unlimited** wins for Chase ecosystem households. **Bilt Mastercard** wins for renters. For category-specific no-fee decisions, compare the [gas-card guide](/articles/best-credit-card-for-gas-2026) and [online-shopping guide](/articles/best-credit-card-for-online-shopping-2026).",
+          "The best no-annual-fee credit card in 2026 depends on your spending pattern. **Citi Double Cash** wins for most households on simplicity and 2% flat earning. **Wells Fargo Autograph** wins for multi-category households. **Chase Freedom Unlimited** wins for Chase ecosystem households. Renters should check the [2026 Bilt cards](/cards/bilt-mastercard), which replaced the Bilt Mastercard and changed how rent earns points. For category-specific no-fee decisions, compare the [gas-card guide](/articles/best-credit-card-for-gas-2026) and [online-shopping guide](/articles/best-credit-card-for-online-shopping-2026).",
           "If you want a profile-specific recommendation, take [the BestCardsForMe quiz](/)."
         ]
       },
@@ -1231,9 +1231,9 @@ export const articleBatch20To24: EditorialArticle[] = [
         "label": "Read card profile"
       },
       {
-        "cardId": "bilt-mastercard",
-        "headline": "BestCardsForMe profile: Bilt Mastercard",
-        "body": "A specialty no-fee fit for renters who can earn on a category most cards ignore.",
+        "cardId": "wells-fargo-active-cash",
+        "headline": "BestCardsForMe profile: Wells Fargo Active Cash",
+        "body": "A flat 2% no-fee card with cell phone protection when you pay your phone bill with it.",
         "label": "Read card profile"
       }
     ],
@@ -1384,8 +1384,8 @@ export const articleBatch20To24: EditorialArticle[] = [
             ],
             [
               "**Renter**",
-              "Bilt Mastercard",
-              "Earns rewards on rent (otherwise impossible)"
+              "Bilt Blue (2026; under re-review)",
+              "Rent points now depend on Bilt card spend"
             ],
             [
               "**Affluent household, $50k+ spending**",
@@ -1511,9 +1511,9 @@ export const articleBatch20To24: EditorialArticle[] = [
         "label": "Read card profile"
       },
       {
-        "cardId": "bilt-mastercard",
-        "headline": "BestCardsForMe profile: Bilt Mastercard",
-        "body": "A no-fee travel-points adjacent option for renters building rewards discipline.",
+        "cardId": "chase-freedom-unlimited",
+        "headline": "BestCardsForMe profile: Chase Freedom Unlimited",
+        "body": "A no-fee way to start earning Ultimate Rewards points that pool with Sapphire Preferred later.",
         "label": "Read card profile"
       }
     ],

@@ -410,6 +410,7 @@ export function getRecommendations(answers: QuizAnswers): RecommendedCard[] {
 
 export function getRankedRecommendations(answers: QuizAnswers): RecommendedCard[] {
   const rankedRecommendations = cards
+    .filter((card) => card.availability !== "discontinued")
     .map((card) => ({
       card,
       rawScore: scoreCard(card, answers),

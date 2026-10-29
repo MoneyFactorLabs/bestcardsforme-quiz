@@ -44,6 +44,8 @@ export type CreditCard = {
   minimumCreditScore: CreditScoreRange;
   loungeValue: "high" | "medium" | "low";
   businessOnly?: boolean;
+  // Discontinued cards keep their profile URL but are never recommended.
+  availability?: "available" | "discontinued";
 };
 
 export type RecommendedCard = {
