@@ -1,5 +1,6 @@
 // Outbound click and conversion report from Supabase.
-// Usage: SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... npm run report:outbound [-- --days 30]
+// Usage: SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... npm run report:outbound [-- --days 30] [-- --qa]
+// Business views exclude QA clicks (utm_source=bcfm-qa*); --qa lists those clicks instead.
 import { createClient } from "@supabase/supabase-js";
 
 const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -13,6 +14,20 @@ const daysFlag = process.argv.indexOf("--days");
 const days = daysFlag > -1 ? Number(process.argv[daysFlag + 1]) : 30;
 const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
 const supabase = createClient(url, key, { auth: { persistSession: false } });
+
+if (process.argv.includes("--qa")) {
+  const { data: qa, error: qaError } = await supabase
+    .from("outbound_clicks_qa")
+    .select("*")
+    .gte("created_at", since)
+    .order("created_at", { ascending: false });
+  if (qaError) throw new Error(qaError.message);
+  console.log(`QA outbound clicks since ${since}: ${qa.length}`);
+  qa.forEach((row) =>
+    console.log(`  ${row.created_at}  ${row.card_id}  ${row.source_page}  ${row.utm_campaign || "(none)"}  ${row.click_id}`),
+  );
+  process.exit(0);
+}
 
 const { data: daily, error } = await supabase.from("outbound_clicks_daily").select("*").gte("day", since);
 if (error) throw new Error(error.message);
