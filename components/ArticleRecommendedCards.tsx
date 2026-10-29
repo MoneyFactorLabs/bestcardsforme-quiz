@@ -159,6 +159,7 @@ export function ArticleRecommendedCards({ article, cardCtas = [] }: ArticleRecom
                 </Link>
                 <Link
                   href={`/go/${item.card.affiliateSlug}`}
+                  prefetch={false}
                   className="focus-ring rounded-md bg-gold px-4 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
                 >
                   Check current terms →

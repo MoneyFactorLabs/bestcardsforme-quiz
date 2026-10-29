@@ -44,6 +44,9 @@ export type CreditCard = {
   minimumCreditScore: CreditScoreRange;
   loungeValue: "high" | "medium" | "low";
   businessOnly?: boolean;
+  // Query parameter the affiliate network uses for a sub-ID (e.g. CJ's "sid"),
+  // so conversions can be joined back to the recorded outbound click.
+  affiliateSubIdParam?: string;
   // Discontinued cards keep their profile URL but are never recommended.
   availability?: "available" | "discontinued";
 };

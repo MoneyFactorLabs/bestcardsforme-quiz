@@ -9,7 +9,9 @@ type CardReviewActionsProps = {
 };
 
 export function CardReviewActions({ cardId, affiliateSlug }: CardReviewActionsProps) {
-  function trackCtaClick(cta: "read_issuer_terms" | "get_offer_updates") {
+  // /go/ clicks are counted server-side as outbound_click, so only the
+  // on-page offer-updates CTA is tracked here.
+  function trackCtaClick(cta: "get_offer_updates") {
     trackEvent({
       eventName: "card_cta_clicked",
       sourcePage: "card_detail",
@@ -24,7 +26,7 @@ export function CardReviewActions({ cardId, affiliateSlug }: CardReviewActionsPr
     <>
       <Link
         href={`/go/${affiliateSlug}`}
-        onClick={() => trackCtaClick("read_issuer_terms")}
+        prefetch={false}
         className="focus-ring inline-flex justify-center rounded-md bg-gold px-5 py-3 text-sm font-bold text-navy transition hover:bg-[#caa42f]"
       >
         Read issuer terms
