@@ -11,6 +11,7 @@
     "test": "tsx --test tests/*.test.ts",
     "validate:site": "node scripts/validate-site.mjs",
     "test:e2e": "node scripts/e2e-smoke.mjs",
+    "report:outbound": "node scripts/report-outbound.mjs",
     "qa": "npm run typecheck && npm test && npm run build && npm run validate:site && npm run test:e2e"
   },
   "dependencies": {
