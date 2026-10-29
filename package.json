@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "validate:site": "node scripts/validate-site.mjs"
+    "test": "tsx --test tests/*.test.ts",
+    "validate:site": "node scripts/validate-site.mjs",
+    "test:e2e": "node scripts/e2e-smoke.mjs",
+    "qa": "npm run typecheck && npm test && npm run build && npm run validate:site && npm run test:e2e"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.104.1",
@@ -20,8 +23,10 @@
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "playwright": "^1.63.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
     "typescript": "^5.8.3"
   }
 }

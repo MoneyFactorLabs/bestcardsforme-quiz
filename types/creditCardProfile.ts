@@ -43,6 +43,8 @@ export type ValueLine = {
 // Pre-computed Year-2 value analysis (welcome bonus excluded), produced by
 // lib/cardValueModel.ts so every number on the page traces back to stated assumptions.
 export type CardValueAnalysis = {
+  // Rewards plus friction-adjusted credits, before the annual fee.
+  grossAnnualValue: number;
   summary: string;
   assumptions: string[];
   lines: ValueLine[];

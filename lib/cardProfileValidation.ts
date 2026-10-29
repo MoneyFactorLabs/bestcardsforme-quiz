@@ -79,6 +79,28 @@ export function validateCardProfiles(profiles: CreditCardProfile[], cards: Credi
     if (profile.factCheck && !profile.valueAnalysis && profile.scoreStatus !== "withheld") {
       at("generated profile has no value analysis");
     }
+
+    // The quiz ranks cards on valueEstimateLow/High; keep it consistent with the profile math.
+    if (card && profile.valueAnalysis) {
+      const gross = profile.valueAnalysis.grossAnnualValue;
+      if (gross < card.valueEstimateLow || gross > card.valueEstimateHigh) {
+        at(
+          `profile value $${gross} is outside the quiz range $${card.valueEstimateLow}-$${card.valueEstimateHigh}`,
+        );
+      }
+    }
+  });
+
+  // Articles must not recommend a card that can no longer be opened.
+  const discontinued = new Set(cards.filter((card) => card.availability === "discontinued").map((card) => card.id));
+  articles.forEach((article) => {
+    const recommended = [
+      ...(article.cardCtas ?? []).map((cta) => cta.cardId),
+      ...(article.recommendationCta?.cardId ? [article.recommendationCta.cardId] : []),
+    ];
+    recommended.forEach((cardId) => {
+      if (discontinued.has(cardId)) errors.push(`article ${article.slug}: recommends discontinued card ${cardId}`);
+    });
   });
 
   return errors;

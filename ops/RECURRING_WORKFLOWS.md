@@ -172,6 +172,18 @@ These don't run on cadence; they run when specific events occur.
   3. Founder decides: activate LeaseFactor, hold for more BCFM validation, or pivot
 - **Escalation:** This is the most consequential triggered workflow. Do not autonomous-execute. Surface for founder decision with all relevant context.
 
+### T-Release. Any production change (every PR, every vertical)
+- **Trigger:** A PR against `main` in any MoneyFactor vertical repo
+- **Owner:** CI (`.github/workflows/quality-gates.yml`) → Claude Code fixes failures → founder approves merge
+- **Gate:** `npm run qa` locally, or the CI workflow, must pass before merge:
+  1. `npm run typecheck`
+  2. `npm test`: value math against hand-worked examples, profile validation, quiz never recommends discontinued cards, `/go/` targets, analytics API contract
+  3. `npm run build`: fails on placeholder copy, broken related links, incoherent scores, quiz/profile fee or value drift, articles recommending discontinued cards
+  4. `npm run validate:site`: broken links, unresolvable URL strings in the page payload (the GSC phantom-URL class), placeholders, missing canonicals, duplicate titles/descriptions
+  5. `npm run test:e2e`: every sitemap URL at 375px and 1280px (HTTP 200, no horizontal overflow, no page errors), quiz walk-through, analytics events received, `/go/` redirects
+- **Control pages:** before merging, diff the control page's rendered HTML against `main` (see PR #1 for the method); any change needs founder sign-off.
+- **New vertical:** copy `scripts/`, `tests/`, and the workflow; `validate-site.mjs` derives routes from the build, so only the domain-specific tests change.
+
 ---
 
 ## Workflow output ownership

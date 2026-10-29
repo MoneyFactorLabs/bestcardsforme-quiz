@@ -205,6 +205,7 @@ export function buildValueAnalysis(input: ValueModelInput): CardValueAnalysis {
   }
 
   return {
+    grossAnnualValue: Math.round(result.rewardsValue + result.creditsCaptured),
     summary: result.isBaselineCard
       ? `Year-2 value of about ${money(result.netValue)} on ${money(
           result.totalSpend,

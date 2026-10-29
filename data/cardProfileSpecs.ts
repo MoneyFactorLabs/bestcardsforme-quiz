@@ -126,7 +126,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
         { status: "verified", note: "Free first checked bag (cardholder + 1 companion), 2 United Club passes, priority boarding, and the hotel, rideshare, Avis/Budget, and $10,000-spend travel credits." },
         { status: "unverified", note: "An Instacart credit appears on some listings but not others; it is excluded from the value math." },
         { status: "unverified", note: "The welcome offer varies by listing (50,000–80,000 miles) and is not used in this profile." },
-        { status: "unverified", note: "Checked-bag value assumes a $35 first-bag fee per direction; United's current fee varies by route and payment timing." },
+        { status: "changed", note: "United raised its first checked-bag fee to $45 prepaid online ($50 at the airport) for tickets bought from April 3, 2026; the bag value uses $45." },
         { status: "unverified", note: "The 1.2¢ United mile valuation is a provisional MoneyFactor value, not yet part of the published methodology table." },
       ],
     },
@@ -140,7 +140,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
         { category: "Everything else", annualSpend: 14500, earnRate: 1 },
       ],
       credits: [
-        { name: "Free first checked bag", faceValue: 280, captureRate: 1, note: "Assumes 2 round trips for 2 travelers at $35 per bag each way." },
+        { name: "Free first checked bag", faceValue: 360, captureRate: 1, note: "Assumes 2 round trips for 2 travelers at United's $45 prepaid first-bag fee each way." },
         { name: "2 United Club one-time passes", faceValue: 118, captureRate: 0.5 },
         { name: "United Hotels credit", faceValue: 100, captureRate: 0.4, note: "Prepaid United Hotels stays only." },
         { name: "Rideshare credit", faceValue: 60, captureRate: 0.6 },
@@ -238,13 +238,13 @@ export const cardProfileSpecs: CardProfileSpec[] = [
     creditsSummary:
       "The anniversary points are the only recurring \"credit\". Older versions of this card included an annual Southwest travel credit; current 2026 listings do not confirm one, so it is not counted.",
     travelPerks:
-      "First checked bag free for the cardholder and up to 8 others on the same reservation, a Preferred seat at booking when available, Extra Legroom upgrades within 48 hours of departure when available, and no foreign transaction fee. No lounge access or Global Entry/TSA PreCheck credit.",
+      "First checked bag free for the cardholder and up to 8 others on the same reservation, a Preferred seat at booking when available, Extra Legroom upgrades within 48 hours of departure when available, 2,500 Tier Qualifying Points toward A-List for every $5,000 spent, and no foreign transaction fee. No lounge access or Global Entry/TSA PreCheck credit.",
     transferPartners:
       "Points stay in Southwest Rapid Rewards. There are no transfer partners; Chase Ultimate Rewards points can transfer into Southwest 1:1.",
     recommendedUserTypes: [
       "Households flying Southwest several round trips a year with checked bags",
       "Travelers who value a Preferred seat at booking and Extra Legroom upgrades",
-      "Southwest loyalists chasing the Companion Pass who want points on everyday spending",
+      "Southwest loyalists working toward A-List or the Companion Pass who want points on everyday spending",
     ],
     skipIf: [
       "You fly Southwest less than twice a year: the $229 fee is hard to recover",
@@ -275,7 +275,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
         { status: "changed", note: "Southwest introduced checked-bag fees and assigned seating, so the card's free-bag and seat benefits replaced older boarding perks." },
         { status: "verified", note: "4x Southwest / 2x gas and restaurants / 1x; 7,500 anniversary points; first checked bag free; Preferred seat at booking and Extra Legroom upgrades when available." },
         { status: "unverified", note: "No annual Southwest travel credit is confirmed in current listings; it is not counted." },
-        { status: "unverified", note: "Checked-bag value assumes a $35 first-bag fee per direction; confirm Southwest's current fee." },
+        { status: "changed", note: "Southwest raised its first checked-bag fee to $45 for reservations made from April 9, 2026; the bag value uses $45." },
         { status: "unverified", note: "The 1.3¢ Southwest point valuation is a provisional MoneyFactor value." },
       ],
     },
@@ -290,7 +290,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       ],
       credits: [
         { name: "7,500 anniversary points", faceValue: 97.5, captureRate: 1, note: "Valued at 1.3¢ per point." },
-        { name: "Free first checked bag", faceValue: 280, captureRate: 1, note: "Assumes 2 round trips for 2 travelers at $35 per bag each way." },
+        { name: "Free first checked bag", faceValue: 360, captureRate: 1, note: "Assumes 2 round trips for 2 travelers at Southwest's $45 first-bag fee each way." },
       ],
     },
   },
@@ -372,7 +372,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       "1% on other purchases",
     ],
     creditsSummary:
-      "A monthly Disney Bundle streaming credit is offered with enrollment, but listings disagree on the amount, so it is not counted in the value math.",
+      "Up to $10 a month ($120 a year) in statement credits on Disney+, Hulu, or ESPN streaming purchases, with enrollment. Credits do not roll over, so we count half of the face value for a household that already subscribes.",
     travelPerks:
       "Not a travel card: the 3% transit category helps commuters, but a 2.7% foreign transaction fee applies abroad.",
     transferPartners:
@@ -408,7 +408,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       method: CHECK_METHOD,
       flags: [
         { status: "verified", note: "$95 annual fee ($0 first year); 6% U.S. supermarkets up to $6,000, 6% select U.S. streaming, 3% U.S. gas and transit, 1% other." },
-        { status: "unverified", note: "The Disney Bundle credit is reported at $7–$10 a month; it is excluded from the value math." },
+        { status: "changed", note: "The Disney streaming credit rose from $7 to $10 a month in August 2025; it is counted at 50% of face value." },
         { status: "unverified", note: "The welcome offer varies by listing and is not used in this profile." },
       ],
     },
@@ -422,7 +422,9 @@ export const cardProfileSpecs: CardProfileSpec[] = [
         { category: "Transit", annualSpend: 1000, earnRate: 3 },
         { category: "Everything else", annualSpend: 14400, earnRate: 1 },
       ],
-      credits: [],
+      credits: [
+        { name: "Disney streaming credit", faceValue: 120, captureRate: 0.5, note: "Assumes an existing Disney+, Hulu, or ESPN subscription on monthly billing." },
+      ],
     },
   },
   {
@@ -442,7 +444,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       "1% on other purchases",
     ],
     creditsSummary:
-      "Amex lists statement credits on select streaming subscriptions with enrollment, but the qualifying services and amounts were not confirmable, so no credit is counted.",
+      "A Disney streaming credit of up to $7 a month is reported but not confirmed for 2026, so no credit is counted.",
     travelPerks:
       "Not a travel card, and a 2.7% foreign transaction fee applies abroad.",
     transferPartners:
@@ -477,7 +479,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       method: CHECK_METHOD,
       flags: [
         { status: "verified", note: "$0 annual fee; 3% U.S. supermarkets, U.S. gas, and U.S. online retail, each capped at $6,000 a year; 1% other." },
-        { status: "unverified", note: "Streaming and meal-kit credits from the 2022 card refresh could not be confirmed for 2026; excluded from the math." },
+        { status: "unverified", note: "A Disney streaming credit of up to $7 a month is reported by a single April 2026 source; it is excluded from the math until confirmed." },
         { status: "unverified", note: "The welcome offer varies by listing and is not used in this profile." },
       ],
     },
@@ -521,7 +523,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
     ],
     skipIf: [
       "You will never hold a Sapphire or Ink Preferred card: a 2% card earns more standalone",
-      "You spend often abroad (3% foreign transaction fee)",
+      "You spend often abroad (3% foreign transaction fee); Freedom Flex no longer charges one",
       "Most of your spending is outside dining and drugstores",
     ],
     marketingOverstates: [
@@ -582,7 +584,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
     creditsSummary:
       "No annual statement credits. Cell phone protection was discontinued in September 2026, removing the card's main non-reward benefit.",
     travelPerks:
-      "Basic travel and purchase protections. Reports indicate the foreign transaction fee was removed in September 2026, but this is not yet confirmed.",
+      "Basic travel and purchase protections, and no foreign transaction fee since September 2026, which makes it the rare $0 Chase card that works abroad.",
     transferPartners:
       "On its own, points redeem as cash back at 1¢. Combined with a Sapphire or Ink Business Preferred card, they become transferable.",
     recommendedUserTypes: [
@@ -615,11 +617,11 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       method: CHECK_METHOD,
       flags: [
         { status: "changed", note: "Cell phone protection ended September 20, 2026 (losses through September 19, 2026 remain covered), per card-news reports." },
-        { status: "unverified", note: "Removal of the 3% foreign transaction fee in September 2026 is reported but not confirmed by Chase." },
+        { status: "changed", note: "The 3% foreign transaction fee was removed in September 2026, per multiple card-news reports." },
         { status: "unverified", note: "Q4 2026 rotating categories are not confirmed; the value math assumes you capture 60% of the $6,000 annual 5% cap." },
       ],
     },
-    scores: { rewardsValue: 7, feeJustification: 10, travelUtility: 3, everydayUse: 6, beginnerFriendliness: 6 },
+    scores: { rewardsValue: 7, feeJustification: 10, travelUtility: 4, everydayUse: 6, beginnerFriendliness: 6 },
     valueModel: {
       currency: "cash",
       spend: [
@@ -713,10 +715,13 @@ export const cardProfileSpecs: CardProfileSpec[] = [
     headline: "rent rewards card in transition to the 2026 Bilt lineup",
     bestFor: "Renters who want rewards on rent payments without a transaction fee",
     rewardsSummary:
-      "The original Bilt Mastercard issued by Wells Fargo stopped accepting applications in October 2025. Bilt relaunched in February 2026 with three cards (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495), all paying rent and mortgage with no transaction fee. We have not yet verified the new cards' earn rates, so this profile is not scored.",
+      "The original Bilt Mastercard issued by Wells Fargo stopped accepting applications in October 2025. Bilt relaunched in February 2026 with three cards (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495), all paying rent and mortgage with no transaction fee. Their everyday earn rates are reported consistently, but the rules for earning points on rent are described differently across sources, so this profile is not scored yet.",
     earnRates: [
-      "Rent and mortgage payments through Bilt with no transaction fee on all three 2026 cards",
-      "Bilt reports 4% back in Bilt Cash on everyday spending across the 2026 cards; full earn rates are being verified",
+      "Bilt Blue ($0): 1x points on everyday spending",
+      "Bilt Obsidian ($95): 3x on dining or groceries (your choice; groceries capped at $25,000 a year), 2x on travel, 1x elsewhere",
+      "Bilt Palladium ($495): 2x on all non-housing spending",
+      "All three: 4% back in Bilt Cash on everyday spending, and rent or mortgage payments through Bilt with no transaction fee",
+      "Rent and mortgage points (up to 1.25x) now depend on how much you also spend on the card; sources describe the mechanics differently, so we have not modeled them",
     ],
     creditsSummary:
       "Benefits differ by tier in the 2026 lineup and are being verified; none are counted here.",
@@ -751,7 +756,8 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       flags: [
         { status: "discontinued", note: "The Wells Fargo-issued Bilt Mastercard stopped accepting applications in October 2025." },
         { status: "changed", note: "Bilt Card 2.0 launched February 7, 2026: Bilt Blue ($0), Bilt Obsidian ($95), and Bilt Palladium ($495), issued by Column N.A." },
-        { status: "unverified", note: "Earn rates, credits, and transfer details for the 2026 cards; the score is withheld until they are verified." },
+        { status: "verified", note: "2026 everyday earn rates: Blue 1x; Obsidian 3x dining or groceries and 2x travel; Palladium 2x on everything; 4% Bilt Cash on all three (multiple 2026 reviews)." },
+        { status: "unverified", note: "How rent and mortgage payments earn points (spend thresholds vs. unlocking with Bilt Cash) is described inconsistently; the score is withheld until confirmed." },
       ],
     },
     scores: "withheld",
