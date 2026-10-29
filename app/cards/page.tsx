@@ -43,7 +43,13 @@ export default function CardsIndexPage() {
           description: profile.bestFor,
           meta: [
             { label: "Fee", value: formatAnnualFee(profile.annualFee) },
-            { label: "Score", value: `${profile.moneyFactorScores.overall.toFixed(1)}/10` },
+            {
+              label: "Score",
+              value:
+                profile.scoreStatus === "withheld"
+                  ? "Under review"
+                  : `${profile.moneyFactorScores.overall.toFixed(1)}/10`,
+            },
           ],
           ctaLabel: "View card profile",
         }))}

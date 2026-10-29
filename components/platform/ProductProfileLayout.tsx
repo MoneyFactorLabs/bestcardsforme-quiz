@@ -8,6 +8,9 @@ export type ProductProfileSection = {
   title: string;
   body?: string;
   items?: string[];
+  rows?: { label: string; value: string; emphasis?: boolean }[];
+  links?: { href: string; label: string; description: string }[];
+  footnotes?: string[];
 };
 
 export type ProductProfileLayoutProps = {
@@ -17,7 +20,8 @@ export type ProductProfileLayoutProps = {
   title: string;
   subtitle?: string;
   meta: { label: string; value: string }[];
-  scorecard: ScorecardProps;
+  reviewedLabel: string;
+  scorecard?: ScorecardProps;
   sections: ProductProfileSection[];
   recommendationCta: RecommendationCTAProps;
   relatedArticles?: RelatedArticleItem[];
@@ -43,6 +47,41 @@ function ProductSection({ section }: { section: ProductProfileSection }) {
           ))}
         </ul>
       )}
+      {section.rows && section.rows.length > 0 && (
+        <dl className="mt-4 divide-y divide-blue-gray/60 overflow-hidden rounded-md border border-blue-gray/70 text-sm">
+          {section.rows.map((row, index) => (
+            <div
+              key={index}
+              className={`flex items-start justify-between gap-4 px-4 py-3 ${
+                row.emphasis ? "bg-gold/10 font-bold text-navy" : "bg-white text-mid-navy/85"
+              }`}
+            >
+              <dt className="min-w-0 font-medium">{row.label}</dt>
+              <dd className="shrink-0 font-bold text-navy">{row.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {section.links && section.links.length > 0 && (
+        <ul className="mt-3 grid gap-3">
+          {section.links.map((link) => (
+            <li key={link.href} className="rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4">
+              <Link
+                href={link.href}
+                className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+              >
+                {link.label}
+              </Link>
+              <p className="mt-1 text-sm font-medium leading-6 text-mid-navy/80">{link.description}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+      {section.footnotes?.map((footnote, index) => (
+        <p key={index} className="mt-3 text-sm font-medium leading-7 text-mid-navy/80">
+          {footnote}
+        </p>
+      ))}
     </section>
   );
 }
@@ -54,6 +93,7 @@ export function ProductProfileLayout({
   title,
   subtitle,
   meta,
+  reviewedLabel,
   scorecard,
   sections,
   recommendationCta,
@@ -82,7 +122,7 @@ export function ProductProfileLayout({
             </p>
           )}
           <div className="mt-6 flex flex-wrap gap-2">
-            {["Reviewed & updated April 2026", "Independent MoneyFactor scoring", "Issuer terms can change"].map(
+            {[reviewedLabel, "Independent MoneyFactor scoring", "Issuer terms can change"].map(
               (item) => (
                 <span
                   key={item}
@@ -126,7 +166,7 @@ export function ProductProfileLayout({
 
       <div className="mt-6 grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
         <div className="grid min-w-0 gap-5">
-          <Scorecard {...scorecard} />
+          {scorecard && <Scorecard {...scorecard} />}
 
           {sections.map((section) => (
             <ProductSection key={section.title} section={section} />

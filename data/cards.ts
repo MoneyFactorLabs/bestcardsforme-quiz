@@ -571,7 +571,7 @@ export const cards: CreditCard[] = [
   {
     id: "united-explorer",
     name: "United Explorer",
-    annualFee: 95,
+    annualFee: 150,
     valueEstimateLow: 200,
     valueEstimateHigh: 550,
     type: "travel/airline",
@@ -612,11 +612,11 @@ export const cards: CreditCard[] = [
   {
     id: "southwest-rapid-rewards-priority",
     name: "Southwest Rapid Rewards Priority",
-    annualFee: 149,
+    annualFee: 229,
     valueEstimateLow: 250,
     valueEstimateHigh: 650,
     type: "travel/airline",
-    bestFor: "Southwest flyers who can use annual travel credits, upgraded boardings, and airline-specific perks",
+    bestFor: "Frequent Southwest flyers who check bags and use seat and upgrade perks",
     realisticAnnualValue: "$250-$650 depending on Southwest flight activity",
     avoidIf: "You do not fly Southwest or need premium international travel perks",
     currentPublicOffer: "Current public offer varies; verify current issuer terms before applying",
