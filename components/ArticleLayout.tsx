@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { linkPrefetch } from "@/lib/links";
 import type { ReactNode } from "react";
 import { ArticleDecisionPaths } from "@/components/ArticleDecisionPaths";
 import { ArticleMoneyFactorScorecard } from "@/components/ArticleMoneyFactorScorecard";
@@ -94,6 +95,7 @@ function renderInlineText(text: string): ReactNode[] {
           <Link
             key={`link-${match.index}`}
             href={href}
+            prefetch={linkPrefetch(href)}
             className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
           >
             {label}
@@ -205,6 +207,7 @@ function ArticleFinalRecommendation({ article }: { article: EditorialArticle }) 
       <div className="mt-4 flex flex-col gap-3 sm:flex-row">
         <Link
           href={href}
+          prefetch={linkPrefetch(href)}
           className="focus-ring rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
         >
           Verify current offer →

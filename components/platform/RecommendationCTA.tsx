@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { linkPrefetch } from "@/lib/links";
 
 export type RecommendationCTAProps = {
   eyebrow?: string;
@@ -52,6 +53,7 @@ export function RecommendationCTA({
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
             href={href}
+            prefetch={linkPrefetch(href)}
             className="focus-ring rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
           >
             {buttonLabel}

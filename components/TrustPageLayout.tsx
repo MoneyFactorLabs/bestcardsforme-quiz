@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { linkPrefetch } from "@/lib/links";
 import type { ReactNode } from "react";
 import { JsonLd } from "@/components/JsonLd";
 import type { TrustPage } from "@/data/trustPages";
@@ -41,6 +42,7 @@ function renderInlineText(text: string): ReactNode[] {
           <Link
             key={`link-${match.index}`}
             href={href}
+            prefetch={linkPrefetch(href)}
             className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
           >
             {label}

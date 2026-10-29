@@ -144,26 +144,39 @@ async function checkQuiz(browser) {
 }
 
 async function checkCardTracking(browser) {
-  const context = await browser.newContext({ viewport: viewports.mobile });
+  // A regular browser user agent: /go/ deliberately ignores "HeadlessChrome" as a bot.
+  const context = await browser.newContext({
+    viewport: viewports.mobile,
+    userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+  });
   await context.addInitScript(trackEvents());
   await blockLiveAnalytics(context);
   const page = await context.newPage();
-  // A 204 response cancels the CTA navigation, so the recorded event can still be read.
-  await page.route("**/go/**", (route) => route.fulfill({ status: 204 }));
+  // In live mode a 204 cancels the CTA navigation, so production records nothing.
+  if (liveBase) await page.route("**/go/**", (route) => route.fulfill({ status: 204 }));
   const viewedBefore = loggedCount("card_detail_viewed");
-  const clickedBefore = loggedCount("card_cta_clicked");
+  const outboundBefore = loggedCount("outbound_click");
 
   await page.goto(`${origin}/cards/citi-double-cash`, { waitUntil: "load" });
   if (!(await waitForEvent(page, "card_detail_viewed", viewedBefore))) fail("card page: card_detail_viewed event not received");
 
-  // Only the sidebar "Read issuer terms" CTA is instrumented today; other /go/ links are counted as a warning.
-  const goLinks = await page.locator('a[href^="/go/"]').count();
-  if (goLinks > 1) warnings.push(`card page: ${goLinks - 1} /go/ link(s) besides "Read issuer terms" send no click event`);
-  const cta = page.getByRole("link", { name: "Read issuer terms" });
-  if (!(await cta.count())) fail("card page: tracked /go/ CTA missing");
-  else {
+  const cta = page.locator('a[href="/go/citi-double-cash"]').first();
+  if (!(await cta.count())) {
+    fail("card page: /go/ CTA missing");
+  } else if (liveBase) {
     await cta.click().catch(() => {});
-    if (!(await waitForEvent(page, "card_cta_clicked", clickedBefore))) fail("card page: card_cta_clicked event not received");
+  } else {
+    // Every /go/ link is counted server-side: one click must log exactly one
+    // outbound_click, even though <Link> also prefetched the route.
+    await cta.click();
+    const start = Date.now();
+    while (loggedCount("outbound_click") === outboundBefore && Date.now() - start < 5000) {
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+    // Leave time for any duplicate (document navigation after the RSC request) to show up.
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const logged = loggedCount("outbound_click") - outboundBefore;
+    if (logged !== 1) fail(`card page: expected 1 outbound_click for one CTA click, server logged ${logged}`);
   }
   await context.close();
 }
@@ -173,7 +186,8 @@ async function checkAffiliateRedirects() {
   const slugs = [...source.matchAll(/affiliateSlug: "([^"]+)"/g)].map((match) => match[1]);
 
   for (const slug of slugs) {
-    const response = await fetch(`${origin}/go/${slug}`, { redirect: "manual" });
+    // The QA user agent is treated as a bot, so redirect checks are never counted as clicks.
+    const response = await fetch(`${origin}/go/${slug}`, { redirect: "manual", headers: { "user-agent": "bcfm-qa-bot" } });
     const location = response.headers.get("location") || "";
     if (![307, 308].includes(response.status) || !location) {
       fail(`/go/${slug}: expected redirect, got ${response.status}`);
