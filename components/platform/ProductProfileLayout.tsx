@@ -66,12 +66,23 @@ function ProductSection({ section }: { section: ProductProfileSection }) {
         <ul className="mt-3 grid gap-3">
           {section.links.map((link) => (
             <li key={link.href} className="rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4">
-              <Link
-                href={link.href}
-                className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
-              >
-                {link.label}
-              </Link>
+              {link.href.startsWith("https://") ? (
+                <a
+                  href={link.href}
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+                >
+                  {link.label}
+                </Link>
+              )}
               <p className="mt-1 text-sm font-medium leading-6 text-mid-navy/80">{link.description}</p>
             </li>
           ))}

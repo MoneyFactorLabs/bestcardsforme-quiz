@@ -1,0 +1,107 @@
+{
+  "note": "Official issuer page and secondary sources for every quiz card. scripts/verify-issuer-facts.mjs checks issuer pages directly (scheduled in CI, where issuer domains are reachable) and flags stale secondary checks. issuerUrl values are best-known product URLs and are confirmed by the first CI run; a 404 there is reported, not guessed around.",
+  "cards": {
+    "chase-sapphire-reserve": {
+      "issuerUrl": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "secondary": []
+    },
+    "chase-sapphire-preferred": {
+      "issuerUrl": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "secondary": []
+    },
+    "capital-one-venture-x": {
+      "issuerUrl": "https://www.capitalone.com/credit-cards/venture-x/",
+      "secondary": []
+    },
+    "amex-platinum": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+      "secondary": []
+    },
+    "amex-gold": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "secondary": [
+        { "publisher": "AwardWallet", "url": "https://awardwallet.com/news/credit-cards/american-express-gold-card-refresh-2026/", "checkedAt": "2026-10-29", "covers": "$325 fee, 4x restaurants ($50k cap), 4x U.S. supermarkets ($25k cap), dining/Resy/Uber/Dunkin credits" }
+      ]
+    },
+    "citi-double-cash": {
+      "issuerUrl": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "secondary": [
+        { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/credit-cards/reviews/citi-double-cash", "checkedAt": "2026-10-29", "covers": "$0 fee, 2% (1% buy + 1% pay), 3% foreign transaction fee" }
+      ]
+    },
+    "wells-fargo-active-cash": {
+      "issuerUrl": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
+      "secondary": [
+        { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/article/credit-cards/wells-fargo-active-cash-card-2-percent-back-no-annual-fee", "checkedAt": "2026-10-29", "covers": "$0 fee, 2% cash rewards, cell phone protection, 3% foreign transaction fee" }
+      ]
+    },
+    "blue-cash-preferred": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+      "secondary": [
+        { "publisher": "American Express (benefit page)", "url": "https://global.americanexpress.com/card-benefits/detail/disney-streaming-credit/blue-cash-preferred", "checkedAt": "2026-10-29", "covers": "Disney streaming credit up to $10/month" },
+        { "publisher": "AwardWallet", "url": "https://awardwallet.com/news/cash-back/amex-disney-streaming-credit-update/", "checkedAt": "2026-10-29", "covers": "Disney credit increase from $7 to $10 (Aug 2025)" }
+      ]
+    },
+    "blue-cash-everyday": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
+      "secondary": [
+        { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/credit-cards/reviews/american-express-blue-cash-everyday", "checkedAt": "2026-10-29", "covers": "$0 fee, 3% U.S. supermarkets/gas/online retail with separate $6,000 caps" }
+      ]
+    },
+    "chase-freedom-unlimited": {
+      "issuerUrl": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "secondary": [
+        { "publisher": "CreditCards.com", "url": "https://www.creditcards.com/card-advice/no-annual-fee-cash-back-rewards-card-chase-freedom-unlimited", "checkedAt": "2026-10-29", "covers": "5% Chase Travel, 3% dining and drugstores, 1.5% other" }
+      ]
+    },
+    "chase-freedom-flex": {
+      "issuerUrl": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "secondary": [
+        { "publisher": "Clark.com", "url": "https://clark.com/credit-cards/chase-freedom-flex-changes-2026/", "checkedAt": "2026-10-29", "covers": "Foreign transaction fee removed and cell phone protection ended (Sept 2026)" },
+        { "publisher": "Upgraded Points", "url": "https://upgradedpoints.com/news/chase-freedom-flex-removing-foreign-transaction-fees/", "checkedAt": "2026-10-29", "covers": "Foreign transaction fee removal" }
+      ]
+    },
+    "bilt-mastercard": {
+      "issuerUrl": "https://www.bilt.com/card",
+      "discontinued": true,
+      "secondary": [
+        { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-credit-card", "checkedAt": "2026-10-29", "covers": "Wells Fargo Bilt Mastercard discontinued (Oct 2025)" },
+        { "publisher": "Doctor of Credit", "url": "https://www.doctorofcredit.com/three-brand-new-bilt-2-0-cards-blue-obsidian-palladium/", "checkedAt": "2026-10-29", "covers": "Bilt Blue/Obsidian/Palladium fees and earn rates" }
+      ]
+    },
+    "hilton-aspire": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+      "secondary": []
+    },
+    "marriott-bonvoy-brilliant": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/",
+      "secondary": []
+    },
+    "united-explorer": {
+      "issuerUrl": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
+      "secondary": [
+        { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/credit-cards/reviews/united-explorer", "checkedAt": "2026-10-29", "covers": "$150 fee ($0 first year), free checked bag, 2 United Club passes" },
+        { "publisher": "Travel Pirates", "url": "https://www.travelpirates.com/captains-log/us-us-airline-checked-baggage-fees-2026", "checkedAt": "2026-10-29", "covers": "United first checked bag $45 prepaid (April 2026)" }
+      ]
+    },
+    "southwest-rapid-rewards-priority": {
+      "issuerUrl": "https://creditcards.chase.com/travel-credit-cards/southwest/priority",
+      "secondary": [
+        { "publisher": "NerdWallet", "url": "https://nerdwallet.com/credit-cards/news/southwest-cards-hike-fees-and-welcome-offers-add-perks-and-bonus-categories", "checkedAt": "2026-10-29", "covers": "Plus $99 / Premier $149 / Priority $229 fees, anniversary points" },
+        { "publisher": "NBC DFW", "url": "https://www.nbcdfw.com/news/local/southwest-becomes-the-latest-airline-to-increase-checked-bag-fees/4007913/", "checkedAt": "2026-10-29", "covers": "Southwest first checked bag $45 (April 2026)" }
+      ]
+    },
+    "ink-business-preferred": {
+      "issuerUrl": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+      "secondary": [
+        { "publisher": "AwardWallet", "url": "https://awardwallet.com/credit-cards/chase-ultimate-rewards/ink-business-preferred/", "checkedAt": "2026-10-29", "covers": "$95 fee, 3x on first $150,000 in four categories" }
+      ]
+    },
+    "ink-business-cash": {
+      "issuerUrl": "https://creditcards.chase.com/business-credit-cards/ink/cash",
+      "secondary": [
+        { "publisher": "CreditCards.com", "url": "https://www.creditcards.com/reviews/chase-ink-business-cash-card-review", "checkedAt": "2026-10-29", "covers": "$0 fee, 5% and 2% tiers each capped at $25,000" }
+      ]
+    }
+  }
+}
