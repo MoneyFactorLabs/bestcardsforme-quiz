@@ -103,9 +103,9 @@ export const articleInternalLinkMap: Record<string, ArticleInternalLink[]> = {
       reason: "New-user framework",
     },
     {
-      slug: "is-capital-one-venture-x-worth-it-2026",
-      anchor: "check the Venture X premium step-up",
-      reason: "Premium alternative",
+      slug: "best-credit-card-for-dining-restaurants-2026",
+      anchor: "see when Sapphire Preferred wins for dining",
+      reason: "Dining decision matrix",
     },
     {
       slug: "best-2-card-credit-card-setup-2026",
@@ -513,9 +513,9 @@ export const articleInternalLinkMap: Record<string, ArticleInternalLink[]> = {
       reason: "Premium Chase stack",
     },
     {
-      slug: "is-amex-platinum-worth-it-2026",
-      anchor: "compare a premium Amex anchor",
-      reason: "Premium Amex stack",
+      slug: "best-credit-card-for-dining-restaurants-2026",
+      anchor: "pick the dining card for a two-card setup",
+      reason: "Dining decision matrix",
     },
   ],
   "best-credit-card-for-gas-2026": [
@@ -611,9 +611,9 @@ export const articleInternalLinkMap: Record<string, ArticleInternalLink[]> = {
       reason: "Low-fee upgrade",
     },
     {
-      slug: "best-2-card-credit-card-setup-2026",
-      anchor: "use no-fee cards in a two-card setup",
-      reason: "Stack complement",
+      slug: "best-credit-card-for-dining-restaurants-2026",
+      anchor: "compare $0 cash back vs points for dining",
+      reason: "Dining decision matrix",
     },
     {
       slug: "best-credit-card-for-online-shopping-2026",

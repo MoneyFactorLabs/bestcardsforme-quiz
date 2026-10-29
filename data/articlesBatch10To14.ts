@@ -993,267 +993,278 @@ export const articleBatch10To14: EditorialArticle[] = [
   },
   {
     "slug": "best-credit-card-for-dining-restaurants-2026",
-    "eyebrow": "Dining Card Comparison",
-    "title": "Best Credit Cards for Dining 2026: Amex Gold vs Chase vs Cash Back",
-    "metaDescription": "Compare the best credit cards for dining and restaurants in 2026 by rewards rate, annual fee, travel perks, cash back, and real-world value.",
-    "dek": "For most affluent households spending $300+ per month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
+    "eyebrow": "Dining Card Decision Matrix",
+    "title": "Best Credit Card for Dining in 2026: Cash Back vs Points by Spend and Fee",
+    "metaDescription": "A dining credit card decision matrix for 2026: cash back vs points, by how much you spend at restaurants and how much annual fee you will pay, with break-even math.",
+    "dek": "There is no single best dining card. The right one depends on three answers: whether you will transfer points, how much you spend at restaurants, and how much annual fee you will tolerate. If you will not transfer points, a $0, 3% cash-back card is the ceiling. If you will, the $95 Chase Sapphire Preferred clears its fee at about $283 a month of dining, and the $325 Amex Gold needs about $564 a month of dining and U.S. supermarket spending combined before it beats a plain 2% card.",
     "category": "Dining and grocery cards",
-    "updatedAt": "2026-04-27",
+    "updatedAt": "2026-10-29",
     "reviewedBy": "Tim, founder and editor of BestCardsForMe",
-    "readingTime": "12 min read",
+    "readingTime": "9 min read",
     "comparisonMetrics": [
       {
-        "label": "Top per-dollar dining value",
-        "value": "Amex Gold at 4x MR"
+        "label": "Won't transfer points",
+        "value": "$0, 3% cash back wins"
       },
       {
-        "label": "Best lower-fee travel fit",
-        "value": "Chase Sapphire Preferred at $95"
+        "label": "$95 points break-even",
+        "value": "~$283/month dining"
       },
       {
-        "label": "Best simple cash-back fit",
-        "value": "Capital One Savor-style cash back"
+        "label": "$325 Amex Gold break-even",
+        "value": "~$564/month dining + groceries"
       },
       {
-        "label": "MoneyFactor lens",
-        "value": "Dining value only matters after annual-fee drag"
+        "label": "Compared against",
+        "value": "A $0, 2% flat-rate card"
       }
     ],
-    "scorecard": {
-      "rewardsValue": 9,
-      "feeJustification": 8,
-      "travelUtility": 5,
-      "everydayUse": 9,
-      "beginnerFriendliness": 6,
-      "overallScore": 7.8,
-      "summary": "For dining plus grocery households, Amex Gold has the strongest combined economics; for dining alone, lower-fee travel cards can be surprisingly competitive."
-    },
     "sections": [
       {
         "heading": "Quick answer",
         "body": [
-          "For most affluent households spending $300+ per month at restaurants, the **Amex Gold at $325** is the strongest dining-focused card in 2026 — its 4x Membership Rewards points on dining worldwide produces the highest captured value per dollar at our conservative point valuations. For households who want premium travel benefits alongside dining rewards, the **Chase Sapphire Reserve at $795** earns elevated rates on dining (post-2025 refresh — verify exact rate) and bundles lounge access. For households that prefer simpler cash back, **Capital One Savor at $95** earns 3% on dining and entertainment. For travel-focused households at the $95 fee tier, the **Chase Sapphire Preferred** earns 3x dining alongside travel benefits.",
-          "This piece walks the comparisons that matter and segments recommendations by household profile."
+          "Every dining card has to beat the card you would otherwise use at restaurants: a $0-fee card earning 2% on everything, like the [Citi Double Cash](/cards/citi-double-cash). This guide measures each dining card by how much it earns **above** that baseline, after its annual fee, in Year 2 (welcome bonuses excluded).",
+          "Answer three questions in order. **Will you transfer points to airline or hotel partners?** If not, points cards lose most of their edge and a $0, 3% cash-back card is your best dining card. **How much do you spend at restaurants?** Under about $250 a month, no dining card adds more than about $30 a year over a 2% card. **How much annual fee will you tolerate?** The fee sets the spending level where a card starts paying for itself."
         ]
       },
       {
-        "heading": "The four cards that matter for dining-focused households",
+        "heading": "The dining decision matrix",
         "body": [
-          "Per-dollar capture comparison on $5,000 of annual dining spend:",
-          "The **Amex Gold's 4x rate produces $100+ more captured value per $5,000 of dining** than its closest competitors. For households whose dining is the dominant card-use category, Gold's earning advantage is substantial."
+          "Each cell shows Year-2 value **above** putting the same dining spend on a $0, 2% flat-rate card, after the annual fee. Points are valued at our published conservative rates and assume you transfer them; cash-back cards are valued at face value.",
+          "Read across your dining-spend row, stop at the highest fee you would pay, and take the best number you reach."
         ],
+        "table": {
+          "columns": [
+            "Dining spend",
+            "$0 fee, cash back (3%)",
+            "$95 fee, points (Sapphire Preferred)",
+            "$325 fee, points (Amex Gold)",
+            "$795 fee (Sapphire Reserve)"
+          ],
+          "rows": [
+            [
+              "**Light**: ~$200/month ($2,400/yr)",
+              "+$24",
+              "−$28",
+              "−$210 dining only; +$78 with $6,000 of U.S. supermarket spend",
+              "−$728"
+            ],
+            [
+              "**Moderate**: ~$420/month ($5,000/yr)",
+              "+$50",
+              "+$45",
+              "−$85 dining only; +$203 with groceries",
+              "−$655"
+            ],
+            [
+              "**Heavy**: ~$830/month ($10,000/yr)",
+              "+$100",
+              "+$185",
+              "+$155 dining only; +$443 with groceries",
+              "−$515"
+            ]
+          ]
+        },
         "bullets": [
-          "**Amex Gold:** 4x × $5,000 × 1.7¢ = **$340**",
-          "**Sapphire Reserve:** 3x × $5,000 × 1.6¢ = **$240**",
-          "**Sapphire Preferred:** 3x × $5,000 × 1.6¢ = **$240**",
-          "**Citi Strata Premier:** 3x × $5,000 × 1.5¢ = **$225**",
-          "**Capital One Savor:** 3% × $5,000 = **$150**"
+          "**Light diners:** take the $0 cash-back option or simply keep using a 2% card. A dining card is not where your money is.",
+          "**Moderate diners:** $0 cash back and the $95 Sapphire Preferred are effectively tied on dining alone; the Preferred wins only if you also value its travel earning and protections.",
+          "**Heavy diners who transfer points:** the Sapphire Preferred leads on dining alone. The Amex Gold leads only when U.S. supermarket spending also runs through it.",
+          "**Sapphire Reserve is never a dining card.** At 3x it earns the same on dining as the Preferred for $700 more a year; hold it only if its travel benefits pay for it."
+        ]
+      },
+      {
+        "heading": "How the matrix is calculated",
+        "body": [
+          "Effective return is points per dollar times our conservative point value. Break-even is the dining spend at which the card's extra return over 2% covers its annual fee."
         ],
         "table": {
           "columns": [
             "Card",
             "Annual fee",
-            "Dining rate",
-            "Point currency",
-            "BCFM valuation"
+            "Dining earn",
+            "Effective return",
+            "Break-even vs. a 2% card"
           ],
           "rows": [
             [
-              "**Amex Gold**",
-              "$325",
-              "4x MR worldwide",
-              "Membership Rewards",
-              "1.7¢"
-            ],
-            [
-              "**Chase Sapphire Reserve**",
-              "$795",
-              "3x UR (post-refresh; verify)",
-              "Ultimate Rewards",
-              "1.6¢"
-            ],
-            [
-              "**Chase Sapphire Preferred**",
-              "$95",
-              "3x UR",
-              "Ultimate Rewards",
-              "1.6¢"
-            ],
-            [
               "**Capital One Savor**",
-              "$95",
+              "$0",
               "3% cash back",
-              "Cash back",
-              "1.0¢"
+              "3.0%",
+              "From the first dollar"
+            ],
+            [
+              "**[Chase Freedom Unlimited](/cards/chase-freedom-unlimited)**",
+              "$0",
+              "3% on dining",
+              "3.0% as cash",
+              "From the first dollar"
+            ],
+            [
+              "**[Chase Sapphire Preferred](/cards/chase-sapphire-preferred)**",
+              "$95",
+              "3x Ultimate Rewards",
+              "4.8% (1.6¢/pt)",
+              "$3,393/yr (~$283/month)"
             ],
             [
               "**Citi Strata Premier**",
               "$95",
-              "3x ThankYou Points",
-              "ThankYou Points",
-              "1.5¢"
+              "3x ThankYou points",
+              "4.5% (1.5¢/pt)",
+              "$3,800/yr (~$317/month)"
+            ],
+            [
+              "**[Amex Gold](/cards/amex-gold)**",
+              "$325",
+              "4x Membership Rewards (first $50,000/yr)",
+              "6.8% (1.7¢/pt)",
+              "$6,771/yr of dining + U.S. supermarkets (~$564/month)"
+            ],
+            [
+              "**[Chase Sapphire Reserve](/cards/chase-sapphire-reserve)**",
+              "$795",
+              "3x Ultimate Rewards",
+              "4.8% (1.6¢/pt)",
+              "$28,393/yr: not realistic for dining alone"
             ]
           ]
-        }
-      },
-      {
-        "heading": "Why Amex Gold dominates per-dollar dining capture",
-        "body": [
-          "Three factors drive Gold's leading position for dining-heavy households:",
-          "The $325 fee, however, must be cleared. For a household spending $300 per month ($3,600/year) on dining alone, captured value is $245 — below the fee on dining alone. Gold's case requires either higher dining volume or capturing the card's grocery 4x and lifestyle credit stack as well. (See our [Amex Gold deep-dive](/cards/amex-gold) for full Year-2 math.)"
-        ],
+        },
         "bullets": [
-          "**The 4x rate is uncapped on dining.** Unlike the supermarket rate (capped at $25,000/year), the dining bonus has no annual ceiling. Households spending $10,000+ at restaurants annually capture proportionally more.",
-          "**Dining \"worldwide\" includes international restaurant spending.** Many cards limit bonus rates to U.S. or domestic dining; Amex Gold's 4x applies globally. For international travelers and households who eat out abroad, this is meaningful.",
-          "**Membership Rewards' transfer partner network is deep.** UR points at 1.6¢ and MR at 1.7¢ both reflect strong transferable currencies. The marginal 0.1¢ MR advantage compounds across $5,000+ of dining spend."
+          "Point values come from our [methodology](/methodology): Chase Ultimate Rewards 1.6¢, Amex Membership Rewards 1.7¢, Citi ThankYou 1.5¢.",
+          "Welcome bonuses are excluded: Year 2 is when a card has to earn its fee.",
+          "Statement credits are excluded from the matrix. Amex Gold's dining-related credits are covered below and lower its break-even only if you already use those merchants.",
+          "The \"with groceries\" Amex Gold column adds $6,000 a year of U.S. supermarket spending at 4x, which also earns 4.8% more than a 2% card."
         ]
       },
       {
-        "heading": "Captured value, segmented by dining-spend tier",
-        "body": [],
+        "heading": "Question 1: will you transfer points?",
+        "body": [
+          "Points cards win the matrix only because transferred points are worth more than 1¢. Redeem them for cash or statement credits and the ranking flips.",
+          "If you are not going to move points to airline or hotel partners at least occasionally, choose cash back. Capital One Savor earns 3% on dining for $0; [Chase Freedom Unlimited](/cards/chase-freedom-unlimited) also earns 3% on dining and can be upgraded into transferable points later if you add a Sapphire card."
+        ],
+        "bullets": [
+          "**Sapphire Preferred cashed out at 1¢:** 3% on dining, the same as a $0 cash-back card, minus a $95 fee. It needs $9,500 a year of dining just to tie a 2% card.",
+          "**Amex Gold redeemed as statement credit (about 0.6¢ per point):** 2.4% on dining, barely above a 2% card, against a $325 fee. At that redemption rate it never pays off on dining.",
+          "**Citi Strata Premier cashed out at 1¢:** 3% on dining for $95, the same trap as the Sapphire Preferred."
+        ]
+      },
+      {
+        "heading": "Question 2: how much do you actually spend at restaurants?",
+        "body": [
+          "Use your last three statements, not a guess. Count restaurants, takeout, and delivery; issuers usually code delivery apps as dining, but merchant coding varies, so check how your regular spots post."
+        ],
+        "bullets": [
+          "**Under $250/month:** the best dining card adds at most about $30 a year over a 2% card. Put your effort into whichever category is actually large, such as [groceries](/articles/best-grocery-credit-card-high-spend-households-2026).",
+          "**$250–$600/month:** a $0, 3% card or the $95 Sapphire Preferred. The Preferred is worth it only if you transfer points and want its travel benefits too.",
+          "**Over $600/month:** points cards pull ahead for people who transfer. The Sapphire Preferred is the best dining-only pick; the Amex Gold wins when supermarket spending joins dining."
+        ]
+      },
+      {
+        "heading": "Question 3: how much annual fee will you tolerate?",
+        "body": [
+          "The fee sets the bar. Every card above $0 has a dining-spend threshold below which you are paying for the privilege of earning less than a 2% card."
+        ],
         "subsections": [
           {
-            "heading": "Tier 1: $200–$400 per month dining ($2,400–$4,800/year)",
+            "heading": "$0: cash back",
             "body": [
-              "Single professional or couple who dines out moderately.",
-              "**Tier 1 winner for dining alone:** Sapphire Preferred at $95 — modest captured value on dining, but no fee penalty and broader travel benefits. **Amex Gold becomes the right pick only when grocery spending also concentrates in 4x territory** or lifestyle credits capture cleanly."
-            ],
-            "bullets": [
-              "**Amex Gold:** 4x × $3,600 = $245 (dining alone). After $325 fee on dining alone: -$80. **Gold's case requires capturing additional grocery 4x and lifestyle credits to clear.**",
-              "**Capital One Savor:** 3% × $3,600 = $108. After $95 fee: +$13.",
-              "**Sapphire Preferred:** 3x × $3,600 = $173. After $95 fee: +$78.",
-              "**Citi Strata Premier:** 3x × $3,600 = $162. After $95 fee: +$67."
+              "Capital One Savor (3% on dining, plus 3% at grocery stores excluding superstores and on popular streaming) or Chase Freedom Unlimited (3% on dining and drugstores, 1.5% elsewhere). Pair either with a [2% catch-all card](/cards/citi-double-cash) for everything else. Our [no-annual-fee guide](/articles/best-no-annual-fee-credit-card-2026) compares the wider $0 field."
             ]
           },
           {
-            "heading": "Tier 2: $400–$700 per month dining ($4,800–$8,400/year)",
+            "heading": "Up to $95: transferable points",
             "body": [
-              "Affluent household that eats out routinely — multiple meals out per week.",
-              "**Tier 2 winner on dining alone:** Sapphire Preferred or Citi Strata Premier. Amex Gold pulls ahead when the grocery 4x and lifestyle credits also capture — typical realistic Year-2 net for an engaged Gold household at this dining tier is $500–$900 above fee, factoring in groceries."
-            ],
-            "bullets": [
-              "**Amex Gold:** 4x × $6,000 = $408. After $325 fee on dining alone: +$83.",
-              "**Capital One Savor:** 3% × $6,000 = $180. After $95: +$85.",
-              "**Sapphire Preferred:** 3x × $6,000 = $288. After $95: +$193.",
-              "**Citi Strata Premier:** 3x × $6,000 = $270. After $95: +$175."
+              "The [Chase Sapphire Preferred](/cards/chase-sapphire-preferred) and Citi Strata Premier both earn 3x on dining. The Preferred values slightly higher at our rates and adds stronger travel protections; the Strata Premier also earns 3x at supermarkets, gas stations, and on air travel and hotels, which suits households whose spending is spread across those categories."
             ]
           },
           {
-            "heading": "Tier 3: $700+ per month dining ($8,400+/year)",
+            "heading": "$325: Amex Gold, only with groceries",
             "body": [
-              "Frequent diner; routinely entertains; high-volume restaurant spending.",
-              "**Tier 3 winner on dining alone:** Surprisingly, Sapphire Preferred at $95 nearly matches Amex Gold on dining-only capture, while Gold pulls clearly ahead once grocery and lifestyle credits factor in. **For dining-only optimization, Preferred wins.** For combined dining + grocery + travel optimization, Gold dominates."
-            ],
-            "bullets": [
-              "**Amex Gold:** 4x × $10,000 = $680. After $325 fee on dining alone: +$355.",
-              "**Capital One Savor:** 3% × $10,000 = $300. After $95: +$205.",
-              "**Sapphire Preferred:** 3x × $10,000 = $480. After $95: +$385.",
-              "**Citi Strata Premier:** 3x × $10,000 = $450. After $95: +$355."
+              "Amex Gold's 4x at restaurants (on up to $50,000 a year) and at U.S. supermarkets (on up to $25,000 a year) is the highest effective dining return here, but $325 is a high bar for dining alone. It makes sense when dining plus U.S. supermarket spending passes about $6,800 a year and you transfer points. Our [Amex Gold review](/articles/is-amex-gold-worth-it-2026) has the full Year-2 math."
+            ]
+          },
+          {
+            "heading": "$795: not for dining",
+            "body": [
+              "The [Chase Sapphire Reserve](/cards/chase-sapphire-reserve) earns 3x on dining, the same as the $95 Preferred. Its case rests entirely on travel credits, lounges, and protections; see [whether the Reserve is worth it](/articles/is-chase-sapphire-reserve-worth-it-2026) before counting dining toward its fee."
             ]
           }
         ]
       },
       {
-        "heading": "Comparison: Gold's structural advantage vs each competitor",
+        "heading": "Amex Gold's dining credits: count only what you already use",
         "body": [
-          "**Vs. Capital One Savor (3% cash back).** Gold's 4x at 1.7¢ MR captures 6.8¢ per dollar. Savor's 3% captures 3¢ per dollar. Gold wins by 3.8¢ per dollar of dining spend — but this assumes you actually transfer MR strategically. Households that redeem MR for statement credit (0.6¢) capture 2.4¢ per dollar — *less* than Savor. The Gold's win depends on point redemption habits.",
-          "**Vs. Sapphire Preferred (3x UR).** Gold's 4x at 1.7¢ captures 6.8¢ per dollar; Preferred's 3x at 1.6¢ captures 4.8¢. Gold wins by 2.0¢ per dollar — but Preferred costs $230 less and adds travel earning, the $50 Chase Travel hotel credit, and the 10% anniversary bonus. For dining-only households, Gold wins. For dining + travel households, Preferred is competitive.",
-          "**Vs. Sapphire Reserve (3x UR — verify post-refresh rate).** Reserve's higher fee ($795 vs $325) and lifestyle credit stack changes the comparison entirely. Reserve isn't typically a dining-focused card; it's a premium travel card with elevated dining as one of many features. Use Reserve for dining only when its premium travel features are also justified.",
-          "**Vs. Citi Strata Premier (3x ThankYou Points).** Strata Premier's 3x at 1.5¢ captures 4.5¢ per dollar of dining; Gold's 4x captures 6.8¢. Gold wins per-dollar, but Strata Premier offers uncapped 3x supermarkets (which Gold caps at $25k), gas, travel, and streaming. For households whose spending spans many categories, Strata Premier's broader bonus footprint is more useful than Gold's dining concentration."
-        ]
-      },
-      {
-        "heading": "Who should get the Amex Gold for dining",
-        "body": [
-          "The Amex Gold at $325 is the right pick when three or more of these are true:",
-          "[Take the BestCardsForMe quiz](/) for a profile-specific recommendation."
+          "Amex Gold lists up to $424 a year in credits that touch dining. Each requires enrollment or a specific merchant, so count only the ones that match habits you already have. Every $50 of credits you would genuinely use lowers Gold's break-even by about $1,040 of combined dining and supermarket spend."
         ],
         "bullets": [
-          "**Your household spends $300+ per month at restaurants** AND $500+ per month on groceries. The combined dining + grocery 4x earnings clear the fee comfortably.",
-          "**You'll engage with the lifestyle credit stack.** GrubHub, Dunkin', and Resy credits add captured value when used; nothing when forgotten.",
-          "**You redeem MR strategically.** Households that transfer MR to airline and hotel partners (a few times a year on intentional trips) capture the 1.7¢ valuation.",
-          "**You eat at restaurants in the Resy network routinely.** The $100 Resy credit captures cleanly for users of the Resy app.",
-          "**You're building or already in an Amex ecosystem.** Households with Platinum or Business Gold benefit from concentrating MR earning across multiple Amex cards."
+          "**Dining credit:** up to $10 a month ($120 a year) at Grubhub (including Seamless), The Cheesecake Factory, Five Guys, Buffalo Wild Wings, and Wonder.",
+          "**Resy credit:** up to $50 twice a year ($100) at qualifying U.S. Resy restaurants.",
+          "**Uber Cash:** up to $10 a month ($120 a year) for U.S. rides and Uber Eats.",
+          "**Dunkin' credit:** up to $7 a month ($84 a year) at U.S. Dunkin' locations.",
+          "Monthly credits expire each month: a forgotten month is value lost, not deferred."
         ]
       },
       {
-        "heading": "Who should get a different dining card",
-        "body": [],
-        "subsections": [
-          {
-            "heading": "Choose Sapphire Preferred over Amex Gold when",
-            "body": [],
-            "bullets": [
-              "Your dining is moderate ($300–$500 per month) and you also travel multiple times a year",
-              "You prefer the lower fee tier and don't need Gold's lifestyle credits",
-              "You're committed to the Chase ecosystem (Sapphire family, multiple Chase cards)",
-              "You want to start with a $95 card and potentially upgrade to Reserve later"
-            ]
-          },
-          {
-            "heading": "Choose Capital One Savor over Amex Gold when",
-            "body": [],
-            "bullets": [
-              "You want simple cash back rather than transferable points",
-              "Your dining spending is moderate and you also spend on entertainment and streaming",
-              "You don't want to track lifestyle credits"
-            ]
-          },
-          {
-            "heading": "Choose Citi Strata Premier over Amex Gold when",
-            "body": [],
-            "bullets": [
-              "Your spending spans many bonus categories (groceries, gas, travel, restaurants, streaming) without concentrating heavily in any one",
-              "You spend $3,000+ per month on groceries and need uncapped supermarket earning",
-              "You're happy with ThankYou Points' transfer partner network"
-            ]
-          },
-          {
-            "heading": "Choose Sapphire Reserve over Amex Gold only when",
-            "body": [],
-            "bullets": [
-              "Premium travel benefits (lounge access, $300 travel credit, lifestyle stack) are also justified",
-              "Don't choose Reserve for dining alone — the fee is far too high for that profile"
-            ]
-          }
+        "heading": "Common dining-card mistakes",
+        "body": [
+          "Most dining-card regret comes from paying for earning power you do not use."
+        ],
+        "bullets": [
+          "Paying an annual fee for dining alone at under about $280 a month of restaurant spend.",
+          "Counting monthly credits at face value instead of what you actually redeem.",
+          "Choosing a points card and then redeeming for statement credits.",
+          "Holding the Sapphire Reserve \"for dining\" when the $95 Preferred earns the same 3x.",
+          "Assuming every takeout or delivery purchase codes as dining without checking your statement."
         ]
       },
       {
         "heading": "Bottom line",
         "body": [
-          "For most affluent households whose dining is meaningful but not dominant, the **Chase Sapphire Preferred at $95** is the strongest no-fluff dining card — 3x UR on dining at 1.6¢ valuation produces strong per-dollar capture without the higher fee or calendar burden of premium options.",
-          "For households where dining plus groceries dominate spending, the **Amex Gold at $325** is the strongest hold — its 4x MR rate on both categories combined with the lifestyle credit stack produces decisive Year-2 captured value above the fee.",
-          "For simpler cash back, **Capital One Savor at $95** delivers 3% on dining without point optimization complexity.",
-          "If you want a profile-specific recommendation matched to your actual dining and broader spending, take [the BestCardsForMe quiz](/).",
-          "If your math points to one of these cards, [check current terms on the issuer site](/go/amex-gold) before applying."
+          "Start from the 2% baseline and make each dining card earn its way above it. If you will not transfer points, a $0, 3% cash-back card is the best you can do on dining. If you will, the $95 Sapphire Preferred pays for itself above about $283 a month of dining, and the $325 Amex Gold above about $564 a month of dining and groceries combined.",
+          "If dining is only part of a bigger picture, [build a two-card setup](/articles/best-2-card-credit-card-setup-2026) or [take the BestCardsForMe quiz](/) for a recommendation built on your full spending."
+        ]
+      },
+      {
+        "heading": "What we checked",
+        "body": [
+          "Card terms were checked on October 29, 2026 against current public card listings and recent 2026 reviews; issuer sites were not independently confirmed. Welcome offers change often and are not used in this guide. Confirm final terms on the issuer's site before applying."
+        ],
+        "bullets": [
+          "**Capital One Savor:** $0 annual fee; 3% on dining, entertainment, popular streaming, and grocery stores (excluding superstores).",
+          "**Chase Sapphire Preferred:** $95 annual fee; 3x on dining.",
+          "**Citi Strata Premier:** $95 annual fee; 3x at restaurants, supermarkets, gas and EV charging, air travel, and hotels.",
+          "**Amex Gold:** $325 annual fee; 4x at restaurants on up to $50,000 a year and at U.S. supermarkets on up to $25,000 a year; dining, Resy, Uber Cash, and Dunkin' credits as listed above.",
+          "**Chase Sapphire Reserve:** $795 annual fee; 3x on dining.",
+          "**Corrected from our previous version:** Capital One Savor no longer has a $95 annual fee, and Amex Gold's restaurant 4x is capped at $50,000 a year rather than uncapped."
         ]
       }
     ],
     "recommendationCta": {
-      "cardId": "amex-gold",
-      "cardName": "American Express Gold",
-      "whyWeLikeIt": "Gold leads for households that pair meaningful restaurant spending with grocery spend and can use Membership Rewards at realistic transfer values.",
-      "annualFee": "$325",
-      "bestFor": "Dining plus grocery optimizers",
+      "cardId": "chase-sapphire-preferred",
+      "cardName": "Chase Sapphire Preferred",
+      "whyWeLikeIt": "The lowest-fee way to earn transferable points on dining: it beats a 2% card above about $283 a month of restaurant spend for people who transfer points.",
+      "annualFee": "$95",
+      "bestFor": "Moderate-to-heavy diners who transfer points",
       "buttonLabel": "Check issuer terms",
-      "href": "/go/amex-gold",
+      "href": "/go/chase-sapphire-preferred",
       "disclosure": "This is an editorial recommendation module. BestCardsForMe may receive compensation from partners in the future, but recommendations are driven by MoneyFactor scoring, net value, and editorial review."
     },
     "cardCtas": [
       {
+        "cardId": "chase-sapphire-preferred",
+        "headline": "Read the Sapphire Preferred profile",
+        "body": "The $95 points pick for diners who transfer, and the best dining-only card at heavy spend."
+      },
+      {
         "cardId": "amex-gold",
         "headline": "Read the Amex Gold profile",
-        "body": "See why Gold is the dining-plus-grocery benchmark in the MoneyFactor model."
+        "body": "The highest dining return here, but only worth $325 when supermarket spending runs through it too."
       },
       {
-        "cardId": "chase-sapphire-preferred",
-        "headline": "Compare Sapphire Preferred",
-        "body": "Preferred is a strong lower-fee dining and travel card for Chase-oriented households."
-      },
-      {
-        "cardId": "chase-sapphire-reserve",
-        "headline": "Compare Sapphire Reserve",
-        "body": "Reserve only makes sense for dining when premium travel benefits are also justified."
+        "cardId": "chase-freedom-unlimited",
+        "headline": "Read the Freedom Unlimited profile",
+        "body": "A $0 card with 3% on dining that can join a Sapphire card's transferable points later."
       }
     ],
     "relatedArticles": [
@@ -1264,49 +1275,37 @@ export const articleBatch10To14: EditorialArticle[] = [
         "slug": "best-grocery-credit-card-high-spend-households-2026"
       },
       {
-        "slug": "is-chase-sapphire-preferred-best-95-travel-card-2026"
+        "slug": "best-no-annual-fee-credit-card-2026"
       }
     ],
     "faqs": [
       {
-        "question": "What's the best credit card for restaurants in 2026?",
-        "answer": "The Amex Gold at $325 produces the highest per-dollar captured value on dining (4x MR at 1.7¢ = 6.8¢ per dollar) for households that redeem MR strategically. For lower fee tiers, the Chase Sapphire Preferred at $95 (3x UR at 1.6¢) is competitive and adds travel earning. For cash back simplicity, Capital One Savor at $95 (3%) is the cleanest option."
+        "question": "What is the best credit card for restaurants in 2026?",
+        "answer": "It depends on whether you transfer points. If you do not, a $0 card earning 3% on dining (such as Capital One Savor) is the best option. If you do, the $95 Chase Sapphire Preferred beats a 2% card above about $283 a month of dining, and the $325 Amex Gold is strongest when dining and U.S. supermarket spending together pass about $564 a month."
+      },
+      {
+        "question": "What is the best no-annual-fee dining credit card?",
+        "answer": "A $0 card earning 3% on dining. Capital One Savor also earns 3% at grocery stores and on popular streaming; Chase Freedom Unlimited earns 3% on dining and drugstores and 1.5% elsewhere, and its points become transferable if you later add a Sapphire card."
       },
       {
         "question": "Is Amex Gold worth it just for dining?",
-        "answer": "Only if you also spend meaningfully on groceries (4x MR up to $25k/year) or capture the lifestyle credit stack. For pure dining without grocery or credit utilization, the Sapphire Preferred at $95 captures more after-fee value at typical dining volumes."
+        "answer": "Usually not. On dining alone it needs about $6,771 a year (about $564 a month) to beat a 2% card at our 1.7¢ point valuation. It works when U.S. supermarket spending also runs through it, or when you already use its dining, Resy, and Uber credits."
       },
       {
-        "question": "Does Amex Gold's 4x rate apply internationally?",
-        "answer": "Yes. Amex's \"dining worldwide\" definition includes restaurants outside the U.S. — meaningful for international travelers and households who eat out abroad. Many other cards limit bonus rates to U.S. or domestic dining only."
+        "question": "Should I choose cash back or points for dining?",
+        "answer": "Choose points only if you will transfer them to airline or hotel partners. Cashed out at 1¢, a 3x points card earns the same 3% as a $0 cash-back card while charging an annual fee."
       },
       {
-        "question": "Are takeout and delivery counted as dining?",
-        "answer": "For most cards, yes — including Amex Gold, Chase Sapphire Preferred, and Capital One Savor. Verify each card's specific definition with the issuer, especially for delivery platforms (DoorDash, Uber Eats, etc.) where merchant coding can vary."
+        "question": "Is Chase Sapphire Reserve a good dining card?",
+        "answer": "Not on its own. It earns 3x on dining, the same as the $95 Sapphire Preferred, so dining cannot justify the extra $700 annual fee. Hold it only if its travel benefits cover the cost."
       },
       {
-        "question": "What's the best dining credit card with no annual fee?",
-        "answer": "The Wells Fargo Autograph at $0 earns 3x on dining, travel, transit, streaming, and phone bills. Captures 3 cents per dollar in cash-equivalent value. Below the per-dollar capture of Amex Gold or Sapphire Preferred, but no fee makes it a strong pick for casual diners who don't want to optimize."
+        "question": "Do takeout and delivery count as dining?",
+        "answer": "Usually, but merchant coding varies by issuer and by merchant. Check how your regular takeout and delivery purchases post on your statement before counting them toward a dining bonus."
       },
       {
-        "question": "Should I get a dining card or a travel card?",
-        "answer": "If your annual spending in restaurants exceeds your annual spending on travel by a meaningful margin (typically $1,500+/year more on dining), prioritize a dining card. If travel exceeds dining, prioritize a travel card. For households where both are substantial, holding two cards (Amex Gold for dining + a travel card) often produces the strongest combined captured value."
-      },
-      {
-        "question": "How much are Membership Rewards points worth at restaurants?",
-        "answer": "The 4x MR earning rate captured at our 1.7¢ valuation produces 6.8¢ per dollar of dining spend. For households that redeem MR strategically, this is the highest per-dollar dining capture available among major U.S. cards. Statement-credit redemptions yield 0.6¢ per point — significantly lower captured value."
-      },
-      {
-        "question": "Does Amex Gold include any restaurant-related credits?",
-        "answer": "Yes — currently a $120 dining credit ($10 per month at GrubHub, Goldbelly, Cheesecake Factory, Five Guys, Wine.com), an $84 Dunkin' credit ($7 per month), and a $100 Resy credit ($50 twice annually). Captured value depends on engagement; lifestyle-credit utilization typically lands at 50–80% for affluent households."
-      },
-      {
-        "question": "Should I hold both Amex Gold and Sapphire Preferred?",
-        "answer": "For households that spend heavily on both dining and travel, holding both can make sense. Combined fees: $420. The pairing produces broader bonus coverage and dual transferable point currencies (MR + UR). Most households should pick one; high-volume diversified households can pencil both."
-      },
-      {
-        "question": "What if I don't transfer points strategically?",
-        "answer": "The Amex Gold's per-dollar capture collapses to ~2.4¢ at statement-credit redemption (0.6¢ per MR point). At those redemption habits, a no-fee 2% cashback card or Capital One Savor at $95 captures more after-fee value. The Gold only earns its premium with strategic redemption habits. ---"
+        "question": "Sapphire Preferred or Amex Gold for dining?",
+        "answer": "On dining alone, the Sapphire Preferred: it clears its fee at a lower spend and leads at about $10,000 a year of dining. The Amex Gold wins once U.S. supermarket spending is added, because its 4x covers both categories."
       }
     ],
     "disclosureCta": {

@@ -23,6 +23,8 @@ const articleSeoTitleOverrides: Record<string, string> = {
     "Amex Platinum vs Chase Sapphire Reserve 2026",
   "is-chase-sapphire-reserve-worth-it-2026":
     "Chase Sapphire Reserve $795 Fee 2026: Worth It?",
+  "best-credit-card-for-dining-restaurants-2026":
+    "Best Dining Credit Card 2026: Cash Back vs Points",
 };
 
 export function generateStaticParams() {
