@@ -2,11 +2,15 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { TrustPageLayout } from "@/components/TrustPageLayout";
 import { getTrustPage } from "@/data/trustPages";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata = {
   title: "How We Review Credit Cards | BestCardsForMe",
   description:
     "How BestCardsForMe by MoneyFactor reviews credit cards using scoring methodology, annual-fee math, rewards analysis, travel-perk valuation, and editorial independence.",
+  alternates: {
+    canonical: absoluteUrl("/how-we-review-credit-cards"),
+  },
 };
 
 export default function HowWeReviewCreditCardsPage() {

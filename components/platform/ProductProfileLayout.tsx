@@ -35,8 +35,8 @@ function ProductSection({ section }: { section: ProductProfileSection }) {
       )}
       {section.items && section.items.length > 0 && (
         <ul className="mt-3 space-y-3 text-sm font-medium leading-7 text-mid-navy/80">
-          {section.items.map((item) => (
-            <li key={item} className="flex gap-3">
+          {section.items.map((item, index) => (
+            <li key={index} className="flex gap-3">
               <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
               <span>{item}</span>
             </li>

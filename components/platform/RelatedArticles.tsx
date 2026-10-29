@@ -22,7 +22,7 @@ export function RelatedArticles({ title = "Related analysis", items }: RelatedAr
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         {items.map((item) => (
           <Link
-            key={`${item.href}-${item.title}`}
+            key={item.href}
             href={item.href}
             className="focus-ring rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4 transition hover:border-gold hover:bg-white"
           >
