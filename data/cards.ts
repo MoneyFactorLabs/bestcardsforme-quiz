@@ -625,7 +625,7 @@ export const cards: CreditCard[] = [
     affiliateDestinationUrl: "/cards/southwest-rapid-rewards-priority#issuer-terms",
     issuerTermsUrl: "#issuer-terms",
     whyValuable: [
-      "For Southwest loyalists, annual credits and boarding-related perks can offset much of the fee.",
+      "For Southwest loyalists who check bags, the free first checked bag and 7,500 anniversary points can offset much of the $229 fee.",
       "The card can be useful for domestic travelers who already choose Southwest regularly.",
     ],
     marketingOverstates: [
@@ -633,13 +633,13 @@ export const cards: CreditCard[] = [
       "The card should not be treated as a premium international travel product.",
     ],
     keyPerks: [
-      "Southwest-specific annual value opportunities",
-      "Boarding-related perks for regular flyers",
-      "Moderate annual fee for airline loyalists",
+      "Free first checked bag for you and up to 8 companions on the same reservation",
+      "7,500 anniversary points and a Preferred seat at booking when available",
+      "Extra Legroom upgrades within 48 hours of departure when available",
     ],
     honestDrawbacks: [
       "Narrow airline fit",
-      "Limited premium travel benefits",
+      "$229 annual fee is hard to recover for occasional or carry-on-only flyers",
       "Weak value for users outside Southwest-heavy markets",
     ],
     moneyFactorVerdict:
