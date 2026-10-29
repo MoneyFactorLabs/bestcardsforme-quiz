@@ -1,7 +1,13 @@
+import { cardProfileSpecs } from "@/data/cardProfileSpecs";
 import { cards } from "@/data/cards";
+import { buildCardProfile } from "@/lib/cardProfileBuilder";
+import { assertValidCardProfiles } from "@/lib/cardProfileValidation";
 import type { CreditCardProfile } from "@/types/creditCardProfile";
 
-export const creditCardProfiles: CreditCardProfile[] = [
+// Hand-written premium profiles were last reviewed when they were published.
+const HANDWRITTEN_REVIEWED_AT = "2026-04-28";
+
+const handwrittenProfiles: CreditCardProfile[] = [
   {
     slug: "chase-sapphire-reserve",
     cardName: "Chase Sapphire Reserve",
@@ -34,6 +40,7 @@ export const creditCardProfiles: CreditCardProfile[] = [
       beginnerFriendliness: 4,
       overall: 7.6,
     },
+    reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/chase-sapphire-reserve",
     relatedArticleSlugs: [
@@ -75,6 +82,7 @@ export const creditCardProfiles: CreditCardProfile[] = [
       beginnerFriendliness: 8,
       overall: 7.8,
     },
+    reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/chase-sapphire-preferred",
     relatedArticleSlugs: [
@@ -115,6 +123,7 @@ export const creditCardProfiles: CreditCardProfile[] = [
       beginnerFriendliness: 3,
       overall: 7.0,
     },
+    reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/amex-platinum",
     relatedArticleSlugs: [
@@ -155,6 +164,7 @@ export const creditCardProfiles: CreditCardProfile[] = [
       beginnerFriendliness: 7,
       overall: 8.0,
     },
+    reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/capital-one-venture-x",
     relatedArticleSlugs: [
@@ -196,6 +206,7 @@ export const creditCardProfiles: CreditCardProfile[] = [
       beginnerFriendliness: 5,
       overall: 6.8,
     },
+    reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/hilton-aspire",
     relatedArticleSlugs: [
@@ -236,6 +247,7 @@ export const creditCardProfiles: CreditCardProfile[] = [
       beginnerFriendliness: 4,
       overall: 6.3,
     },
+    reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/marriott-bonvoy-brilliant",
     relatedArticleSlugs: [
@@ -276,48 +288,24 @@ export const creditCardProfiles: CreditCardProfile[] = [
       beginnerFriendliness: 6,
       overall: 7.8,
     },
+    reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/amex-gold",
     relatedArticleSlugs: ["best-grocery-credit-card-high-spend-households-2026"],
   },
 ];
 
-function fallbackProfileFromLegacyCard(slug: string): CreditCardProfile | undefined {
-  const legacyCard = cards.find((card) => card.id === slug);
+export const creditCardProfiles: CreditCardProfile[] = [
+  ...handwrittenProfiles,
+  ...cardProfileSpecs.map(buildCardProfile),
+];
 
-  if (!legacyCard) return undefined;
-
-  return {
-    slug: legacyCard.id,
-    cardName: legacyCard.name,
-    issuer: "Issuer details pending",
-    annualFee: legacyCard.annualFee,
-    bestFor: legacyCard.bestFor,
-    rewardsSummary: legacyCard.moneyFactorVerdict,
-    creditsSummary: legacyCard.currentPublicOffer,
-    travelPerks: legacyCard.keyPerks.join(" "),
-    transferPartners: "Transfer-partner details vary by issuer and should be verified before applying.",
-    recommendedUserTypes: legacyCard.whyValuable,
-    skipIf: legacyCard.honestDrawbacks,
-    moneyFactorScores: {
-      rewardsValue: 6,
-      feeJustification: legacyCard.annualFee === 0 ? 9 : 6,
-      travelUtility: legacyCard.loungeValue === "high" ? 8 : legacyCard.loungeValue === "medium" ? 6 : 3,
-      everydayUse: 6,
-      beginnerFriendliness: legacyCard.annualFee === 0 ? 8 : 5,
-      overall: 6.2,
-    },
-    affiliateStatus: "placeholder",
-    affiliateUrlPlaceholder: `/go/${legacyCard.affiliateSlug}`,
-    relatedArticleSlugs: [],
-  };
-}
+// Fails the build if any profile ships placeholder copy, broken links,
+// incoherent scores, or a fee that disagrees with the quiz card data.
+assertValidCardProfiles(creditCardProfiles, cards);
 
 export function getCreditCardProfileBySlug(slug: string) {
-  return (
-    creditCardProfiles.find((profile) => profile.slug === slug) ||
-    fallbackProfileFromLegacyCard(slug)
-  );
+  return creditCardProfiles.find((profile) => profile.slug === slug);
 }
 
 export function getAllCreditCardProfileSlugs() {

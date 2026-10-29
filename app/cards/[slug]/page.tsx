@@ -13,9 +13,11 @@ import {
   getAllCreditCardProfileSlugs,
   getCreditCardProfileBySlug,
 } from "@/data/creditCardProfiles";
+import { describeScoreWeights } from "@/lib/cardProfileBuilder";
 import { absoluteUrl } from "@/lib/site";
 import { buildCardProfileStructuredData } from "@/lib/structuredData";
-import type { CreditCardProfile } from "@/types/creditCardProfile";
+import type { ProductProfileSection } from "@/components/platform/ProductProfileLayout";
+import type { CreditCardProfile, FactStatus } from "@/types/creditCardProfile";
 
 type CardDetailsPageProps = {
   params: Promise<{
@@ -27,6 +29,41 @@ function formatAnnualFee(annualFee: number) {
   return annualFee === 0 ? "$0" : `$${annualFee}`;
 }
 
+function parseIsoDate(value: string) {
+  const [year, month, day] = value.split("-").map(Number);
+
+  return new Date(year, month - 1, day);
+}
+
+function formatReviewedLabel(reviewedAt: string) {
+  const month = new Intl.DateTimeFormat("en", { month: "long", year: "numeric" }).format(
+    parseIsoDate(reviewedAt),
+  );
+
+  return `Reviewed & updated ${month}`;
+}
+
+function formatCheckedDate(checkedAt: string) {
+  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(
+    parseIsoDate(checkedAt),
+  );
+}
+
+const factStatusLabels: Record<FactStatus, string> = {
+  verified: "Verified",
+  changed: "Changed",
+  unverified: "Not yet verified",
+  discontinued: "Discontinued",
+};
+
+// Article deks are written in inline markdown; related-article cards render plain text.
+function stripInlineMarkdown(text: string) {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1");
+}
+
 function getRelatedArticleItems(profile: CreditCardProfile) {
   return profile.relatedArticleSlugs
     .map((slug) => articles.find((article) => article.slug === slug))
@@ -34,16 +71,21 @@ function getRelatedArticleItems(profile: CreditCardProfile) {
     .map((article) => ({
       title: article.title,
       href: `/articles/${article.slug}`,
-      dek: article.dek,
+      dek: stripInlineMarkdown(article.dek),
       label: article.category,
     }));
 }
 
 function getScorecard(profile: CreditCardProfile) {
+  if (profile.scoreStatus === "withheld") return undefined;
+
   return {
     title: "Scored for credit-card fit",
-    summary:
-      "MoneyFactor scores weigh realistic rewards, fee defensibility, travel utility, everyday usefulness, and how easy the card is to manage.",
+    summary: profile.scoringCategory
+      ? `MoneyFactor scores weigh realistic rewards, fee defensibility, travel utility, everyday usefulness, and how easy the card is to manage. ${describeScoreWeights(
+          profile.scoringCategory,
+        )}`
+      : "MoneyFactor scores weigh realistic rewards, fee defensibility, travel utility, everyday usefulness, and how easy the card is to manage.",
     overallScore: profile.moneyFactorScores.overall,
     metrics: [
       { label: "Rewards Value", value: profile.moneyFactorScores.rewardsValue },
@@ -53,6 +95,82 @@ function getScorecard(profile: CreditCardProfile) {
       { label: "Beginner Friendliness", value: profile.moneyFactorScores.beginnerFriendliness },
     ],
   };
+}
+
+function getProfileSections(profile: CreditCardProfile): ProductProfileSection[] {
+  const credits: ProductProfileSection = {
+    title: "Credits and perks",
+    body: profile.creditsSummary,
+    items: [profile.travelPerks, profile.transferPartners],
+  };
+  const fit: ProductProfileSection[] = [
+    { title: "Who should get it", items: profile.recommendedUserTypes },
+    { title: "Who should skip it", items: profile.skipIf },
+  ];
+
+  // Hand-written premium profiles keep their original layout.
+  if (!profile.factCheck) {
+    return [{ title: "Rewards summary", body: profile.rewardsSummary }, credits, ...fit];
+  }
+
+  const sections: ProductProfileSection[] = [];
+
+  if (profile.scoreStatus === "withheld") {
+    sections.push({
+      title: "Profile status: under re-review",
+      body: "This card changed materially and we have not yet verified the replacement terms, so we are not publishing a score or value estimate. The facts we could confirm are below.",
+    });
+  }
+
+  sections.push(
+    { title: "Rewards summary", body: profile.rewardsSummary },
+    { title: "Earn rates", items: profile.earnRates },
+  );
+
+  if (profile.valueAnalysis) {
+    sections.push({
+      title: "Year-2 value math",
+      body: profile.valueAnalysis.summary,
+      rows: profile.valueAnalysis.lines,
+      footnotes: [
+        profile.valueAnalysis.breakEven,
+        ...(profile.valueAnalysis.alternateValuation ? [profile.valueAnalysis.alternateValuation] : []),
+      ],
+    });
+    sections.push({ title: "Assumptions behind the math", items: profile.valueAnalysis.assumptions });
+  }
+
+  sections.push(credits);
+
+  if (profile.marketingOverstates?.length) {
+    sections.push({ title: "What the marketing overstates", items: profile.marketingOverstates });
+  }
+
+  sections.push(...fit);
+
+  const alternatives = (profile.alternatives ?? [])
+    .map((alternative) => ({ alternative, target: getCreditCardProfileBySlug(alternative.slug) }))
+    .filter((entry): entry is { alternative: typeof entry.alternative; target: CreditCardProfile } =>
+      Boolean(entry.target),
+    );
+  if (alternatives.length > 0) {
+    sections.push({
+      title: "Alternatives to compare",
+      links: alternatives.map(({ alternative, target }) => ({
+        href: `/cards/${target.slug}`,
+        label: `${target.cardName} (${formatAnnualFee(target.annualFee)} annual fee)`,
+        description: alternative.reason,
+      })),
+    });
+  }
+
+  sections.push({
+    title: "Fact check",
+    body: `Checked ${formatCheckedDate(profile.factCheck.checkedAt)}. ${profile.factCheck.method}`,
+    items: profile.factCheck.flags.map((flag) => `${factStatusLabels[flag.status]}: ${flag.note}`),
+  });
+
+  return sections;
 }
 
 export function generateStaticParams() {
@@ -70,7 +188,8 @@ export async function generateMetadata({ params }: CardDetailsPageProps): Promis
       ? `${profile.cardName} Review | BestCardsForMe by MoneyFactor`
       : "Card Review | BestCardsForMe",
     description: profile
-      ? `MoneyFactor profile for ${profile.cardName}, including annual fee, best fit, rewards, perks, who should get it, and who should skip it.`
+      ? profile.metaDescription ||
+        `MoneyFactor profile for ${profile.cardName}, including annual fee, best fit, rewards, perks, who should get it, and who should skip it.`
       : "BestCardsForMe honest credit card review.",
     alternates: profile
       ? {
@@ -99,30 +218,18 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
         subtitle={`${profile.issuer} credit card profile built around realistic annual value, fee math, and user fit.`}
         meta={[
           { label: "Issuer", value: profile.issuer },
-          { label: "Annual fee", value: formatAnnualFee(profile.annualFee) },
+          { label: "Annual fee", value: profile.annualFeeNote || formatAnnualFee(profile.annualFee) },
           { label: "Best for", value: profile.bestFor },
-          { label: "Terms status", value: "Verify before applying" },
+          {
+            label: "Terms status",
+            value: profile.factCheck
+              ? `Checked ${formatCheckedDate(profile.factCheck.checkedAt)}; verify before applying`
+              : "Verify before applying",
+          },
         ]}
+        reviewedLabel={formatReviewedLabel(profile.reviewedAt)}
         scorecard={getScorecard(profile)}
-        sections={[
-          {
-            title: "Rewards summary",
-            body: profile.rewardsSummary,
-          },
-          {
-            title: "Credits and perks",
-            body: profile.creditsSummary,
-            items: [profile.travelPerks, profile.transferPartners],
-          },
-          {
-            title: "Who should get it",
-            items: profile.recommendedUserTypes,
-          },
-          {
-            title: "Who should skip it",
-            items: profile.skipIf,
-          },
-        ]}
+        sections={getProfileSections(profile)}
         recommendationCta={{
           productName: profile.cardName,
           whyWeLikeIt: profile.bestFor,

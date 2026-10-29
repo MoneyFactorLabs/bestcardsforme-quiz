@@ -6,6 +6,8 @@ import { absoluteUrl } from "@/lib/site";
 
 export const metadata = {
   title: "Contact and Editorial Standards | BestCardsForMe by MoneyFactor",
+  description:
+    "Contact BestCardsForMe by MoneyFactor for corrections, methodology questions, reader questions about cards, partnership inquiries, and press.",
   alternates: {
     canonical: absoluteUrl("/contact"),
   },

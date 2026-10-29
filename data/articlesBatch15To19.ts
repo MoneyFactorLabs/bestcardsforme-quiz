@@ -475,24 +475,24 @@ export const articleBatch15To19: EditorialArticle[] = [
               "rows": [
                 [
                   "Southwest Rapid Rewards Plus",
-                  "$69",
+                  "$99",
                   "Yes",
                   "3,000",
                   "Entry tier"
                 ],
                 [
                   "Southwest Rapid Rewards Premier",
-                  "$99",
+                  "$149",
                   "Yes",
                   "6,000",
                   "Mid-tier"
                 ],
                 [
                   "Southwest Rapid Rewards Priority",
-                  "$149",
+                  "$229",
                   "Yes",
                   "7,500",
-                  "Top tier with $75 Southwest credit + 4 upgraded boardings/year"
+                  "Top tier: free first checked bag, Preferred seat at booking, Extra Legroom upgrades when available"
                 ]
               ]
             }
@@ -546,7 +546,7 @@ export const articleBatch15To19: EditorialArticle[] = [
           "**Delta:** SkyMiles Reserve ($650) for premium / SkyMiles Platinum ($350) for mid-tier / SkyMiles Gold ($150) for entry",
           "**United:** United Club Infinite ($695) for premium / United Quest ($250) for mid-tier / [United Explorer](/cards/united-explorer) ($0–$150) for entry",
           "**American:** Executive ($595) for premium / Platinum Select ($99) for mid-tier",
-          "**Southwest:** [Rapid Rewards Priority](/cards/southwest-rapid-rewards-priority) ($149) plus Companion Pass strategy"
+          "**Southwest:** [Rapid Rewards Priority](/cards/southwest-rapid-rewards-priority) ($229) plus Companion Pass strategy"
         ]
       }
     ],
@@ -1384,19 +1384,13 @@ export const articleBatch15To19: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Setup 7: Bilt Mastercard + Chase Sapphire Preferred ($95 combined fee)",
+            "heading": "Setup 7: Bilt card + Chase Sapphire Preferred (under re-review)",
             "body": [
               "**For:** Renters paying $1,500+ per month rent who also want travel benefits.",
-              "**How it works:** Bilt Mastercard ($0 fee) earns 1x on rent paid through Bilt's payment system — uniquely, no other card lets you pay rent on Mastercard rails without fees. Bilt also earns 3x dining, 2x travel. Sapphire Preferred handles other travel and bonus-category spending.",
-              "**Captured value example** (household paying $24,000/year in rent, $4,000 dining, $30,000 other):",
-              "**Net after fees:** $600 - $95 = **$505 per year.** Lower than other setups, but Bilt earns rewards on rent — a category no other card touches.",
-              "**Strengths:** Earns on rent (otherwise zero rewards). Bilt points transfer to multiple airlines and hotels.",
-              "**Weaknesses:** Only useful for renters; homeowners should ignore. Bilt's transfer partners are smaller than Chase UR or Amex MR."
-            ],
-            "bullets": [
-              "Bilt: $24,000 × 1x rent = 24,000 Bilt points + dining bonuses = ~$300+ value",
-              "Sapphire Preferred: $4,000 × 3x dining + $30,000 × 1x = ~$300+ value",
-              "Combined: ~$600+ in earned value alone, plus protections"
+              "**Status:** The Wells Fargo-issued Bilt Mastercard closed to new applicants in October 2025. Its February 2026 replacements (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495) still pay rent with no transaction fee, but rent points now depend on how much you also spend on the card. We removed the earlier captured-value example, which assumed the old card's flat 1x on rent.",
+              "**How it works now:** Pay rent through Bilt on a 2026 Bilt card (Blue at $0 earns 1x on everyday spending; Obsidian at $95 earns 3x on dining or groceries and 2x on travel) and keep Sapphire Preferred for travel and dining. Whether this beats Setups 1–6 depends on the new rent-earning rules, which we are re-verifying.",
+              "**Strengths:** Still the only mainstream way to pay rent by card without a transaction fee. Bilt points transfer to airline and hotel partners.",
+              "**Weaknesses:** Only useful for renters, and rent rewards now require meaningful spending on the Bilt card itself. See our [Bilt profile](/cards/bilt-mastercard) for what we have confirmed."
             ]
           }
         ]
@@ -1452,9 +1446,9 @@ export const articleBatch15To19: EditorialArticle[] = [
             ],
             [
               "**Rent-paying renter**",
-              "Bilt Mastercard + Sapphire Preferred",
+              "Bilt Blue + Sapphire Preferred (under re-review)",
               "$95",
-              "Earns on rent (otherwise impossible)"
+              "Rent points now depend on Bilt card spend"
             ]
           ]
         }
@@ -1484,7 +1478,7 @@ export const articleBatch15To19: EditorialArticle[] = [
           "**Highest captured value:** [Amex Gold + Amex Platinum](/cards/amex-platinum) at $1,220 combined",
           "**Premium benefits at modest fee:** [Capital One Venture X + Savor](/cards/capital-one-venture-x) at $490 combined",
           "**Premium UR ecosystem:** Chase Sapphire Reserve + Freedom Unlimited at $795 combined",
-          "**For renters:** Bilt Mastercard + Sapphire Preferred at $95 combined"
+          "**For renters:** a 2026 Bilt card + Sapphire Preferred, once we finish re-verifying Bilt's new rent rules"
         ]
       }
     ],
@@ -1545,7 +1539,7 @@ export const articleBatch15To19: EditorialArticle[] = [
       },
       {
         "question": "What's the best 2-card setup for renters?",
-        "answer": "Bilt Mastercard ($0) + Chase Sapphire Preferred ($95). Bilt is the only card that earns rewards on rent through Bilt's payment system without fees. For renters paying $1,500+ per month rent, this is the only way to earn meaningful rewards on the largest fixed expense."
+        "answer": "A 2026 Bilt card plus Chase Sapphire Preferred ($95) is still the leading renter setup, because Bilt lets you pay rent by card with no transaction fee. The original Bilt Mastercard closed to new applicants in October 2025, and its February 2026 replacements (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495) still pay rent with no transaction fee, but rent points now depend on how much you also spend on the card. Check our Bilt profile before applying."
       },
       {
         "question": "Will applying for two cards hurt my credit score?",

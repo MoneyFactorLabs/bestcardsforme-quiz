@@ -1,0 +1,30 @@
+name: Quality gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit tests (value math, profiles, quiz, affiliate routing, analytics API)
+        run: npm test
+      - name: Build (includes card-profile validation)
+        run: npm run build
+      - name: Site validation (links, payload URLs, placeholders, canonicals, duplicates)
+        run: npm run validate:site
+      - name: Install Chromium for the browser smoke test
+        run: npx playwright install --with-deps chromium
+      - name: Browser smoke test (mobile + desktop, quiz, events, /go/ redirects)
+        run: npm run test:e2e
