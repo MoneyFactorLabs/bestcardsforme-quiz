@@ -30,6 +30,8 @@ jobs:
       - run: npm ci
       - name: Wait for the production alias to serve the new deployment
         run: sleep 45
+      - name: Live /go/ tracking probe (one tagged real click, repeat, prefetch, bot, unknown slug)
+        run: bash scripts/probe-outbound.sh
       - name: Live site validation (status, robots, sitemap, canonicals, links, placeholders, control page, phantom 404s)
         run: npm run validate:site -- --url "$SITE_URL"
       - name: Install Chromium
