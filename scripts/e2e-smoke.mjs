@@ -1,6 +1,10 @@
-// Browser smoke test against the production build (`next start`).
+// Browser smoke test against the production build (`next start`) or, with
+// E2E_BASE_URL, against a live deployment.
 // Usage: npm run build && npm run test:e2e
+//        E2E_BASE_URL=https://bestcardsforme.com npm run test:e2e
 // Optional: SCREENSHOT_DIR=path saves mobile screenshots of key pages.
+// In live mode analytics calls are intercepted, never sent, so production
+// data stays clean; events are confirmed in the page instead of the server log.
 //
 // Checks every sitemap URL at phone and desktop widths (HTTP 200, no
 // horizontal overflow, no uncaught page errors), walks the quiz end to end,
@@ -11,7 +15,8 @@ import path from "node:path";
 import { chromium } from "playwright";
 
 const port = Number(process.env.E2E_PORT || 3123);
-const origin = `http://localhost:${port}`;
+const liveBase = process.env.E2E_BASE_URL?.replace(/\/$/, "");
+const origin = liveBase || `http://localhost:${port}`;
 const screenshotDir = process.env.SCREENSHOT_DIR;
 const keyPages = [
   "/",
@@ -59,7 +64,7 @@ async function waitForEvent(page, name, sinceCount, timeoutMs = 5000) {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
     const sentByPage = await page.evaluate((eventName) => window.__bcfmEvents?.includes(eventName), name).catch(() => false);
-    if (sentByPage && loggedCount(name) > sinceCount) return true;
+    if (sentByPage && (liveBase || loggedCount(name) > sinceCount)) return true;
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
   return false;
@@ -73,12 +78,20 @@ const trackEvents = () =>
     if (String(url).endsWith("/api/events") && data instanceof Blob) {
       data.text().then((text) => window.__bcfmEvents.push(JSON.parse(text).eventName)).catch(() => {});
     }
+    if (${Boolean(liveBase)}) return true;
     return originalBeacon ? originalBeacon(url, data) : true;
   };`;
+
+// In live mode, answer analytics requests locally so tests never write production rows.
+async function blockLiveAnalytics(context) {
+  if (liveBase) await context.route("**/api/events", (route) => route.fulfill({ status: 200, body: "{}" }));
+}
 
 async function checkPages(browser, paths) {
   for (const [name, viewport] of Object.entries(viewports)) {
     const context = await browser.newContext({ viewport });
+    await context.addInitScript(trackEvents());
+    await blockLiveAnalytics(context);
     const page = await context.newPage();
     const pageErrors = [];
     page.on("pageerror", (error) => pageErrors.push(error.message));
@@ -104,6 +117,7 @@ async function checkPages(browser, paths) {
 async function checkQuiz(browser) {
   const context = await browser.newContext({ viewport: viewports.mobile });
   await context.addInitScript(trackEvents());
+  await blockLiveAnalytics(context);
   const page = await context.newPage();
   const completedBefore = loggedCount("quiz_completed");
 
@@ -132,6 +146,7 @@ async function checkQuiz(browser) {
 async function checkCardTracking(browser) {
   const context = await browser.newContext({ viewport: viewports.mobile });
   await context.addInitScript(trackEvents());
+  await blockLiveAnalytics(context);
   const page = await context.newPage();
   // A 204 response cancels the CTA navigation, so the recorded event can still be read.
   await page.route("**/go/**", (route) => route.fulfill({ status: 204 }));
@@ -171,14 +186,16 @@ async function checkAffiliateRedirects() {
   }
 }
 
-const server = spawn("npx", ["next", "start", "-p", String(port)], {
-  stdio: ["ignore", "pipe", "pipe"],
-  detached: true,
-  // Run without Supabase so events are logged locally instead of stored.
-  env: { ...process.env, SUPABASE_URL: "", SUPABASE_SERVICE_ROLE_KEY: "", NEXT_PUBLIC_SUPABASE_URL: "" },
-});
-server.stdout.on("data", (chunk) => (serverLog += chunk));
-server.stderr.on("data", (chunk) => (serverLog += chunk));
+const server = liveBase
+  ? undefined
+  : spawn("npx", ["next", "start", "-p", String(port)], {
+      stdio: ["ignore", "pipe", "pipe"],
+      detached: true,
+      // Run without Supabase so events are logged locally instead of stored.
+      env: { ...process.env, SUPABASE_URL: "", SUPABASE_SERVICE_ROLE_KEY: "", NEXT_PUBLIC_SUPABASE_URL: "" },
+    });
+server?.stdout.on("data", (chunk) => (serverLog += chunk));
+server?.stderr.on("data", (chunk) => (serverLog += chunk));
 let browser;
 
 try {
@@ -204,5 +221,5 @@ try {
   }
 } finally {
   await browser?.close();
-  process.kill(-server.pid);
+  if (server) process.kill(-server.pid);
 }
