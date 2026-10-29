@@ -74,7 +74,7 @@ function renderInlineText(text: string): ReactNode[] {
     if (token.startsWith("**")) {
       nodes.push(
         <strong
-          key={`${token}-${match.index}`}
+          key={`strong-${match.index}`}
           className="rounded-sm bg-gold/10 px-1 font-bold text-navy"
         >
           {token.slice(2, -2)}
@@ -82,7 +82,7 @@ function renderInlineText(text: string): ReactNode[] {
       );
     } else if (token.startsWith("*")) {
       nodes.push(
-        <em key={`${token}-${match.index}`} className="italic">
+        <em key={`em-${match.index}`} className="italic">
           {token.slice(1, -1)}
         </em>
       );
@@ -92,7 +92,7 @@ function renderInlineText(text: string): ReactNode[] {
         const [, label, href] = linkMatch;
         nodes.push(
           <Link
-            key={`${href}-${match.index}`}
+            key={`link-${match.index}`}
             href={href}
             className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
           >
@@ -131,11 +131,11 @@ function ArticleDataTable({ table }: { table: ArticleTable }) {
             </tr>
           </thead>
           <tbody className="divide-y divide-blue-gray/60">
-            {table.rows.map((row) => (
-              <tr key={row.join("|")} className="bg-white even:bg-[#f8fafc]">
+            {table.rows.map((row, rowIndex) => (
+              <tr key={rowIndex} className="bg-white even:bg-[#f8fafc]">
                 {row.map((cell, index) => (
                   <td
-                    key={`${row.join("|")}-${index}`}
+                    key={index}
                     className={`px-4 py-4 align-top leading-7 text-mid-navy/90 ${
                       index === 0 ? "font-bold text-navy" : "font-medium"
                     }`}
@@ -328,8 +328,8 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
               <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
               <div className="mt-4 space-y-5 text-[1.02rem] font-medium leading-8 text-mid-navy/90">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph}>{renderInlineText(paragraph)}</p>
+                {section.body.map((paragraph, index) => (
+                  <p key={index}>{renderInlineText(paragraph)}</p>
                 ))}
                 {section.table && <ArticleDataTable table={section.table} />}
                 {section.subsections && (
@@ -342,17 +342,17 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                         <h3 className="min-w-0 text-lg font-semibold text-navy">{subsection.heading}</h3>
                         {subsection.body && (
                           <div className="mt-3 min-w-0 space-y-3 text-[0.98rem] font-medium leading-8 text-mid-navy/90">
-                            {subsection.body.map((paragraph) => (
-                              <p key={paragraph}>{renderInlineText(paragraph)}</p>
+                            {subsection.body.map((paragraph, index) => (
+                              <p key={index}>{renderInlineText(paragraph)}</p>
                             ))}
                           </div>
                         )}
                         {subsection.table && <ArticleDataTable table={subsection.table} />}
                         {subsection.bullets && (
                           <ul className="mt-4 grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
-                            {subsection.bullets.map((bullet) => (
+                            {subsection.bullets.map((bullet, index) => (
                               <li
-                                key={bullet}
+                                key={index}
                                 className="flex gap-3 rounded-md border border-blue-gray/60 bg-white p-3 sm:p-4"
                               >
                                 <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
@@ -367,9 +367,9 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                 )}
                 {section.bullets && (
                   <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
-                    {section.bullets.map((bullet) => (
+                    {section.bullets.map((bullet, index) => (
                       <li
-                        key={bullet}
+                        key={index}
                         className="flex gap-3 rounded-md border border-blue-gray/60 bg-[#f8fafc] p-3 sm:p-4"
                       >
                         <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
@@ -418,15 +418,15 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
               <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
               <div className="mt-4 space-y-5 text-[1.02rem] font-medium leading-8 text-mid-navy/90">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph}>{renderInlineText(paragraph)}</p>
+                {section.body.map((paragraph, index) => (
+                  <p key={index}>{renderInlineText(paragraph)}</p>
                 ))}
                 {section.table && <ArticleDataTable table={section.table} />}
                 {section.bullets && (
                   <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
-                    {section.bullets.map((bullet) => (
+                    {section.bullets.map((bullet, index) => (
                       <li
-                        key={bullet}
+                        key={index}
                         className="flex gap-3 rounded-md border border-blue-gray/60 bg-[#f8fafc] p-3 sm:p-4"
                       >
                         <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />

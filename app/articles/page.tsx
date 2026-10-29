@@ -4,12 +4,16 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { articles } from "@/data/articles";
+import { absoluteUrl } from "@/lib/site";
 import { buildArticlesIndexStructuredData } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Credit Card Articles | BestCardsForMe by MoneyFactor",
   description:
     "Long-form credit card comparisons from BestCardsForMe by MoneyFactor, built around realistic annual value and household fit.",
+  alternates: {
+    canonical: absoluteUrl("/articles"),
+  },
 };
 
 function formatDate(value: string) {

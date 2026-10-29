@@ -23,13 +23,13 @@ function renderInlineText(text: string): ReactNode[] {
 
     if (token.startsWith("**")) {
       nodes.push(
-        <strong key={`${token}-${match.index}`} className="font-bold text-navy">
+        <strong key={`strong-${match.index}`} className="font-bold text-navy">
           {token.slice(2, -2)}
         </strong>
       );
     } else if (token.startsWith("*")) {
       nodes.push(
-        <em key={`${token}-${match.index}`} className="italic">
+        <em key={`em-${match.index}`} className="italic">
           {token.slice(1, -1)}
         </em>
       );
@@ -39,7 +39,7 @@ function renderInlineText(text: string): ReactNode[] {
         const [, label, href] = linkMatch;
         nodes.push(
           <Link
-            key={`${href}-${match.index}`}
+            key={`link-${match.index}`}
             href={href}
             className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
           >
@@ -87,7 +87,7 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
                       if (block.type === "subheading") {
                         return (
                           <h3
-                            key={`${block.heading}-${index}`}
+                            key={`heading-${index}`}
                             className="pt-2 text-base font-semibold text-navy"
                           >
                             {block.heading}
@@ -101,9 +101,9 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
                             key={`bullets-${index}`}
                             className="grid gap-3 border-t border-blue-gray/60 pt-4"
                           >
-                            {block.items.map((item) => (
+                            {block.items.map((item, itemIndex) => (
                               <li
-                                key={item}
+                                key={itemIndex}
                                 className="flex gap-3 rounded-md border border-blue-gray/60 bg-[#f8fafc] p-3"
                               >
                                 <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
@@ -114,10 +114,10 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
                         );
                       }
 
-                      return <p key={`${block.text}-${index}`}>{renderInlineText(block.text)}</p>;
+                      return <p key={`text-${index}`}>{renderInlineText(block.text)}</p>;
                     })
-                  : section.body?.map((paragraph) => (
-                      <p key={paragraph}>{renderInlineText(paragraph)}</p>
+                  : section.body?.map((paragraph, index) => (
+                      <p key={index}>{renderInlineText(paragraph)}</p>
                     ))}
               </div>
             </article>
