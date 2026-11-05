@@ -89,7 +89,7 @@ When a dispatch brief doesn't specify output location, defaults apply:
 | Status update | Append to relevant `ops/*_LOG.md` |
 | Strategic analysis | `~/Documents/MoneyFactor/[Topic]_Analysis.md` |
 | Response library entry | Append to existing library (Reddit, Source, etc.) |
-| Engineering ticket | `~/Documents/MoneyFactor/Engineering_Ticket_[date].md` for founder review |
+| Engineering ticket | A GitHub issue in the target repo (see AGENT_ROLES.md handoff conventions); fall back to `~/Documents/MoneyFactor/Engineering_Ticket_[date].md` only if GitHub is unavailable |
 
 If the dispatch is ambiguous about output location, Claude writes the file using these defaults and notes the location in the chat summary.
 

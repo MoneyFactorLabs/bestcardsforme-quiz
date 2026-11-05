@@ -1,8 +1,26 @@
 # Agent Roles — MoneyFactor / BestCardsForMe
 
-_Last updated: 2026-05-12_
+_Last updated: 2026-11-05_
 
-Claude (Max) now handles all operating roles previously split across ChatGPT and Codex. This document is the canonical source for which lane owns which work.
+This document is the canonical source for which lane owns which work.
+
+**Current model (2026-11-05):** ChatGPT is active for portfolio strategy, research and prioritization across Tim's projects. Claude Code remains the primary engineering agent. **GitHub issues are the shared handoff and decision record** between lanes: work is specified in an issue, delivered through a pull request that closes it, and reported back on the issue. Codex remains deprecated.
+
+---
+
+## ChatGPT (portfolio strategy lane)
+Active again as of 2026-11-05 (it was deprecated 2026-05-12; see the table below).
+
+**Owns:**
+- Portfolio strategy and prioritization across MoneyFactor, BestCardsForMe and Tim's other projects
+- Research and competitive intelligence that feeds a decision
+- Turning approved ideas into GitHub issues (bounded tickets, research questions, decision records) through its GitHub integration
+- Reviewing outcomes from the issue thread and pull request rather than from chat transcripts
+
+**Does not own:**
+- Code changes, commits, merges or deployments (route to Claude Code)
+- Changes to doctrine, production data, affiliate or licensing commitments (founder decides)
+- Anything on the prohibited-actions list
 
 ---
 
@@ -91,8 +109,9 @@ See `ops/DISPATCH_PROTOCOL.md` for brief formats and common patterns.
 
 | Agent | Deprecated | Replaced by |
 |---|---|---|
-| ChatGPT Pro/Plus | 2026-05-12 | Claude.ai chat (strategic PM lane) |
 | Codex | 2026-05-12 | Claude Code |
+
+History: ChatGPT Pro/Plus was deprecated on 2026-05-12 in favor of Claude.ai chat, then reinstated on 2026-11-05 as the portfolio strategy lane above.
 
 ---
 
@@ -102,7 +121,8 @@ See `ops/DISPATCH_PROTOCOL.md` for brief formats and common patterns.
 |---|---|---|
 | GSC data pull and analysis | Claude chat | Browser extension assists with live read |
 | Content draft (article, response) | Claude chat | Output to `~/Documents/MoneyFactor/` |
-| Code change | Claude Code | Bounded ticket with acceptance criteria |
+| Portfolio strategy and prioritization | ChatGPT + founder | ChatGPT proposes; founder decides; outcome recorded on a GitHub issue |
+| Code change | Claude Code | Bounded ticket as a GitHub issue with acceptance criteria |
 | Production deploy verification | Claude Code → Chrome extension | Chrome verifies the live URL |
 | Browser ops (forms, GSC, Vercel) | Chrome extension | Read-only by default; write actions require explicit founder approval |
 | Mobile handoff | Dispatch | See `DISPATCH_PROTOCOL.md` |
@@ -119,7 +139,8 @@ See `ops/DISPATCH_PROTOCOL.md` for brief formats and common patterns.
 
 When one lane needs another:
 
-- **Claude chat → Claude Code:** Chat writes a bounded ticket (scope, acceptance criteria, file paths). Founder runs the ticket in Claude Code session. Code reports back via commit message.
+- **ChatGPT or Claude chat → Claude Code:** The lane writes a bounded ticket (scope, acceptance criteria, file paths) as a **GitHub issue** in the target repo; ChatGPT can create it directly through its GitHub integration. Claude Code works from the issue, opens a pull request that says `Closes #N`, and posts the result (PR link, checks, anything blocked) as a comment on the issue. The founder reviews and merges.
+- **Decisions:** A call that needs the founder is recorded as a GitHub issue (options, recommendation, then the outcome), so the decision outlives the chat it came from.
 - **Claude chat → Chrome extension:** Chat provides the URL and the specific action (read X, verify Y). Extension returns the data; chat interprets.
 - **Dispatch → Claude chat:** Dispatch brief lands; desktop Claude picks up, executes, files output to specified location, summarizes in chat thread when founder returns to desktop.
 - **Any lane → Founder:** When founder confirmation is required, the lane stops and writes a clear decision request: what's needed, why, what happens if approved, what happens if declined.
@@ -143,6 +164,7 @@ In all cases, the lane reports current state, the question, and recommended next
 
 ## Quick reference
 
+- Work queue and decision record: GitHub issues in this repo
 - Doctrine: `DOCTRINE.md` (repo root) + `ops/MONEYFACTOR_VERTICAL_RULES.md`
 - Current state: `ops/CURRENT_STATUS.md` + `ops/NEXT_ACTIONS.md`
 - Strategic brief: `ops/MONEYFACTOR_PROJECT_BRIEF.md`

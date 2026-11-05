@@ -69,5 +69,5 @@ No production changes unless one of these is true:
 - Claude Code: active — repo engineering, bounded tickets
 - Claude Chrome extension: active — live SERP / GSC / dashboard reads
 - Claude Dispatch: active — mobile-to-desktop async handoff
-- ChatGPT: historical reference / additional thinking partner (deprecated as primary working agent per AGENT_ROLES.md 2026-05-12)
+- ChatGPT: active (reinstated 2026-11-05) for portfolio strategy, research and prioritization; creates GitHub issues as the handoff to Claude Code (see AGENT_ROLES.md)
 - Lovable / Perplexity: prototype tools for LeaseFactor V0 (per doctrine, prototype-first before production repo)
