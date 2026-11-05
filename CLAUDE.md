@@ -21,7 +21,7 @@ This file is the entry point. The canonical operating docs already exist; read t
 
 ## How work arrives and is reported
 
-- Engineering tickets arrive as **GitHub issues** in this repo (the bounded-ticket format in `ops/AGENT_ROLES.md`: scope, acceptance criteria, file paths). A spec drafted in a chat is pasted into an issue; the issue is the source of truth.
+- Engineering tickets arrive as **GitHub issues** in this repo (the bounded-ticket format in `ops/AGENT_ROLES.md`: scope, acceptance criteria, file paths). ChatGPT creates and updates issues directly through its GitHub integration (or Tim asks Claude to file one); the issue is the source of truth, not a chat transcript.
 - Work on a branch and open a **pull request** that says `Closes #N`, with what changed, how it was verified, and what was deliberately not changed.
 - Post a short result comment on the issue: PR link, check results, anything blocked or needing Tim.
 - Tim merges to `main`. Don't merge yourself unless the issue explicitly says so.
