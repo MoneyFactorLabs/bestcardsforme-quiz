@@ -7,8 +7,8 @@
 //
 // Fails on: an invalid pattern, a usedIn slug that is not a published article,
 // a secondary source older than --stale-days, or (with --issuers) a claim that
-// is not found on a page that rendered. Pages that cannot be read are reported
-// as unverified, never as verified.
+// is not found on its issuer page. A page that cannot be read leaves its claims
+// unverified, which also fails: an unverifiable claim is a blocker, not a pass.
 import fs from "node:fs";
 import path from "node:path";
 import { claimSnippet, pageText } from "./lib/issuerFacts.mjs";
@@ -48,31 +48,39 @@ for (const [productId, product] of Object.entries(registry)) {
   }
 }
 
-if (checkIssuers && failures.length === 0) {
-  for (const [productId, product] of Object.entries(registry)) {
-    let text = "";
-    let pageStatus = "";
-    try {
-      const response = await fetch(product.issuerUrl, {
+// Fetches each issuer page once. A claim can name its own issuer URL when the
+// product page does not carry that term in its server-rendered HTML.
+const pages = new Map();
+async function readPage(url) {
+  if (!pages.has(url)) {
+    pages.set(
+      url,
+      fetch(url, {
         headers: { "user-agent": "Mozilla/5.0 (compatible; BestCardsForMe-FactCheck/1.0; +https://bestcardsforme.com/contact)" },
         signal: AbortSignal.timeout(20000),
-      });
-      if (response.ok) text = pageText(await response.text());
-      else pageStatus = `HTTP ${response.status}`;
-    } catch (error) {
-      pageStatus = error.cause?.code || error.name;
-    }
+      })
+        .then(async (response) => (response.ok ? { text: pageText(await response.text()) } : { text: "", status: `HTTP ${response.status}` }))
+        .catch((error) => ({ text: "", status: error.cause?.code || error.name })),
+    );
+  }
+  return pages.get(url);
+}
 
+if (checkIssuers && failures.length === 0) {
+  for (const [productId, product] of Object.entries(registry)) {
     for (const claim of product.claims) {
+      const url = claim.url || product.issuerUrl;
+      const { text, status: pageStatus } = await readPage(url);
       if (!text) {
         results.push({ productId, claim: claim.id, status: "unverified", detail: `page not readable (${pageStatus})` });
+        failures.push(`${productId}/${claim.id}: could not read ${url} (${pageStatus}); claim unverified`);
       } else if (new RegExp(claim.pattern, "i").test(text)) {
         results.push({ productId, claim: claim.id, status: "verified", detail: claim.text });
       } else {
         const context = claimSnippet(text, claim.hint);
         const where = context ? ` | page near "${claim.hint}": ${context}` : ` | "${claim.hint}" not on the page (${text.length} characters of text)`;
         results.push({ productId, claim: claim.id, status: "not-found", detail: `${claim.text}${where}` });
-        failures.push(`${productId}/${claim.id}: "${claim.text}" not found on ${product.issuerUrl}`);
+        failures.push(`${productId}/${claim.id}: "${claim.text}" not found on ${url}`);
       }
     }
   }
