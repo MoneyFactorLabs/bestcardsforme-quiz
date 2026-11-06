@@ -1,0 +1,42 @@
+name: Editorial audit
+
+# Read-only inventory of every published article: duplicate titles and meta
+# descriptions, broken article/card links, orphan articles, overdue reviews and
+# missing issuer-claim sources. Reports to the run summary and an artifact; it
+# never edits content or opens anything outside this repository.
+on:
+  schedule:
+    - cron: "43 14 * * 2"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - data/articles*.ts
+      - data/creditCardProfiles.ts
+      - data/cardProfileSpecs.ts
+      - lib/articleInternalLinks.ts
+      - quality/issuer-claims.json
+      - scripts/editorial-audit.ts
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Editorial inventory and internal-link audit
+        run: npm run audit:editorial -- --out editorial-audit.md
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: editorial-audit
+          path: editorial-audit.md
+          if-no-files-found: ignore
