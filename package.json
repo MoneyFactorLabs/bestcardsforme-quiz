@@ -13,6 +13,7 @@
     "test:e2e": "node scripts/e2e-smoke.mjs",
     "report:outbound": "node scripts/report-outbound.mjs",
     "verify:facts": "node scripts/verify-issuer-facts.mjs",
+    "audit:editorial": "tsx scripts/editorial-audit.ts",
     "qa": "npm run typecheck && npm test && npm run verify:facts && npm run build && npm run validate:site && npm run test:e2e"
   },
   "dependencies": {
