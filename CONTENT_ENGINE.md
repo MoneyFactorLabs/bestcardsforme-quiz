@@ -81,5 +81,5 @@ automatically; a person approves each merge and each external post.
    links, overdue reviews, and missing claim sources. To flag pages losing Search Console
    traction, run `npm run audit:editorial -- --gsc export.csv` with a Search Console or
    Windsor.ai export (columns: `page,impressions,previous_impressions`). The issuer checks
-   run weekly (Mondays). Distribution drafts (for example LinkedIn) live in `ops/distribution/`
-   and are posted manually only after approval.
+   run weekly (Mondays). Any distribution follows the channels in
+   `ops/MONEYFACTOR_VOICE_AND_POSITIONING.md` (no LinkedIn) and is never automated.
