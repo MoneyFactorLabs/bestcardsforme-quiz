@@ -145,7 +145,7 @@ const strategyArticle: EditorialArticle = {
   eyebrow: "Household Wallet Strategy",
   title: "Credit Card Strategy for $200k–$400k Households: Spend Mix Beats Income (2026)",
   metaDescription:
-    "At $200k–$400k of income, spend mix and travel intensity pick the right cards. Year-2 net value for three household profiles across six wallets, with the math shown.",
+    "At $200k–$400k of income, spend mix and travel pick the right cards. Year-2 net value for three household profiles across six wallets, math shown.",
   dek: `Two households earning $300,000 can need opposite wallets. In our Year-2 model, a home-centered household nets the most from **${homeBest.wallet.label}** (${usd(homeBest.result.net)} a year), while a travel-heavy one nets the most from **${travelBest.wallet.label}** (${usd(travelBest.result.net)}). Income only tells you which cards you can get approved for; your spend mix and how often you travel decide which ones pay.`,
   category: "Card stack strategy",
   updatedAt: UPDATED_AT,
@@ -353,7 +353,7 @@ const secondCardArticle: EditorialArticle = {
   eyebrow: "Premium Wallet Strategy",
   title: "Best Second Card If You Already Have Amex Platinum or Sapphire Reserve (2026)",
   metaDescription:
-    "The best second card for Amex Platinum or Chase Sapphire Reserve owners, ranked by incremental Year-2 value after fees, with the math and a cash-out sensitivity.",
+    "The best second card for Amex Platinum or Sapphire Reserve owners, ranked by incremental Year-2 value after fees, with a cash-out sensitivity.",
   dek: `If you already pay for a Platinum or Sapphire Reserve, the next card should fill the categories your premium card earns 1x on, not duplicate its perks. In our model, the best second card for a Reserve owner is **${reserveTop.candidate.label}** (${signed(reserveTop.gain)} a year) and for a Platinum owner it is **${platinumTop.candidate.label}** (${signed(platinumTop.gain)}). If you cash points out instead of transferring them, ${reserveTopCash.candidate.label} climbs to the top for both, with Venture X close behind.`,
   category: "Card stack strategy",
   updatedAt: UPDATED_AT,
@@ -520,7 +520,7 @@ const stackingArticle: EditorialArticle = {
   eyebrow: "Annual Fee Math",
   title: "Two or Three Premium Credit Cards vs One: The Annual-Fee Stacking Math (2026)",
   metaDescription:
-    "Is holding two or three premium credit cards worth $1,690–$2,015 in annual fees? Break-even math for stacking Sapphire Reserve, Amex Platinum and Gold across three households.",
+    "Are two or three premium cards worth $1,690–$2,015 in fees? Break-even math for stacking Sapphire Reserve, Amex Platinum and Gold.",
   dek: `Adding an Amex Platinum to a Sapphire Reserve wallet raises annual fees from $795 to $1,690. In our Year-2 model that second premium card adds **${signed(platinumAdd.travel)}** a year for a travel-heavy household, **${signed(platinumAdd.balanced)}** for a balanced one, and **${signed(platinumAdd.home)}** for a home-centered one. Stacking pays only when each card's credits are used and its categories carry real spend.`,
   category: "Card stack strategy",
   updatedAt: UPDATED_AT,

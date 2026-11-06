@@ -70,7 +70,8 @@ if (checkIssuers && failures.length === 0) {
         results.push({ productId, claim: claim.id, status: "verified", detail: claim.text });
       } else {
         const context = claimSnippet(text, claim.hint);
-        results.push({ productId, claim: claim.id, status: "not-found", detail: `${claim.text}${context ? ` | page near "${claim.hint}": ${context}` : ""}` });
+        const where = context ? ` | page near "${claim.hint}": ${context}` : ` | "${claim.hint}" not on the page (${text.length} characters of text)`;
+        results.push({ productId, claim: claim.id, status: "not-found", detail: `${claim.text}${where}` });
         failures.push(`${productId}/${claim.id}: "${claim.text}" not found on ${product.issuerUrl}`);
       }
     }
