@@ -1,0 +1,388 @@
+{
+  "note": "Issuer terms that articles state beyond the annual fee. Each claim is matched against the official issuer page from a GitHub runner by scripts/verify-issuer-claims.mjs (weekly and on PRs that touch this file or articles). A claim that is not found on the issuer page fails the check: fix the article or the claim, never the pattern alone. 'secondary' records the dated non-issuer source used when drafting.",
+  "products": {
+    "chase-sapphire-reserve": {
+      "issuerUrl": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "usedIn": [
+        "amex-platinum-vs-chase-sapphire-reserve-2026",
+        "best-second-credit-card-for-premium-card-owners-2026",
+        "multiple-premium-credit-cards-vs-one-2026",
+        "credit-card-strategy-200k-400k-household-income-2026"
+      ],
+      "secondary": [
+        {
+          "publisher": "Motley Fool",
+          "url": "https://www.fool.com/money/credit-cards/articles/is-the-chase-sapphire-reserve-card-worth-it-in-2026",
+          "checkedAt": "2026-11-06",
+          "covers": "8x Chase Travel, 4x flights and hotels booked direct, 3x dining, 1x other"
+        },
+        {
+          "publisher": "WalletHub",
+          "url": "https://wallethub.com/edu/cc/chase-sapphire-reserve-benefits/144626",
+          "checkedAt": "2026-11-06",
+          "covers": "$795 fee, $300 travel credit, $500 The Edit credit, $300 dining credit, $300 StubHub credit"
+        }
+      ],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$795 annual fee",
+          "pattern": "\\$795"
+        },
+        {
+          "id": "travel-credit",
+          "text": "$300 annual travel credit",
+          "pattern": "\\$300[^.]{0,120}travel",
+          "hint": "travel credit"
+        },
+        {
+          "id": "chase-travel-8x",
+          "text": "8x points on Chase Travel purchases",
+          "pattern": "8x[^.]{0,80}Chase Travel",
+          "hint": "8x"
+        },
+        {
+          "id": "direct-4x",
+          "text": "4x points on flights and hotels booked direct",
+          "pattern": "4x[^.]{0,80}(flights|hotels)",
+          "hint": "4x"
+        },
+        {
+          "id": "dining-3x",
+          "text": "3x points on dining",
+          "pattern": "3x[^.]{0,60}dining",
+          "hint": "3x"
+        },
+        {
+          "id": "edit-credit",
+          "text": "Up to $500 a year for The Edit prepaid hotel bookings",
+          "pattern": "\\$500[^.]{0,160}The Edit|The Edit[^.]{0,160}\\$500",
+          "hint": "The Edit"
+        },
+        {
+          "id": "dining-credit",
+          "text": "Up to $300 a year in dining credits at Sapphire Reserve Exclusive Tables restaurants",
+          "pattern": "\\$300[^.]{0,160}(dining|Exclusive Tables)",
+          "hint": "Exclusive Tables"
+        },
+        {
+          "id": "stubhub-credit",
+          "text": "Up to $300 a year in StubHub/viagogo credits",
+          "pattern": "\\$300[^.]{0,120}StubHub|StubHub[^.]{0,120}\\$300",
+          "hint": "StubHub"
+        }
+      ]
+    },
+    "amex-platinum": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+      "usedIn": [
+        "amex-platinum-vs-chase-sapphire-reserve-2026",
+        "best-second-credit-card-for-premium-card-owners-2026",
+        "multiple-premium-credit-cards-vs-one-2026"
+      ],
+      "secondary": [
+        {
+          "publisher": "Upgraded Points",
+          "url": "https://upgradedpoints.com/credit-cards/reviews/american-express-platinum-card/benefits/",
+          "checkedAt": "2026-11-06",
+          "covers": "$895 fee and 2026 credit list"
+        },
+        {
+          "publisher": "Thrifty Traveler",
+          "url": "https://thriftytraveler.com/news/credit-card/amex-platinum-drops-saks-credit/",
+          "checkedAt": "2026-11-06",
+          "covers": "Saks credit ended June 30, 2026"
+        },
+        {
+          "publisher": "CardStack",
+          "url": "https://cardstack.money/articles/credit-card-reviews/amex-platinum-credits-list-2026",
+          "checkedAt": "2026-11-06",
+          "covers": "Resy $100/quarter, digital entertainment $25/month, CLEAR+ $219"
+        }
+      ],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$895 annual fee",
+          "pattern": "\\$895"
+        },
+        {
+          "id": "flights-5x",
+          "text": "5x points on flights booked directly with airlines or with Amex Travel",
+          "pattern": "5X[^.]{0,120}flights",
+          "hint": "5X"
+        },
+        {
+          "id": "hotel-credit",
+          "text": "Up to $600 a year in hotel credits on prepaid Fine Hotels + Resorts or The Hotel Collection bookings",
+          "pattern": "\\$600[^.]{0,200}(hotel|Fine Hotels)",
+          "hint": "Fine Hotels"
+        },
+        {
+          "id": "airline-credit",
+          "text": "Up to $200 a year in airline incidental fee credits",
+          "pattern": "\\$200[^.]{0,120}airline",
+          "hint": "Airline Fee"
+        },
+        {
+          "id": "uber-cash",
+          "text": "Up to $200 a year in Uber Cash",
+          "pattern": "\\$200[^.]{0,80}Uber",
+          "hint": "Uber Cash"
+        },
+        {
+          "id": "resy-credit",
+          "text": "Up to $400 a year in Resy restaurant credits",
+          "pattern": "\\$400[^.]{0,120}Resy|Resy[^.]{0,120}\\$400",
+          "hint": "Resy"
+        },
+        {
+          "id": "entertainment-credit",
+          "text": "Up to $300 a year in digital entertainment credits",
+          "pattern": "\\$300[^.]{0,120}(digital entertainment|Digital Entertainment)",
+          "hint": "Entertainment"
+        },
+        {
+          "id": "lululemon-credit",
+          "text": "Up to $300 a year in lululemon credits",
+          "pattern": "\\$300[^.]{0,80}lululemon|lululemon[^.]{0,80}\\$300",
+          "hint": "lululemon"
+        },
+        {
+          "id": "clear-credit",
+          "text": "Up to $219 a year for CLEAR+",
+          "pattern": "\\$219[^.]{0,80}CLEAR|CLEAR[^.]{0,80}\\$219",
+          "hint": "CLEAR"
+        }
+      ]
+    },
+    "amex-gold": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "usedIn": [
+        "best-second-credit-card-for-premium-card-owners-2026",
+        "multiple-premium-credit-cards-vs-one-2026",
+        "credit-card-strategy-200k-400k-household-income-2026"
+      ],
+      "secondary": [
+        {
+          "publisher": "AwardWallet",
+          "url": "https://awardwallet.com/news/credit-cards/american-express-gold-card-refresh-2026/",
+          "checkedAt": "2026-10-29",
+          "covers": "$325 fee, 4x restaurants ($50k cap), 4x U.S. supermarkets ($25k cap), dining/Resy/Uber/Dunkin credits"
+        }
+      ],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$325 annual fee",
+          "pattern": "\\$325"
+        },
+        {
+          "id": "restaurants-4x",
+          "text": "4x points at restaurants worldwide (up to $50,000 a year)",
+          "pattern": "4X[^.]{0,120}restaurants",
+          "hint": "4X"
+        },
+        {
+          "id": "supermarkets-4x",
+          "text": "4x points at U.S. supermarkets (up to $25,000 a year)",
+          "pattern": "4X[^.]{0,160}supermarkets",
+          "hint": "supermarkets"
+        },
+        {
+          "id": "dining-credit",
+          "text": "Up to $120 a year in dining credits",
+          "pattern": "\\$120[^.]{0,160}(dining|Dining)",
+          "hint": "Dining Credit"
+        },
+        {
+          "id": "uber-cash",
+          "text": "Up to $120 a year in Uber Cash",
+          "pattern": "\\$120[^.]{0,100}Uber",
+          "hint": "Uber"
+        },
+        {
+          "id": "resy-credit",
+          "text": "Up to $100 a year in Resy credits",
+          "pattern": "\\$100[^.]{0,120}Resy|Resy[^.]{0,120}\\$100",
+          "hint": "Resy"
+        },
+        {
+          "id": "dunkin-credit",
+          "text": "Up to $84 a year in Dunkin' credits",
+          "pattern": "\\$84[^.]{0,80}Dunkin|Dunkin[^.]{0,80}\\$84",
+          "hint": "Dunkin"
+        }
+      ]
+    },
+    "capital-one-venture-x": {
+      "issuerUrl": "https://www.capitalone.com/credit-cards/venture-x/",
+      "usedIn": [
+        "best-second-credit-card-for-premium-card-owners-2026",
+        "credit-card-strategy-200k-400k-household-income-2026"
+      ],
+      "secondary": [],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$395 annual fee",
+          "pattern": "\\$395"
+        },
+        {
+          "id": "travel-credit",
+          "text": "$300 annual credit for bookings through Capital One Travel",
+          "pattern": "\\$300[^.]{0,160}Capital One Travel",
+          "hint": "$300"
+        },
+        {
+          "id": "anniversary-miles",
+          "text": "10,000 bonus miles every account anniversary",
+          "pattern": "10,000[^.]{0,80}(anniversary|bonus miles)",
+          "hint": "10,000"
+        },
+        {
+          "id": "base-2x",
+          "text": "2 miles per dollar on every purchase",
+          "pattern": "2X?\\s*(miles|Miles)[^.]{0,80}(every|all|other) purchase|2 miles per dollar",
+          "hint": "2X"
+        }
+      ]
+    },
+    "capital-one-spark-cash-plus": {
+      "issuerUrl": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+      "usedIn": [
+        "best-business-credit-card-for-llc-owner-2026"
+      ],
+      "secondary": [
+        {
+          "publisher": "NerdWallet",
+          "url": "https://www.nerdwallet.com/business/credit-cards/reviews/capital-one-spark-cash-plus",
+          "checkedAt": "2026-11-06",
+          "covers": "$150 fee refunded after $150,000 annual spend, 2% cash back on every purchase"
+        }
+      ],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$150 annual fee",
+          "pattern": "\\$150(?![\\d,])"
+        },
+        {
+          "id": "flat-2",
+          "text": "Unlimited 2% cash back on every purchase",
+          "pattern": "2%[^.]{0,80}(cash back|every purchase)",
+          "hint": "2%"
+        },
+        {
+          "id": "fee-refund",
+          "text": "Annual fee refunded every year you spend $150,000 or more",
+          "pattern": "\\$150,000",
+          "hint": "150,000"
+        }
+      ]
+    },
+    "ink-business-preferred": {
+      "issuerUrl": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+      "usedIn": [
+        "best-business-credit-card-for-llc-owner-2026"
+      ],
+      "secondary": [],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$95 annual fee",
+          "pattern": "\\$95(?![\\d,])"
+        },
+        {
+          "id": "bonus-3x",
+          "text": "3x points on the first $150,000 a year in combined travel, shipping, internet/cable/phone and social/search advertising",
+          "pattern": "\\$150,000",
+          "hint": "3X"
+        }
+      ]
+    },
+    "amex-business-platinum": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/",
+      "usedIn": [
+        "best-business-credit-card-for-llc-owner-2026"
+      ],
+      "secondary": [
+        {
+          "publisher": "CNBC Select",
+          "url": "https://www.cnbc.com/select/amex-business-platinum-card-2025-changes/",
+          "checkedAt": "2026-11-06",
+          "covers": "$895 fee after the 2025 refresh"
+        }
+      ],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$895 annual fee",
+          "pattern": "\\$895"
+        },
+        {
+          "id": "flights-5x",
+          "text": "5x points on flights and prepaid hotels booked through Amex Travel",
+          "pattern": "5X[^.]{0,120}(flights|Flights)",
+          "hint": "5X"
+        },
+        {
+          "id": "airline-credit",
+          "text": "Up to $200 a year in airline incidental fee credits",
+          "pattern": "\\$200[^.]{0,120}(airline|Airline)",
+          "hint": "Airline"
+        },
+        {
+          "id": "dell-credit",
+          "text": "Dell Technologies credits",
+          "pattern": "Dell",
+          "hint": "Dell"
+        },
+        {
+          "id": "indeed-credit",
+          "text": "Indeed hiring credits",
+          "pattern": "Indeed",
+          "hint": "Indeed"
+        },
+        {
+          "id": "adobe-credit",
+          "text": "Adobe credits",
+          "pattern": "Adobe",
+          "hint": "Adobe"
+        },
+        {
+          "id": "wireless-credit",
+          "text": "U.S. wireless telephone service credits",
+          "pattern": "[Ww]ireless",
+          "hint": "wireless"
+        }
+      ]
+    },
+    "amex-business-gold": {
+      "issuerUrl": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+      "usedIn": [
+        "best-business-credit-card-for-llc-owner-2026"
+      ],
+      "secondary": [],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$375 annual fee",
+          "pattern": "\\$375"
+        },
+        {
+          "id": "top-two-4x",
+          "text": "4x points on the two eligible categories where the business spends the most each month",
+          "pattern": "4X[^.]{0,200}(categor)",
+          "hint": "4X"
+        },
+        {
+          "id": "cap-150k",
+          "text": "4x applies to the first $150,000 of combined purchases each calendar year",
+          "pattern": "\\$150,000",
+          "hint": "150,000"
+        }
+      ]
+    }
+  }
+}

@@ -2,6 +2,7 @@ import type { EditorialArticle } from "@/types/article";
 import { articleBatch10To14 } from "@/data/articlesBatch10To14";
 import { articleBatch15To19 } from "@/data/articlesBatch15To19";
 import { articleBatch20To24 } from "@/data/articlesBatch20To24";
+import { articleAffluentCluster, highSpendLlcSection } from "@/data/articlesAffluentCluster";
 
 export const articles: EditorialArticle[] = [
   {
@@ -1589,7 +1590,7 @@ export const articles: EditorialArticle[] = [
     metaDescription: "MoneyFactor guide to the best business credit card for LLC owners in 2026, segmented by advertising, travel, diversified spend, cash flow, and FAQs.",
     dek: "The best business credit card for an LLC owner depends on the spending pattern behind the business: advertising, travel, telecom, shipping, diversified spend, or simple cash flow.",
     category: "Business credit cards",
-    updatedAt: "2026-04-27",
+    updatedAt: "2026-11-06",
     reviewedBy: "Tim, founder and editor of BestCardsForMe",
     readingTime: "12 min read",
     comparisonMetrics: [
@@ -1759,6 +1760,7 @@ export const articles: EditorialArticle[] = [
           ]
         }
       },
+      highSpendLlcSection,
       {
         heading: "Who should get a business credit card at all?",
         body: [
@@ -2474,6 +2476,7 @@ export const articles: EditorialArticle[] = [
   ...articleBatch10To14,
   ...articleBatch15To19,
   ...articleBatch20To24,
+  ...articleAffluentCluster,
 ];
 
 export function getArticleBySlug(slug: string) {
