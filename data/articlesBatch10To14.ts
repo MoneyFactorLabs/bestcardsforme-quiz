@@ -1,4 +1,6 @@
 import type { EditorialArticle } from "@/types/article";
+import { holdingBoth } from "@/data/articlesAffluentCluster";
+import { formatDollars as usd, formatSigned as signed } from "@/lib/walletModel";
 
 export const articleBatch10To14: EditorialArticle[] = [
   {
@@ -332,7 +334,7 @@ export const articleBatch10To14: EditorialArticle[] = [
     "metaDescription": "Compare Amex Platinum and Chase Sapphire Reserve for 2026 by annual fee, travel credits, lounge access, dining, rewards, and real-world value.",
     "dek": "The **Amex Platinum** and **Chase Sapphire Reserve** are both ultra-premium travel cards, but the better 2026 choice depends on how you actually travel: Amex Platinum wins for luxury travel households that use Centurion Lounges, Fine Hotels + Resorts, and Amex credits; Chase Sapphire Reserve wins for travelers who want simpler value, a flexible $300 travel credit, and Ultimate Rewards partners. Most households should choose one, not both, because the overlap is expensive and the winner changes by lounge access, booking habits, and credit-calendar tolerance.",
     "category": "Premium travel cards",
-    "updatedAt": "2026-04-27",
+    "updatedAt": "2026-11-06",
     "reviewedBy": "Tim, founder and editor of BestCardsForMe",
     "readingTime": "12 min read",
     "comparisonMetrics": [
@@ -420,7 +422,7 @@ export const articleBatch10To14: EditorialArticle[] = [
             [
               "**Hotel credit**",
               "$600 ($300 × 2) at Fine Hotels + Resorts/Hotel Collection prepaid via Amex Travel",
-              "$300, applies to any travel purchase"
+              "$300 travel credit for any travel purchase, plus up to $500 a year for prepaid stays booked through The Edit"
             ],
             [
               "**Airline credit**",
@@ -429,18 +431,18 @@ export const articleBatch10To14: EditorialArticle[] = [
             ],
             [
               "**Lifestyle credit stack**",
-              "Heavy — Equinox $300, Uber $200, Walmart+ $155, Saks $120, Disney/entertainment $240",
-              "Significant post-2025 refresh stack — DoorDash, StubHub, Lyft, Apple, etc."
+              "Heavy — Resy $400, digital entertainment $300, lululemon $300, Uber Cash $200, among others (the Saks credit ended June 30, 2026)",
+              "Post-2025 refresh stack — $300 Exclusive Tables dining credit and $300 StubHub credit, among others"
             ],
             [
               "**CLEAR+ credit**",
-              "$209",
+              "$219",
               "None standard (verify current)"
             ],
             [
               "**Earning structure**",
               "5x flights & prepaid hotels via Amex Travel; 1x base",
-              "Higher multipliers in bonus categories (Chase Travel, dining, etc.); 1x base"
+              "8x Chase Travel; 4x flights and hotels booked direct; 3x dining; 1x base"
             ],
             [
               "**Hotel status**",
@@ -499,14 +501,14 @@ export const articleBatch10To14: EditorialArticle[] = [
           {
             "heading": "Amex Platinum at $895",
             "body": [
-              "Total realistic Year-2 captured value: **$3,264 to $3,614.** Net after $895 fee: **+$2,369 to +$2,719.**"
+              "Total realistic Year-2 captured value: **$3,274 to $3,624.** Net after $895 fee: **+$2,379 to +$2,729.**"
             ],
             "bullets": [
               "$600 hotel credit (FHR) at near face value: **+$500–$600**",
               "$200 airline credit captured: **+$150–$200**",
-              "$209 CLEAR+: **+$209**",
+              "$219 CLEAR+: **+$219**",
               "Centurion Lounge × 12 visits @ ~$50 per visit: **+$600**",
-              "Lifestyle credits at 60% utilization (Equinox, Uber, Saks, Walmart+, entertainment): **+$700–$900**",
+              "Lifestyle credits at 60% utilization (Resy, Uber, digital entertainment, lululemon, Equinox): **+$700–$900**",
               "5x earning advantage on $15,000 of flight/prepaid hotel spend at 1.7¢ MR: **+$510**",
               "1x base on $35,000 at 1.7¢: **+$595**"
             ]
@@ -585,11 +587,12 @@ export const articleBatch10To14: EditorialArticle[] = [
       {
         "heading": "Holding both: when it makes sense",
         "body": [
-          "For most households, holding both cards is overkill — the lounge access overlaps, the lifestyle credits compete for the same calendar attention, and the combined fee approaches $1,700. For a small number of households, however, the math justifies both:",
-          "For everyone else, pick one. The marginal value of the second card is rarely worth the fee."
+          `Holding both cards costs $1,690 a year in fees, and the overlap is real: you can only sit in one lounge at a time, and both cards carry travel protections. The second card therefore has to pay for itself with what only it offers. In our [annual-fee stacking model](/articles/multiple-premium-credit-cards-vs-one-2026), adding the Platinum to a Sapphire Reserve wallet is worth **${signed(holdingBoth.gain.travel)}** a year for a travel-heavy household, **${signed(holdingBoth.gain.balanced)}** for a balanced one, and **${signed(holdingBoth.gain.home)}** for a home-centered one (Year 2, points transferred, lounge access counted once).`,
+          `The swing comes from credits. Next to a Reserve, the Platinum needs about ${usd(holdingBoth.breakEvenCredits.travel)} of credits you actually use to break even for a travel-heavy household, rising to ${usd(holdingBoth.breakEvenCredits.home)} for a household that rarely flies. If you cash points out at about 1¢, the travel-heavy gain falls to ${signed(holdingBoth.gainCashOut.travel)}.`,
+          "Holding both tends to make sense for:"
         ],
         "bullets": [
-          "**Households with $80,000+ annual spending across diverse categories** can capture meaningful earning value from both cards' bonus structures. UR for Chase Travel and dining; MR for flights and prepaid hotels via Amex Travel.",
+          "**Households that fly often and book prepaid luxury hotels most years**, so the Platinum's 5x on flights and $600 hotel credit both land on spending that already happens.",
           "**Households with deep transfer-partner strategies across both networks.** Hyatt + Aeroplan + United via UR; ANA + Singapore + Delta via MR. For households who genuinely use redemptions in both networks, two transferable currencies beats one.",
           "**Households where one cardholder holds the Platinum and the spouse holds the Reserve.** This avoids overlap on a single household calendar and splits the lounge access between two travelers."
         ]
@@ -640,6 +643,12 @@ export const articleBatch10To14: EditorialArticle[] = [
       },
       {
         "slug": "is-amex-gold-worth-it-2026"
+      },
+      {
+        "slug": "multiple-premium-credit-cards-vs-one-2026"
+      },
+      {
+        "slug": "best-second-credit-card-for-premium-card-owners-2026"
       }
     ],
     "faqs": [
@@ -689,7 +698,7 @@ export const articleBatch10To14: EditorialArticle[] = [
       },
       {
         "question": "Is it worth holding both cards?",
-        "answer": "Rarely. Households with $80,000+ annual diversified spending or deep cross-network transfer strategies sometimes pencil both. For most affluent households, the $1,700 combined fee exceeds the marginal value of the second card."
+        "answer": `Only when you use the second card's unique credits. In our model, adding the Platinum to a Sapphire Reserve is worth ${signed(holdingBoth.gain.travel)} a year for a travel-heavy household but ${signed(holdingBoth.gain.home)} for a home-centered one, on $1,690 of combined fees.`
       },
       {
         "question": "Which has better international travel coverage?",

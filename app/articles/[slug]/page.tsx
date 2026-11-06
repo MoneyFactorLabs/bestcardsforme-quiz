@@ -25,6 +25,12 @@ const articleSeoTitleOverrides: Record<string, string> = {
     "Chase Sapphire Reserve $795 Fee 2026: Worth It?",
   "best-credit-card-for-dining-restaurants-2026":
     "Best Dining Credit Card 2026: Cash Back vs Points",
+  "credit-card-strategy-200k-400k-household-income-2026":
+    "Credit Card Strategy for $200k–$400k Households (2026)",
+  "best-second-credit-card-for-premium-card-owners-2026":
+    "Best Second Card for Amex Platinum or Sapphire Reserve Owners",
+  "multiple-premium-credit-cards-vs-one-2026":
+    "Two or Three Premium Cards vs One: Annual-Fee Math (2026)",
 };
 
 export function generateStaticParams() {

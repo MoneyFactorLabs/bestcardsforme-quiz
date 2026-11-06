@@ -1,6 +1,23 @@
 // Looks for a published annual fee within 160 characters of each "annual fee"
 // mention on an issuer page. Pages that render terms with JavaScript only are
 // "inconclusive", never a match.
+export function pageText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&nbsp;|&#160;/g, " ")
+    .replace(/&reg;|&#174;|®|&trade;|™/g, "")
+    .replace(/\s+/g, " ");
+}
+
+// Text around the first mention of a hint, so a missed claim shows what the page says instead.
+export function claimSnippet(text, hint) {
+  if (!hint) return "";
+  const index = text.toLowerCase().indexOf(hint.toLowerCase());
+  return index === -1 ? "" : text.slice(Math.max(0, index - 120), index + 160).trim();
+}
+
 export function checkFee(html, fee) {
   const text = html
     .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, " ")
