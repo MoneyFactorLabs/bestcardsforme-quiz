@@ -14,6 +14,7 @@
     "report:outbound": "node scripts/report-outbound.mjs",
     "verify:facts": "node scripts/verify-issuer-facts.mjs",
     "verify:claims": "node scripts/verify-issuer-claims.mjs",
+    "audit:editorial": "tsx scripts/editorial-audit.ts",
     "qa": "npm run typecheck && npm test && npm run verify:facts && npm run verify:claims && npm run build && npm run validate:site && npm run test:e2e"
   },
   "dependencies": {
