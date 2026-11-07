@@ -78,7 +78,10 @@ function getRelatedArticleItems(profile: CreditCardProfile) {
     .map((article) => ({
       title: article.title,
       href: `/articles/${article.slug}`,
-      dek: stripInlineMarkdown(article.dek),
+      // The short meta description, not the full dek: deks run up to ~130 words and
+      // repeated on every card page that links the article they made card pages
+      // largely copies of article intros.
+      dek: article.metaDescription ?? stripInlineMarkdown(article.dek),
       label: article.category,
     }));
 }
