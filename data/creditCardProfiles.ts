@@ -48,6 +48,8 @@ const handwrittenProfiles: CreditCardProfile[] = [
       "is-chase-sapphire-preferred-best-95-travel-card-2026",
       "is-amex-platinum-worth-it-2026",
       "is-capital-one-venture-x-worth-it-2026",
+      "best-second-credit-card-for-premium-card-owners-2026",
+      "multiple-premium-credit-cards-vs-one-2026",
     ],
   },
   {
@@ -130,6 +132,8 @@ const handwrittenProfiles: CreditCardProfile[] = [
       "is-amex-platinum-worth-it-2026",
       "is-chase-sapphire-reserve-worth-it-2026",
       "is-capital-one-venture-x-worth-it-2026",
+      "best-second-credit-card-for-premium-card-owners-2026",
+      "multiple-premium-credit-cards-vs-one-2026",
     ],
   },
   {
@@ -291,7 +295,11 @@ const handwrittenProfiles: CreditCardProfile[] = [
     reviewedAt: HANDWRITTEN_REVIEWED_AT,
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/amex-gold",
-    relatedArticleSlugs: ["best-grocery-credit-card-high-spend-households-2026"],
+    relatedArticleSlugs: [
+      "best-grocery-credit-card-high-spend-households-2026",
+      "credit-card-strategy-200k-400k-household-income-2026",
+      "best-second-credit-card-for-premium-card-owners-2026",
+    ],
   },
 ];
 

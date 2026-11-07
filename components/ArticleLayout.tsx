@@ -28,6 +28,14 @@ function formatDate(value: string) {
   }).format(new Date(year, month - 1, day));
 }
 
+// A text node that starts with "/" (e.g. "/year" after a highlighted "$4,000")
+// is serialized into the page data as a quoted path-like string, which Google
+// has crawled as a URL (/year returned 404 in Search Console). A leading word
+// joiner (U+2060, zero-width and non-breaking) keeps the text identical on
+// screen while stopping it from looking like a path.
+const WORD_JOINER = "\u2060";
+const plainSegment = (segment: string) => (segment.startsWith("/") ? WORD_JOINER + segment : segment);
+
 function renderPlainText(text: string, keyPrefix: string): ReactNode[] {
   const nodes: ReactNode[] = [];
   const financialPattern =
@@ -37,7 +45,7 @@ function renderPlainText(text: string, keyPrefix: string): ReactNode[] {
 
   while ((match = financialPattern.exec(text)) !== null) {
     if (match.index > lastIndex) {
-      nodes.push(text.slice(lastIndex, match.index));
+      nodes.push(plainSegment(text.slice(lastIndex, match.index)));
     }
 
     nodes.push(
@@ -53,7 +61,7 @@ function renderPlainText(text: string, keyPrefix: string): ReactNode[] {
   }
 
   if (lastIndex < text.length) {
-    nodes.push(text.slice(lastIndex));
+    nodes.push(plainSegment(text.slice(lastIndex)));
   }
 
   return nodes;

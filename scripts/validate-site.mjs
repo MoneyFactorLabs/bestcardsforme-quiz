@@ -4,8 +4,12 @@
 // Fails on broken internal links, URL-like strings in the inline RSC payload
 // that do not resolve (Google crawls these), placeholder copy, missing or
 // mismatched canonicals, duplicate titles or meta descriptions, and any change
-// to a control page listed in quality/control-pages.json. Live mode also
-// checks HTTP status, robots.txt, and that known phantom URLs stay 404.
+// to a control page listed in quality/control-pages.json. Indexing checks: every
+// page with a self-referencing canonical must be in the sitemap (and nothing
+// else may be), carry no noindex, and be reachable by links from the homepage.
+// Live mode also checks HTTP status, robots.txt, X-Robots-Tag, http/www
+// redirects, that /go/ redirects instead of serving a page, and that known
+// phantom URLs stay 404.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -16,7 +20,10 @@ const staticFiles = new Set(["/sitemap.xml", "/robots.txt", "/icon.svg", "/apple
 const urlFlag = process.argv.indexOf("--url");
 const liveBase = urlFlag > -1 ? process.argv[urlFlag + 1]?.replace(/\/$/, "") : undefined;
 // URLs Google reported that must keep returning 404 (they were never real pages).
-const knownPhantomUrls = ["/cards/chase-sapphire-preferred-94", "/methodology-414", "/month);"];
+const knownPhantomUrls = ["/cards/chase-sapphire-preferred-94", "/methodology-414", "/month);", "/year"];
+// Page-data strings that look like paths but are known text, pending a decision.
+// "/10" is the scorecard "8.4/10"; changing it alters the control article's HTML.
+const allowedPathLikeText = new Set(["/10"]);
 
 function walk(dir, out = []) {
   for (const name of fs.readdirSync(dir)) {
@@ -30,6 +37,8 @@ function walk(dir, out = []) {
 
 const errors = [];
 const pages = new Map();
+const robotsHeaders = new Map();
+let sitemapPaths = [];
 let canonicalOrigin;
 
 if (liveBase) {
@@ -38,11 +47,33 @@ if (liveBase) {
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(match[1]));
   if (locs.length === 0) errors.push("/sitemap.xml: no URLs");
   canonicalOrigin = locs[0]?.origin;
+  sitemapPaths = locs.map((loc) => loc.pathname.replace(/\/$/, "") || "/");
 
   for (const loc of locs) {
     const response = await get(loc.pathname);
     if (response.status !== 200) errors.push(`${loc.pathname}: HTTP ${response.status}`);
-    else pages.set(loc.pathname, await response.text());
+    else {
+      pages.set(loc.pathname.replace(/\/$/, "") || "/", await response.text());
+      robotsHeaders.set(loc.pathname, response.headers.get("x-robots-tag") || "");
+    }
+  }
+  for (const [pathname, header] of robotsHeaders) {
+    if (/noindex/i.test(header)) errors.push(`${pathname}: X-Robots-Tag "${header}" blocks indexing`);
+  }
+
+  // One hop to the canonical origin from http:// and the other host variant.
+  const canonical = new URL(canonicalOrigin);
+  const alternateHost = canonical.hostname.startsWith("www.") ? canonical.hostname.slice(4) : `www.${canonical.hostname}`;
+  for (const variant of [`http://${canonical.hostname}/`, `https://${alternateHost}/`]) {
+    try {
+      const response = await fetch(variant, { redirect: "manual" });
+      const location = response.headers.get("location") || "";
+      if (![301, 307, 308].includes(response.status) || !location.startsWith(`${canonicalOrigin}/`)) {
+        errors.push(`${variant}: expected one redirect to ${canonicalOrigin}/, got ${response.status} ${location}`);
+      }
+    } catch (error) {
+      errors.push(`${variant}: ${error.cause?.code || error.message}`);
+    }
   }
 
   const robots = await (await get("/robots.txt")).text();
@@ -52,6 +83,16 @@ if (liveBase) {
   for (const phantom of knownPhantomUrls) {
     const status = (await get(phantom)).status;
     if (status !== 404) errors.push(`${phantom}: expected 404, got ${status}`);
+  }
+  // Affiliate routes must redirect (never serve an indexable page) and unknown slugs must 404.
+  const goSlug = [...(fs.readFileSync(path.join(process.cwd(), "data/cards.ts"), "utf8").match(/affiliateSlug: "([^"]+)"/) || [])][1];
+  if (goSlug) {
+    const goResponse = await fetch(`${liveBase}/go/${goSlug}`, { redirect: "manual", headers: { "user-agent": "Googlebot/2.1 (+http://www.google.com/bot.html)" } });
+    if (goResponse.status < 300 || goResponse.status >= 400) errors.push(`/go/${goSlug}: expected a redirect, got ${goResponse.status}`);
+  }
+  for (const missing of ["/cards/not-a-card", "/articles/not-an-article"]) {
+    const status = (await get(missing)).status;
+    if (status !== 404) errors.push(`${missing}: expected 404, got ${status}`);
   }
 } else {
   if (!fs.existsSync(root)) {
@@ -63,6 +104,14 @@ if (liveBase) {
     if (route === "/index") route = "/";
     if (route === "/_not-found") continue;
     pages.set(route, fs.readFileSync(file, "utf8"));
+  }
+  const sitemapFile = path.join(root, "sitemap.xml.body");
+  if (fs.existsSync(sitemapFile)) {
+    const sitemap = fs.readFileSync(sitemapFile, "utf8");
+    sitemapPaths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(match[1]).pathname.replace(/\/$/, "") || "/");
+    canonicalOrigin = new URL(sitemap.match(/<loc>([^<]+)<\/loc>/)[1]).origin;
+  } else {
+    errors.push("sitemap.xml: missing from the build");
   }
 }
 
@@ -82,6 +131,9 @@ const resolves = (href) =>
 const seenTitles = new Map();
 const seenDescriptions = new Map();
 const payloadPattern = new RegExp(`\\\\?"(/(?:${routePrefixes.join("|")})[^"\\\\]*)\\\\?"`, "g");
+// Any other page-data string that starts like a path ("/year through ...") is
+// read by Google as a URL up to the first space; it must resolve or be allowed.
+const pathLikeTextPattern = /\\"(\/[A-Za-z0-9][^\s"\\]*)/g;
 
 for (const [route, html] of pages) {
   for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
@@ -94,6 +146,15 @@ for (const [route, html] of pages) {
   for (const match of scripts.matchAll(payloadPattern)) {
     if (!resolves(match[1])) errors.push(`${route}: unresolvable URL-like string in page data "${match[1].slice(0, 80)}"`);
   }
+  for (const match of scripts.matchAll(pathLikeTextPattern)) {
+    const candidate = match[1].replace(/[?#].*$/, "");
+    if (allowedPathLikeText.has(candidate) || resolves(candidate) || candidate.startsWith("/_next/")) continue;
+    if (/^\/(?:icon|apple-icon)[.\w-]*$/.test(candidate)) continue;
+    errors.push(`${route}: text in page data starts like a path "${candidate.slice(0, 60)}" (Google may crawl it as a URL)`);
+  }
+
+  const robotsMeta = html.match(/<meta name="robots" content="([^"]+)"/)?.[1] || "";
+  if (/noindex/i.test(robotsMeta)) errors.push(`${route}: meta robots "${robotsMeta}" blocks indexing`);
 
   const visibleText = html.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ");
   const placeholder = visibleText.match(placeholderPattern);
@@ -124,6 +185,37 @@ for (const [route, html] of pages) {
   }
 }
 
+// Every page whose canonical is itself belongs in the sitemap, and the sitemap
+// lists nothing that is not such a page.
+const selfCanonical = [...pages.keys()].filter((route) => {
+  const canonical = pages.get(route).match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+  return canonical && (!canonicalOrigin || new URL(canonical).origin === canonicalOrigin) && (new URL(canonical).pathname.replace(/\/$/, "") || "/") === route;
+});
+if (sitemapPaths.length > 0) {
+  const listed = new Set(sitemapPaths);
+  selfCanonical.filter((route) => !listed.has(route)).forEach((route) => errors.push(`${route}: indexable page missing from sitemap.xml`));
+  if (!liveBase) sitemapPaths.filter((route) => !pages.has(route)).forEach((route) => errors.push(`sitemap.xml lists ${route}, which is not a page`));
+}
+
+// Every sitemap page must be reachable by following links from the homepage.
+if (pages.has("/")) {
+  const reached = new Set(["/"]);
+  const queue = ["/"];
+  while (queue.length > 0) {
+    const html = pages.get(queue.pop());
+    for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
+      const href = match[1].replace(/\/$/, "") || "/";
+      if (pages.has(href) && !reached.has(href)) {
+        reached.add(href);
+        queue.push(href);
+      }
+    }
+  }
+  (sitemapPaths.length > 0 ? sitemapPaths : selfCanonical)
+    .filter((route) => pages.has(route) && !reached.has(route))
+    .forEach((route) => errors.push(`${route}: not reachable by links from the homepage`));
+}
+
 // Page assertions pin facts that must appear (or must not reappear) on specific
 // pages, e.g. corrected fees and removed claims; see quality/page-assertions.json.
 const assertionsFile = path.join(process.cwd(), "quality/page-assertions.json");
@@ -136,6 +228,7 @@ if (fs.existsSync(assertionsFile)) {
       .replace(/&amp;/g, "&")
       .replace(/&#x27;|&#39;/g, "'")
       .replace(/&quot;/g, '"')
+      .replace(/\u2060/g, "")
       .replace(/\s+/g, " ");
 
   for (const [route, { contains = [], absent = [] }] of Object.entries(assertions)) {
