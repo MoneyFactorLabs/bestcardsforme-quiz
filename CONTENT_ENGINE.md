@@ -61,6 +61,8 @@ automatically; a person approves each merge and each external post.
    traction in the weekly editorial audit, or a query cluster with no page) is written up as a
    GitHub issue with the evidence and the intended URL: new page, or an existing page to improve.
    Check the audit inventory first so a new page never competes with an existing one.
+   `npm run growth` (see `ops/GROWTH_ENGINE.md`) scores candidate opportunities against the
+   weekly Search Console export, rejects duplicate intents, and writes the briefs.
 2. **Draft.** Claude Code drafts in a branch. Dollar figures in decision articles come from code
    (`lib/walletModel.ts`, `lib/cardValueModel.ts`), not hand arithmetic, and tests pin the
    headline results.
