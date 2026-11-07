@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/data/articles";
-import { getAllCreditCardProfileSlugs } from "@/data/creditCardProfiles";
+import { creditCardProfiles, getAllCreditCardProfileSlugs } from "@/data/creditCardProfiles";
 import { absoluteUrl } from "@/lib/site";
 
 const staticRoutes = [
@@ -22,12 +22,15 @@ function sitemapEntry(url: string, lastModified?: string | Date): MetadataRoute.
   };
 }
 
+// lastmod is only set from real review dates. Stamping every page with the build
+// time on each deploy makes lastmod unreliable, and Google ignores it when it is.
+const cardReviewedAt = new Map(creditCardProfiles.map((profile) => [profile.slug, profile.reviewedAt]));
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   const entries = [
-    ...staticRoutes.map((route) => sitemapEntry(route, now)),
+    ...staticRoutes.map((route) => sitemapEntry(route)),
     ...articles.map((article) => sitemapEntry(`/articles/${article.slug}`, article.updatedAt)),
-    ...getAllCreditCardProfileSlugs().map((slug) => sitemapEntry(`/cards/${slug}`, now)),
+    ...getAllCreditCardProfileSlugs().map((slug) => sitemapEntry(`/cards/${slug}`, cardReviewedAt.get(slug))),
   ];
   const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
 
