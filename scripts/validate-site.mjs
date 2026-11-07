@@ -278,8 +278,9 @@ if (fs.existsSync(controlFile)) {
 
 if (errors.length > 0) {
   console.error(`Site validation failed (${errors.length} issues across ${pages.size} pages):`);
-  for (const error of errors.slice(0, 50)) console.error(`- ${error}`);
-  if (errors.length > 50) console.error(`- …and ${errors.length - 50} more`);
+  // Repeated messages are counted so every distinct problem stays visible.
+  const counts = errors.reduce((map, error) => map.set(error, (map.get(error) || 0) + 1), new Map());
+  for (const [error, count] of counts) console.error(`- ${error}${count > 1 ? ` (×${count})` : ""}`);
   process.exit(1);
 }
 
