@@ -22,6 +22,8 @@ jobs:
         run: npm test
       - name: Fact sources registered and fresh
         run: npm run verify:facts
+      - name: Article claim registry valid and fresh
+        run: npm run verify:claims
       - name: Build (includes card-profile validation)
         run: npm run build
       - name: Site validation (links, payload URLs, placeholders, canonicals, duplicates)

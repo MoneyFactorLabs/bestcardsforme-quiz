@@ -1,7 +1,8 @@
 name: Issuer fact verification
 
-# Checks published annual fees against official issuer pages from a GitHub
-# runner (issuer domains are reachable here) and flags stale secondary sources.
+# Checks published annual fees and the issuer terms our articles state against
+# official issuer pages from a GitHub runner (issuer domains are reachable
+# here) and flags stale secondary sources.
 on:
   schedule:
     - cron: "17 13 * * 1"
@@ -9,6 +10,9 @@ on:
   pull_request:
     paths:
       - quality/issuer-sources.json
+      - quality/issuer-claims.json
+      - scripts/verify-issuer-claims.mjs
+      - data/articles*.ts
       - scripts/verify-issuer-facts.mjs
       - scripts/lib/issuerFacts.mjs
       - data/cards.ts
@@ -25,10 +29,15 @@ jobs:
           node-version: 22
       - name: Verify issuer pages and source freshness
         run: npm run verify:facts -- --issuers --write
+      - name: Verify article claims against issuer pages
+        if: always()
+        run: npm run verify:claims -- --issuers --write
       - name: Upload verification report
         if: always()
         uses: actions/upload-artifact@v6
         with:
           name: issuer-verification
-          path: quality/issuer-verification.json
+          path: |
+            quality/issuer-verification.json
+            quality/issuer-claims-report.json
           if-no-files-found: ignore
