@@ -20,7 +20,15 @@ const staticFiles = new Set(["/sitemap.xml", "/robots.txt", "/icon.svg", "/apple
 const urlFlag = process.argv.indexOf("--url");
 const liveBase = urlFlag > -1 ? process.argv[urlFlag + 1]?.replace(/\/$/, "") : undefined;
 // URLs Google reported that must keep returning 404 (they were never real pages).
-const knownPhantomUrls = ["/cards/chase-sapphire-preferred-94", "/methodology-414", "/month);", "/year"];
+const knownPhantomUrls = [
+  "/cards/chase-sapphire-preferred-94",
+  "/cards/amex-gold-289",
+  "/cards/capital-one-venture-x-0",
+  "/methodology-414",
+  "/visit",
+  "/month);",
+  "/year",
+];
 // Page-data strings that look like paths but are known text, pending a decision.
 // "/10" is the scorecard "8.4/10"; changing it alters the control article's HTML.
 const allowedPathLikeText = new Set(["/10"]);
