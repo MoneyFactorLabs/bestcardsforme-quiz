@@ -191,6 +191,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       { slug: "citi-double-cash", reason: "A flat 2% catch-all if your business spending does not fit the 3x categories." },
     ],
     relatedArticleSlugs: [
+      "ink-business-preferred-vs-spark-cash-plus-2026",
       "best-business-credit-card-for-llc-owner-2026",
       "best-credit-card-for-business-owners-2026",
       "best-2-card-credit-card-setup-2026",
@@ -678,6 +679,7 @@ export const cardProfileSpecs: CardProfileSpec[] = [
       { slug: "chase-freedom-unlimited", reason: "The personal no-fee Chase card for pooling points." },
     ],
     relatedArticleSlugs: [
+      "personal-vs-business-credit-card-for-business-spending-2026",
       "best-business-credit-card-for-llc-owner-2026",
       "best-credit-card-for-business-owners-2026",
     ],

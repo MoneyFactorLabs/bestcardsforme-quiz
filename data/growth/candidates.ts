@@ -33,6 +33,8 @@ export type Candidate = {
   conversionIntent: 1 | 2 | 3;
   // 1 = reuse an existing model and data, 3 = new model or tool.
   effort: 1 | 2 | 3;
+  // Set once the page ships outside /articles (e.g. a tool), so it is not briefed again.
+  publishedPath?: string;
   preview?: () => PreviewTable;
 };
 
@@ -358,6 +360,7 @@ export const candidates: Candidate[] = [
     cta: { quiz: true, cards: [] },
     conversionIntent: 2,
     effort: 3,
+    publishedPath: "/tools/annual-fee-break-even-calculator",
   },
   {
     id: "personal-card-for-business-spend",

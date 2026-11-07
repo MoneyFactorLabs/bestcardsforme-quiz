@@ -183,7 +183,10 @@ export function scoreCandidate(candidate: Candidate, data: GscDataset, context: 
     }
   }
   if (candidate.kind === "new") {
-    if (context.articles.some((article) => article.slug === candidate.slug)) {
+    if (candidate.publishedPath) {
+      status = "duplicate";
+      reasons.push(`Already published at ${candidate.publishedPath}.`);
+    } else if (context.articles.some((article) => article.slug === candidate.slug)) {
       status = "duplicate";
       reasons.push("Slug already exists.");
     } else if (nearest && nearest.similarity >= DUPLICATE_SIMILARITY) {

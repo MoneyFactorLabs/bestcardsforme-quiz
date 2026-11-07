@@ -19,6 +19,10 @@ function getArticleUrl(slug: string) {
 }
 
 const articleSeoTitleOverrides: Record<string, string> = {
+  "capital-one-venture-x-vs-amex-platinum-2026": "Venture X vs Amex Platinum (2026): Which Pays More?",
+  "ink-business-preferred-vs-spark-cash-plus-2026": "Ink Business Preferred vs Spark Cash Plus (2026)",
+  "amex-gold-vs-chase-sapphire-reserve-2026": "Amex Gold vs Chase Sapphire Reserve (2026)",
+  "personal-vs-business-credit-card-for-business-spending-2026": "Personal vs Business Card for Business Spending (2026)",
   "amex-platinum-vs-chase-sapphire-reserve-2026":
     "Amex Platinum vs Chase Sapphire Reserve 2026",
   "is-chase-sapphire-reserve-worth-it-2026":

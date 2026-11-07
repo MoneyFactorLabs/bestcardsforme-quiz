@@ -18,7 +18,7 @@ type ProfileId = (typeof householdProfiles)[number]["id"];
 type Cards = ReturnType<typeof cardsFor>;
 type Pick = (cards: Cards) => WalletCard[];
 
-const UPDATED_AT = "2026-11-08";
+const UPDATED_AT = "2026-11-07";
 const REVIEWED_BY = "Tim, founder and editor of BestCardsForMe";
 const CASH_OUT: ValuationOverride = { chaseUltimateRewards: 1, amexMembershipRewards: 1, capitalOneMiles: 1 };
 
@@ -292,7 +292,7 @@ const inkSparkArticle: EditorialArticle = {
     {
       heading: "Assumptions and limitations",
       body: [
-        "Business spend mixes vary widely; plug your own numbers into the [annual fee break-even calculator](/tools/annual-fee-break-even-calculator). For a full LLC card lineup see the [LLC owner guide](/articles/best-business-credit-card-for-llc-owner-2026); for larger teams see [business-owner card strategy](/articles/best-credit-card-for-business-owners-2026).",
+        "Business spend mixes vary widely; plug your own numbers into the [annual fee break-even calculator](/tools/annual-fee-break-even-calculator). For a full LLC card lineup see the [LLC owner guide](/articles/best-business-credit-card-for-llc-owner-2026); for larger teams see [business-owner card strategy](/articles/best-credit-card-for-business-owners-2026). [Take the quiz](/) for a recommendation built on your own spending.",
       ],
       bullets: businessAssumptions,
     },
