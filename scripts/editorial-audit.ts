@@ -8,15 +8,16 @@
 // 180), articles with no entry in the issuer claim registry, and, when a GSC
 // export is supplied, pages whose impressions fell 30% or more period over period.
 //
-// The optional GSC CSV needs a header row with: page, impressions,
-// previous_impressions (clicks / previous_clicks optional). Export from Search
-// Console or Windsor.ai; nothing here calls an external API.
+// The optional GSC CSV is read by lib/growth/gsc.ts: a Search Console Pages.csv
+// in Compare mode, a long-format (date, page) export, or the minimal
+// page,impressions,previous_impressions format. Nothing here calls an external API.
 import fs from "node:fs";
 import path from "node:path";
 import { articles } from "@/data/articles";
 import { cards } from "@/data/cards";
 import { creditCardProfiles } from "@/data/creditCardProfiles";
 import { articleInternalLinkMap } from "@/lib/articleInternalLinks";
+import { parseGscExport } from "@/lib/growth/gsc";
 
 const args = process.argv.slice(2);
 const option = (name: string) => (args.includes(name) ? args[args.indexOf(name) + 1] : undefined);
@@ -98,21 +99,17 @@ if (unsourced > 0) warnings.push(`${unsourced} of ${articles.length} articles ha
 let gscSection = "Search Console data: not connected (pass `--gsc <export.csv>` to flag pages losing impressions).";
 const gscPath = option("--gsc");
 if (gscPath) {
-  const [header, ...lines] = fs.readFileSync(gscPath, "utf8").trim().split(/\r?\n/);
-  const columns = header.split(",").map((name) => name.trim().toLowerCase());
-  const index = (name: string) => columns.indexOf(name);
+  const pages = parseGscExport(fs.readFileSync(gscPath, "utf8")).rows.filter((row) => row.dimension === "page");
   const losing: string[] = [];
-  for (const line of lines) {
-    const cells = line.split(",");
-    const page = cells[index("page")];
-    const now = Number(cells[index("impressions")]);
-    const before = Number(cells[index("previous_impressions")]);
+  for (const row of pages) {
+    const now = row.current?.impressions ?? 0;
+    const before = row.previous?.impressions ?? 0;
     if (before >= 20 && now <= before * 0.7) {
-      losing.push(`${page}: ${before} → ${now} impressions (${Math.round((1 - now / before) * 100)}% down)`);
+      losing.push(`${row.key}: ${before} → ${now} impressions (${Math.round((1 - now / before) * 100)}% down)`);
     }
   }
   losing.forEach((entry) => warnings.push(`Losing traction: ${entry}`));
-  gscSection = `Search Console data: ${lines.length} pages from ${path.basename(gscPath)}; ${losing.length} lost 30%+ of impressions.`;
+  gscSection = `Search Console data: ${pages.length} pages from ${path.basename(gscPath)}; ${losing.length} lost 30%+ of impressions.`;
 }
 
 const report = [

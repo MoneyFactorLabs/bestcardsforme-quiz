@@ -1,0 +1,11 @@
+{
+  "label": "2026-11-04",
+  "source": "Google Search Console performance, bestcardsforme.com, as reported by the founder in Issue #16 (page-level only; clicks were stated for two pages; per-page previous-period values and query rows were not provided)",
+  "currentRange": "2026-10-29..2026-11-04",
+  "previousRange": "2026-10-22..2026-10-28",
+  "totals": {
+    "current": { "clicks": 3, "impressions": 756, "position": 44.3 },
+    "previous": { "clicks": 0, "impressions": 316, "position": 41.2 }
+  },
+  "current": ["2026-11-04/Pages.csv"]
+}

@@ -10,3 +10,6 @@ dist
 
 # Claude Code working directory
 .claude/
+
+# Growth Engine: raw Search Console exports stay local (public repo)
+growth/inputs/private/

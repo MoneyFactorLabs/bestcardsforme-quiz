@@ -1,0 +1,34 @@
+name: Growth Engine
+
+# Manual only: scores content opportunities from a committed Search Console
+# manifest and uploads the weekly report and briefs. Read-only; no schedule,
+# no secrets, nothing published.
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Manifest path, e.g. growth/inputs/2026-11-04.json
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  growth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Score opportunities and write briefs
+        run: npm run growth -- --manifest "${{ inputs.manifest }}" --out growth-output
+      - name: Add report to the run summary
+        run: cat growth-output/report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v6
+        with:
+          name: growth-engine
+          path: growth-output
