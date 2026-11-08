@@ -108,7 +108,13 @@ test("guards: duplicate intent, protected control page, recently rewritten page,
   assert.equal(byId["best-card-to-pair-with-reserve"].status, "duplicate");
   assert.equal(byId["support-high-income-control"].status, "protected");
   assert.equal(byId["improve-dining"].status, "hold");
-  assert.equal(scoreCandidate({ ...base, products: ["citi-double-cash"] }, empty, context).status, "needs-facts");
+  // (base's own title now matches the published Ink vs Spark comparison, so use a fresh topic here.)
+  const fresh = { ...base, title: "Rural Household Fuel Rewards Card", intent: "Which fuel card suits a rural household?", queryPatterns: ["fuel"] };
+  assert.equal(scoreCandidate({ ...fresh, products: ["citi-double-cash"] }, empty, context).status, "needs-facts");
+  // Issue #19 batch: shipped pages are recognised and not briefed again.
+  for (const id of ["venture-x-vs-amex-platinum", "ink-preferred-vs-spark-cash-plus", "amex-gold-vs-sapphire-reserve", "personal-card-for-business-spend", "annual-fee-break-even-calculator"]) {
+    assert.equal(byId[id].status, "duplicate", id);
+  }
   assert.equal(scoreCandidate({ ...base, slug: articles[0].slug }, empty, context).status, "duplicate");
 });
 
@@ -127,10 +133,11 @@ test("every catalog candidate is well formed and links only to real pages", () =
   }
 });
 
-test("the real catalog yields at least 10 briefable, non-duplicate opportunities", () => {
+test("the real catalog still yields briefable, non-duplicate opportunities after batch 1", () => {
   const ranked = rankOpportunities(candidates, { rows: [], notes: [] }, context);
   const briefable = ranked.filter((item) => item.status === "brief" || item.status === "needs-facts");
-  assert.ok(briefable.length >= 10, `only ${briefable.length} briefable`);
+  // 10 before Issue #19 shipped five of them; refill data/growth/candidates.ts as batches publish.
+  assert.ok(briefable.length >= 4, `only ${briefable.length} briefable`);
   for (const item of briefable.filter((entry) => entry.candidate.kind === "new")) {
     assert.ok((nearestArticle(item.candidate, articles)?.similarity ?? 0) < 0.5, item.candidate.id);
   }

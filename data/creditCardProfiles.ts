@@ -44,6 +44,7 @@ const handwrittenProfiles: CreditCardProfile[] = [
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/chase-sapphire-reserve",
     relatedArticleSlugs: [
+      "amex-gold-vs-chase-sapphire-reserve-2026",
       "is-chase-sapphire-reserve-worth-it-2026",
       "is-chase-sapphire-preferred-best-95-travel-card-2026",
       "is-amex-platinum-worth-it-2026",
@@ -129,6 +130,7 @@ const handwrittenProfiles: CreditCardProfile[] = [
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/amex-platinum",
     relatedArticleSlugs: [
+      "capital-one-venture-x-vs-amex-platinum-2026",
       "is-amex-platinum-worth-it-2026",
       "is-chase-sapphire-reserve-worth-it-2026",
       "is-capital-one-venture-x-worth-it-2026",
@@ -172,6 +174,7 @@ const handwrittenProfiles: CreditCardProfile[] = [
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/capital-one-venture-x",
     relatedArticleSlugs: [
+      "capital-one-venture-x-vs-amex-platinum-2026",
       "is-capital-one-venture-x-worth-it-2026",
       "is-chase-sapphire-preferred-best-95-travel-card-2026",
       "is-chase-sapphire-reserve-worth-it-2026",
@@ -296,6 +299,7 @@ const handwrittenProfiles: CreditCardProfile[] = [
     affiliateStatus: "placeholder",
     affiliateUrlPlaceholder: "/go/amex-gold",
     relatedArticleSlugs: [
+      "amex-gold-vs-chase-sapphire-reserve-2026",
       "best-grocery-credit-card-high-spend-households-2026",
       "credit-card-strategy-200k-400k-household-income-2026",
       "best-second-credit-card-for-premium-card-owners-2026",

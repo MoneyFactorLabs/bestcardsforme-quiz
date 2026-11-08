@@ -7,7 +7,9 @@
         "amex-platinum-vs-chase-sapphire-reserve-2026",
         "best-second-credit-card-for-premium-card-owners-2026",
         "multiple-premium-credit-cards-vs-one-2026",
-        "credit-card-strategy-200k-400k-household-income-2026"
+        "credit-card-strategy-200k-400k-household-income-2026",
+        "amex-gold-vs-chase-sapphire-reserve-2026",
+        "personal-vs-business-credit-card-for-business-spending-2026"
       ],
       "secondary": [
         {
@@ -78,7 +80,8 @@
       "usedIn": [
         "amex-platinum-vs-chase-sapphire-reserve-2026",
         "best-second-credit-card-for-premium-card-owners-2026",
-        "multiple-premium-credit-cards-vs-one-2026"
+        "multiple-premium-credit-cards-vs-one-2026",
+        "capital-one-venture-x-vs-amex-platinum-2026"
       ],
       "secondary": [
         {
@@ -153,6 +156,12 @@
           "text": "Up to $219 a year for CLEAR+",
           "pattern": "\\$219[^.]{0,80}CLEAR|CLEAR[^.]{0,80}\\$219",
           "hint": "CLEAR"
+        },
+        {
+          "id": "centurion",
+          "text": "Airport lounge access including Amex Centurion Lounges",
+          "pattern": "Centurion",
+          "hint": "Centurion"
         }
       ]
     },
@@ -161,7 +170,8 @@
       "usedIn": [
         "best-second-credit-card-for-premium-card-owners-2026",
         "multiple-premium-credit-cards-vs-one-2026",
-        "credit-card-strategy-200k-400k-household-income-2026"
+        "credit-card-strategy-200k-400k-household-income-2026",
+        "amex-gold-vs-chase-sapphire-reserve-2026"
       ],
       "secondary": [
         {
@@ -212,6 +222,18 @@
           "text": "Up to $84 a year in Dunkin' credits",
           "pattern": "\\$84[^.]{0,80}Dunkin|Dunkin[^.]{0,80}\\$84",
           "hint": "Dunkin"
+        },
+        {
+          "id": "restaurant-cap",
+          "text": "4x at restaurants on up to $50,000 a year",
+          "pattern": "\\$50,000",
+          "hint": "50,000"
+        },
+        {
+          "id": "supermarket-cap",
+          "text": "4x at U.S. supermarkets on up to $25,000 a year",
+          "pattern": "\\$25,000",
+          "hint": "25,000"
         }
       ]
     },
@@ -219,7 +241,8 @@
       "issuerUrl": "https://www.capitalone.com/credit-cards/venture-x/",
       "usedIn": [
         "best-second-credit-card-for-premium-card-owners-2026",
-        "credit-card-strategy-200k-400k-household-income-2026"
+        "credit-card-strategy-200k-400k-household-income-2026",
+        "capital-one-venture-x-vs-amex-platinum-2026"
       ],
       "secondary": [
         {
@@ -266,7 +289,9 @@
     "capital-one-spark-cash-plus": {
       "issuerUrl": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
       "usedIn": [
-        "best-business-credit-card-for-llc-owner-2026"
+        "best-business-credit-card-for-llc-owner-2026",
+        "ink-business-preferred-vs-spark-cash-plus-2026",
+        "personal-vs-business-credit-card-for-business-spending-2026"
       ],
       "secondary": [
         {
@@ -299,7 +324,9 @@
     "ink-business-preferred": {
       "issuerUrl": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
       "usedIn": [
-        "best-business-credit-card-for-llc-owner-2026"
+        "best-business-credit-card-for-llc-owner-2026",
+        "ink-business-preferred-vs-spark-cash-plus-2026",
+        "personal-vs-business-credit-card-for-business-spending-2026"
       ],
       "secondary": [],
       "claims": [
@@ -313,6 +340,12 @@
           "text": "3x points on the first $150,000 a year in combined travel, shipping, internet/cable/phone and social/search advertising",
           "pattern": "\\$150,000",
           "hint": "3X"
+        },
+        {
+          "id": "bonus-categories",
+          "text": "3x categories: travel, shipping, internet/cable/phone, social media and search engine advertising",
+          "pattern": "shipping[^.]{0,200}advertising|advertising[^.]{0,200}shipping",
+          "hint": "shipping"
         }
       ]
     },
@@ -396,6 +429,70 @@
           "text": "4x applies to the first $150,000 of combined purchases each calendar year",
           "pattern": "\\$150,000",
           "hint": "150,000"
+        }
+      ]
+    },
+    "chase-freedom-unlimited": {
+      "issuerUrl": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "usedIn": [
+        "personal-vs-business-credit-card-for-business-spending-2026",
+        "amex-gold-vs-chase-sapphire-reserve-2026"
+      ],
+      "secondary": [
+        {
+          "publisher": "CreditCards.com",
+          "url": "https://www.creditcards.com/card-advice/no-annual-fee-cash-back-rewards-card-chase-freedom-unlimited",
+          "checkedAt": "2026-10-29",
+          "covers": "5% Chase Travel, 3% dining and drugstores, 1.5% other"
+        }
+      ],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$0 annual fee",
+          "pattern": "\\$0 annual fee|no annual fee",
+          "hint": "annual fee"
+        },
+        {
+          "id": "base-1-5",
+          "text": "1.5% (1.5x) on all other purchases",
+          "pattern": "1\\.5%",
+          "hint": "1.5"
+        },
+        {
+          "id": "dining-3",
+          "text": "3% (3x) on dining",
+          "pattern": "3%[^.]{0,80}dining|dining[^.]{0,80}3%",
+          "hint": "dining"
+        }
+      ]
+    },
+    "citi-double-cash": {
+      "issuerUrl": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "usedIn": [
+        "capital-one-venture-x-vs-amex-platinum-2026",
+        "amex-gold-vs-chase-sapphire-reserve-2026"
+      ],
+      "secondary": [
+        {
+          "publisher": "NerdWallet",
+          "url": "https://www.nerdwallet.com/credit-cards/reviews/citi-double-cash",
+          "checkedAt": "2026-10-29",
+          "covers": "$0 fee, 2% (1% buy + 1% pay)"
+        }
+      ],
+      "claims": [
+        {
+          "id": "fee",
+          "text": "$0 annual fee",
+          "pattern": "\\$0 annual fee|no annual fee",
+          "hint": "annual fee"
+        },
+        {
+          "id": "two-percent",
+          "text": "2% on every purchase (1% when you buy, 1% as you pay)",
+          "pattern": "2%",
+          "hint": "2%"
         }
       ]
     }

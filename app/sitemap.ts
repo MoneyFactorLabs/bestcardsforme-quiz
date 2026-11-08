@@ -13,6 +13,7 @@ const staticRoutes = [
   "/editorial-standards",
   "/affiliate-disclosure",
   "/contact",
+  "/tools/annual-fee-break-even-calculator",
 ];
 
 function sitemapEntry(url: string, lastModified?: string | Date): MetadataRoute.Sitemap[number] {
