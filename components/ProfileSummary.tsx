@@ -18,41 +18,35 @@ export function ProfileSummary({ profile, answers }: ProfileSummaryProps) {
         : "Lounge-heavy cards are discounted because that benefit is not central to your profile.";
 
   return (
-    <section className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
-      <div className="grid gap-px bg-blue-gray/70 sm:grid-cols-3">
-        {[
-          ["Primary lens", "Your stated goal"],
-          ["Fee lens", "Annual value after friction"],
-          ["Usage lens", "Perks you are likely to use"],
-        ].map(([label, value]) => (
-          <div key={label} className="bg-[#f8fafc] px-5 py-3">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-mid-navy/55">
-              {label}
-            </p>
-            <p className="mt-1 text-sm font-semibold text-navy">{value}</p>
-          </div>
-        ))}
-      </div>
-      <div className="p-5 sm:p-6">
-      <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+    <details className="group rounded-xl border border-line bg-white shadow-card">
+      <summary className="focus-ring flex cursor-pointer items-center justify-between gap-3 rounded-xl px-5 py-4 sm:px-6">
+        <span>
+          <span className="block text-sm font-semibold text-gold-ink">How we read your answers</span>
+          <span className="mt-0.5 block text-lg font-semibold text-navy">{profile.title}</span>
+        </span>
+        <span aria-hidden="true" className="text-sm font-semibold text-mid-navy transition group-open:rotate-180">
+          ▾
+        </span>
+      </summary>
+      <div className="grid gap-5 border-t border-line px-5 py-5 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Your profile</p>
-          <h2 className="mt-2 text-2xl font-semibold text-navy sm:text-3xl">{profile.title}</h2>
-          <p className="mt-3 text-base leading-7 text-mid-navy/80">{profile.summary}</p>
+          <p className="text-base leading-7 text-mid-navy/85">{profile.summary}</p>
           <p className="mt-3 text-sm leading-6 text-mid-navy/70">{loungeCopy}</p>
+          <p className="mt-3 text-sm leading-6 text-mid-navy/70">
+            Every card is weighed on your stated goal, its value after the annual fee, and the perks you are likely to use.
+          </p>
         </div>
-        <div className="rounded-md bg-[#f5f8fb] p-4">
+        <div className="rounded-lg bg-surface p-4">
           <p className="text-sm font-semibold text-navy">Signals used in your ranking</p>
-          <div className="mt-3 grid gap-2">
+          <ul className="mt-3 grid gap-2">
             {profile.signals.map((signal) => (
-              <p key={signal} className="rounded-md border border-blue-gray/60 bg-white px-3 py-2 text-sm text-mid-navy/75">
+              <li key={signal} className="rounded-md border border-line bg-white px-3 py-2 text-sm text-mid-navy/80">
                 {signal}
-              </p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
-      </div>
-    </section>
+    </details>
   );
 }

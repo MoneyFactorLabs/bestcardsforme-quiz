@@ -54,6 +54,9 @@ export type CreditCard = {
 export type RecommendedCard = {
   card: CreditCard;
   score: number;
+  // Estimated yearly value for these answers after the annual fee (the figure the
+  // "clears the annual fee by about $X" bullet quotes); the fee is card.annualFee.
+  estimatedNetValue: number;
   explanationBullets: string[];
   cautionBullet: string;
   lowerFitReason: string;
