@@ -5,7 +5,8 @@ import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { LoungeGuestCalculator } from "@/components/LoungeGuestCalculator";
 import { FAMILY_PARTY, LOUNGE_POLICIES_VERIFIED_AT, familyExample, loungePolicies } from "@/data/loungePolicies";
-import type { Known, NetworkAccess } from "@/lib/loungeModel";
+import { LoungeNetworkGuide } from "@/components/LoungeNetworkGuide";
+import { authorizedUsersText, freeGuestsText, guestFeeText, showKnown, usd } from "@/lib/loungeFormat";
 import { absoluteUrl } from "@/lib/site";
 import issuerClaims from "@/quality/issuer-claims.json";
 
@@ -22,16 +23,10 @@ export const metadata: Metadata = {
   openGraph: { title: SEO_TITLE, description: DESCRIPTION, url: absoluteUrl(PATH), type: "article" },
 };
 
-const usd = (value: number) => `$${Math.round(value).toLocaleString("en-US")}`;
-const show = (value: Known<number>, format = usd) => (value === "unknown" ? "Not published" : format(value));
-const guestsText = (network: NetworkAccess) =>
-  network.freeGuests === "unknown"
-    ? "Not published"
-    : `${network.freeGuests}${network.spendUnlock ? ` (${network.spendUnlock.freeGuests} after $${network.spendUnlock.spend.toLocaleString("en-US")} spend)` : ""}`;
-const feeText = (network: NetworkAccess) =>
-  network.guestFee === "unknown" ? "Not published" : `${usd(network.guestFee)}${network.childGuestFee !== undefined ? ` (${usd(network.childGuestFee)} ages 2-17)` : ""}`;
-const auText = (network: NetworkAccess) =>
-  network.authorizedUsers === "included" ? "Yes, own access" : network.authorizedUsers === "not-included" ? "No" : "Not stated";
+const show = showKnown;
+const guestsText = freeGuestsText;
+const feeText = guestFeeText;
+const auText = authorizedUsersText;
 
 const reserve = loungePolicies.find((policy) => policy.cardSlug === "chase-sapphire-reserve")!;
 const platinum = loungePolicies.find((policy) => policy.cardSlug === "amex-platinum")!;
@@ -41,7 +36,7 @@ const centurion = net(platinum, "centurion");
 type ClaimProducts = Record<string, { claims: { id: string; text: string; url?: string }[]; issuerUrl: string }>;
 const claimProducts = issuerClaims.products as unknown as ClaimProducts;
 const sourcesFor = (policy: (typeof loungePolicies)[number]) => {
-  const ids = [...new Set(policy.networks.flatMap((network) => network.claims))];
+  const ids = [...new Set(policy.networks.flatMap((network) => [...network.claims, ...network.restrictions.map((restriction) => restriction.claim)]))];
   return ids.map((ref) => {
     const [productId, claimId] = ref.split("/");
     const product = claimProducts[productId];
@@ -113,9 +108,13 @@ export default function LoungeAccessPage() {
           </ul>
         </section>
 
+        <div className="mt-6">
+          <LoungeNetworkGuide />
+        </div>
+
         <section className={`mt-6 ${card} overflow-x-auto`}>
-          <h2 className={h2}>Guest rules side by side</h2>
-          <p className={p}>From each issuer&apos;s own pages. &quot;Not published&quot; means the issuer page we checked does not state it; we do not fill the gap.</p>
+          <h2 className={h2}>Guest rules side by side, by card</h2>
+          <p className={p}>Same three cards, one row per lounge network. From each issuer&apos;s own pages. &quot;Not published&quot; means the issuer page we checked does not state it; we do not fill the gap.</p>
           <table className="mt-4 w-full min-w-[640px] text-left text-sm">
             <caption className="sr-only">Lounge guest rules by card and network</caption>
             <thead>

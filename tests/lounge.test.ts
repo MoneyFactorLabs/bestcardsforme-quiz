@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { FAMILY_PARTY, familyExample, getLoungePolicy, loungePolicies } from "@/data/loungePolicies";
-import { compareCard, networkCost, validateParty, type Party } from "@/lib/loungeModel";
+import { FAMILY_PARTY, familyExample, getLoungePolicy, loungeNetworks, loungePolicies } from "@/data/loungePolicies";
+import { compareCard, groupByNetwork, networkCost, validateParty, type Party } from "@/lib/loungeModel";
 import claimsRegistry from "@/quality/issuer-claims.json";
 
 const ROUTE = "/credit-card-lounge-access";
@@ -89,6 +89,64 @@ test("every lounge rule is backed by a registered issuer claim used on the loung
       if (typeof row.memberVisits === "number") assert.ok(joined.includes(String(row.memberVisits)), `${policy.cardSlug}/${row.id} visits`);
       // No invented unlimited access.
       assert.notEqual(row.memberVisits, "unlimited");
+    }
+  }
+});
+
+test("calculator cost matrix by lounge network and party composition", () => {
+  const family = party(); // 2 adults, 2 children (2-17), 1 card member, 6 visits
+  const withAu = party({ cardMembers: 2 });
+  const unlocked = party({ meetsSpendUnlock: true });
+  const solo = party({ adults: 1, children: 0, visitsPerYear: 12 });
+  // [card, network, family, family with an authorized user, family after the $75k unlock] as annual cost.
+  const U = "unknown";
+  const expected: [string, string, number | string, number | string, number | string][] = [
+    ["chase-sapphire-reserve", "priority-pass", 162, 0, 162], // 1 child × $27 × 6; AU brings two more free places
+    ["chase-sapphire-reserve", "sapphire-lounges", U, U, U], // third guest fee not published; AU rule not stated
+    ["chase-sapphire-reserve", "maple-leaf", 708, U, 708], // 1 free guest, 2 × $59 × 6
+    ["amex-platinum", "centurion", 660, 360, 180], // $50 + 2 × $30; AU: 2 × $30; unlock: 2 free, 1 child $30
+    ["amex-platinum", "priority-pass", U, U, U],
+    ["amex-platinum", "escape", U, U, U],
+    ["amex-platinum", "plaza-premium", U, U, U],
+    ["amex-platinum", "delta-sky-club", 900, U, 900], // 3 × $50 × 6; Visits never cover guests; unlock is Centurion-only
+    ["capital-one-venture-x", "capital-one-lounges", U, U, U],
+    ["capital-one-venture-x", "priority-pass", U, U, U],
+  ];
+  for (const [card, id, a, b, c] of expected) {
+    const row = network(card, id);
+    assert.equal(networkCost(row, family).annual, a, `${card}/${id} family`);
+    assert.equal(networkCost(row, withAu).annual, b, `${card}/${id} with AU`);
+    assert.equal(networkCost(row, unlocked).annual, c, `${card}/${id} unlocked`);
+    // A solo traveller never pays guest fees; only the Sky Club has a published visit cap.
+    assert.equal(networkCost(row, solo).annual, 0, `${card}/${id} solo`);
+    assert.equal(networkCost(row, solo).exceedsMemberVisits, id === "delta-sky-club", `${card}/${id} cap`);
+  }
+  // Every network on every card is covered by the matrix above.
+  assert.equal(expected.length, loungePolicies.reduce((sum, policy) => sum + policy.networks.length, 0));
+});
+
+test("lounge-first view is derived from the same policy rows", () => {
+  const groups = groupByNetwork(loungePolicies, loungeNetworks);
+  const pairs = groups.flatMap((group) => group.cards.map(({ policy, access }) => `${policy.cardSlug}/${access.id}`));
+  const rows = loungePolicies.flatMap((policy) => policy.networks.map((access) => `${policy.cardSlug}/${access.id}`));
+  assert.deepEqual([...pairs].sort(), [...rows].sort());
+  for (const group of groups) {
+    assert.ok(group.network, "every network id has a catalogue entry");
+    for (const { access } of group.cards) assert.equal(access.id, group.network.id);
+  }
+  const pp = groups.find((group) => group.network.id === "priority-pass")!;
+  assert.deepEqual(pp.cards.map(({ policy }) => policy.cardSlug), ["chase-sapphire-reserve", "amex-platinum", "capital-one-venture-x"]);
+  assert.equal(groups[0].network.id, "priority-pass", "networks reached by most cards come first");
+});
+
+test("every displayed restriction is backed by a registered claim used on the lounge page", () => {
+  for (const policy of loungePolicies) {
+    for (const row of policy.networks) {
+      for (const restriction of row.restrictions) {
+        const [productId, claimId] = restriction.claim.split("/");
+        assert.ok(products[productId]?.usedIn.includes(ROUTE), `${restriction.claim}: product not used on ${ROUTE}`);
+        assert.ok(products[productId].claims.some((claim) => claim.id === claimId), `${restriction.claim}: unknown claim`);
+      }
     }
   }
 });

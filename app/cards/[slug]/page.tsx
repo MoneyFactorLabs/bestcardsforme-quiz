@@ -10,6 +10,7 @@ import { CardReviewActions } from "@/components/analytics/CardReviewActions";
 import { ProductProfileLayout } from "@/components/platform/ProductProfileLayout";
 import { articles } from "@/data/articles";
 import { getLoungePolicy } from "@/data/loungePolicies";
+import { authorizedUsersText, freeGuestsText, guestFeeText, visitsText } from "@/lib/loungeFormat";
 import {
   getAllCreditCardProfileSlugs,
   getCreditCardProfileBySlug,
@@ -113,24 +114,15 @@ function getScorecard(profile: CreditCardProfile) {
 function getLoungeSection(profile: CreditCardProfile): ProductProfileSection | undefined {
   const policy = getLoungePolicy(profile.slug);
   if (!policy) return undefined;
-  const money = (value: number) => `$${value.toLocaleString("en-US")}`;
   return {
     title: "Lounge access and guests",
     body: policy.summary,
-    items: policy.networks.map((network) => {
-      const free =
-        network.freeGuests === "unknown"
-          ? "free guests not published"
-          : `${network.freeGuests} free guest${network.freeGuests === 1 ? "" : "s"}${
-              network.spendUnlock ? ` (${network.spendUnlock.freeGuests} after ${money(network.spendUnlock.spend)} spend)` : ""
-            }`;
-      const fee =
-        network.guestFee === "unknown"
-          ? "extra-guest fee not published"
-          : `${money(network.guestFee)} per extra guest${network.childGuestFee !== undefined ? ` (${money(network.childGuestFee)} ages 2-17)` : ""}`;
-      const visits = typeof network.memberVisits === "number" ? `${network.memberVisits} visits a year; ` : "";
-      return `${network.name}: ${visits}${free}; ${fee}.`;
-    }),
+    items: policy.networks.map((access) =>
+      [
+        `${access.name}: free guests ${freeGuestsText(access)}; extra guest ${guestFeeText(access)}; visits ${visitsText(access)}; authorized users ${authorizedUsersText(access)}.`,
+        ...access.restrictions.map((restriction) => restriction.text),
+      ].join(" "),
+    ),
     links: [
       {
         href: "/credit-card-lounge-access",

@@ -6,10 +6,27 @@ export type Known<T> = T | "unknown";
 
 export type LoungeNetworkKind = "issuer" | "priority-pass" | "airline" | "partner";
 
+// Canonical network ids; add one here (and in data/loungePolicies.ts loungeNetworks)
+// when a new card reaches a new network.
+export type LoungeNetworkId =
+  | "priority-pass"
+  | "centurion"
+  | "sapphire-lounges"
+  | "capital-one-lounges"
+  | "delta-sky-club"
+  | "maple-leaf"
+  | "escape"
+  | "plaza-premium";
+
+export type LoungeNetworkInfo = { id: LoungeNetworkId; name: string; kind: LoungeNetworkKind; operator: string };
+
+// An eligibility rule or restriction shown to readers, with the registered claim that backs it.
+export type LoungeRestriction = { text: string; claim: string };
+
 export type NetworkAccess = {
-  id: string;
+  id: LoungeNetworkId;
+  // How this card's terms name the network.
   name: string;
-  kind: LoungeNetworkKind;
   // Visits a year included for the card member; "unlimited" only when the issuer says so.
   memberVisits: Known<number | "unlimited">;
   // Guests admitted free with each eligible member, per visit.
@@ -21,9 +38,9 @@ export type NetworkAccess = {
   childGuestFee?: number;
   // Whether authorized users / additional card members on the account get their own access.
   authorizedUsers: Known<"included" | "not-included">;
-  conditions: string[];
-  // "<product id>/<claim id>" entries in quality/issuer-claims.json backing this row.
+  // "<product id>/<claim id>" entries in quality/issuer-claims.json backing the numbers above.
   claims: string[];
+  restrictions: LoungeRestriction[];
 };
 
 export type CardLoungePolicy = {
@@ -133,4 +150,23 @@ export function compareCard(policy: CardLoungePolicy, party: Party): CardLoungeR
     .filter((cost): cost is NetworkCost & { annual: number } => typeof cost.annual === "number" && !cost.exceedsMemberVisits)
     .sort((a, b) => a.annual - b.annual)[0];
   return { policy, costs, cheapest };
+}
+
+export type NetworkGroup = {
+  network: LoungeNetworkInfo;
+  cards: { policy: CardLoungePolicy; access: NetworkAccess }[];
+};
+
+// Network-first view of the same policy rows: every card (in the covered set) that reaches each network.
+export function groupByNetwork(policies: CardLoungePolicy[], networks: Record<LoungeNetworkId, LoungeNetworkInfo>): NetworkGroup[] {
+  const groups = new Map<LoungeNetworkId, NetworkGroup>();
+  for (const policy of policies) {
+    for (const access of policy.networks) {
+      const group = groups.get(access.id) ?? { network: networks[access.id], cards: [] };
+      group.cards.push({ policy, access });
+      groups.set(access.id, group);
+    }
+  }
+  // Networks reached by more cards first, then by name.
+  return [...groups.values()].sort((a, b) => b.cards.length - a.cards.length || a.network.name.localeCompare(b.network.name));
 }
