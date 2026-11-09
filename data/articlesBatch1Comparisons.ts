@@ -127,7 +127,7 @@ const ventureXArticle: EditorialArticle = {
           ["**Everyday earning**", "2 miles per dollar on every purchase", "1x on most purchases outside flights and prepaid Amex Travel hotels"],
           ["**Flights**", "2x booked direct (portal bonuses not assumed here)", "5x booked directly with airlines or through Amex Travel"],
           ["**Biggest credits**", "$300 a year for Capital One Travel bookings; 10,000 miles each anniversary", "Up to $600 hotel (prepaid FHR/Hotel Collection), $400 Resy, $300 digital entertainment, $300 lululemon, $200 airline fees, $200 Uber Cash, $219 CLEAR+"],
-          ["**Lounges**", "Airport lounge access for the cardholder", "Airport lounge access, including Amex Centurion Lounges"],
+          ["**Lounges**", "Cardholder plus two free guests at Capital One and partner lounges", "Centurion Lounges ($50 a guest unless the account spends $75,000 a year), Priority Pass and more; [guest rules compared](/credit-card-lounge-access)"],
           ["**Upkeep**", "One portal credit to use", "Several monthly, quarterly and semiannual credits to track"],
         ],
       },

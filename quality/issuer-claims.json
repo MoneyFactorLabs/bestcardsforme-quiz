@@ -9,7 +9,8 @@
         "multiple-premium-credit-cards-vs-one-2026",
         "credit-card-strategy-200k-400k-household-income-2026",
         "amex-gold-vs-chase-sapphire-reserve-2026",
-        "personal-vs-business-credit-card-for-business-spending-2026"
+        "personal-vs-business-credit-card-for-business-spending-2026",
+        "/credit-card-lounge-access"
       ],
       "secondary": [
         {
@@ -72,6 +73,42 @@
           "text": "Up to $300 a year in StubHub/viagogo credits",
           "pattern": "\\$300[^.]{0,120}StubHub|StubHub[^.]{0,120}\\$300",
           "hint": "StubHub"
+        },
+        {
+          "id": "lounge-network",
+          "text": "Chase Sapphire Lounges by The Club and 1,300+ Priority Pass lounges with up to two guests",
+          "pattern": "Chase Sapphire Lounges by The Club and 1,300\\+ Priority Pass[^.]{0,80}with up to two guests",
+          "hint": "Sapphire Lounges"
+        },
+        {
+          "id": "priority-pass-authorized-users",
+          "text": "Primary cardmembers and authorized users get Priority Pass access with up to two guests each",
+          "pattern": "Primary cardmembers and authorized users on the account are granted complimentary access to the Priority Pass lounges and are allowed a maximum of two accompanying guests each",
+          "hint": "accompanying guests"
+        },
+        {
+          "id": "priority-pass-guest-fee",
+          "text": "$27 per additional Priority Pass guest, per visit",
+          "pattern": "additional guests, your card will be charged \\$27 per guest, per visit",
+          "hint": "per guest, per visit"
+        },
+        {
+          "id": "maple-leaf",
+          "text": "Air Canada Maple Leaf Lounges: cardmember plus 1 guest each; additional guests $59 USD at U.S. lounges; Star Alliance boarding pass required",
+          "pattern": "themselves and 1 guest each to Air Canada[^.]{0,40}Maple Leaf Lounges",
+          "hint": "Maple Leaf"
+        },
+        {
+          "id": "maple-leaf-fee",
+          "text": "Additional Maple Leaf Lounge guests: $59 USD at U.S. lounges",
+          "pattern": "\\$59 USD at US lounges",
+          "hint": "Maple Leaf"
+        },
+        {
+          "id": "maple-leaf-star-alliance",
+          "text": "Maple Leaf Lounge entry requires a same-day or overnight boarding pass on a Star Alliance-operated flight",
+          "pattern": "boarding pass for a flight operated by a Star Alliance member airline",
+          "hint": "Star Alliance"
         }
       ]
     },
@@ -81,7 +118,8 @@
         "amex-platinum-vs-chase-sapphire-reserve-2026",
         "best-second-credit-card-for-premium-card-owners-2026",
         "multiple-premium-credit-cards-vs-one-2026",
-        "capital-one-venture-x-vs-amex-platinum-2026"
+        "capital-one-venture-x-vs-amex-platinum-2026",
+        "/credit-card-lounge-access"
       ],
       "secondary": [
         {
@@ -162,6 +200,130 @@
           "text": "Airport lounge access including Amex Centurion Lounges",
           "pattern": "Centurion",
           "hint": "Centurion"
+        },
+        {
+          "id": "lounge-network",
+          "text": "Global Lounge Collection: Centurion Lounges, 10 Delta Sky Club visits when flying an eligible Delta flight, Priority Pass (enrollment required) and select partner lounges",
+          "pattern": "Centurion Lounges,\\s*10 (complimentary )?Delta Sky Club visits when flying on an eligible Delta flight, Priority Pass membership \\(enrollment required\\)",
+          "hint": "Global Lounge Collection"
+        },
+        {
+          "id": "centurion-guest-fee",
+          "text": "Centurion Lounge guests cost $50 each ($30 for children aged 2 through 17) per location",
+          "pattern": "\\$50 (USD )?fee (for each guest|per person) \\(or \\$30 for children aged 2 through 17",
+          "hint": "children aged 2 through 17",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "centurion-additional-cards",
+          "text": "Additional Platinum Card Members on the account have Centurion Lounge access on the same guest terms",
+          "pattern": "Additional U\\.S\\. Platinum Card Members on the Account (will be charged|are charged)",
+          "hint": "Additional U.S. Platinum Card Members",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "centurion-75k-guests",
+          "text": "Two complimentary Centurion Lounge guests per visit after $75,000 in eligible purchases in a calendar year",
+          "pattern": "Complimentary Guest Access for up to two \\(2\\) guests per visit to locations of The Centurion Lounge[\\s\\S]{0,260}?after spending \\$75,000",
+          "hint": "Complimentary Guest Access",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "centurion-same-flight",
+          "text": "Centurion Lounge guests must be on the same flight as the Card Member",
+          "pattern": "All guests must be traveling on the same flight as the Card ?Member",
+          "hint": "same flight",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "priority-pass-two-guests",
+          "text": "Two complimentary guests at Priority Pass lounges that admit guests; additional guests pay the Priority Pass guest fee",
+          "pattern": "Priority Pass lounge that admits guests, Platinum Card Members receive complimentary access for up to two accompanying guests",
+          "hint": "accompanying guests",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "escape-two-guests",
+          "text": "Two guests at no additional cost at Escape Lounges",
+          "pattern": "bring two \\(2\\) guests with you at no additional cost",
+          "hint": "no additional cost",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "plaza-two-guests",
+          "text": "Up to two complimentary guests at Plaza Premium Lounges",
+          "pattern": "up to two \\(2\\) companions into Plaza Premium Lounges as complimentary guests",
+          "hint": "Plaza Premium",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "sky-club-guests",
+          "text": "Delta Sky Club guests (up to two, or immediate family) cost $50 per person per visit; Visits cannot be used for guests",
+          "pattern": "Visits cannot be used for guest entry\\. During a Visit, Eligible Platinum Card Members may bring either up to two \\(2\\) guests, or their immediate family[^.]{0,120}\\$50 per person",
+          "hint": "Visits cannot be used for guest entry",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "sky-club-same-day-delta",
+          "text": "10 Sky Club Visits each Medallion Year (February 1 through January 31), only when traveling on a same-day ticket on a Delta-operated or Delta-marketed flight",
+          "pattern": "Platinum Cards? from American Express[\\s\\S]{0,120}receive 10 Visits each Medallion Year \\(February 1 through January 31\\) to the Delta Sky Club when traveling on a same-day ticket on a Delta-operated",
+          "hint": "10 Visits each Medallion Year",
+          "url": "https://www.delta.com/us/en/delta-sky-club/access"
+        },
+        {
+          "id": "sky-club-basic-economy",
+          "text": "No Sky Club entry for Platinum Card Members or guests flying Delta Main Basic fares",
+          "pattern": "Platinum Card Members and guests flying on Delta Main Basic \\(or equivalent\\) fares will not be permitted Club entry",
+          "hint": "Main Basic",
+          "url": "https://www.delta.com/us/en/delta-sky-club/access"
+        },
+        {
+          "id": "sky-club-guest-same-day",
+          "text": "Sky Club guests must also be flying on a same-day Delta-operated flight",
+          "pattern": "Guests also must be flying on a same-day Delta-operated flight",
+          "hint": "Guests also must be flying",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "centurion-international",
+          "text": "Centurion Lounge guest policies at international locations may vary",
+          "pattern": "Guest access policies[^.]{0,160}international locations of The Centurion Lounge may vary",
+          "hint": "international locations",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "centurion-arrival-window",
+          "text": "Platinum Card Members must arrive at a Centurion Lounge within 3 hours of their departing flight",
+          "pattern": "Platinum Card Members? must (arrive|enter) within 3 hours",
+          "hint": "within 3 hours",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "priority-pass-guest-limits",
+          "text": "Some Priority Pass lounges limit the number of guests or do not admit guests",
+          "pattern": "Some lounges limit the number of guests or do not admit guests",
+          "hint": "Some lounges limit",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "plaza-same-day",
+          "text": "Plaza Premium entry requires a boarding pass for same-day travel",
+          "pattern": "present your valid Platinum Card, a boarding pass showing a confirmed reservation for same-day travel",
+          "hint": "same-day travel",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
         }
       ]
     },
@@ -242,7 +404,8 @@
       "usedIn": [
         "best-second-credit-card-for-premium-card-owners-2026",
         "credit-card-strategy-200k-400k-household-income-2026",
-        "capital-one-venture-x-vs-amex-platinum-2026"
+        "capital-one-venture-x-vs-amex-platinum-2026",
+        "/credit-card-lounge-access"
       ],
       "secondary": [
         {
@@ -283,6 +446,25 @@
           "text": "Airport lounge access for the cardholder",
           "pattern": "[Ll]ounge",
           "hint": "lounge"
+        },
+        {
+          "id": "lounge-two-guests",
+          "text": "Complimentary lounge access for the cardholder and two guests at 1,300+ lounges, including Capital One Lounges and the Partner Lounge Network",
+          "pattern": "complimentary access for you and two guests to 1,300\\+ airport lounges, including Capital One Lounges",
+          "hint": "two guests",
+          "scope": "html"
+        },
+        {
+          "id": "primary-cardholders",
+          "text": "Capital One Lounge and Landing access is described for Venture X primary cardholders",
+          "pattern": "Venture X primary cardholders can enjoy access to Capital One Lounge",
+          "hint": "primary cardholders"
+        },
+        {
+          "id": "priority-pass-enroll",
+          "text": "Priority Pass access requires enrollment",
+          "pattern": "In order to access Priority Pass lounges, eligible cardholders will need to enroll",
+          "hint": "enroll"
         }
       ]
     },

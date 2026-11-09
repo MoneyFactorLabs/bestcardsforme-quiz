@@ -9,6 +9,8 @@ import { CardPageAnalytics } from "@/components/analytics/CardPageAnalytics";
 import { CardReviewActions } from "@/components/analytics/CardReviewActions";
 import { ProductProfileLayout } from "@/components/platform/ProductProfileLayout";
 import { articles } from "@/data/articles";
+import { getLoungePolicy } from "@/data/loungePolicies";
+import { authorizedUsersText, freeGuestsText, guestFeeText, visitsText } from "@/lib/loungeFormat";
 import {
   getAllCreditCardProfileSlugs,
   getCreditCardProfileBySlug,
@@ -107,6 +109,31 @@ function getScorecard(profile: CreditCardProfile) {
   };
 }
 
+
+// Lounge guest rules from data/loungePolicies.ts (issuer-verified claims); "not published" when the issuer page is silent.
+function getLoungeSection(profile: CreditCardProfile): ProductProfileSection | undefined {
+  const policy = getLoungePolicy(profile.slug);
+  if (!policy) return undefined;
+  return {
+    title: "Lounge access and guests",
+    body: policy.summary,
+    items: policy.networks.map((access) =>
+      [
+        `${access.name}: free guests ${freeGuestsText(access)}; extra guest ${guestFeeText(access)}; visits ${visitsText(access)}; authorized users ${authorizedUsersText(access)}.`,
+        ...access.restrictions.map((restriction) => restriction.text),
+      ].join(" "),
+    ),
+    links: [
+      {
+        href: "/credit-card-lounge-access",
+        label: "Compare lounge guest costs",
+        description: "Guest rules for the Reserve, Platinum and Venture X side by side, with a calculator for your party.",
+      },
+    ],
+    footnotes: [`Checked against ${policy.issuer} pages on ${formatCheckedDate(policy.verifiedAt)}. ${policy.caveats.join(" ")}`],
+  };
+}
+
 function getProfileSections(profile: CreditCardProfile): ProductProfileSection[] {
   const credits: ProductProfileSection = {
     title: "Credits and perks",
@@ -119,8 +146,10 @@ function getProfileSections(profile: CreditCardProfile): ProductProfileSection[]
   ];
 
   // Hand-written premium profiles keep their original layout.
+  const lounge = getLoungeSection(profile);
+
   if (!profile.factCheck) {
-    return [{ title: "Rewards summary", body: profile.rewardsSummary }, credits, ...fit];
+    return [{ title: "Rewards summary", body: profile.rewardsSummary }, credits, ...(lounge ? [lounge] : []), ...fit];
   }
 
   const sections: ProductProfileSection[] = [];
@@ -151,6 +180,7 @@ function getProfileSections(profile: CreditCardProfile): ProductProfileSection[]
   }
 
   sections.push(credits);
+  if (lounge) sections.push(lounge);
 
   if (profile.marketingOverstates?.length) {
     sections.push({ title: "What the marketing overstates", items: profile.marketingOverstates });
