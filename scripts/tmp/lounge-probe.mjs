@@ -10,7 +10,7 @@ for (const url of urls) {
   } catch (e) { status = e.cause?.code || e.name; }
   console.log(`\n===== ${url}\n  status: ${status}; text chars: ${text.length}`);
   const seen = new Set(); let n = 0;
-  for (const m of text.matchAll(/[^.]*\b(guest|guests|Priority Pass|Authorized User|Additional Card|Sky Club|Centurion Lounge|Capital One Lounge|Sapphire Lounge|\$75,000)\b[^.]*\./gi)) {
-    const s = m[0].trim().slice(0, 600); if (seen.has(s)) continue; seen.add(s); console.log("  - " + s); if (++n >= 60) break;
+  for (const m of text.matchAll(/[^.]*\b(guest|guests|Priority Pass|Authorized User|Additional Card|Card Member|Sky Club|Centurion Lounge|Capital One Lounge|Capital One Landing|Sapphire Lounge|\$75,000|per visit|per person)\b[^.]*\./gi)) {
+    const s = m[0].trim().slice(0, 600); if (seen.has(s)) continue; seen.add(s); console.log("  - " + s); if (++n >= 90) break;
   }
 }
