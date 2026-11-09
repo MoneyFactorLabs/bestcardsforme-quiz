@@ -27,19 +27,6 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - name: TEMP lounge probe (Issue 21, remove before PR)
-        continue-on-error: true
-        run: >
-          node --max-http-header-size=131072 scripts/tmp/lounge-probe.mjs
-          https://www.americanexpress.com/us/credit-cards/card/platinum/
-          https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/
-          https://www.thecenturionlounge.com/
-          https://www.americanexpress.com/en-us/travel/the-centurion-lounge/access/
-          https://www.capitalone.com/credit-cards/venture-x/
-          https://www.capitalone.com/credit-cards/benefits/
-          https://www.capitalone.com/lounges/airports/
-          https://www.capitalone.com/credit-cards/venture-x/airport-lounges/
-          https://www.capitalone.com/lp/lounges/
       - name: Verify issuer pages and source freshness
         run: npm run verify:facts -- --issuers --write
       - name: Verify article claims against issuer pages

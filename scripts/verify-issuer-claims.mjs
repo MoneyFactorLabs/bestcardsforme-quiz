@@ -5,13 +5,14 @@
 //        npm run verify:claims -- --issuers --write (save quality/issuer-claims-report.json)
 // Options: --stale-days N (default 120)
 //
-// Fails on: an invalid pattern, a usedIn slug that is not a published article,
+// Fails on: an invalid pattern, a usedIn entry that is neither a published article
+// slug nor an app route ("/path" with app/<path>/page.tsx),
 // a secondary source older than --stale-days, or (with --issuers) a claim that
 // is not found on its issuer page. A page that cannot be read leaves its claims
 // unverified, which also fails: an unverifiable claim is a blocker, not a pass.
 import fs from "node:fs";
 import path from "node:path";
-import { claimSnippet, pageText } from "./lib/issuerFacts.mjs";
+import { claimSnippet, pageText, rawText } from "./lib/issuerFacts.mjs";
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -33,7 +34,8 @@ const results = [];
 
 for (const [productId, product] of Object.entries(registry)) {
   for (const slug of product.usedIn) {
-    if (!articleSlugs.has(slug)) failures.push(`${productId}: usedIn "${slug}" is not a published article`);
+    const isRoute = slug.startsWith("/") && fs.existsSync(path.join(root, "app", slug, "page.tsx"));
+    if (!isRoute && !articleSlugs.has(slug)) failures.push(`${productId}: usedIn "${slug}" is not a published article or app route`);
   }
   for (const source of product.secondary) {
     const ageDays = Math.floor((today - new Date(source.checkedAt)) / 86400000);
@@ -59,8 +61,12 @@ async function readPage(url) {
         headers: { "user-agent": "Mozilla/5.0 (compatible; BestCardsForMe-FactCheck/1.0; +https://bestcardsforme.com/contact)" },
         signal: AbortSignal.timeout(20000),
       })
-        .then(async (response) => (response.ok ? { text: pageText(await response.text()) } : { text: "", status: `HTTP ${response.status}` }))
-        .catch((error) => ({ text: "", status: error.cause?.code || error.name })),
+        .then(async (response) => {
+          if (!response.ok) return { text: "", html: "", status: `HTTP ${response.status}` };
+          const body = await response.text();
+          return { text: pageText(body), html: rawText(body) };
+        })
+        .catch((error) => ({ text: "", html: "", status: error.cause?.code || error.name })),
     );
   }
   return pages.get(url);
@@ -70,7 +76,10 @@ if (checkIssuers && failures.length === 0) {
   for (const [productId, product] of Object.entries(registry)) {
     for (const claim of product.claims) {
       const url = claim.url || product.issuerUrl;
-      const { text, status: pageStatus } = await readPage(url);
+      const page = await readPage(url);
+      const pageStatus = page.status;
+      // "scope": "html" claims live in data embedded in the page (script tags), not in visible markup.
+      const text = claim.scope === "html" ? page.html : page.text;
       if (!text) {
         results.push({ productId, claim: claim.id, status: "unverified", detail: `page not readable (${pageStatus})` });
         failures.push(`${productId}/${claim.id}: could not read ${url} (${pageStatus}); claim unverified`);

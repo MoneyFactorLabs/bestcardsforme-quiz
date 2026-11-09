@@ -11,6 +11,26 @@ export function pageText(html) {
     .replace(/\s+/g, " ");
 }
 
+// Text of the whole HTML response, scripts included, with JSON/HTML escapes decoded.
+// Some issuers ship their terms as data inside <script> tags rather than as visible
+// markup; claims marked "scope": "html" are matched against this text instead.
+export function rawText(html) {
+  return html
+    .replace(/\\u003[cC]/g, "<")
+    .replace(/\\u003[eE]/g, ">")
+    .replace(/\\u0026/g, "&")
+    .replace(/\\u002F/g, "/")
+    .replace(/\\"/g, '"')
+    .replace(/\\[nt]/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&nbsp;|&#160;/g, " ")
+    .replace(/&reg;|&#174;|®|&trade;|™/g, "")
+    .replace(/\s+/g, " ");
+}
+
 // Text around the first mention of a hint, so a missed claim shows what the page says instead.
 export function claimSnippet(text, hint) {
   if (!hint) return "";

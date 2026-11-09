@@ -9,6 +9,7 @@ import { CardPageAnalytics } from "@/components/analytics/CardPageAnalytics";
 import { CardReviewActions } from "@/components/analytics/CardReviewActions";
 import { ProductProfileLayout } from "@/components/platform/ProductProfileLayout";
 import { articles } from "@/data/articles";
+import { getLoungePolicy } from "@/data/loungePolicies";
 import {
   getAllCreditCardProfileSlugs,
   getCreditCardProfileBySlug,
@@ -107,6 +108,40 @@ function getScorecard(profile: CreditCardProfile) {
   };
 }
 
+
+// Lounge guest rules from data/loungePolicies.ts (issuer-verified claims); "not published" when the issuer page is silent.
+function getLoungeSection(profile: CreditCardProfile): ProductProfileSection | undefined {
+  const policy = getLoungePolicy(profile.slug);
+  if (!policy) return undefined;
+  const money = (value: number) => `$${value.toLocaleString("en-US")}`;
+  return {
+    title: "Lounge access and guests",
+    body: policy.summary,
+    rows: policy.networks.map((network) => {
+      const free =
+        network.freeGuests === "unknown"
+          ? "free guests not published"
+          : `${network.freeGuests} free guest${network.freeGuests === 1 ? "" : "s"}${
+              network.spendUnlock ? ` (${network.spendUnlock.freeGuests} after ${money(network.spendUnlock.spend)} spend)` : ""
+            }`;
+      const fee =
+        network.guestFee === "unknown"
+          ? "extra-guest fee not published"
+          : `${money(network.guestFee)} per extra guest${network.childGuestFee !== undefined ? ` (${money(network.childGuestFee)} ages 2-17)` : ""}`;
+      const visits = typeof network.memberVisits === "number" ? `${network.memberVisits} visits a year; ` : "";
+      return { label: network.name, value: `${visits}${free}; ${fee}` };
+    }),
+    links: [
+      {
+        href: "/credit-card-lounge-access",
+        label: "Compare lounge guest costs",
+        description: "Guest rules for the Reserve, Platinum and Venture X side by side, with a calculator for your party.",
+      },
+    ],
+    footnotes: [`Checked against ${policy.issuer} pages on ${formatCheckedDate(policy.verifiedAt)}. ${policy.caveats.join(" ")}`],
+  };
+}
+
 function getProfileSections(profile: CreditCardProfile): ProductProfileSection[] {
   const credits: ProductProfileSection = {
     title: "Credits and perks",
@@ -151,6 +186,8 @@ function getProfileSections(profile: CreditCardProfile): ProductProfileSection[]
   }
 
   sections.push(credits);
+  const lounge = getLoungeSection(profile);
+  if (lounge) sections.push(lounge);
 
   if (profile.marketingOverstates?.length) {
     sections.push({ title: "What the marketing overstates", items: profile.marketingOverstates });

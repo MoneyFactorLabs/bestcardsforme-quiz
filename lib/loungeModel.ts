@@ -10,17 +10,17 @@ export type NetworkAccess = {
   id: string;
   name: string;
   kind: LoungeNetworkKind;
-  // Visits a year the cardholder gets; "unlimited" only when the issuer says so.
-  cardholderVisits: Known<number | "unlimited">;
-  visitCondition?: string;
+  // Visits a year included for the card member; "unlimited" only when the issuer says so.
+  memberVisits: Known<number | "unlimited">;
   // Guests admitted free with each eligible member, per visit.
   freeGuests: Known<number>;
-  freeGuestsCondition?: string;
-  // Fee per additional guest, per visit (USD).
+  // Free guests after a published annual spend threshold (e.g. Centurion after $75,000).
+  spendUnlock?: { spend: number; freeGuests: number };
+  // Fee per paying guest per visit (USD); childGuestFee applies to ages 2-17 where published.
   guestFee: Known<number>;
+  childGuestFee?: number;
+  // Whether authorized users / additional card members on the account get their own access.
   authorizedUsers: Known<"included" | "not-included">;
-  authorizedUserNote?: string;
-  enrollmentRequired?: boolean;
   conditions: string[];
   // "<product id>/<claim id>" entries in quality/issuer-claims.json backing this row.
   claims: string[];
@@ -31,73 +31,106 @@ export type CardLoungePolicy = {
   cardName: string;
   issuer: string;
   annualFee: number;
+  // Key in data/walletScenarios.ts walletCards, for Year-2 card economics.
+  walletKey: "sapphireReserve" | "amexPlatinum" | "ventureX";
   sourceUrl: string;
   verifiedAt: string;
+  summary: string;
   networks: NetworkAccess[];
   caveats: string[];
 };
 
 export type Party = {
-  // People travelling together, including the cardholder.
-  travelers: number;
-  // How many of them hold their own card on the account (primary + authorized users).
+  // Adults travelling together, including the cardholder.
+  adults: number;
+  // Children aged 2-17 (under-2s are not counted; most lounges admit them free).
+  children: number;
+  // Travellers who hold their own card on the account (primary + authorized users), all adults.
   cardMembers: number;
   visitsPerYear: number;
-};
-
-export type NetworkCost = {
-  network: NetworkAccess;
-  payingGuestsPerVisit: Known<number>;
-  annualGuestCost: Known<number>;
-  // True when the visit count exceeds a published annual cap.
-  exceedsVisitCap: boolean;
+  // The household meets a card's published spend threshold for complimentary guests.
+  meetsSpendUnlock: boolean;
 };
 
 export const PARTY_LIMITS = {
-  travelers: { min: 1, max: 10 },
-  cardMembers: { min: 1, max: 10 },
+  adults: { min: 1, max: 9 },
+  children: { min: 0, max: 8 },
+  cardMembers: { min: 1, max: 9 },
   visitsPerYear: { min: 0, max: 200 },
 } as const;
 
-export function validateParty(party: Party): string[] {
-  const errors: string[] = [];
-  for (const key of Object.keys(PARTY_LIMITS) as (keyof Party)[]) {
-    const value = party[key];
-    const { min, max } = PARTY_LIMITS[key];
-    if (!Number.isInteger(value) || value < min || value > max) errors.push(`${key} must be a whole number from ${min} to ${max}.`);
+export type PartyError = { field: keyof typeof PARTY_LIMITS; message: string };
+
+export function validateParty(party: Party): PartyError[] {
+  const errors: PartyError[] = [];
+  for (const field of Object.keys(PARTY_LIMITS) as (keyof typeof PARTY_LIMITS)[]) {
+    const value = party[field];
+    const { min, max } = PARTY_LIMITS[field];
+    if (!Number.isInteger(value) || value < min || value > max) errors.push({ field, message: `Enter a whole number from ${min} to ${max}.` });
   }
-  if (party.cardMembers > party.travelers) errors.push("cardMembers cannot exceed travelers.");
+  if (!errors.length && party.cardMembers > party.adults) {
+    errors.push({ field: "cardMembers", message: "Can't be more than the number of adults travelling." });
+  }
   return errors;
 }
 
-// Guests who would pay on one visit to this network.
-export function payingGuests(network: NetworkAccess, party: Party): Known<number> {
-  // Card members only count as members when the network admits authorized users.
-  const members = network.authorizedUsers === "included" ? party.cardMembers : 1;
-  if (network.authorizedUsers === "unknown" && party.cardMembers > 1) return "unknown";
-  const guests = party.travelers - members;
-  if (guests <= 0) return 0;
-  if (network.freeGuests === "unknown") return "unknown";
-  // Each eligible member may bring the free-guest allowance.
-  return Math.max(0, guests - network.freeGuests * members);
-}
+export type NetworkCost = {
+  network: NetworkAccess;
+  // Card members this network admits in their own right.
+  members: number;
+  freeGuestsPerVisit: Known<number>;
+  payingAdults: Known<number>;
+  payingChildren: Known<number>;
+  perVisit: Known<number>;
+  annual: Known<number>;
+  // Visits a year above a published cap (paid separately; not priced here).
+  exceedsMemberVisits: boolean;
+};
 
 export function networkCost(network: NetworkAccess, party: Party): NetworkCost {
-  const paying = payingGuests(network, party);
-  const cap = network.cardholderVisits;
-  const exceedsVisitCap = typeof cap === "number" && party.visitsPerYear > cap;
-  let annualGuestCost: Known<number>;
-  if (paying === "unknown") annualGuestCost = "unknown";
-  else if (paying === 0) annualGuestCost = 0;
-  else if (network.guestFee === "unknown") annualGuestCost = "unknown";
-  else annualGuestCost = paying * network.guestFee * party.visitsPerYear;
-  return { network, payingGuestsPerVisit: paying, annualGuestCost, exceedsVisitCap };
+  const auKnown = network.authorizedUsers !== "unknown" || party.cardMembers === 1;
+  const members = network.authorizedUsers === "included" ? party.cardMembers : 1;
+  const exceedsMemberVisits = typeof network.memberVisits === "number" && party.visitsPerYear > network.memberVisits;
+  const base = { network, members, exceedsMemberVisits };
+
+  if (!auKnown) {
+    return { ...base, freeGuestsPerVisit: "unknown", payingAdults: "unknown", payingChildren: "unknown", perVisit: "unknown", annual: "unknown" };
+  }
+  const freePerMember = party.meetsSpendUnlock && network.spendUnlock ? network.spendUnlock.freeGuests : network.freeGuests;
+  const guestAdults = party.adults - members;
+  const guestChildren = party.children;
+  if (guestAdults + guestChildren === 0) {
+    return { ...base, freeGuestsPerVisit: freePerMember, payingAdults: 0, payingChildren: 0, perVisit: 0, annual: 0 };
+  }
+  if (freePerMember === "unknown") {
+    return { ...base, freeGuestsPerVisit: "unknown", payingAdults: "unknown", payingChildren: "unknown", perVisit: "unknown", annual: "unknown" };
+  }
+  // Free places go to adults first, the costlier guests where a child rate exists.
+  let free = freePerMember * members;
+  const payingAdults = Math.max(0, guestAdults - free);
+  free = Math.max(0, free - guestAdults);
+  const payingChildren = Math.max(0, guestChildren - free);
+  if (payingAdults + payingChildren === 0) {
+    return { ...base, freeGuestsPerVisit: freePerMember, payingAdults, payingChildren, perVisit: 0, annual: 0 };
+  }
+  if (network.guestFee === "unknown") {
+    return { ...base, freeGuestsPerVisit: freePerMember, payingAdults, payingChildren, perVisit: "unknown", annual: "unknown" };
+  }
+  const perVisit = payingAdults * network.guestFee + payingChildren * (network.childGuestFee ?? network.guestFee);
+  return { ...base, freeGuestsPerVisit: freePerMember, payingAdults, payingChildren, perVisit, annual: perVisit * party.visitsPerYear };
 }
 
-// Cheapest known option for this party on a card, ignoring networks whose cost is unknown.
-export function cheapestNetwork(policy: CardLoungePolicy, party: Party): NetworkCost | undefined {
-  const known = policy.networks
-    .map((network) => networkCost(network, party))
-    .filter((cost): cost is NetworkCost & { annualGuestCost: number } => typeof cost.annualGuestCost === "number" && !cost.exceedsVisitCap);
-  return known.sort((a, b) => a.annualGuestCost - b.annualGuestCost)[0];
+export type CardLoungeResult = {
+  policy: CardLoungePolicy;
+  costs: NetworkCost[];
+  // Lowest known annual guest cost on a network without a visit cap the party exceeds.
+  cheapest?: NetworkCost & { annual: number };
+};
+
+export function compareCard(policy: CardLoungePolicy, party: Party): CardLoungeResult {
+  const costs = policy.networks.map((network) => networkCost(network, party));
+  const cheapest = costs
+    .filter((cost): cost is NetworkCost & { annual: number } => typeof cost.annual === "number" && !cost.exceedsMemberVisits)
+    .sort((a, b) => a.annual - b.annual)[0];
+  return { policy, costs, cheapest };
 }

@@ -14,6 +14,7 @@ const staticRoutes = [
   "/affiliate-disclosure",
   "/contact",
   "/tools/annual-fee-break-even-calculator",
+  "/credit-card-lounge-access",
 ];
 
 function sitemapEntry(url: string, lastModified?: string | Date): MetadataRoute.Sitemap[number] {
