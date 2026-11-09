@@ -36,6 +36,7 @@ const auText = (network: NetworkAccess) =>
 const reserve = loungePolicies.find((policy) => policy.cardSlug === "chase-sapphire-reserve")!;
 const platinum = loungePolicies.find((policy) => policy.cardSlug === "amex-platinum")!;
 const net = (policy: typeof reserve, id: string) => policy.networks.find((network) => network.id === id)!;
+const centurion = net(platinum, "centurion");
 
 type ClaimProducts = Record<string, { claims: { id: string; text: string; url?: string }[]; issuerUrl: string }>;
 const claimProducts = issuerClaims.products as unknown as ClaimProducts;
@@ -83,7 +84,7 @@ export default function LoungeAccessPage() {
           </p>
           <p className="mt-3 text-sm leading-6 text-mid-navy/70">
             By Tim, founder and editor of BestCardsForMe. We may earn compensation from issuers in the future; it never changes the math or the
-            order. <Link href="/affiliate-disclosure" className={link}>Affiliate disclosure</Link>.
+            ranking. <Link href="/affiliate-disclosure" className={link}>Affiliate disclosure</Link>.
           </p>
         </header>
 
@@ -101,7 +102,7 @@ export default function LoungeAccessPage() {
               a visit.
             </li>
             <li>
-              <strong>Amex Platinum: Centurion guests are paid</strong> ({feeText(net(platinum, "centurion"))}) unless the account spends $75,000
+              <strong>Amex Platinum: Centurion guests are paid</strong>, {show(centurion.guestFee)} each or {usd(centurion.childGuestFee ?? 0)} for ages 2-17, unless the account spends $75,000
               in a calendar year. The same family pays {show(fx.platinumCenturion.perVisit)} per Centurion visit, {show(fx.platinumCenturion75k.perVisit)}{" "}
               after the spend unlock. Priority Pass, Escape and Plaza Premium lounges admit two free guests.
             </li>

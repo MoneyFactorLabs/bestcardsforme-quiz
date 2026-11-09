@@ -117,7 +117,7 @@ function getLoungeSection(profile: CreditCardProfile): ProductProfileSection | u
   return {
     title: "Lounge access and guests",
     body: policy.summary,
-    rows: policy.networks.map((network) => {
+    items: policy.networks.map((network) => {
       const free =
         network.freeGuests === "unknown"
           ? "free guests not published"
@@ -129,7 +129,7 @@ function getLoungeSection(profile: CreditCardProfile): ProductProfileSection | u
           ? "extra-guest fee not published"
           : `${money(network.guestFee)} per extra guest${network.childGuestFee !== undefined ? ` (${money(network.childGuestFee)} ages 2-17)` : ""}`;
       const visits = typeof network.memberVisits === "number" ? `${network.memberVisits} visits a year; ` : "";
-      return { label: network.name, value: `${visits}${free}; ${fee}` };
+      return `${network.name}: ${visits}${free}; ${fee}.`;
     }),
     links: [
       {
@@ -154,8 +154,10 @@ function getProfileSections(profile: CreditCardProfile): ProductProfileSection[]
   ];
 
   // Hand-written premium profiles keep their original layout.
+  const lounge = getLoungeSection(profile);
+
   if (!profile.factCheck) {
-    return [{ title: "Rewards summary", body: profile.rewardsSummary }, credits, ...fit];
+    return [{ title: "Rewards summary", body: profile.rewardsSummary }, credits, ...(lounge ? [lounge] : []), ...fit];
   }
 
   const sections: ProductProfileSection[] = [];
@@ -186,7 +188,6 @@ function getProfileSections(profile: CreditCardProfile): ProductProfileSection[]
   }
 
   sections.push(credits);
-  const lounge = getLoungeSection(profile);
   if (lounge) sections.push(lounge);
 
   if (profile.marketingOverstates?.length) {
