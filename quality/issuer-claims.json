@@ -103,6 +103,12 @@
           "text": "Additional Maple Leaf Lounge guests: $59 USD at U.S. lounges",
           "pattern": "\\$59 USD at US lounges",
           "hint": "Maple Leaf"
+        },
+        {
+          "id": "maple-leaf-star-alliance",
+          "text": "Maple Leaf Lounge entry requires a same-day or overnight boarding pass on a Star Alliance-operated flight",
+          "pattern": "boarding pass for a flight operated by a Star Alliance member airline",
+          "hint": "Star Alliance"
         }
       ]
     },
@@ -262,6 +268,60 @@
           "text": "Delta Sky Club guests (up to two, or immediate family) cost $50 per person per visit; Visits cannot be used for guests",
           "pattern": "Visits cannot be used for guest entry\\. During a Visit, Eligible Platinum Card Members may bring either up to two \\(2\\) guests, or their immediate family[^.]{0,120}\\$50 per person",
           "hint": "Visits cannot be used for guest entry",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "sky-club-same-day-delta",
+          "text": "10 Sky Club Visits each Medallion Year (February 1 through January 31), only when traveling on a same-day ticket on a Delta-operated or Delta-marketed flight",
+          "pattern": "Platinum Cards? from American Express[\\s\\S]{0,120}receive 10 Visits each Medallion Year \\(February 1 through January 31\\) to the Delta Sky Club when traveling on a same-day ticket on a Delta-operated",
+          "hint": "10 Visits each Medallion Year",
+          "url": "https://www.delta.com/us/en/delta-sky-club/access"
+        },
+        {
+          "id": "sky-club-basic-economy",
+          "text": "No Sky Club entry for Platinum Card Members or guests flying Delta Main Basic fares",
+          "pattern": "Platinum Card Members and guests flying on Delta Main Basic \\(or equivalent\\) fares will not be permitted Club entry",
+          "hint": "Main Basic",
+          "url": "https://www.delta.com/us/en/delta-sky-club/access"
+        },
+        {
+          "id": "sky-club-guest-same-day",
+          "text": "Sky Club guests must also be flying on a same-day Delta-operated flight",
+          "pattern": "Guests also must be flying on a same-day Delta-operated flight",
+          "hint": "Guests also must be flying",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "centurion-international",
+          "text": "Centurion Lounge guest policies at international locations may vary",
+          "pattern": "Guest access policies[^.]{0,160}international locations of The Centurion Lounge may vary",
+          "hint": "international locations",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "centurion-arrival-window",
+          "text": "Platinum Card Members must arrive at a Centurion Lounge within 3 hours of their departing flight",
+          "pattern": "Platinum Card Members? must (arrive|enter) within 3 hours",
+          "hint": "within 3 hours",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "priority-pass-guest-limits",
+          "text": "Some Priority Pass lounges limit the number of guests or do not admit guests",
+          "pattern": "Some lounges limit the number of guests or do not admit guests",
+          "hint": "Some lounges limit",
+          "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
+          "scope": "html"
+        },
+        {
+          "id": "plaza-same-day",
+          "text": "Plaza Premium entry requires a boarding pass for same-day travel",
+          "pattern": "present your valid Platinum Card, a boarding pass showing a confirmed reservation for same-day travel",
+          "hint": "same-day travel",
           "url": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/",
           "scope": "html"
         }
