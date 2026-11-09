@@ -8,8 +8,9 @@ import { compareCard, networkCost, type CardLoungePolicy, type LoungeNetworkId, 
 // every card that reaches these lounges.
 export const LOUNGE_POLICIES_VERIFIED_AT = "2026-11-09";
 
-// Canonical lounge networks. Cards point at these ids, so a network-first view (and,
-// later, airport-level lounge discovery) can group every card that reaches a network.
+// Canonical lounge networks. Cards point at these ids, so the network-first view can
+// group every covered card that reaches a network. Scope is networks per card, not
+// individual lounge locations: BestCardsForMe helps choose a card, not plan a trip.
 export const loungeNetworks: Record<LoungeNetworkId, LoungeNetworkInfo> = {
   "priority-pass": { id: "priority-pass", name: "Priority Pass", kind: "priority-pass", operator: "Collinson (Priority Pass)" },
   centurion: { id: "centurion", name: "Amex Centurion Lounges", kind: "issuer", operator: "American Express" },
