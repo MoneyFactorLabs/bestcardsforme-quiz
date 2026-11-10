@@ -56,5 +56,6 @@ PNG exports and the comparison are rendered from the SVGs with a headless browse
 - **Lettering:** it's traced from the image, not set in a font. It's faithful, but editing the text or adding new words needs the original typeface or a designer.
 - **AI-generated source:** copyright protection for purely AI-generated artwork is uncertain. Before registering the mark, have a designer produce a final master from these files, and run a trademark search on the name and the mark.
 
-## Still needed
-- **The MoneyFactor M logo (original file).** It hasn't been supplied or seen yet. Once it is, it gets the same faithful trace, then a check that its geometry, palette and visual weight match this B, and matching production variants.
+## Related
+- The MoneyFactor M logo was supplied on 2026-11-10 and traced the same way: `../moneyfactor/`.
+- The review of how the two marks fit together, and an optional palette alignment for this logo, is in `../system/README.md`. The files in this folder stay as supplied until the founder decides.
