@@ -173,3 +173,26 @@ for fname, svg in files.items():
     with open(os.path.join(OUT, fname), "w") as fh:
         fh.write(svg)
 print("wrote", sorted(files))
+
+# Production copies for the site header and favicon: coordinates rounded to 0.1 unit (well below a pixel at
+# any header size), the 2x width/height dropped so CSS sizes the image.
+import re
+
+REPO = os.path.dirname(BRANDING)
+
+
+def minify(svg):
+    svg = re.sub(r"-?\d+\.\d+", lambda m: f"{float(m.group()):.1f}".rstrip("0").rstrip("."), svg)
+    return re.sub(r' width="\d+" height="\d+" role=', " role=", svg, count=1)
+
+
+site = {
+    os.path.join(REPO, "public", "brand", "bcfm-logo-stacked.svg"): minify(files["bcfm-type-stacked-light.svg"]),
+    os.path.join(REPO, "public", "brand", "bcfm-logo-compact.svg"): minify(files["bcfm-type-compact-light.svg"]),
+    os.path.join(REPO, "app", "icon.svg"): minify(files["bcfm-type-favicon.svg"]),
+}
+for path, svg in site.items():
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w") as fh:
+        fh.write(svg)
+print("site copies:", {os.path.relpath(p, REPO): len(s) for p, s in site.items()})

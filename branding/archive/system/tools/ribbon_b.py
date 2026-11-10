@@ -4,8 +4,8 @@ import importlib.util
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
-spec = importlib.util.spec_from_file_location("bcfm", f"{REPO}/branding/bestcardsforme/tools/trace_original.py")
+BRANDING = os.path.dirname(os.path.dirname(HERE))
+spec = importlib.util.spec_from_file_location("bcfm", os.path.join(BRANDING, "bestcardsforme", "tools", "trace_original.py"))
 bcfm = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(bcfm)
 

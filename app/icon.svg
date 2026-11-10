@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="BestCardsForMe">
-  <rect width="512" height="512" rx="96" fill="#0F1F33"/>
-  <rect x="104" y="148" width="304" height="216" rx="28" fill="#FFFFFF"/>
-  <rect x="104" y="148" width="304" height="62" rx="28" fill="#D4AF37"/>
-  <rect x="104" y="184" width="304" height="26" fill="#D4AF37"/>
-  <text
-    x="256"
-    y="306"
-    fill="#0F1F33"
-    font-family="Inter, Arial, sans-serif"
-    font-size="84"
-    font-weight="800"
-    letter-spacing="4"
-    text-anchor="middle"
-  >
-    BCFM
-  </text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="512" height="512"><rect width="180" height="180" rx="40" fill="#0B1B39"/><g transform="translate(40.6 140)"><path fill="#FFFFFF" d="M9.1 0V-100H56.1Q66.2 -100 73.8 -96.5Q81.4 -93.1 85.6 -86.9Q89.9 -80.7 89.9 -72.5Q89.9 -66 86.6 -60.5Q83.2 -55 77.4 -51.5Q84.8 -48.2 89 -42.3Q93.3 -36.4 93.3 -29.1Q93.3 -20.4 89 -13.8Q84.6 -7.3 76.7 -3.6Q68.8 0 58.3 0ZM29.8 -59.1H54.8Q61.4 -59.1 65.3 -62.3Q69.2 -65.6 69.2 -71Q69.2 -76.5 65.3 -79.6Q61.4 -82.8 54.8 -82.8H29.8ZM29.8 -17.2H56.7Q63.9 -17.2 68.1 -20.7Q72.3 -24.2 72.3 -30.1Q72.3 -36 68.1 -39.5Q63.9 -43 56.7 -43H29.8Z"/></g><rect x="40.6" y="152" width="98.7" height="12" rx="6" fill="#17C3A8"/></svg>

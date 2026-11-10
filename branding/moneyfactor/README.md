@@ -37,7 +37,7 @@ Vector production files for the **MoneyFactor** parent logo, traced faithfully f
 Ribbon gradients are fitted to the original's own pixels (least-squares direction of the brightness change, median color at six stops), not invented.
 
 ## Usage notes
-- **Contrast:** "Money" navy is about 17:1 on white. "Factor" teal `#10A390` is about 3.2:1 on white: fine for the logotype at display size (WCAG large-text / logo exemption), **not** for small text. Where "Factor" appears small in teal (e.g. an endorsement line), use the deeper `#0B7F70` (4.9:1); see `../system/README.md`.
+- **Contrast:** "Money" navy is about 17:1 on white. "Factor" teal `#10A390` is about 3.2:1 on white: fine for the logotype at display size (WCAG large-text / logo exemption), **not** for small text. Where "Factor" appears small in teal (e.g. an endorsement line), use the deeper `#0B7F70` (4.9:1); see `../archive/system/README.md`.
 - **Minimum size:** horizontal lockup down to about 160px wide; below that, the icon alone. Favicon SVG at 16–48px only.
 - **Clear space:** at least the height of the "M" in "Money" on all sides.
 
@@ -52,4 +52,4 @@ PNG exports and the comparison are rendered from the SVGs with a headless browse
 ## Known limits
 - **Lettering** is traced, not set in a font. Editing the words needs the original typeface or a designer.
 - **AI-generated source:** copyright protection for purely AI-generated artwork is uncertain. Before registering the mark, have a designer produce a final master from these files and run a trademark search on the name and mark.
-- **Relationship to the Best Cards For Me B:** the two marks share no geometry (ribbon M vs. card-stack B). This trace keeps both as supplied; see `../system/README.md` for the palette alignment proposal.
+- **Relationship to the Best Cards For Me B:** the two marks share no geometry (ribbon M vs. card-stack B). This trace keeps both as supplied; see `../archive/system/README.md` for the palette alignment proposal.

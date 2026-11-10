@@ -59,10 +59,10 @@ PYTHONDONTWRITEBYTECODE=1 python3 branding/bestcardsforme-typographic/tools/buil
 The font is downloaded from google/fonts into `tools/.cache/`, which git ignores. The script imports the MoneyFactor trace, which rewrites the same MoneyFactor SVGs byte-for-byte. PNGs and previews are rendered with a headless browser (Playwright).
 
 ## Archived concepts (kept, not deleted)
-- `../bestcardsforme/`: faithful trace of the original card-stack B lockup.
-- `../system/proposals/ribbon-b/`: ribbon-style B, upright and leaning versions. The founder declined both.
-- `../system/proposals/wordmark/`: the original lockup with only line 1 re-typed. Superseded by this folder.
-- `../system/proposals/bcfm-aligned-*`: the palette-alignment proposal for the original lockup.
+- `../archive/bestcardsforme/`: faithful trace of the original card-stack B lockup.
+- `../archive/system/proposals/ribbon-b/`: ribbon-style B, upright and leaning versions. The founder declined both.
+- `../archive/system/proposals/wordmark/`: the original lockup with only line 1 re-typed. Superseded by this folder.
+- `../archive/system/proposals/bcfm-aligned-*`: the palette-alignment proposal for the original lockup.
 
 ## Decisions needed from the founder
 1. Which variant leads: stacked or inline on desktop. Compact is the mobile companion either way.

@@ -1,8 +1,8 @@
 # MoneyFactor + Best Cards For Me: brand system review
 
-> **Archived (2026-11-10).** These proposals refer to the original card-stack lockup. The current direction is `../bestcardsforme-typographic/`. Kept for the record.
+> **Archived (2026-11-10).** These proposals refer to the original card-stack lockup. The current direction is `../../bestcardsforme-typographic/`. Kept for the record.
 
-Compares the two founder-supplied logos and proposes an **optional** palette alignment. Nothing here replaces the faithful files in `../bestcardsforme/` and `../moneyfactor/`, and nothing is used by the site.
+Compares the two founder-supplied logos and proposes an **optional** palette alignment. Nothing here replaces the faithful files in `../bestcardsforme/` and `../../moneyfactor/`, and nothing is used by the site.
 
 Preview: `previews/system-comparison.png` (A = as supplied, B = aligned proposal, light and dark, plus the palette changes).
 
@@ -42,10 +42,10 @@ If B is approved, the remaining BCFM variants (stacked, icon, favicon, PNGs) get
 
 ## Rebuilding
 ```bash
-pip install -r branding/bestcardsforme/tools/requirements.txt
-PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/align.py
+pip install -r branding/archive/bestcardsforme/tools/requirements.txt
+PYTHONDONTWRITEBYTECODE=1 python3 branding/archive/system/tools/align.py
 ```
-`align.py` imports the faithful trace script, which rewrites the same faithful SVGs byte-for-byte, so `git status` should show no change under `branding/bestcardsforme/`.
+`align.py` imports the faithful trace script, which rewrites the same faithful SVGs byte-for-byte, so `git status` should show no change under `branding/archive/bestcardsforme/`.
 
 ## Decisions needed from the founder
 1. Keep the logos as supplied (**A**) or adopt the aligned palette (**B**).
@@ -71,7 +71,7 @@ This is a new B drawn in the MoneyFactor M's folded-ribbon style. Preview: `prev
 
 **Status:** this is a proposal only. The original B in `../bestcardsforme/` is unchanged. Once an option is picked, the full set (stacked, favicon, touch icon, PNG exports) gets built.
 
-**Rebuild:** `PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/ribbon_b.py`
+**Rebuild:** `PYTHONDONTWRITEBYTECODE=1 python3 branding/archive/system/tools/ribbon_b.py`
 
 ## Proposal: "Best Cards For Me" in the MoneyFactor lettering (founder request, 2026-11-10)
 
@@ -83,4 +83,4 @@ Preview: `previews/wordmark-options.png`. Files: `proposals/wordmark/bcfm-wordma
 - **Placement:** line 1 is set as outlines at the original cap height, baseline and left edge. It ends within about 2% of the original width.
 - **Unchanged:** the icon, the divider, the colors and "Powered by MoneyFactor" are the faithful traces, with the same wording, size and weight.
 - **Ribbon B:** the ribbon-style B above was rejected by the founder. It stays only for the record.
-- **Rebuild:** `pip install fonttools uharfbuzz`, then `PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/wordmark_rhd.py`. The font downloads from google/fonts into an ignored cache.
+- **Rebuild:** `pip install fonttools uharfbuzz`, then `PYTHONDONTWRITEBYTECODE=1 python3 branding/archive/system/tools/wordmark_rhd.py`. The font downloads from google/fonts into an ignored cache.

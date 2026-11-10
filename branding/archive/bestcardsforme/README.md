@@ -1,6 +1,6 @@
 # Best Cards For Me: logo assets
 
-> **Archived (2026-11-10).** The founder moved Best Cards For Me to a typography-first identity endorsed by the MoneyFactor logo: see `../bestcardsforme-typographic/`. These files are kept for the record and are not the current direction.
+> **Archived (2026-11-10).** The founder moved Best Cards For Me to a typography-first identity endorsed by the MoneyFactor logo: see `../../bestcardsforme-typographic/`. These files are kept for the record and are not the current direction.
 
 Vector production files for the **Best Cards For Me** logo, traced faithfully from the founder-approved original ChatGPT artwork (`source/original-chatgpt.png`). The design is unchanged: same three-card B, gradient, swoosh, colors and type. Tracing only turns the raster's soft edges into clean curves.
 
@@ -48,7 +48,7 @@ Vector production files for the **Best Cards For Me** logo, traced faithfully fr
 
 ## Rebuilding
 ```bash
-cd branding/bestcardsforme
+cd branding/archive/bestcardsforme
 pip install -r tools/requirements.txt
 python3 tools/trace_original.py   # rewrites svg/*.svg
 ```
@@ -59,5 +59,5 @@ PNG exports and the comparison are rendered from the SVGs with a headless browse
 - **AI-generated source:** copyright protection for purely AI-generated artwork is uncertain. Before registering the mark, have a designer produce a final master from these files, and run a trademark search on the name and the mark.
 
 ## Related
-- The MoneyFactor M logo was supplied on 2026-11-10 and traced the same way: `../moneyfactor/`.
+- The MoneyFactor M logo was supplied on 2026-11-10 and traced the same way: `../../moneyfactor/`.
 - The review of how the two marks fit together, and an optional palette alignment for this logo, is in `../system/README.md`. The files in this folder stay as supplied until the founder decides.
