@@ -338,7 +338,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             >
               <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
-              <div className="mt-4 space-y-5 text-[1.02rem] font-medium leading-8 text-mid-navy/90">
+              <div className="mt-3 space-y-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
                 {section.body.map((paragraph, index) => (
                   <p key={index}>{renderInlineText(paragraph)}</p>
                 ))}
@@ -352,7 +352,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                       >
                         <h3 className="min-w-0 text-lg font-semibold text-navy">{subsection.heading}</h3>
                         {subsection.body && (
-                          <div className="mt-3 min-w-0 space-y-3 text-[0.98rem] font-medium leading-8 text-mid-navy/90">
+                          <div className="mt-2 min-w-0 space-y-3 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
                             {subsection.body.map((paragraph, index) => (
                               <p key={index}>{renderInlineText(paragraph)}</p>
                             ))}
@@ -360,7 +360,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                         )}
                         {subsection.table && <ArticleDataTable table={subsection.table} />}
                         {subsection.bullets && (
-                          <ul className="mt-4 grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                          <ul className="mt-4 grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.9rem] font-medium leading-6 text-mid-navy/90">
                             {subsection.bullets.map((bullet, index) => (
                               <li
                                 key={index}
@@ -377,7 +377,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                   </div>
                 )}
                 {section.bullets && (
-                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.9rem] font-medium leading-6 text-mid-navy/90">
                     {section.bullets.map((bullet, index) => (
                       <li
                         key={index}
@@ -428,13 +428,13 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             >
               <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
-              <div className="mt-4 space-y-5 text-[1.02rem] font-medium leading-8 text-mid-navy/90">
+              <div className="mt-3 space-y-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
                 {section.body.map((paragraph, index) => (
                   <p key={index}>{renderInlineText(paragraph)}</p>
                 ))}
                 {section.table && <ArticleDataTable table={section.table} />}
                 {section.bullets && (
-                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.9rem] font-medium leading-6 text-mid-navy/90">
                     {section.bullets.map((bullet, index) => (
                       <li
                         key={index}
