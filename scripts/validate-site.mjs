@@ -17,6 +17,13 @@ import path from "node:path";
 const root = path.join(process.cwd(), ".next/server/app");
 const placeholderPattern = /details pending|lorem ipsum|\bTBD\b|\bTODO\b/i;
 const staticFiles = new Set(["/sitemap.xml", "/robots.txt", "/icon.svg", "/apple-icon.png"]);
+// Files in public/ are served at their path, so references to them resolve.
+const publicDir = path.join(process.cwd(), "public");
+if (fs.existsSync(publicDir)) {
+  for (const file of fs.readdirSync(publicDir, { recursive: true })) {
+    if (fs.statSync(path.join(publicDir, file)).isFile()) staticFiles.add(`/${file.split(path.sep).join("/")}`);
+  }
+}
 const urlFlag = process.argv.indexOf("--url");
 const liveBase = urlFlag > -1 ? process.argv[urlFlag + 1]?.replace(/\/$/, "") : undefined;
 // URLs Google reported that must keep returning 404 (they were never real pages).
