@@ -49,3 +49,24 @@ PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/align.py
 1. Keep the logos as supplied (**A**) or adopt the aligned palette (**B**).
 2. If B: should "Factor" be teal in "Powered by MoneyFactor", or stay all navy?
 3. Recommended before trademark filing: a designer-produced master for both marks and a trademark search.
+
+## Proposal: ribbon-style B (founder request, 2026-11-10)
+
+This is a new B drawn in the MoneyFactor M's folded-ribbon style. Preview: `previews/ribbon-b-options.png`.
+
+**How it borrows from the M:**
+- A navy ribbon runs up the stem, rounds over the top like the M's peaks, and wraps the upper bowl.
+- A mint ribbon folds over it at the waist and wraps the lower bowl.
+- It uses the M's colors (navy `#0B1B39`, mint gradient `#0C9282` → `#19D7B9`), the M's fold shading, a rounded top corner and flat-cut feet.
+
+**Options:**
+- **1:** upright.
+- **2:** leaning forward 12°, echoing the M's angled legs.
+
+**Files:** `proposals/ribbon-b/bcfm-ribbon-v{1,2}-{light,dark,icon}.svg`.
+
+**Unchanged:** the "Powered by MoneyFactor" wording, size and weight. The lockups set "Best Cards For" in the M's navy.
+
+**Status:** this is a proposal only. The original B in `../bestcardsforme/` is unchanged. Once an option is picked, the full set (stacked, favicon, touch icon, PNG exports) gets built.
+
+**Rebuild:** `PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/ribbon_b.py`
