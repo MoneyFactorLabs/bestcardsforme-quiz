@@ -11,11 +11,18 @@ export function Header() {
         independent MoneyFactor scoring and editorial review.
       </div>
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 py-5 sm:px-8 md:flex-row md:items-center md:justify-between">
-        <Link href="/" className="focus-ring rounded-sm transition hover:text-mid-navy">
-          <p className="text-xl font-semibold tracking-[0.02em] text-navy">BestCardsForMe</p>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-mid-navy/70">
-            by MoneyFactor
-          </p>
+        <Link href="/" className="focus-ring self-start rounded-sm md:self-auto">
+          {/* Text-first lockup: compact (MoneyFactor wordmark) on mobile, stacked (MoneyFactor M + wordmark) from md up. */}
+          <picture>
+            <source media="(min-width: 768px)" srcSet="/brand/bcfm-logo-stacked.svg" width={1264} height={273} />
+            <img
+              src="/brand/bcfm-logo-compact.svg"
+              alt="Best Cards For Me, Powered by MoneyFactor"
+              width={1264}
+              height={280}
+              className="block h-12 w-auto md:h-14"
+            />
+          </picture>
         </Link>
         <div className="flex w-full flex-col gap-3 md:w-auto md:items-end">
           <nav
