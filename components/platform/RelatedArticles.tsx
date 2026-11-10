@@ -17,17 +17,17 @@ export function RelatedArticles({ title = "Related analysis", items }: RelatedAr
 
   return (
     <section className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
-      <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+      <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
       <h2 className="text-xl font-semibold text-navy sm:text-2xl">{title}</h2>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         {items.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="focus-ring rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4 transition hover:border-gold hover:bg-white"
+            className="focus-ring rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4 transition hover:border-accent hover:bg-white"
           >
             {item.label && (
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-ink">
                 {item.label}
               </p>
             )}

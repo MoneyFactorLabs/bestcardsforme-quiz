@@ -22,7 +22,7 @@ export function ArticleDecisionPaths({ article, articles }: ArticleDecisionPaths
     <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-ink">
             Decision paths
           </p>
           <h2 className="mt-2 text-xl font-semibold text-navy">Where to go from this guide</h2>
@@ -44,7 +44,7 @@ export function ArticleDecisionPaths({ article, articles }: ArticleDecisionPaths
           <Link
             key={link.slug}
             href={`/articles/${link.slug}`}
-            className="focus-ring rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4 transition hover:border-gold hover:bg-white"
+            className="focus-ring rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4 transition hover:border-accent hover:bg-white"
           >
             <p className="text-sm font-bold text-navy">{link.anchor}</p>
             <p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-mid-navy/55">

@@ -9,7 +9,7 @@ export function PopularNonFitCards({ cards }: PopularNonFitCardsProps) {
   return (
     <section className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
       <div className="mb-4">
-        <p className="text-sm font-semibold text-gold-ink">Honest exclusions</p>
+        <p className="text-sm font-semibold text-accent-ink">Honest exclusions</p>
         <h2 className="mt-1 text-2xl font-semibold tracking-tight text-navy">Popular cards that may not fit your profile</h2>
       </div>
       <div className="grid gap-3 md:grid-cols-2">
@@ -24,7 +24,7 @@ export function PopularNonFitCards({ cards }: PopularNonFitCardsProps) {
             <p className="mt-1 flex-1 text-sm leading-6 text-mid-navy/75">{recommendation.lowerFitReason}</p>
             <Link
               href={`/cards/${recommendation.card.id}`}
-              className="focus-ring mt-3 self-start text-sm font-semibold text-navy underline decoration-gold/60 underline-offset-4 hover:text-mid-navy"
+              className="focus-ring mt-3 self-start text-sm font-semibold text-navy underline decoration-accent/60 underline-offset-4 hover:text-mid-navy"
             >
               See why →
             </Link>

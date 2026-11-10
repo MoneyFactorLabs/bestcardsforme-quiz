@@ -107,7 +107,7 @@ export function ArticleRecommendedCards({ article, cardCtas = [] }: ArticleRecom
   return (
     <section className="min-w-0 overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
       <div className="bg-navy px-5 py-6 text-white sm:px-7">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-bright">
           {variation.eyebrow}
         </p>
         <h2 className="mt-2 text-2xl font-semibold">{variation.heading}</h2>
@@ -121,7 +121,7 @@ export function ArticleRecommendedCards({ article, cardCtas = [] }: ArticleRecom
           <article key={item.card.id} className="bg-white p-5 sm:p-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <div className="min-w-0">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-ink">
                   {formatAnnualFee(item.card)} annual fee
                 </p>
                 <h3 className="mt-2 text-xl font-semibold leading-tight text-navy">
@@ -160,7 +160,7 @@ export function ArticleRecommendedCards({ article, cardCtas = [] }: ArticleRecom
                 <Link
                   href={`/go/${item.card.affiliateSlug}`}
                   prefetch={false}
-                  className="focus-ring rounded-md bg-gold px-4 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+                  className="focus-ring rounded-md bg-accent px-4 py-3 text-center text-sm font-bold text-navy transition hover:bg-accent-hover"
                 >
                   Check current terms →
                 </Link>

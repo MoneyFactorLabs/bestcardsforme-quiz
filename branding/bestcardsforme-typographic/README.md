@@ -46,7 +46,7 @@ Previews:
 | Role | Light | Dark |
 |---|---|---|
 | "Best Cards For" | `#0B1B39` (MoneyFactor navy, ~17:1 on white) | `#FFFFFF` on `#0A1F52` |
-| "Me" accent | `#0057FB` (existing BCFM blue, 5.6:1) | `#5B9BFF` |
+| "Me" accent | `#10A390` (MoneyFactor logo teal, same as "Factor"; display size, 3.2:1) | `#2FD3B6` |
 | "Powered by" | `#547492` (4.9:1) | `#AEBBD0` |
 | MoneyFactor logo | as approved (navy + teal) | approved dark variant |
 | Favicon | tile `#0B1B39`, B white, underline `#17C3A8` | — |
@@ -66,6 +66,6 @@ The font is downloaded from google/fonts into `tools/.cache/`, which git ignores
 
 ## Decisions needed from the founder
 1. Which variant leads: stacked or inline on desktop. Compact is the mobile companion either way.
-2. "Me" accent: keep the existing BCFM blue, or make the name all navy.
+2. ~~"Me" accent~~ decided 2026-11-10: MoneyFactor teal (PR #23 palette reconciliation).
 3. Favicon: this type tile, or the MoneyFactor M.
 4. Separate approval before anything goes into the live header, favicon or metadata.

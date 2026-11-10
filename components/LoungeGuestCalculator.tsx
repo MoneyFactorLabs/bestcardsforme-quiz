@@ -64,7 +64,7 @@ export function LoungeGuestCalculator() {
                   onChange={(event) => setRaw((current) => ({ ...current, [field.key]: event.target.value }))}
                   aria-invalid={error ? true : undefined}
                   aria-describedby={`lounge-${field.key}-hint${error ? ` lounge-${field.key}-error` : ""}`}
-                  className={`mt-1 w-full rounded-md border bg-white px-3 py-2 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold ${error ? "border-2 border-red-700" : "border-blue-gray"}`}
+                  className={`mt-1 w-full rounded-md border bg-white px-3 py-2 text-base text-navy focus:outline-none focus:ring-2 focus:ring-accent-ink ${error ? "border-2 border-red-700" : "border-blue-gray"}`}
                 />
                 <p id={`lounge-${field.key}-hint`} className="mt-1 text-xs leading-5 text-mid-navy/70">{field.hint}</p>
                 {error ? <p id={`lounge-${field.key}-error`} className="mt-1 text-sm font-semibold text-red-700">{error}</p> : null}
@@ -82,7 +82,7 @@ export function LoungeGuestCalculator() {
           </label>
           <div>
             <label htmlFor="lounge-profile" className="block text-sm font-bold text-navy">Household spending profile for card economics</label>
-            <select id="lounge-profile" value={profileId} onChange={(event) => setProfileId(event.target.value as typeof profileId)} className="mt-1 w-full rounded-md border border-blue-gray bg-white px-3 py-2 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold">
+            <select id="lounge-profile" value={profileId} onChange={(event) => setProfileId(event.target.value as typeof profileId)} className="mt-1 w-full rounded-md border border-blue-gray bg-white px-3 py-2 text-base text-navy focus:outline-none focus:ring-2 focus:ring-accent-ink">
               {householdProfiles.map((candidate) => (
                 <option key={candidate.id} value={candidate.id}>{candidate.label}</option>
               ))}

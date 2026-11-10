@@ -4,7 +4,7 @@ import { authorizedUsersText, freeGuestsText, guestFeeText, visitsText } from "@
 import { groupByNetwork } from "@/lib/loungeModel";
 
 const kindLabel = { issuer: "Card issuer lounge", "priority-pass": "Lounge membership network", airline: "Airline lounge", partner: "Partner lounge" } as const;
-const link = "font-semibold text-navy underline decoration-gold/70 underline-offset-4 hover:text-mid-navy";
+const link = "font-semibold text-navy underline decoration-accent/70 underline-offset-4 hover:text-mid-navy";
 
 // Lounge-first view built from the same policy rows as the card-first table and the calculator.
 export function LoungeNetworkGuide() {
@@ -21,7 +21,7 @@ export function LoungeNetworkGuide() {
         {groups.map(({ network, cards }) => (
           <article key={network.id} className="rounded-lg border border-blue-gray/70 p-4" data-testid={`network-${network.id}`} aria-labelledby={`network-${network.id}-name`}>
             <h3 id={`network-${network.id}-name`} className="text-lg font-semibold text-navy">{network.name}</h3>
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">{kindLabel[network.kind]}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent-ink">{kindLabel[network.kind]}</p>
             <p className="mt-1 text-sm text-mid-navy/75">
               {cards.length === 1 ? "1 of the covered cards" : `${cards.length} of the covered cards`}
             </p>

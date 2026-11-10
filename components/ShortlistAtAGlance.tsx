@@ -20,7 +20,7 @@ export function ShortlistAtAGlance({ recommendations }: { recommendations: Recom
             <li key={recommendation.card.id}>
               <a
                 href={`#result-${recommendation.card.id}`}
-                className={`focus-ring flex h-full items-center justify-between gap-3 rounded-lg border p-3 transition hover:border-navy/40 md:block md:p-4 ${index === 0 ? "border-gold/70 bg-gold/5" : "border-line bg-surface/60"}`}
+                className={`focus-ring flex h-full items-center justify-between gap-3 rounded-lg border p-3 transition hover:border-navy/40 md:block md:p-4 ${index === 0 ? "border-accent/70 bg-accent/5" : "border-line bg-surface/60"}`}
               >
                 <div>
                   <p className="text-xs font-bold text-mid-navy/70">{index === 0 ? "Best match" : `#${index + 1}`}</p>

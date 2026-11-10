@@ -10,7 +10,7 @@ export function QuizQuestion({ question, selectedValue, onSelect }: QuizQuestion
   return (
     <fieldset className="space-y-6">
       <div>
-        <legend className="text-sm font-semibold text-gold-ink">{question.eyebrow}</legend>
+        <legend className="text-sm font-semibold text-accent-ink">{question.eyebrow}</legend>
         <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-tight text-navy sm:text-[2rem]">{question.question}</h2>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
@@ -33,7 +33,7 @@ export function QuizQuestion({ question, selectedValue, onSelect }: QuizQuestion
               <span
                 aria-hidden="true"
                 className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
-                  isSelected ? "border-gold bg-gold text-navy" : "border-line bg-white"
+                  isSelected ? "border-accent bg-accent text-navy" : "border-line bg-white"
                 }`}
               >
                 {isSelected ? (

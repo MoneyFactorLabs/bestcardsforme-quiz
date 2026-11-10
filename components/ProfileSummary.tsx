@@ -21,7 +21,7 @@ export function ProfileSummary({ profile, answers }: ProfileSummaryProps) {
     <details className="group rounded-xl border border-line bg-white shadow-card">
       <summary className="focus-ring flex cursor-pointer items-center justify-between gap-3 rounded-xl px-5 py-4 sm:px-6">
         <span>
-          <span className="block text-sm font-semibold text-gold-ink">How we read your answers</span>
+          <span className="block text-sm font-semibold text-accent-ink">How we read your answers</span>
           <span className="mt-0.5 block text-lg font-semibold text-navy">{profile.title}</span>
         </span>
         <span aria-hidden="true" className="text-sm font-semibold text-mid-navy transition group-open:rotate-180">

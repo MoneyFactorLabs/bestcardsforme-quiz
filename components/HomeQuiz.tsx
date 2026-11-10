@@ -137,7 +137,7 @@ export function HomeQuiz() {
         <section id="results" className="scroll-mt-4 mx-auto w-full max-w-6xl px-4 pb-14 pt-4 sm:px-8 sm:pb-16 sm:pt-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-sm font-semibold text-gold-ink">Your personalized card shortlist</p>
+              <p className="text-sm font-semibold text-accent-ink">Your personalized card shortlist</p>
               <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-navy sm:text-4xl">
                 Cards ranked for your actual spending life.
               </h1>

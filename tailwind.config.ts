@@ -10,9 +10,11 @@ const config: Config = {
       colors: {
         navy: "#0F1F33",
         "mid-navy": "#1F3A5F",
-        gold: "#D4AF37",
-        // Gold for text on light backgrounds: #D4AF37 on white fails WCAG contrast (about 2:1).
-        "gold-ink": "#7A5E0E",
+        // Accent: the approved MoneyFactor logo teal family (replaces the old mustard gold).
+        accent: "#17C3A8", //          fills (buttons, chips); navy text on it is 7.4:1
+        "accent-hover": "#12AE95", //  hover/pressed fill; navy text 5.9:1
+        "accent-ink": "#0B7F70", //    teal text, links and focus rings on white/light surfaces: 4.9:1
+        "accent-bright": "#2FD3B6", // teal text on navy panels: 8.8:1
         "blue-gray": "#C8D7E6",
         surface: "#F5F8FB",
         line: "#DCE5EF",

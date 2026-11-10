@@ -25,7 +25,7 @@ export function RecommendationCTA({
   return (
     <section className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
       <div className="bg-navy px-5 py-5 text-white sm:px-7">
-        <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.2em] text-gold">{eyebrow}</p>
+        <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.2em] text-accent-bright">{eyebrow}</p>
         <h2 className="mt-2 text-2xl font-semibold">{productName}</h2>
       </div>
       {(annualFee || bestFor) && (
@@ -54,7 +54,7 @@ export function RecommendationCTA({
           <Link
             href={href}
             prefetch={linkPrefetch(href)}
-            className="focus-ring rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+            className="focus-ring rounded-md bg-accent px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-accent-hover"
           >
             {buttonLabel}
           </Link>

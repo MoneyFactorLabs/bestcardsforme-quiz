@@ -31,7 +31,7 @@ export function Header() {
           >
             <Link
               href="/#quiz"
-              className={`${navLinkBase} border-gold bg-gold text-navy hover:border-[#caa42f] hover:bg-[#caa42f]`}
+              className={`${navLinkBase} border-accent bg-accent text-navy hover:border-accent-hover hover:bg-accent-hover`}
             >
               Start Quiz
             </Link>

@@ -49,8 +49,8 @@ MF_ICON_Y0, MF_ICON_Y1 = 231, 486
 MF_DESC = 497
 
 THEMES = {
-    "light": {"name": "#0B1B39", "me": "#0057FB", "slate": "#547492", "rule": "#C9D3DF", "bg": None},
-    "dark": {"name": "#FFFFFF", "me": "#5B9BFF", "slate": "#AEBBD0", "rule": "#3A5378", "bg": "#0A1F52"},
+    "light": {"name": "#0B1B39", "me": "#10A390", "slate": "#547492", "rule": "#C9D3DF", "bg": None},
+    "dark": {"name": "#FFFFFF", "me": "#2FD3B6", "slate": "#AEBBD0", "rule": "#3A5378", "bg": "#0A1F52"},
 }
 
 _fonts = {}

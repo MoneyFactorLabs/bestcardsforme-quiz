@@ -8,7 +8,7 @@ export function EmailCapture() {
       </div>
       <div className="grid gap-5 p-5 sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Detailed comparison</p>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-bright">Detailed comparison</p>
           <h2 className="mt-2 text-2xl font-semibold leading-tight sm:text-3xl">
             Want the full honest-math comparison and today's strongest public offers?
           </h2>

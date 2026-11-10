@@ -54,7 +54,7 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
 
   return (
     <article
-      className={`overflow-hidden rounded-xl border bg-white shadow-card ${isTop ? "border-gold/70 ring-1 ring-gold/40" : "border-line"}`}
+      className={`overflow-hidden rounded-xl border bg-white shadow-card ${isTop ? "border-accent/70 ring-1 ring-accent/40" : "border-line"}`}
       aria-labelledby={`result-${card.id}`}
     >
       {/* Mobile order: name, value, reasons. Desktop: reasons left, value column right. */}
@@ -96,7 +96,7 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
               </li>
             ))}
           </ul>
-          <p className="mt-4 rounded-md border-l-4 border-gold bg-gold/10 px-3 py-2 text-sm leading-6 text-mid-navy/85">
+          <p className="mt-4 rounded-md border-l-4 border-accent bg-accent/10 px-3 py-2 text-sm leading-6 text-mid-navy/85">
             <span className="font-semibold text-navy">Watch out: </span>
             {recommendation.cautionBullet}
           </p>

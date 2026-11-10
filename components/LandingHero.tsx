@@ -42,7 +42,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
         className="scroll-mt-6 mx-auto grid w-full max-w-6xl gap-10 px-4 pb-12 pt-6 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,27rem)] lg:items-center lg:gap-14 lg:pb-16 lg:pt-10"
       >
         <div>
-          <p className="text-sm font-semibold text-gold-ink">A MoneyFactor decision engine</p>
+          <p className="text-sm font-semibold text-accent-ink">A MoneyFactor decision engine</p>
           <h1 className="mt-3 max-w-2xl text-4xl font-semibold leading-[1.08] tracking-tight text-navy sm:text-5xl lg:text-[3.5rem]">
             Find the credit card that actually fits you.
           </h1>
@@ -54,11 +54,11 @@ export function LandingHero({ onStart }: LandingHeroProps) {
             <button
               type="button"
               onClick={onStart}
-              className="focus-ring rounded-md bg-gold px-7 py-4 text-base font-bold text-navy shadow-card transition hover:bg-[#caa42f]"
+              className="focus-ring rounded-md bg-accent px-7 py-4 text-base font-bold text-navy shadow-card transition hover:bg-accent-hover"
             >
               Start quiz
             </button>
-            <Link href="/methodology" className="focus-ring rounded-md px-3 py-2 text-sm font-semibold text-mid-navy underline decoration-gold/60 underline-offset-4 hover:text-navy">
+            <Link href="/methodology" className="focus-ring rounded-md px-3 py-2 text-sm font-semibold text-mid-navy underline decoration-accent/60 underline-offset-4 hover:text-navy">
               How we score cards
             </Link>
           </div>
@@ -74,7 +74,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
 
         <aside aria-labelledby="example-result-heading" className="rounded-2xl border border-line bg-white p-5 shadow-soft sm:p-6">
           <div className="flex items-center justify-between gap-3">
-            <p id="example-result-heading" className="text-xs font-bold uppercase tracking-[0.14em] text-gold-ink">
+            <p id="example-result-heading" className="text-xs font-bold uppercase tracking-[0.14em] text-accent-ink">
               Example result
             </p>
             <span className="rounded-full bg-navy px-3 py-1 text-xs font-bold text-white">Best match</span>
@@ -112,7 +112,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
               href={tool.href}
               className="focus-ring group rounded-xl border border-line bg-white p-5 shadow-card transition hover:border-navy/40"
             >
-              <p className="font-semibold text-navy group-hover:underline group-hover:decoration-gold/70 group-hover:underline-offset-4">{tool.title} →</p>
+              <p className="font-semibold text-navy group-hover:underline group-hover:decoration-accent/70 group-hover:underline-offset-4">{tool.title} →</p>
               <p className="mt-2 text-sm leading-6 text-mid-navy/75">{tool.body}</p>
             </Link>
           ))}

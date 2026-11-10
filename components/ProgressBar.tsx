@@ -23,7 +23,7 @@ export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
         style={{ gridTemplateColumns: `repeat(${totalSteps}, minmax(0, 1fr))` }}
       >
         {Array.from({ length: totalSteps }, (_, index) => (
-          <span key={index} className={`h-1.5 rounded-full ${index < currentStep ? "bg-gold" : "bg-line"}`} />
+          <span key={index} className={`h-1.5 rounded-full ${index < currentStep ? "bg-accent" : "bg-line"}`} />
         ))}
       </div>
     </div>

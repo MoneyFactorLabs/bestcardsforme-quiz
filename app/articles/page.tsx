@@ -47,7 +47,7 @@ export default function ArticlesIndexPage() {
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 pt-8 sm:px-8 sm:pb-16 sm:pt-12">
         <header className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
           <div className="bg-navy px-5 py-8 text-white sm:px-8 sm:py-10">
-            <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">
+            <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-accent-bright">
               BestCardsForMe Articles
             </p>
             <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
@@ -78,7 +78,7 @@ export default function ArticlesIndexPage() {
           <article className="mt-7 overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
               <div className="p-5 sm:p-7">
-                <p className="eyebrow-wrap text-xs font-bold uppercase tracking-[0.2em] text-gold">
+                <p className="eyebrow-wrap text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">
                   Featured honest-math analysis
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold leading-tight text-navy sm:text-4xl">
@@ -137,7 +137,7 @@ export default function ArticlesIndexPage() {
                 key={article.slug}
                 className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-6"
               >
-                <p className="eyebrow-wrap text-xs font-bold uppercase tracking-[0.2em] text-gold">
+                <p className="eyebrow-wrap text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">
                   {article.category}
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold leading-tight text-navy">
@@ -164,7 +164,7 @@ export default function ArticlesIndexPage() {
           </div>
         )}
 
-        <div className="mt-7 flex flex-col gap-3 rounded-lg border border-gold/40 bg-gold/10 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-7 flex flex-col gap-3 rounded-lg border border-accent/40 bg-accent/10 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-semibold text-navy">Want a personalized answer first?</p>
             <p className="mt-1 text-sm leading-6 text-mid-navy/75">
@@ -187,7 +187,7 @@ export default function ArticlesIndexPage() {
             >
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <p className="eyebrow-wrap text-xs font-bold uppercase tracking-[0.2em] text-gold">
+                  <p className="eyebrow-wrap text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">
                     {article.category}
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold leading-tight text-navy sm:text-3xl">
