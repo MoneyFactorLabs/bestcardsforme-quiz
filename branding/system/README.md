@@ -1,5 +1,7 @@
 # MoneyFactor + Best Cards For Me: brand system review
 
+> **Archived (2026-11-10).** These proposals refer to the original card-stack lockup. The current direction is `../bestcardsforme-typographic/`. Kept for the record.
+
 Compares the two founder-supplied logos and proposes an **optional** palette alignment. Nothing here replaces the faithful files in `../bestcardsforme/` and `../moneyfactor/`, and nothing is used by the site.
 
 Preview: `previews/system-comparison.png` (A = as supplied, B = aligned proposal, light and dark, plus the palette changes).

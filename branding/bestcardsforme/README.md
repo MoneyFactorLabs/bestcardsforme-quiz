@@ -1,5 +1,7 @@
 # Best Cards For Me: logo assets
 
+> **Archived (2026-11-10).** The founder moved Best Cards For Me to a typography-first identity endorsed by the MoneyFactor logo: see `../bestcardsforme-typographic/`. These files are kept for the record and are not the current direction.
+
 Vector production files for the **Best Cards For Me** logo, traced faithfully from the founder-approved original ChatGPT artwork (`source/original-chatgpt.png`). The design is unchanged: same three-card B, gradient, swoosh, colors and type. Tracing only turns the raster's soft edges into clean curves.
 
 **Status:** asset review only. These files are **not used by the site**: no header, favicon, metadata or page imports them. Wiring them in is a separate, founder-approved change, because the shared Header is part of the control article's fingerprint.
