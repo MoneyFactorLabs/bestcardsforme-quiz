@@ -37,7 +37,7 @@ export default function MoneyFactorLandingPage() {
             </p>
           </div>
           <div className="px-5 py-10 sm:px-8 sm:py-14">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-accent-ink">
               Parent company
             </p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight sm:text-6xl">
@@ -53,7 +53,7 @@ export default function MoneyFactorLandingPage() {
 
         <div className="mt-6 grid gap-5">
           <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-7">
-            <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+            <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
             <h2 className="text-2xl font-semibold">What MoneyFactor Does</h2>
             <ul className="mt-5 grid gap-3 text-sm font-medium leading-7 text-mid-navy/80">
               {[
@@ -62,7 +62,7 @@ export default function MoneyFactorLandingPage() {
                 "Focuses on financial decisions where consumers are often overwhelmed by marketing or unclear pricing.",
               ].map((item) => (
                 <li key={item} className="flex gap-3 rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4">
-                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -71,7 +71,7 @@ export default function MoneyFactorLandingPage() {
 
           <section className="overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft">
             <div className="bg-navy p-5 text-white sm:p-7">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-accent-bright">
                 Active vertical
               </p>
               <h2 className="mt-3 text-3xl font-semibold">BestCardsForMe</h2>
@@ -105,7 +105,7 @@ export default function MoneyFactorLandingPage() {
           </section>
 
           <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-7">
-            <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+            <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
             <h2 className="text-2xl font-semibold">Future Engines</h2>
             <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/75">
               These are planned future verticals, not active products yet.
@@ -126,7 +126,7 @@ export default function MoneyFactorLandingPage() {
           </section>
 
           <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-7">
-            <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+            <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
             <h2 className="text-2xl font-semibold">Trust & methodology</h2>
             <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/75">
               MoneyFactor uses conservative assumptions, realistic benefit capture, and transparent
@@ -151,13 +151,13 @@ export default function MoneyFactorLandingPage() {
           </section>
 
           <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-7">
-            <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+            <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
             <h2 className="text-2xl font-semibold">Contact</h2>
             <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/75">
               For editorial, partnership, or company inquiries, email{" "}
               <a
                 href="mailto:tim@moneyfactor.io"
-                className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+                className="font-bold text-navy underline decoration-accent/70 underline-offset-4 transition hover:text-mid-navy"
               >
                 tim@moneyfactor.io
               </a>

@@ -43,7 +43,7 @@ function renderInlineText(text: string): ReactNode[] {
             key={`link-${match.index}`}
             href={href}
             prefetch={linkPrefetch(href)}
-            className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+            className="font-bold text-navy underline decoration-accent/70 underline-offset-4 transition hover:text-mid-navy"
           >
             {label}
           </Link>
@@ -67,7 +67,7 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
       <JsonLd data={buildTrustPageStructuredData(page)} />
       <section className="mx-auto w-full max-w-4xl px-4 pb-14 pt-8 sm:px-8 sm:pb-16 sm:pt-12">
         <header className="rounded-lg border border-blue-gray/70 bg-white p-6 shadow-soft sm:p-8">
-          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">{page.eyebrow}</p>
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-accent-ink">{page.eyebrow}</p>
           <h1 className="mt-3 break-words text-3xl font-semibold leading-[1.15] text-navy sm:text-5xl">
             {page.title}
           </h1>
@@ -108,7 +108,7 @@ export function TrustPageLayout({ page }: TrustPageLayoutProps) {
                                 key={itemIndex}
                                 className="flex gap-3 rounded-md border border-blue-gray/60 bg-[#f8fafc] p-3"
                               >
-                                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                                 <span>{renderInlineText(item)}</span>
                               </li>
                             ))}

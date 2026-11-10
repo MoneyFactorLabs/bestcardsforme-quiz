@@ -303,7 +303,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
         sidebar={
           <aside className="w-full overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft lg:sticky lg:top-5">
             <div className="bg-navy p-5 text-white">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Next step</p>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-bright">Next step</p>
               <h2 className="mt-2 text-2xl font-semibold">Verify terms before applying</h2>
               <p className="mt-3 text-sm leading-6 text-blue-gray">
                 Offers, fees, credits, and eligibility rules can change. Treat issuer terms as the
@@ -312,7 +312,7 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
             </div>
 
             <div className="grid gap-3 p-5">
-              <div className="rounded-md border border-gold/50 bg-gold/10 p-4">
+              <div className="rounded-md border border-accent/50 bg-accent/10 p-4">
                 <p className="text-sm font-semibold text-navy">Profile decision checks</p>
                 <ul className="mt-3 space-y-2 text-sm leading-6 text-mid-navy/75">
                   <li>Annual fee clears realistic usage</li>

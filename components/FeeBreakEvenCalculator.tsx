@@ -65,7 +65,7 @@ export function FeeBreakEvenCalculator() {
           value={presetId}
           onChange={(event) => applyPreset(event.target.value)}
           aria-describedby="fee-preset-note"
-          className="mt-2 w-full rounded-md border border-blue-gray bg-white px-3 py-2 text-base text-navy focus:outline-none focus:ring-2 focus:ring-gold"
+          className="mt-2 w-full rounded-md border border-blue-gray bg-white px-3 py-2 text-base text-navy focus:outline-none focus:ring-2 focus:ring-accent-ink"
         >
           {presets.map((candidate) => (
             <option key={candidate.id} value={candidate.id}>
@@ -91,7 +91,7 @@ export function FeeBreakEvenCalculator() {
                   {field.label}
                 </label>
                 <div
-                  className={`mt-1 flex items-center rounded-md border bg-white focus-within:ring-2 focus-within:ring-gold ${
+                  className={`mt-1 flex items-center rounded-md border bg-white focus-within:ring-2 focus-within:ring-accent-ink ${
                     error ? "border-2 border-red-700" : "border-blue-gray"
                   }`}
                 >
@@ -153,7 +153,7 @@ export function FeeBreakEvenCalculator() {
                 <div><dt className="text-white/70">Net after the fee</dt><dd className="text-lg font-semibold">{usd(result.net)}</dd></div>
                 <div><dt className="text-white/70">Same spend on a 2% card</dt><dd className="text-lg font-semibold">{usd(result.baseline)}</dd></div>
               </dl>
-              <h3 className="mt-6 font-semibold text-gold">Break-even points</h3>
+              <h3 className="mt-6 font-semibold text-accent-ink">Break-even points</h3>
               <ul className="mt-2 grid gap-2 text-sm leading-6">
                 <li>
                   {result.creditsToBreakEven === 0

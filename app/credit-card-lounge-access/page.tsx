@@ -56,7 +56,7 @@ const structuredData = {
   publisher: { "@type": "Organization", name: "BestCardsForMe", url: absoluteUrl("/") },
 };
 
-const link = "font-bold text-navy underline decoration-gold/70 underline-offset-4 hover:text-mid-navy";
+const link = "font-bold text-navy underline decoration-accent/70 underline-offset-4 hover:text-mid-navy";
 const card = "rounded-lg border border-blue-gray/70 bg-white p-6 shadow-soft";
 const h2 = "text-2xl font-semibold text-navy";
 const p = "mt-3 text-base leading-7 text-mid-navy/85";
@@ -70,7 +70,7 @@ export default function LoungeAccessPage() {
       <JsonLd data={structuredData} />
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 pt-8 sm:px-8 sm:pt-12">
         <header className={`${card} sm:p-8`}>
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold">Lounge access</p>
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-accent-ink">Lounge access</p>
           <h1 className="mt-3 text-3xl font-semibold leading-[1.15] text-navy sm:text-5xl">{TITLE}</h1>
           <p className="mt-4 text-base leading-8 text-mid-navy/75 sm:text-lg">
             Every premium card advertises lounge access. What decides the value is who gets in with you, and what each extra person costs. We read

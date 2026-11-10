@@ -51,7 +51,7 @@ function renderPlainText(text: string, keyPrefix: string): ReactNode[] {
     nodes.push(
       <span
         key={`${keyPrefix}-money-${match.index}`}
-        className="rounded-sm bg-gold/10 px-1 font-bold text-navy"
+        className="rounded-sm bg-accent/10 px-1 font-bold text-navy"
       >
         {match[0]}
       </span>
@@ -84,7 +84,7 @@ function renderInlineText(text: string): ReactNode[] {
       nodes.push(
         <strong
           key={`strong-${match.index}`}
-          className="rounded-sm bg-gold/10 px-1 font-bold text-navy"
+          className="rounded-sm bg-accent/10 px-1 font-bold text-navy"
         >
           {token.slice(2, -2)}
         </strong>
@@ -104,7 +104,7 @@ function renderInlineText(text: string): ReactNode[] {
             key={`link-${match.index}`}
             href={href}
             prefetch={linkPrefetch(href)}
-            className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+            className="font-bold text-navy underline decoration-accent/70 underline-offset-4 transition hover:text-mid-navy"
           >
             {label}
           </Link>
@@ -174,7 +174,7 @@ function isTrustFooterSection(section: ArticleSection) {
 
 function ArticleIntroCta() {
   return (
-    <section className="min-w-0 rounded-lg border border-gold/40 bg-gold/10 p-5 shadow-soft sm:p-6">
+    <section className="min-w-0 rounded-lg border border-accent/40 bg-accent/10 p-5 shadow-soft sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-sm font-semibold text-navy">Want your card ranked against your profile?</p>
@@ -202,7 +202,7 @@ function ArticleFinalRecommendation({ article }: { article: EditorialArticle }) 
 
   return (
     <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-[#f8fafc] p-5 shadow-soft sm:p-6">
-      <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Final check</p>
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-ink">Final check</p>
       <h2 className="mt-2 text-xl font-semibold text-navy">
         Verify fit before you apply
       </h2>
@@ -216,7 +216,7 @@ function ArticleFinalRecommendation({ article }: { article: EditorialArticle }) 
         <Link
           href={href}
           prefetch={linkPrefetch(href)}
-          className="focus-ring rounded-md bg-gold px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+          className="focus-ring rounded-md bg-accent px-5 py-3 text-center text-sm font-bold text-navy transition hover:bg-accent-hover"
         >
           Verify current offer →
         </Link>
@@ -254,7 +254,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
 
       <header className="mt-5 overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft">
         <div className="bg-navy px-5 py-8 text-white sm:px-8 sm:py-10">
-          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-accent-bright">
             {article.eyebrow}
           </p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
@@ -264,7 +264,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
             By{" "}
             <Link
               href="/about"
-              className="text-white underline decoration-gold/70 underline-offset-4 transition hover:text-blue-gray"
+              className="text-white underline decoration-accent/70 underline-offset-4 transition hover:text-blue-gray"
             >
               Tim, founder and editor of BestCardsForMe
             </Link>
@@ -294,7 +294,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
       <div className="mt-7 grid min-w-0 gap-7 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
         <div className="grid min-w-0 gap-6 sm:gap-7">
           <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-[#f8fafc] p-5 shadow-soft sm:p-6">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-ink">
               Editorial standard
             </p>
             <p className="mt-2 text-sm font-medium leading-7 text-mid-navy/85">
@@ -308,7 +308,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
 
           {article.comparisonMetrics && article.comparisonMetrics.length > 0 && (
             <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
-              <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+              <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">
                 Comparison snapshot
               </h2>
@@ -336,9 +336,9 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
               key={section.heading}
               className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"
             >
-              <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+              <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
-              <div className="mt-4 space-y-5 text-[1.02rem] font-medium leading-8 text-mid-navy/90">
+              <div className="mt-3 space-y-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
                 {section.body.map((paragraph, index) => (
                   <p key={index}>{renderInlineText(paragraph)}</p>
                 ))}
@@ -352,7 +352,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                       >
                         <h3 className="min-w-0 text-lg font-semibold text-navy">{subsection.heading}</h3>
                         {subsection.body && (
-                          <div className="mt-3 min-w-0 space-y-3 text-[0.98rem] font-medium leading-8 text-mid-navy/90">
+                          <div className="mt-2 min-w-0 space-y-3 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
                             {subsection.body.map((paragraph, index) => (
                               <p key={index}>{renderInlineText(paragraph)}</p>
                             ))}
@@ -360,13 +360,13 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                         )}
                         {subsection.table && <ArticleDataTable table={subsection.table} />}
                         {subsection.bullets && (
-                          <ul className="mt-4 grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                          <ul className="mt-4 grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.9rem] font-medium leading-6 text-mid-navy/90">
                             {subsection.bullets.map((bullet, index) => (
                               <li
                                 key={index}
                                 className="flex gap-3 rounded-md border border-blue-gray/60 bg-white p-3 sm:p-4"
                               >
-                                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                                 <span>{renderInlineText(bullet)}</span>
                               </li>
                             ))}
@@ -377,13 +377,13 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
                   </div>
                 )}
                 {section.bullets && (
-                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.9rem] font-medium leading-6 text-mid-navy/90">
                     {section.bullets.map((bullet, index) => (
                       <li
                         key={index}
                         className="flex gap-3 rounded-md border border-blue-gray/60 bg-[#f8fafc] p-3 sm:p-4"
                       >
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                         <span>{renderInlineText(bullet)}</span>
                       </li>
                     ))}
@@ -401,7 +401,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
 
           {article.faqs && article.faqs.length > 0 && (
             <section className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
-              <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+              <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">FAQ</h2>
               <div className="mt-4 grid gap-3">
                 {article.faqs.map((faq) => (
@@ -426,21 +426,21 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
               key={section.heading}
               className="min-w-0 rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7"
             >
-              <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+              <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
               <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.heading}</h2>
-              <div className="mt-4 space-y-5 text-[1.02rem] font-medium leading-8 text-mid-navy/90">
+              <div className="mt-3 space-y-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
                 {section.body.map((paragraph, index) => (
                   <p key={index}>{renderInlineText(paragraph)}</p>
                 ))}
                 {section.table && <ArticleDataTable table={section.table} />}
                 {section.bullets && (
-                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.95rem] font-medium leading-7 text-mid-navy/90">
+                  <ul className="grid gap-3 border-t border-blue-gray/60 pt-4 text-[0.9rem] font-medium leading-6 text-mid-navy/90">
                     {section.bullets.map((bullet, index) => (
                       <li
                         key={index}
                         className="flex gap-3 rounded-md border border-blue-gray/60 bg-[#f8fafc] p-3 sm:p-4"
                       >
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                         <span>{renderInlineText(bullet)}</span>
                       </li>
                     ))}
@@ -453,7 +453,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
 
         <aside className="overflow-hidden rounded-lg border border-blue-gray/80 bg-white shadow-soft lg:sticky lg:top-5">
           <div className="bg-navy p-5 text-white">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-bright">
               MoneyFactor lens
             </p>
             <h2 className="mt-2 text-2xl font-semibold">Read for net value</h2>
@@ -465,7 +465,7 @@ export function ArticleLayout({ article }: ArticleLayoutProps) {
           <div className="grid gap-3 p-5">
             <Link
               href="/"
-              className="focus-ring rounded-md bg-gold px-4 py-3 text-center text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+              className="focus-ring rounded-md bg-accent px-4 py-3 text-center text-sm font-bold text-navy transition hover:bg-accent-hover"
             >
               Take the card quiz
             </Link>

@@ -32,7 +32,7 @@ export type ProductProfileLayoutProps = {
 function ProductSection({ section }: { section: ProductProfileSection }) {
   return (
     <section className="rounded-lg border border-blue-gray/70 bg-white p-5 shadow-soft sm:p-6">
-      <div className="mb-3 h-1 w-12 rounded-full bg-gold" />
+      <div className="mb-3 h-1 w-12 rounded-full bg-accent" />
       <h2 className="text-xl font-semibold text-navy sm:text-2xl">{section.title}</h2>
       {section.body && (
         <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/80">{section.body}</p>
@@ -41,7 +41,7 @@ function ProductSection({ section }: { section: ProductProfileSection }) {
         <ul className="mt-3 space-y-3 text-sm font-medium leading-7 text-mid-navy/80">
           {section.items.map((item, index) => (
             <li key={index} className="flex gap-3">
-              <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+              <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               <span>{item}</span>
             </li>
           ))}
@@ -53,7 +53,7 @@ function ProductSection({ section }: { section: ProductProfileSection }) {
             <div
               key={index}
               className={`flex items-start justify-between gap-4 px-4 py-3 ${
-                row.emphasis ? "bg-gold/10 font-bold text-navy" : "bg-white text-mid-navy/85"
+                row.emphasis ? "bg-accent/10 font-bold text-navy" : "bg-white text-mid-navy/85"
               }`}
             >
               <dt className="min-w-0 font-medium">{row.label}</dt>
@@ -71,14 +71,14 @@ function ProductSection({ section }: { section: ProductProfileSection }) {
                   href={link.href}
                   rel="nofollow noopener noreferrer"
                   target="_blank"
-                  className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+                  className="font-bold text-navy underline decoration-accent/70 underline-offset-4 transition hover:text-mid-navy"
                 >
                   {link.label}
                 </a>
               ) : (
                 <Link
                   href={link.href}
-                  className="font-bold text-navy underline decoration-gold/70 underline-offset-4 transition hover:text-mid-navy"
+                  className="font-bold text-navy underline decoration-accent/70 underline-offset-4 transition hover:text-mid-navy"
                 >
                   {link.label}
                 </Link>
@@ -123,7 +123,7 @@ export function ProductProfileLayout({
 
       <header className="mt-5 overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft">
         <div className="bg-navy px-5 py-7 text-white sm:px-8 sm:py-9">
-          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-gold">{eyebrow}</p>
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-accent-bright">{eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
             {title}
           </h1>
@@ -158,10 +158,10 @@ export function ProductProfileLayout({
         </div>
       </header>
 
-      <section className="mt-5 rounded-lg border border-gold/40 bg-gold/10 p-5">
+      <section className="mt-5 rounded-lg border border-accent/40 bg-accent/10 p-5">
         <div className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-ink">
               MoneyFactor review posture
             </p>
             <h2 className="mt-2 text-xl font-semibold text-navy">

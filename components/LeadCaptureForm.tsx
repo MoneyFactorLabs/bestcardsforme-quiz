@@ -65,8 +65,8 @@ export function LeadCaptureForm({
       <p
         className={`rounded-md border px-4 py-3 text-sm font-semibold ${
           isDark
-            ? "border-gold/40 bg-white/10 text-blue-gray"
-            : "border-gold/60 bg-gold/10 text-navy"
+            ? "border-accent/40 bg-white/10 text-blue-gray"
+            : "border-accent/60 bg-accent/10 text-navy"
         }`}
       >
         {message}
@@ -96,7 +96,7 @@ export function LeadCaptureForm({
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="focus-ring min-h-12 rounded-md bg-gold px-5 text-sm font-bold text-navy transition hover:bg-[#caa42f] disabled:cursor-not-allowed disabled:opacity-70"
+        className="focus-ring min-h-12 rounded-md bg-accent px-5 text-sm font-bold text-navy transition hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? "Saving..." : buttonLabel}
       </button>

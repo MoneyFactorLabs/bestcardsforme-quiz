@@ -27,7 +27,7 @@ export function CardReviewActions({ cardId, affiliateSlug }: CardReviewActionsPr
       <Link
         href={`/go/${affiliateSlug}`}
         prefetch={false}
-        className="focus-ring inline-flex justify-center rounded-md bg-gold px-5 py-3 text-sm font-bold text-navy transition hover:bg-[#caa42f]"
+        className="focus-ring inline-flex justify-center rounded-md bg-accent px-5 py-3 text-sm font-bold text-navy transition hover:bg-accent-hover"
       >
         Read issuer terms
       </Link>

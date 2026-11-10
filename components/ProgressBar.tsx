@@ -4,21 +4,27 @@ type ProgressBarProps = {
 };
 
 export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
-  const percent = Math.round((currentStep / totalSteps) * 100);
-
   return (
-    <div aria-label={`Question ${currentStep} of ${totalSteps}`} className="w-full">
-      <div className="mb-3 flex items-center justify-between text-sm font-semibold text-mid-navy/70">
+    <div className="w-full">
+      <div className="mb-3 flex items-center justify-between text-sm font-semibold text-mid-navy/75">
         <span>
-          Question {currentStep} of {totalSteps}
+          Question <span className="tabular-nums">{currentStep}</span> of <span className="tabular-nums">{totalSteps}</span>
         </span>
-        <span>{percent}%</span>
+        <span className="tabular-nums">{totalSteps - currentStep === 0 ? "Last one" : `${totalSteps - currentStep} to go`}</span>
       </div>
-      <div className="h-2 rounded-full bg-blue-gray/55">
-        <div
-          className="h-2 rounded-full bg-gold transition-all duration-300"
-          style={{ width: `${percent}%` }}
-        />
+      <div
+        role="progressbar"
+        aria-label="Quiz progress"
+        aria-valuemin={1}
+        aria-valuemax={totalSteps}
+        aria-valuenow={currentStep}
+        aria-valuetext={`Question ${currentStep} of ${totalSteps}`}
+        className="grid gap-1"
+        style={{ gridTemplateColumns: `repeat(${totalSteps}, minmax(0, 1fr))` }}
+      >
+        {Array.from({ length: totalSteps }, (_, index) => (
+          <span key={index} className={`h-1.5 rounded-full ${index < currentStep ? "bg-accent" : "bg-line"}`} />
+        ))}
       </div>
     </div>
   );

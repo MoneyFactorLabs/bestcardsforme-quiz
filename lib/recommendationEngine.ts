@@ -414,6 +414,7 @@ export function getRankedRecommendations(answers: QuizAnswers): RecommendedCard[
     .map((card) => ({
       card,
       rawScore: scoreCard(card, answers),
+      estimatedNetValue: getCapturedAnnualValue(card, answers),
       explanationBullets: buildExplanation(card, answers),
       cautionBullet: buildProfileCaution(card, answers),
       lowerFitReason: buildLowerFitReason(card, answers),

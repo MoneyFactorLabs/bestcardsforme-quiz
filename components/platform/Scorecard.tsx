@@ -26,16 +26,16 @@ export function Scorecard({
 }: ScorecardProps) {
   return (
     <section className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-7">
-      <div className="mb-4 h-1.5 w-14 rounded-full bg-gold" />
+      <div className="mb-4 h-1.5 w-14 rounded-full bg-accent" />
       <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-start">
         <div>
-          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.2em] text-gold">{eyebrow}</p>
+          <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.2em] text-accent-ink">{eyebrow}</p>
           <h2 className="mt-2 text-xl font-semibold text-navy sm:text-2xl">{title}</h2>
           {summary && (
             <p className="mt-3 text-sm font-medium leading-7 text-mid-navy/85">{summary}</p>
           )}
         </div>
-        <div className="rounded-lg border border-gold/60 bg-gold/10 px-5 py-4 text-center">
+        <div className="rounded-lg border border-accent/60 bg-accent/10 px-5 py-4 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-mid-navy/65">
             {overallLabel}
           </p>
@@ -55,7 +55,7 @@ export function Scorecard({
                 <p className="text-sm font-bold text-mid-navy">{score}/10</p>
               </div>
               <div className="mt-3 h-2 overflow-hidden rounded-full bg-blue-gray/70">
-                <div className="h-full rounded-full bg-gold" style={{ width: `${score * 10}%` }} />
+                <div className="h-full rounded-full bg-accent" style={{ width: `${score * 10}%` }} />
               </div>
             </div>
           );
