@@ -144,7 +144,28 @@ def icon(favicon=False):
     return svg(view, 512, 512, DEFS["light"], icon_body("light"))
 
 
+def mono(color, with_word=True):
+    """One-colour version (print, embossing, single-ink). The teal ribbon cuts a thin gap into the
+    navy one so the fold stays readable when both ribbons are the same colour."""
+    gap = ('<mask id="k" maskUnits="userSpaceOnUse" x="-10000" y="-10000" width="20000" height="20000">'
+           '<rect x="-10000" y="-10000" width="20000" height="20000" fill="#FFFFFF"/>'
+           f'<path fill-rule="evenodd" fill="#000000" stroke="#000000" stroke-width="14" stroke-linejoin="round" d="{paths["ribbon_teal"]}"/></mask>')
+    body = (f'<path fill-rule="evenodd" fill="{color}" mask="url(#k)" d="{paths["ribbon_navy"]}"/>'
+            + p("ribbon_teal", color))
+    if with_word:
+        body += p("word_navy", color) + p("word_teal", color)
+        return svg(box, box[2], box[3], gap, body)
+    side = max(ix.max() - ix.min(), iy.max() - iy.min()) + 32
+    view = ((ix.min() + ix.max()) / 2 - side / 2, (iy.min() + iy.max()) / 2 - side / 2, side, side)
+    return svg(view, 512, 512, gap, body)
+
+
 files = {
+    "moneyfactor-original-mono-navy.svg": mono("#0B1B39"),
+    "moneyfactor-original-mono-black.svg": mono("#000000"),
+    "moneyfactor-original-mono-white.svg": mono("#FFFFFF"),
+    "moneyfactor-original-icon-mono-navy.svg": mono("#0B1B39", with_word=False),
+    "moneyfactor-original-icon-mono-white.svg": mono("#FFFFFF", with_word=False),
     "moneyfactor-original-horizontal-light.svg": horizontal("light"),
     "moneyfactor-original-horizontal-dark.svg": horizontal("dark"),
     "moneyfactor-original-stacked-light.svg": stacked("light"),

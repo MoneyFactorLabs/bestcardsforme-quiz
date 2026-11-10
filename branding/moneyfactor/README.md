@@ -13,6 +13,9 @@ Vector production files for the **MoneyFactor** parent logo, traced faithfully f
 | `svg/moneyfactor-original-stacked-light.svg`, `-dark.svg` | Responsive variant for narrow spaces: the M centered above the wordmark |
 | `svg/moneyfactor-original-icon.svg` | The M on its own, with the original ribbon shading (avatars, app icons, large favicon sizes) |
 | `svg/moneyfactor-original-favicon.svg` | Simplified M for 16–32px tabs: flat colors instead of gradients. The navy ribbon turns white in dark browser themes (`prefers-color-scheme`) |
+| `svg/moneyfactor-original-mono-navy.svg`, `-mono-black.svg`, `-mono-white.svg` | One-colour lockups (single-ink print, embossing, partner co-branding). The teal ribbon cuts a thin gap into the navy one so the fold still reads |
+| `svg/moneyfactor-original-icon-mono-navy.svg`, `-icon-mono-white.svg` | One-colour M |
+| `png/*mono*.png` | Transparent PNG exports of the monochrome versions (lockups 2×, icons 512px) |
 | `png/moneyfactor-original-horizontal-*.png`, `png/moneyfactor-original-stacked-*.png` | 2× raster exports (light ones transparent) |
 | `png/moneyfactor-original-icon-512.png` | Icon, 512px, transparent |
 | `png/favicon-32.png` | Raster favicon fallback |
