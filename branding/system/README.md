@@ -50,7 +50,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/align.py
 2. If B: should "Factor" be teal in "Powered by MoneyFactor", or stay all navy?
 3. Recommended before trademark filing: a designer-produced master for both marks and a trademark search.
 
-## Proposal: ribbon-style B (founder request, 2026-11-10)
+## Proposal: ribbon-style B (founder request, 2026-11-10; not chosen)
 
 This is a new B drawn in the MoneyFactor M's folded-ribbon style. Preview: `previews/ribbon-b-options.png`.
 
@@ -70,3 +70,15 @@ This is a new B drawn in the MoneyFactor M's folded-ribbon style. Preview: `prev
 **Status:** this is a proposal only. The original B in `../bestcardsforme/` is unchanged. Once an option is picked, the full set (stacked, favicon, touch icon, PNG exports) gets built.
 
 **Rebuild:** `PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/ribbon_b.py`
+
+## Proposal: "Best Cards For Me" in the MoneyFactor lettering (founder request, 2026-11-10)
+
+The founder asked for the B in "Best" to match the MoneyFactor style. Changing one letter would clash with the rest of the line, so the whole of line 1 is reset in the parent wordmark's lettering style.
+
+Preview: `previews/wordmark-options.png`. Files: `proposals/wordmark/bcfm-wordmark-rhd-horizontal-{light,dark}.svg`.
+
+- **Font:** Red Hat Display ExtraBold (800), SIL Open Font License. It is the closest open-source match to the MoneyFactor wordmark, judged by eye and by pixel overlap against the supplied artwork. Like MoneyFactor, it has a vertical-sided M, a two-storey a, a curved y tail and flat-cut ends. This is a match, not a claim that the MoneyFactor artwork uses this font.
+- **Placement:** line 1 is set as outlines at the original cap height, baseline and left edge. It ends within about 2% of the original width.
+- **Unchanged:** the icon, the divider, the colors and "Powered by MoneyFactor" are the faithful traces, with the same wording, size and weight.
+- **Ribbon B:** the ribbon-style B above was rejected by the founder. It stays only for the record.
+- **Rebuild:** `pip install fonttools uharfbuzz`, then `PYTHONDONTWRITEBYTECODE=1 python3 branding/system/tools/wordmark_rhd.py`. The font downloads from google/fonts into an ignored cache.
