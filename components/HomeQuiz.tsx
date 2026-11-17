@@ -113,7 +113,10 @@ export function HomeQuiz() {
       {screen === "landing" && <LandingHero onStart={handleStart} />}
 
       {screen === "quiz" && (
-        <section id="quiz" className="scroll-mt-6 mx-auto w-full max-w-3xl px-4 pb-12 pt-4 sm:px-8 sm:pb-16 sm:pt-8">
+        <section id="quiz" className="relative scroll-mt-6 bg-surface px-4 pb-12 pt-6 sm:px-8 sm:pb-16 sm:pt-10">
+          <div aria-hidden="true" className="absolute inset-x-0 top-0 h-36 bg-navy" />
+          <div className="relative mx-auto w-full max-w-3xl">
+          <p className="mb-4 text-sm font-semibold text-accent-bright">Card fit quiz · about 2 minutes</p>
           <div className="rounded-2xl border border-line bg-white p-5 shadow-soft sm:p-9">
             <ProgressBar currentStep={currentQuestionIndex + 1} totalSteps={quizQuestions.length} />
             <div className="mt-8">
@@ -127,53 +130,54 @@ export function HomeQuiz() {
               >
                 ← Back
               </button>
-              <p className="text-sm text-mid-navy/65 sm:text-right">No signup, no credit check. Answers stay in this session.</p>
+              <p className="text-sm text-mid-navy/80 sm:text-right">No signup, no credit check. Answers stay in this session.</p>
             </div>
+          </div>
           </div>
         </section>
       )}
 
       {screen === "results" && (
-        <section id="results" className="scroll-mt-4 mx-auto w-full max-w-6xl px-4 pb-14 pt-4 sm:px-8 sm:pb-16 sm:pt-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold text-accent-ink">Your personalized card shortlist</p>
-              <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-navy sm:text-4xl">
-                Cards ranked for your actual spending life.
-              </h1>
-              {profileSummary ? (
-                <p className="mt-2 text-base text-mid-navy/80">
-                  Read as a <span className="font-semibold text-navy">{profileSummary.title.toLowerCase()}</span>. Values are estimates for your
-                  answers, after each card&apos;s annual fee.
-                </p>
-              ) : null}
+        <section id="results" className="scroll-mt-4">
+          <div className="bg-navy text-white">
+            <div className="mx-auto w-full max-w-6xl px-4 pb-8 pt-6 sm:px-8 sm:pb-10 sm:pt-10">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-accent-bright">Your personalized card shortlist</p>
+                  <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+                    Cards ranked for your actual spending life.
+                  </h1>
+                  {profileSummary ? (
+                    <p className="mt-2 text-base text-blue-gray">
+                      Read as a <span className="font-semibold text-white">{profileSummary.title.toLowerCase()}</span>. Values are estimates for
+                      your answers, after each card&apos;s annual fee.
+                    </p>
+                  ) : null}
+                </div>
+                <button
+                  type="button"
+                  onClick={handleRestart}
+                  className="focus-ring shrink-0 self-start rounded-md border border-white/30 px-5 py-3 text-sm font-bold text-white transition hover:border-white sm:self-auto"
+                >
+                  Restart quiz
+                </button>
+              </div>
+              <div className="mt-6">
+                <ShortlistAtAGlance recommendations={recommendations} />
+              </div>
             </div>
-            <button
-              type="button"
-              onClick={handleRestart}
-              className="focus-ring shrink-0 rounded-md border border-line bg-white px-5 py-3 text-sm font-bold text-navy transition hover:border-navy"
-            >
-              Restart quiz
-            </button>
           </div>
 
-          <div className="mt-6">
-            <ShortlistAtAGlance recommendations={recommendations} />
-          </div>
-
-          <div className="mt-6 grid gap-5">
-            {recommendations.map((recommendation, index) => (
-              <ResultsCard key={recommendation.card.id} recommendation={recommendation} rank={index + 1} />
-            ))}
-          </div>
-
-          {profileSummary && (
-            <div className="mt-6">
-              <ProfileSummary profile={profileSummary} answers={answers as QuizAnswers} />
+          <div className="bg-surface">
+            <div className="mx-auto grid w-full max-w-6xl gap-5 px-4 py-8 sm:px-8 sm:py-10">
+              {recommendations.map((recommendation, index) => (
+                <ResultsCard key={recommendation.card.id} recommendation={recommendation} rank={index + 1} />
+              ))}
             </div>
-          )}
+          </div>
 
-          <div className="mt-6 grid gap-5">
+          <div className="mx-auto grid w-full max-w-6xl gap-5 px-4 py-8 sm:px-8 sm:py-10">
+            {profileSummary && <ProfileSummary profile={profileSummary} answers={answers as QuizAnswers} />}
             <PopularNonFitCards cards={popularNonFits} />
             <EmailCapture />
             <Disclaimer />

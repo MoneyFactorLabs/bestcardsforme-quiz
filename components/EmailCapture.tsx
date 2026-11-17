@@ -10,7 +10,7 @@ export function EmailCapture() {
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-bright">Detailed comparison</p>
           <h2 className="mt-2 text-2xl font-semibold leading-tight sm:text-3xl">
-            Want the full honest-math comparison and today's strongest public offers?
+            Want the full real-math comparison and today's strongest public offers?
           </h2>
           <p className="mt-3 text-sm leading-6 text-blue-gray">
             Get the side-by-side value logic, offer-check reminders, and the caveats that matter
