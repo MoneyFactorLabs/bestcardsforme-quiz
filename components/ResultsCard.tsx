@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CardGlyph, ValueBar } from "@/components/ValueBar";
 import type { RecommendedCard } from "@/types/card";
 
 type ResultsCardProps = {
@@ -18,7 +19,7 @@ export function NetValuePanel({ recommendation, compact = false }: { recommendat
   const captured = net + card.annualFee;
   const clears = net >= 0;
   return (
-    <div className="rounded-lg border border-line bg-surface p-4 sm:p-5" data-testid="net-value-panel">
+    <div className="rounded-lg border border-line bg-white p-4 sm:p-5" data-testid="net-value-panel">
       <p className="text-sm font-semibold text-mid-navy">Estimated net value for your answers</p>
       <p className={`mt-1 font-semibold tabular-nums tracking-tight ${compact ? "text-3xl" : "text-4xl sm:text-5xl"} ${clears ? "text-positive" : "text-negative"}`}>
         {clears ? "+" : "−"}
@@ -28,6 +29,9 @@ export function NetValuePanel({ recommendation, compact = false }: { recommendat
       <p className="mt-1 text-sm text-mid-navy/75">
         {clears ? `after the ${money(card.annualFee)} annual fee` : `short of covering the ${money(card.annualFee)} annual fee`}
       </p>
+      <div className="mt-3">
+        <ValueBar captured={captured} annualFee={card.annualFee} scaleMax={card.valueEstimateHigh} />
+      </div>
       <dl className="mt-4 grid gap-1.5 border-t border-line pt-3 text-sm">
         <div className="flex justify-between gap-4">
           <dt className="text-mid-navy/75">Value you would likely capture</dt>
@@ -54,13 +58,14 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
 
   return (
     <article
-      className={`overflow-hidden rounded-xl border bg-white shadow-card ${isTop ? "border-accent/70 ring-1 ring-accent/40" : "border-line"}`}
+      className={`overflow-hidden rounded-2xl border bg-white shadow-card ${isTop ? "border-accent ring-2 ring-accent/50" : "border-line"}`}
       aria-labelledby={`result-${card.id}`}
     >
       {/* Mobile order: name, value, reasons. Desktop: reasons left, value column right. */}
-      <div className="grid gap-5 p-5 sm:p-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,20rem)] lg:gap-x-8">
+      <div className="grid gap-5 p-5 sm:p-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-x-8">
         <div className="lg:col-start-1 lg:row-start-1">
           <div className="flex flex-wrap items-center gap-2">
+            <CardGlyph rank={rank} className="mr-1" />
             <span className={`rounded-full px-3 py-1 text-xs font-bold ${isTop ? "bg-navy text-white" : "bg-surface text-navy"}`}>
               {isTop ? "Best match" : `#${rank} match`}
             </span>
@@ -74,7 +79,7 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
           <p className="mt-1 text-sm leading-6 text-mid-navy/75">Best for {card.bestFor.charAt(0).toLowerCase() + card.bestFor.slice(1)}</p>
         </div>
 
-        <div className="grid content-start gap-3 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <div className="grid content-start gap-3 rounded-xl lg:bg-surface lg:p-4 lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <NetValuePanel recommendation={recommendation} />
           <Link
             href={`/cards/${card.id}`}

@@ -1,43 +1,54 @@
+import { CardGlyph, ValueBar } from "@/components/ValueBar";
 import type { RecommendedCard } from "@/types/card";
 
 const money = (value: number) => `$${Math.abs(Math.round(value)).toLocaleString("en-US")}`;
 
-// Side-by-side summary of the shortlist: the estimated net value is the headline number.
+// Side-by-side summary of the shortlist, designed to sit on the navy results band. The
+// estimated net value is the headline number; the bars share one scale so cards compare.
 export function ShortlistAtAGlance({ recommendations }: { recommendations: RecommendedCard[] }) {
+  const scaleMax = Math.max(1, ...recommendations.map((r) => r.estimatedNetValue + r.card.annualFee));
   return (
-    <section aria-labelledby="glance-heading" className="rounded-xl border border-line bg-white p-4 shadow-card sm:p-5">
-      <h2 id="glance-heading" className="text-sm font-semibold text-navy">
-        Your shortlist at a glance
-      </h2>
-      <p className="mt-1 text-sm leading-6 text-mid-navy/75">
-        Ranked by overall fit to your answers. Estimated net value is one input, alongside your goal, fee comfort and the perks you are
-        likely to use.
-      </p>
-      <ol className="mt-3 grid gap-3 md:grid-cols-3">
+    <section aria-labelledby="glance-heading">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+        <h2 id="glance-heading" className="text-sm font-semibold text-white">
+          Your shortlist at a glance
+        </h2>
+        <p className="text-xs text-blue-gray">Ranked by overall fit. Net value is one input, alongside goal, fee comfort and likely perks.</p>
+      </div>
+      <ol className="mt-3 grid gap-2 md:grid-cols-3 md:gap-3">
         {recommendations.map((recommendation, index) => {
           const net = recommendation.estimatedNetValue;
+          const { card } = recommendation;
           return (
-            <li key={recommendation.card.id}>
+            <li key={card.id}>
               <a
-                href={`#result-${recommendation.card.id}`}
-                className={`focus-ring flex h-full items-center justify-between gap-3 rounded-lg border p-3 transition hover:border-navy/40 md:block md:p-4 ${index === 0 ? "border-accent/70 bg-accent/5" : "border-line bg-surface/60"}`}
+                href={`#result-${card.id}`}
+                className={`focus-ring block h-full rounded-xl border p-3 transition md:p-4 hover:-translate-y-0.5 ${
+                  index === 0 ? "border-accent bg-white" : "border-white/15 bg-white/95"
+                }`}
               >
-                <div>
-                  <p className="text-xs font-bold text-mid-navy/70">{index === 0 ? "Best match" : `#${index + 1}`}</p>
-                  <p className="mt-0.5 font-semibold leading-snug text-navy">{recommendation.card.name}</p>
-                  <p className="mt-1 text-xs text-mid-navy/70 md:hidden">
-                    <span className="tabular-nums">{recommendation.card.annualFee ? `${money(recommendation.card.annualFee)} fee` : "No annual fee"}</span>
-                    {" · "}fit <span className="tabular-nums">{recommendation.score}</span>/100
+                <div className="flex items-center gap-3">
+                  <CardGlyph rank={index + 1} className="hidden md:inline-flex" />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-bold text-accent-ink">{index === 0 ? "Best match" : `#${index + 1} match`}</p>
+                    <p className="truncate font-semibold leading-snug text-navy">{card.name}</p>
+                  </div>
+                  <p className={`shrink-0 text-xl font-semibold tabular-nums tracking-tight md:hidden ${net >= 0 ? "text-positive" : "text-negative"}`}>
+                    {net >= 0 ? "+" : "−"}
+                    {money(net)}
+                    <span className="ml-0.5 text-xs font-medium text-mid-navy/70">/yr</span>
                   </p>
                 </div>
-                <p className={`shrink-0 text-xl font-semibold tabular-nums tracking-tight md:mt-2 md:text-2xl ${net >= 0 ? "text-positive" : "text-negative"}`}>
+                <p className={`mt-3 hidden text-2xl font-semibold tabular-nums tracking-tight md:block ${net >= 0 ? "text-positive" : "text-negative"}`}>
                   {net >= 0 ? "+" : "−"}
                   {money(net)}
-                  <span className="ml-1 text-sm font-medium text-mid-navy/70">/ yr</span>
+                  <span className="ml-1 text-sm font-medium text-mid-navy/70">/ yr after fee</span>
                 </p>
-                <p className="mt-1 hidden text-xs text-mid-navy/70 md:block">
-                  <span className="tabular-nums">{recommendation.card.annualFee ? `${money(recommendation.card.annualFee)} fee` : "No annual fee"}</span>
-                  {" · "}fit <span className="tabular-nums">{recommendation.score}</span>/100
+                <div className="mt-2">
+                  <ValueBar captured={net + card.annualFee} annualFee={card.annualFee} scaleMax={scaleMax} />
+                </div>
+                <p className="mt-2 hidden text-xs text-mid-navy/70 md:block">
+                  fit score <span className="tabular-nums">{recommendation.score}</span>/100
                 </p>
               </a>
             </li>
