@@ -1,0 +1,58 @@
+{
+  "note": "Source of truth for every image or illustration the site serves (issue #28). An asset not listed here must not be served; tests/assetRights.test.ts enforces this. Issuer card artwork, issuer logos, payment-network marks, third-party product photos and stock images are not used: there is no license on file for any of them. Add an issuer image only with an explicit, verifiable public license for commercial comparison-site use, recorded here with its terms.",
+  "excludedCategories": [
+    "Issuer card face artwork (any issuer)",
+    "Issuer logos and wordmarks",
+    "Payment network marks (Visa, Mastercard, American Express, Discover) and contactless symbols",
+    "Third-party product photography and stock imagery without documented commercial-use rights",
+    "AI-generated approximations of real issuer card faces"
+  ],
+  "assets": [
+    {
+      "path": "components/CardArt.tsx",
+      "kind": "code-generated SVG illustration",
+      "creator": "BestCardsForMe (MoneyFactor), drawn in code for issue #28",
+      "rightsBasis": "Original work owned by MoneyFactor",
+      "license": "Original work; no third-party license",
+      "restrictions": "Issuer-neutral by design: no issuer artwork, logos, network marks, card numbers or text inside the art. The card's name is shown as adjacent editorial text, and featured uses carry the caption 'Illustration by BestCardsForMe, not the issuer's card design.'",
+      "lastVerified": "2026-11-18"
+    },
+    {
+      "path": "public/brand/bcfm-logo-stacked.svg",
+      "kind": "logo (SVG)",
+      "creator": "BestCardsForMe; built by branding/bestcardsforme-typographic/tools/build.py",
+      "rightsBasis": "Company brand asset. Wordmark set in Red Hat Display (SIL Open Font License 1.1, converted to outlines). The MoneyFactor mark is traced from founder-supplied artwork.",
+      "license": "Original work; font under SIL OFL 1.1 (https://openfontlicense.org)",
+      "restrictions": "The founder-supplied source artwork is AI-generated; get a designer master and trademark search before registering the mark (see branding/moneyfactor/README.md).",
+      "lastVerified": "2026-11-18"
+    },
+    {
+      "path": "public/brand/bcfm-logo-compact.svg",
+      "kind": "logo (SVG)",
+      "creator": "BestCardsForMe; built by branding/bestcardsforme-typographic/tools/build.py",
+      "rightsBasis": "Company brand asset. Wordmark set in Red Hat Display (SIL Open Font License 1.1, converted to outlines). The MoneyFactor wordmark is traced from founder-supplied artwork.",
+      "license": "Original work; font under SIL OFL 1.1 (https://openfontlicense.org)",
+      "restrictions": "Same as the stacked logo.",
+      "lastVerified": "2026-11-18"
+    },
+    {
+      "path": "app/icon.svg",
+      "kind": "favicon (SVG)",
+      "creator": "BestCardsForMe; built by branding/bestcardsforme-typographic/tools/build.py",
+      "rightsBasis": "Company brand asset: letter B in Red Hat Display (SIL OFL 1.1, outlined) on a brand-colour tile",
+      "license": "Original work; font under SIL OFL 1.1 (https://openfontlicense.org)",
+      "restrictions": "None beyond brand use",
+      "lastVerified": "2026-11-18"
+    },
+    {
+      "path": "app/apple-icon.png",
+      "kind": "touch icon (PNG)",
+      "creator": "BestCardsForMe; rendered from app/icon.svg",
+      "rightsBasis": "Company brand asset (raster export of app/icon.svg)",
+      "license": "Original work",
+      "restrictions": "None beyond brand use",
+      "lastVerified": "2026-11-18"
+    }
+  ],
+  "unverifiedAndUnused": []
+}

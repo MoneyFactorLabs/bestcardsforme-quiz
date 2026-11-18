@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { CardPageAnalytics } from "@/components/analytics/CardPageAnalytics";
 import { CardReviewActions } from "@/components/analytics/CardReviewActions";
+import { CardArt } from "@/components/CardArt";
 import { ProductProfileLayout } from "@/components/platform/ProductProfileLayout";
 import { articles } from "@/data/articles";
 import { getLoungePolicy } from "@/data/loungePolicies";
@@ -274,6 +275,8 @@ export default async function CardDetailsPage({ params }: CardDetailsPageProps) 
       <ProductProfileLayout
         backHref="/cards"
         backLabel="Back to card profiles"
+        visual={<CardArt id={profile.slug} annualFee={profile.annualFee} size="xl" context="profile" />}
+        visualCaption="Illustration by BestCardsForMe, not the issuer's card design."
         eyebrow="BestCardsForMe Honest Review"
         title={profile.cardName}
         subtitle={`${profile.issuer} credit card profile built around realistic annual value, fee math, and user fit.`}

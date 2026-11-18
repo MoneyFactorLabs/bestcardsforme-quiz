@@ -50,18 +50,3 @@ export function ValueBar({ captured, annualFee, scaleMax, tone = "light" }: Valu
     </div>
   );
 }
-
-// A generic, deliberately non-issuer card shape for scanning a list. It is not card art and
-// does not imitate any issuer's design (no licensed card imagery is available).
-export function CardGlyph({ rank, className = "" }: { rank?: number; className?: string }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={`relative inline-flex h-10 w-16 shrink-0 overflow-hidden rounded-md bg-gradient-to-br from-navy to-mid-navy shadow-card ${className}`}
-    >
-      <span className="absolute left-2 top-2.5 h-2.5 w-3.5 rounded-[3px] bg-accent-bright/80" />
-      <span className="absolute bottom-2 left-2 h-1 w-8 rounded-full bg-white/35" />
-      {rank ? <span className="absolute bottom-1.5 right-2 text-[0.65rem] font-bold text-white/85">#{rank}</span> : null}
-    </span>
-  );
-}

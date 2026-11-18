@@ -1,4 +1,5 @@
-import { CardGlyph, ValueBar } from "@/components/ValueBar";
+import { CardArt } from "@/components/CardArt";
+import { ValueBar } from "@/components/ValueBar";
 import type { RecommendedCard } from "@/types/card";
 
 const money = (value: number) => `$${Math.abs(Math.round(value)).toLocaleString("en-US")}`;
@@ -28,7 +29,7 @@ export function ShortlistAtAGlance({ recommendations }: { recommendations: Recom
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <CardGlyph rank={index + 1} className="hidden md:inline-flex" />
+                  <CardArt id={card.id} annualFee={card.annualFee} type={card.type} size="xs" context="glance" className="hidden md:inline-block" />
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-bold text-accent-ink">{index === 0 ? "Best match" : `#${index + 1} match`}</p>
                     <p className="truncate font-semibold leading-snug text-navy">{card.name}</p>
