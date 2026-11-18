@@ -27,6 +27,9 @@ export type ProductProfileLayoutProps = {
   relatedArticles?: RelatedArticleItem[];
   sidebar?: ReactNode;
   children?: ReactNode;
+  // Optional illustration in the header, with a caption saying it is not the issuer's design.
+  visual?: ReactNode;
+  visualCaption?: string;
 };
 
 function ProductSection({ section }: { section: ProductProfileSection }) {
@@ -111,6 +114,8 @@ export function ProductProfileLayout({
   relatedArticles,
   sidebar,
   children,
+  visual,
+  visualCaption,
 }: ProductProfileLayoutProps) {
   return (
     <article className="mx-auto w-full max-w-6xl px-4 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-10">
@@ -123,6 +128,8 @@ export function ProductProfileLayout({
 
       <header className="mt-5 overflow-hidden rounded-lg border border-blue-gray/70 bg-white shadow-soft">
         <div className="bg-navy px-5 py-7 text-white sm:px-8 sm:py-9">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="min-w-0">
           <p className="eyebrow-wrap text-sm font-bold uppercase tracking-[0.22em] text-accent-bright">{eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight sm:text-5xl">
             {title}
@@ -143,6 +150,14 @@ export function ProductProfileLayout({
                 </span>
               )
             )}
+          </div>
+          </div>
+          {visual ? (
+            <figure className="shrink-0">
+              {visual}
+              {visualCaption ? <figcaption className="mt-3 max-w-[18rem] text-xs leading-5 text-blue-gray">{visualCaption}</figcaption> : null}
+            </figure>
+          ) : null}
           </div>
         </div>
 

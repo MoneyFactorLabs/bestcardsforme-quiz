@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { fitLabel } from "@/components/ResultsCard";
-import { CardGlyph, ValueBar } from "@/components/ValueBar";
+import { CardArt } from "@/components/CardArt";
+import { ValueBar } from "@/components/ValueBar";
 import { quizQuestions } from "@/data/questions";
 import { EXAMPLE_PROFILE_LABEL, getExampleRecommendation } from "@/lib/exampleRecommendation";
 
@@ -92,7 +93,7 @@ export function LandingHero({ onStart }: LandingHeroProps) {
               <span className="rounded-full bg-navy px-3 py-1 text-xs font-bold text-white">Best match</span>
             </div>
             <div className="mt-4 flex items-center gap-3">
-              <CardGlyph />
+              <CardArt id={top.card.id} annualFee={top.card.annualFee} type={top.card.type} size="sm" context="hero" />
               <div className="min-w-0">
                 <h2 className="text-xl font-semibold tracking-tight text-navy">{top.card.name}</h2>
                 <p className="text-sm text-mid-navy/75">

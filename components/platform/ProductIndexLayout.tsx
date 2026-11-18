@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 export type ProductIndexItem = {
   title: string;
@@ -7,6 +8,8 @@ export type ProductIndexItem = {
   description: string;
   meta: { label: string; value: string }[];
   ctaLabel?: string;
+  // Optional illustration shown beside the title (decorative; the title carries the identity).
+  visual?: ReactNode;
 };
 
 export type ProductIndexLayoutProps = {
@@ -65,7 +68,9 @@ export function ProductIndexLayout({ eyebrow, title, description, items }: Produ
           <article key={item.href} className="rounded-lg border border-blue-gray/80 bg-white p-5 shadow-soft sm:p-6">
             <div className="flex h-full flex-col">
             <div className="flex flex-col gap-4">
-              <div>
+              <div className="flex items-start gap-4">
+              {item.visual}
+              <div className="min-w-0">
                 {item.eyebrow && (
                   <p className="eyebrow-wrap text-xs font-bold uppercase tracking-[0.2em] text-accent-ink">
                     {item.eyebrow}
@@ -79,6 +84,7 @@ export function ProductIndexLayout({ eyebrow, title, description, items }: Produ
                 <p className="mt-3 max-w-3xl text-sm font-medium leading-7 text-mid-navy/90">
                   {item.description}
                 </p>
+              </div>
               </div>
               <div className="grid gap-2 rounded-md border border-blue-gray/70 bg-[#f8fafc] p-4 text-sm font-medium text-mid-navy/85 sm:grid-cols-3">
                 {item.meta.map((metric) => (

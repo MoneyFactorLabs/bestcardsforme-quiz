@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { CardGlyph, ValueBar } from "@/components/ValueBar";
+import { CardArt } from "@/components/CardArt";
+import { ValueBar } from "@/components/ValueBar";
 import type { RecommendedCard } from "@/types/card";
 
 type ResultsCardProps = {
@@ -65,7 +66,7 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
       <div className="grid gap-5 p-5 sm:p-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-x-8">
         <div className="lg:col-start-1 lg:row-start-1">
           <div className="flex flex-wrap items-center gap-2">
-            <CardGlyph rank={rank} className="mr-1" />
+            <CardArt id={card.id} annualFee={card.annualFee} type={card.type} size="xs" context="result" className="mr-1 sm:w-24" />
             <span className={`rounded-full px-3 py-1 text-xs font-bold ${isTop ? "bg-navy text-white" : "bg-surface text-navy"}`}>
               {isTop ? "Best match" : `#${rank} match`}
             </span>

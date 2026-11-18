@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { CardArt } from "@/components/CardArt";
 import { ProductIndexLayout } from "@/components/platform/ProductIndexLayout";
 import {
   getAllCreditCardProfileSlugs,
@@ -52,6 +53,7 @@ export default function CardsIndexPage() {
             },
           ],
           ctaLabel: "View card profile",
+          visual: <CardArt id={profile.slug} annualFee={profile.annualFee} size="sm" context="index" className="mt-1 sm:w-28" />,
         }))}
       />
       <Footer />
