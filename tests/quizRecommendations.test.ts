@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { cards } from "@/data/cards";
 import { quizQuestions as questions } from "@/data/questions";
-import { getRecommendations } from "@/lib/recommendationEngine";
+import { getPopularNonFits, getRankedRecommendations, getRecommendations } from "@/lib/recommendationEngine";
 import type { QuizAnswers } from "@/types/quiz";
 
 const baseAnswers: QuizAnswers = {
@@ -31,6 +31,18 @@ function* answerSamples(count: number) {
 }
 
 describe("quiz recommendations", () => {
+  it("excludes exact owned variants and keeps the default ranking for unknown cards", () => {
+    const owned = ["chase-sapphire-reserve", "amex-platinum", "bilt-mastercard"];
+    assert.deepEqual(getRecommendations(baseAnswers, []), getRecommendations(baseAnswers));
+    assert.deepEqual(getRecommendations(baseAnswers, ["unknown"]), getRecommendations(baseAnswers));
+    assert.deepEqual(getRecommendations(baseAnswers, [...owned, owned[0]]), getRecommendations(baseAnswers, owned));
+    const remaining = getRankedRecommendations(baseAnswers, owned).map(({ card }) => card.id);
+    assert.ok(owned.every((id) => !remaining.includes(id)));
+    assert.ok(remaining.includes("chase-sapphire-preferred"));
+    assert.ok(getPopularNonFits(baseAnswers, owned).every(({ card }) => !owned.includes(card.id)));
+    assert.deepEqual(getRecommendations(baseAnswers, cards.map(({ id }) => id)), []);
+  });
+
   it("never recommend a discontinued card and always return three valid cards", () => {
     const discontinued = new Set(cards.filter((card) => card.availability === "discontinued").map((card) => card.id));
     assert.ok(discontinued.size > 0, "fixture expects at least one discontinued card");

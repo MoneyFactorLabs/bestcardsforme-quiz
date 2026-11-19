@@ -124,10 +124,26 @@ async function checkQuiz(browser) {
   await page.goto(origin, { waitUntil: "load" });
   await page.getByRole("button", { name: /start quiz/i }).first().click();
 
+  let ownedCardSelected = false;
   // Each answer advances the quiz; pick the first option until results render.
   for (let step = 0; step < 20; step += 1) {
     const resultLinks = page.locator('a[href^="/cards/"]');
     if ((await resultLinks.count()) >= 3 && !(await page.locator("[aria-pressed]").count())) break;
+    const searchCards = page.getByRole("searchbox", { name: "Search cards" });
+    if (await searchCards.count()) {
+      await searchCards.fill("Sapphire Reserve");
+      const ownedCard = page.getByRole("checkbox", { name: /Sapphire Reserve/i });
+      await ownedCard.focus();
+      await ownedCard.press("Space");
+      if (!(await ownedCard.isChecked())) fail("quiz: keyboard selection failed");
+      await page.getByRole("button", { name: /back/i }).click();
+      await page.locator("main button[aria-pressed]").first().click();
+      await searchCards.waitFor();
+      if (!(await ownedCard.isChecked())) fail("quiz: owned selection lost after going back");
+      await page.getByRole("button", { name: "Continue to results" }).click();
+      ownedCardSelected = true;
+      break;
+    }
     const option = page.locator("main button[type=button]").filter({ hasNotText: /back|restart/i }).first();
     if (!(await option.count())) break;
     await option.click();
@@ -137,6 +153,9 @@ async function checkQuiz(browser) {
   const recommended = await page.locator('a[href^="/cards/"]').evaluateAll((links) =>
     links.map((link) => link.getAttribute("href")),
   );
+  if (ownedCardSelected && recommended.some((href) => href?.includes("chase-sapphire-reserve"))) {
+    fail("quiz: recommended an owned card");
+  }
   if (recommended.length < 3) fail(`quiz: expected 3+ card links on results, found ${recommended.length}`);
   if (recommended.some((href) => href?.includes("bilt-mastercard"))) fail("quiz: recommended discontinued Bilt Mastercard");
   if (!(await waitForEvent(page, "quiz_completed", completedBefore))) fail("quiz: quiz_completed event not received");

@@ -6,12 +6,14 @@ import { EmailCapture } from "@/components/EmailCapture";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { LandingHero } from "@/components/LandingHero";
+import { OwnedCardQuestion } from "@/components/OwnedCardQuestion";
 import { PopularNonFitCards } from "@/components/PopularNonFitCards";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ProfileSummary } from "@/components/ProfileSummary";
 import { QuizQuestion } from "@/components/QuizQuestion";
 import { ResultsCard } from "@/components/ResultsCard";
 import { ShortlistAtAGlance } from "@/components/ShortlistAtAGlance";
+import { cards } from "@/data/cards";
 import { quizQuestions } from "@/data/questions";
 import { trackEvent } from "@/lib/analyticsClient";
 import {
@@ -35,19 +37,20 @@ export function HomeQuiz() {
     document.getElementById(screen === "quiz" ? "quiz" : "results")?.scrollIntoView({ block: "start" });
   }, [screen]);
 
+  const [ownedCardIds, setOwnedCardIds] = useState<string[]>([]);
+  const isOwnershipStep = currentQuestionIndex === quizQuestions.length;
   const currentQuestion = quizQuestions[currentQuestionIndex];
-  const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
   const selectedValue = answers[currentQuestion?.id];
 
   const recommendations = useMemo(() => {
     if (screen !== "results") return [];
-    return getRecommendations(answers as QuizAnswers);
-  }, [answers, screen]);
+    return getRecommendations(answers as QuizAnswers, ownedCardIds);
+  }, [answers, ownedCardIds, screen]);
 
   const popularNonFits = useMemo(() => {
     if (screen !== "results") return [];
-    return getPopularNonFits(answers as QuizAnswers);
-  }, [answers, screen]);
+    return getPopularNonFits(answers as QuizAnswers, ownedCardIds);
+  }, [answers, ownedCardIds, screen]);
 
   const profileSummary = useMemo(() => {
     if (screen !== "results") return null;
@@ -66,29 +69,30 @@ export function HomeQuiz() {
 
     setAnswers(nextAnswers);
 
-    if (isLastQuestion) {
-      const completedAnswers = nextAnswers as QuizAnswers;
-      const topRecommendations = getRecommendations(completedAnswers);
-
-      trackEvent({
-        eventName: "quiz_completed",
-        sourcePage: "quiz",
-        metadata: {
-          main_goal: completedAnswers.mainGoal,
-          annual_fee_comfort: completedAnswers.annualFeeComfort,
-          monthly_spend: completedAnswers.monthlySpend,
-          top_category: completedAnswers.topCategory,
-          travel_frequency: completedAnswers.travelFrequency,
-          top_cards: topRecommendations.map((recommendation) => recommendation.card.id),
-        },
-      });
-      setScreen("results");
-      return;
-    }
-
     window.setTimeout(() => {
-      setCurrentQuestionIndex((index) => Math.min(index + 1, quizQuestions.length - 1));
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }, 120);
+  }
+
+  function handleComplete(selectedIds: string[]) {
+    setOwnedCardIds(selectedIds);
+    const completedAnswers = answers as QuizAnswers;
+    const topRecommendations = getRecommendations(completedAnswers, selectedIds);
+
+    trackEvent({
+      eventName: "quiz_completed",
+      sourcePage: "quiz",
+      metadata: {
+        main_goal: completedAnswers.mainGoal,
+        annual_fee_comfort: completedAnswers.annualFeeComfort,
+        monthly_spend: completedAnswers.monthlySpend,
+        top_category: completedAnswers.topCategory,
+        travel_frequency: completedAnswers.travelFrequency,
+        top_cards: topRecommendations.map((recommendation) => recommendation.card.id),
+        used_owned_card_selector: selectedIds.length > 0,
+      },
+    });
+    setScreen("results");
   }
 
   function handleBack() {
@@ -102,6 +106,7 @@ export function HomeQuiz() {
 
   function handleRestart() {
     setAnswers({});
+    setOwnedCardIds([]);
     setCurrentQuestionIndex(0);
     setScreen("landing");
   }
@@ -118,9 +123,13 @@ export function HomeQuiz() {
           <div className="relative mx-auto w-full max-w-3xl">
           <p className="mb-4 text-sm font-semibold text-accent-bright">Card fit quiz · about 2 minutes</p>
           <div className="rounded-2xl border border-line bg-white p-5 shadow-soft sm:p-9">
-            <ProgressBar currentStep={currentQuestionIndex + 1} totalSteps={quizQuestions.length} />
+            <ProgressBar currentStep={currentQuestionIndex + 1} totalSteps={quizQuestions.length + 1} />
             <div className="mt-8">
-              <QuizQuestion question={currentQuestion} selectedValue={selectedValue} onSelect={handleSelect} />
+              {isOwnershipStep ? (
+                <OwnedCardQuestion selectedIds={ownedCardIds} onChange={setOwnedCardIds} onContinue={handleComplete} />
+              ) : (
+                <QuizQuestion question={currentQuestion} selectedValue={selectedValue} onSelect={handleSelect} />
+              )}
             </div>
             <div className="mt-8 flex flex-col-reverse gap-3 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
               <button
@@ -162,14 +171,24 @@ export function HomeQuiz() {
                   Restart quiz
                 </button>
               </div>
-              <div className="mt-6">
-                <ShortlistAtAGlance recommendations={recommendations} />
-              </div>
+              {recommendations.length > 0 && (
+                <div className="mt-6">
+                  <ShortlistAtAGlance recommendations={recommendations} />
+                </div>
+              )}
             </div>
           </div>
 
           <div className="bg-surface">
             <div className="mx-auto grid w-full max-w-6xl gap-5 px-4 py-8 sm:px-8 sm:py-10">
+              {ownedCardIds.length > 0 && (
+                <section className="rounded-xl border border-line bg-white p-5 text-navy">
+                  <h2 className="font-semibold">Cards you already have</h2>
+                  <p className="mt-1 text-sm">{cards.filter((card) => ownedCardIds.includes(card.id)).map((card) => card.name).join(", ")}</p>
+                  <p className="mt-2 text-sm">The estimates below show each new card’s standalone value. Compare its rewards and perks with what you already earn before applying.</p>
+                </section>
+              )}
+              {recommendations.length === 0 && <p>You already own every card in our current recommendation catalog.</p>}
               {recommendations.map((recommendation, index) => (
                 <ResultsCard key={recommendation.card.id} recommendation={recommendation} rank={index + 1} />
               ))}
