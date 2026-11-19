@@ -4,10 +4,12 @@ import { cards } from "@/data/cards";
 type Props = {
   selectedIds: string[];
   onChange: (ids: string[]) => void;
-  onContinue: (ids: string[]) => void;
+  hasUnlistedCard: boolean;
+  onUnlistedChange: (checked: boolean) => void;
+  onContinue: (ids: string[], hasUnlistedCard: boolean) => void;
 };
 
-export function OwnedCardQuestion({ selectedIds, onChange, onContinue }: Props) {
+export function OwnedCardQuestion({ selectedIds, onChange, hasUnlistedCard, onUnlistedChange, onContinue }: Props) {
   const [search, setSearch] = useState("");
   const query = search.trim().toLowerCase();
   const matches = cards.filter((card) => card.name.toLowerCase().includes(query));
@@ -49,12 +51,15 @@ export function OwnedCardQuestion({ selectedIds, onChange, onContinue }: Props) 
         ))}
         {matches.length === 0 && <p role="status" className="p-2 text-sm">No matching cards.</p>}
       </div>
-      <p className="text-sm text-mid-navy">If a card is missing, continue with the cards you found.</p>
+      <label className="flex min-h-11 items-center gap-3 text-sm text-mid-navy">
+        <input type="checkbox" checked={hasUnlistedCard} onChange={(event) => onUnlistedChange(event.target.checked)} className="focus-ring accent-accent-ink" />
+        I also have a card that is missing from this list
+      </label>
       <div className="flex flex-wrap gap-3">
-        <button type="button" onClick={() => onContinue(selectedIds)} className="focus-ring rounded-md bg-accent px-4 py-2 font-semibold text-navy">
+        <button type="button" onClick={() => onContinue(selectedIds, hasUnlistedCard)} className="focus-ring rounded-md bg-accent px-4 py-2 font-semibold text-navy">
           Continue to results
         </button>
-        <button type="button" onClick={() => onContinue([])} className="focus-ring rounded-md px-4 py-2 font-semibold text-navy">
+        <button type="button" onClick={() => onContinue([], false)} className="focus-ring rounded-md px-4 py-2 font-semibold text-navy">
           Skip this question
         </button>
       </div>

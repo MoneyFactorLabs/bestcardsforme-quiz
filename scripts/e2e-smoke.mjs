@@ -131,8 +131,8 @@ async function checkQuiz(browser) {
     if ((await resultLinks.count()) >= 3 && !(await page.locator("[aria-pressed]").count())) break;
     const searchCards = page.getByRole("searchbox", { name: "Search cards" });
     if (await searchCards.count()) {
-      await searchCards.fill("Sapphire Reserve");
-      const ownedCard = page.getByRole("checkbox", { name: /Sapphire Reserve/i });
+      await searchCards.fill("Citi Double Cash");
+      const ownedCard = page.getByRole("checkbox", { name: /Citi Double Cash/i });
       await ownedCard.focus();
       await ownedCard.press("Space");
       if (!(await ownedCard.isChecked())) fail("quiz: keyboard selection failed");
@@ -153,7 +153,10 @@ async function checkQuiz(browser) {
   const recommended = await page.locator('a[href^="/cards/"]').evaluateAll((links) =>
     links.map((link) => link.getAttribute("href")),
   );
-  if (ownedCardSelected && recommended.some((href) => href?.includes("chase-sapphire-reserve"))) {
+  if (ownedCardSelected && !(await page.getByText(/estimate based on \$9,000 in annual purchases/i).count())) {
+    fail("quiz: portfolio comparison assumptions are missing");
+  }
+  if (ownedCardSelected && recommended.some((href) => href?.includes("citi-double-cash"))) {
     fail("quiz: recommended an owned card");
   }
   if (recommended.length < 3) fail(`quiz: expected 3+ card links on results, found ${recommended.length}`);

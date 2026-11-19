@@ -15,6 +15,7 @@ import { ResultsCard } from "@/components/ResultsCard";
 import { ShortlistAtAGlance } from "@/components/ShortlistAtAGlance";
 import { cards } from "@/data/cards";
 import { quizQuestions } from "@/data/questions";
+import { compareOwnedPortfolio } from "@/lib/ownedPortfolio";
 import { trackEvent } from "@/lib/analyticsClient";
 import {
   getPopularNonFits,
@@ -38,6 +39,8 @@ export function HomeQuiz() {
   }, [screen]);
 
   const [ownedCardIds, setOwnedCardIds] = useState<string[]>([]);
+  const [hasUnlistedCard, setHasUnlistedCard] = useState(false);
+  const portfolio = screen === "results" ? compareOwnedPortfolio(answers as QuizAnswers, ownedCardIds, hasUnlistedCard) : null;
   const isOwnershipStep = currentQuestionIndex === quizQuestions.length;
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const selectedValue = answers[currentQuestion?.id];
@@ -74,8 +77,9 @@ export function HomeQuiz() {
     }, 120);
   }
 
-  function handleComplete(selectedIds: string[]) {
+  function handleComplete(selectedIds: string[], unlisted: boolean) {
     setOwnedCardIds(selectedIds);
+    setHasUnlistedCard(unlisted);
     const completedAnswers = answers as QuizAnswers;
     const topRecommendations = getRecommendations(completedAnswers, selectedIds);
 
@@ -89,7 +93,7 @@ export function HomeQuiz() {
         top_category: completedAnswers.topCategory,
         travel_frequency: completedAnswers.travelFrequency,
         top_cards: topRecommendations.map((recommendation) => recommendation.card.id),
-        used_owned_card_selector: selectedIds.length > 0,
+        used_owned_card_selector: selectedIds.length > 0 || unlisted,
       },
     });
     setScreen("results");
@@ -107,6 +111,7 @@ export function HomeQuiz() {
   function handleRestart() {
     setAnswers({});
     setOwnedCardIds([]);
+    setHasUnlistedCard(false);
     setCurrentQuestionIndex(0);
     setScreen("landing");
   }
@@ -126,7 +131,13 @@ export function HomeQuiz() {
             <ProgressBar currentStep={currentQuestionIndex + 1} totalSteps={quizQuestions.length + 1} />
             <div className="mt-8">
               {isOwnershipStep ? (
-                <OwnedCardQuestion selectedIds={ownedCardIds} onChange={setOwnedCardIds} onContinue={handleComplete} />
+                <OwnedCardQuestion
+                  selectedIds={ownedCardIds}
+                  onChange={setOwnedCardIds}
+                  hasUnlistedCard={hasUnlistedCard}
+                  onUnlistedChange={setHasUnlistedCard}
+                  onContinue={handleComplete}
+                />
               ) : (
                 <QuizQuestion question={currentQuestion} selectedValue={selectedValue} onSelect={handleSelect} />
               )}
@@ -181,11 +192,34 @@ export function HomeQuiz() {
 
           <div className="bg-surface">
             <div className="mx-auto grid w-full max-w-6xl gap-5 px-4 py-8 sm:px-8 sm:py-10">
-              {ownedCardIds.length > 0 && (
+              {portfolio && portfolio.kind !== "skipped" && (
                 <section className="rounded-xl border border-line bg-white p-5 text-navy">
                   <h2 className="font-semibold">Cards you already have</h2>
                   <p className="mt-1 text-sm">{cards.filter((card) => ownedCardIds.includes(card.id)).map((card) => card.name).join(", ")}</p>
-                  <p className="mt-2 text-sm">The estimates below show each new card’s standalone value. Compare its rewards and perks with what you already earn before applying.</p>
+                  {hasUnlistedCard && <p className="mt-1 text-sm">Includes an unlisted card.</p>}
+                  <h3 className="mt-4 font-semibold">What a new card could add</h3>
+                  {portfolio.kind === "unavailable" ? (
+                    <p className="mt-1 text-sm">We don’t have enough comparable cash-back data for your cards or goal. The shortlist shows standalone estimates.</p>
+                  ) : (
+                    <>
+                      {portfolio.additions.length > 0 ? (
+                        <ul className="mt-2 space-y-1 text-sm">
+                          {portfolio.additions.map(({ card, annualGain }) => (
+                            <li key={card.id}>{card.name} could add about ${Math.round(annualGain / 5) * 5} per year after its fee.</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="mt-1 text-sm">{portfolio.comparedCount > 0
+                          ? "The cash-back cards we could compare add less than $25 per year under these assumptions."
+                          : "There are no additional comparable cash-back cards within your fee preference."}</p>
+                      )}
+                      <p className="mt-2 text-sm">
+                        Estimate based on ${portfolio.annualSpend.toLocaleString("en-US")} in annual purchases.
+                        {answers.topCategory === "mixed" ? " Uses catch-all rates across purchases." : " Assumes 25% goes to your top category at eligible merchants and uses catch-all rates on the rest."}
+                        {" "}Pays balances in full and uses cash redemptions. Excludes credits, perks, welcome offers, rotating categories, and portal rewards. Shortlist values below are standalone.
+                      </p>
+                    </>
+                  )}
                 </section>
               )}
               {recommendations.length === 0 && <p>You already own every card in our current recommendation catalog.</p>}
