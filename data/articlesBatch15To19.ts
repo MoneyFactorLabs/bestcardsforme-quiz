@@ -1384,13 +1384,13 @@ export const articleBatch15To19: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Setup 7: Bilt card + Chase Sapphire Preferred (under re-review)",
+            "heading": "Setup 7: Bilt Blue + Chase Sapphire Preferred",
             "body": [
-              "**For:** Renters paying $1,500+ per month rent who also want travel benefits.",
-              "**Status:** The Wells Fargo-issued Bilt Mastercard closed to new applicants in October 2025. Its February 2026 replacements (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495) still pay rent with no transaction fee, but rent points now depend on how much you also spend on the card. We removed the earlier captured-value example, which assumed the old card's flat 1x on rent.",
-              "**How it works now:** Pay rent through Bilt on a 2026 Bilt card (Blue at $0 earns 1x on everyday spending; Obsidian at $95 earns 3x on dining or groceries and 2x on travel) and keep Sapphire Preferred for travel and dining. Whether this beats Setups 1–6 depends on the new rent-earning rules, which we are re-verifying.",
-              "**Strengths:** Still the only mainstream way to pay rent by card without a transaction fee. Bilt points transfer to airline and hotel partners.",
-              "**Weaknesses:** Only useful for renters, and rent rewards now require meaningful spending on the Bilt card itself. See our [Bilt profile](/cards/bilt-mastercard) for what we have confirmed."
+              "**For:** Renters or homeowners making eligible housing payments through Bilt who also want a separate travel card.",
+              "**Housing points:** In the housing-only option, a $2,000 eligible housing payment and $1,000 in qualifying spend in the same billing cycle earns 1,500 housing points, plus the purchase points earned separately. At an illustrative 1¢ per Bilt Point, the housing points are worth $15 for that cycle.",
+              "**Trade-off:** Moving that $1,000 from a 2% cash-back card to Blue at 1x gives up $10 in purchase rewards under the same valuation. Compared with paying the housing bill outside Bilt, the net gain is $5 for that cycle before considering the separate Sapphire fee. Compare your actual alternative card and whether you already earn points on the housing payment.",
+              "**Strengths:** [Bilt Blue](/cards/bilt-blue) has no annual fee. Eligible payments made through Bilt have no transaction fee, and Bilt Points can transfer to participating travel partners.",
+              "**Weaknesses:** Routing purchases to Bilt can reduce rewards from your other card. Flexible Bilt Cash follows a separate set of rules. New accounts from January 1, 2027 enter the refreshed housing-only program."
             ]
           }
         ]
@@ -1446,9 +1446,9 @@ export const articleBatch15To19: EditorialArticle[] = [
             ],
             [
               "**Rent-paying renter**",
-              "Bilt Blue + Sapphire Preferred (under re-review)",
+              "Bilt Blue + Sapphire Preferred",
               "$95",
-              "Rent points now depend on Bilt card spend"
+              "Housing points depend on the rewards setting and qualifying spend"
             ]
           ]
         }
@@ -1478,7 +1478,7 @@ export const articleBatch15To19: EditorialArticle[] = [
           "**Highest captured value:** [Amex Gold + Amex Platinum](/cards/amex-platinum) at $1,220 combined",
           "**Premium benefits at modest fee:** [Capital One Venture X + Savor](/cards/capital-one-venture-x) at $490 combined",
           "**Premium UR ecosystem:** Chase Sapphire Reserve + Freedom Unlimited at $795 combined",
-          "**For renters:** a 2026 Bilt card + Sapphire Preferred, once we finish re-verifying Bilt's new rent rules"
+          "**For renters or homeowners:** Consider Bilt Blue alongside Sapphire Preferred if the housing points are worth more than the rewards lost by moving everyday spend."
         ]
       }
     ],
@@ -1539,7 +1539,7 @@ export const articleBatch15To19: EditorialArticle[] = [
       },
       {
         "question": "What's the best 2-card setup for renters?",
-        "answer": "A 2026 Bilt card plus Chase Sapphire Preferred ($95) is still the leading renter setup, because Bilt lets you pay rent by card with no transaction fee. The original Bilt Mastercard closed to new applicants in October 2025, and its February 2026 replacements (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495) still pay rent with no transaction fee, but rent points now depend on how much you also spend on the card. Check our Bilt profile before applying."
+        "answer": "Bilt Blue plus Chase Sapphire Preferred ($95) is one option if you already value Sapphire’s travel benefits. Compare the extra points from eligible rent with what you would give up by moving spending to Blue. The [Bilt Blue profile](/cards/bilt-blue) explains why the points rate varies."
       },
       {
         "question": "Will applying for two cards hurt my credit score?",

@@ -933,7 +933,7 @@ export const articleBatch20To24: EditorialArticle[] = [
       },
       {
         "label": "Best specialty no-fee profile",
-        "value": "Bilt Blue for rent payments (under re-review)"
+        "value": "Bilt Blue for eligible housing payments"
       },
       {
         "label": "MoneyFactor lens",
@@ -1033,7 +1033,7 @@ export const articleBatch20To24: EditorialArticle[] = [
             [
               "**Bilt Blue (2026)**",
               "$0",
-              "1x everyday, 4% Bilt Cash; rent points depend on card spend",
+              "1x on eligible everyday purchases; housing points depend on the applicable rewards setting",
               "Replaced the Wells Fargo Bilt Mastercard"
             ],
             [
@@ -1180,13 +1180,13 @@ export const articleBatch20To24: EditorialArticle[] = [
             ]
           },
           {
-            "heading": "Best Low / No Fee Specialty Option — Bilt Blue (under re-review)",
+            "heading": "No-Fee Option for Housing Rewards — Bilt Blue",
             "body": [
               "**Annual fee:** $0",
-              "The Wells Fargo-issued Bilt Mastercard closed to new applicants in October 2025. Its February 2026 replacements (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495) still pay rent with no transaction fee, but rent points now depend on how much you also spend on the card. Bilt Blue is the $0 option: 1x points on everyday spending plus 4% back in Bilt Cash.",
-              "**Best for:** Renters who will also put regular spending on the card, since rent points now depend on it.",
-              "**Trigger:** Consider Bilt Blue when you rent and pay $1,500+ per month, after checking the current rent-earning rules; we are re-verifying them.",
-              "[Read the full review →](/cards/bilt-mastercard) · [Check current terms →](/go/bilt-mastercard)",
+              "Bilt Blue has no annual fee and earns 1x on eligible everyday purchases. Eligible rent or mortgage payments through Bilt carry no transaction fee. Housing points depend on your account’s rewards setting and qualifying non-housing spend.",
+              "**Best for:** Renters or homeowners who can make eligible housing payments through Bilt and shift enough everyday spending to justify the opportunity cost.",
+              "**Trigger:** Compare the value of your housing points with the rewards you would lose by moving spending from your current card.",
+              "[Read the Bilt Blue profile →](/cards/bilt-blue)",
               "*Recommendations reflect BestCardsForMe's editorial methodology applied to $0-fee profiles. For a profile-specific recommendation, [take the BestCardsForMe quiz](/).*"
             ]
           }
@@ -1195,7 +1195,7 @@ export const articleBatch20To24: EditorialArticle[] = [
       {
         "heading": "Bottom line",
         "body": [
-          "The best no-annual-fee credit card in 2026 depends on your spending pattern. **Citi Double Cash** wins for most households on simplicity and 2% flat earning. **Wells Fargo Autograph** wins for multi-category households. **Chase Freedom Unlimited** wins for Chase ecosystem households. Renters should check the [2026 Bilt cards](/cards/bilt-mastercard), which replaced the Bilt Mastercard and changed how rent earns points. For category-specific no-fee decisions, compare the [gas-card guide](/articles/best-credit-card-for-gas-2026) and [online-shopping guide](/articles/best-credit-card-for-online-shopping-2026).",
+          "The best no-annual-fee credit card in 2026 depends on your spending pattern. **Citi Double Cash** wins for most households on simplicity and 2% flat earning. **Wells Fargo Autograph** wins for multi-category households. **Chase Freedom Unlimited** wins for Chase ecosystem households. Renters and homeowners considering housing rewards can start with [Bilt Blue](/cards/bilt-blue) and compare the opportunity cost of shifting spending. For category-specific no-fee decisions, compare the [gas-card guide](/articles/best-credit-card-for-gas-2026) and [online-shopping guide](/articles/best-credit-card-for-online-shopping-2026).",
           "If you want a profile-specific recommendation, take [the BestCardsForMe quiz](/)."
         ]
       },
@@ -1384,8 +1384,8 @@ export const articleBatch20To24: EditorialArticle[] = [
             ],
             [
               "**Renter**",
-              "Bilt Blue (2026; under re-review)",
-              "Rent points now depend on Bilt card spend"
+              "Bilt Blue",
+              "Housing points depend on the rewards setting and qualifying spend"
             ],
             [
               "**Affluent household, $50k+ spending**",
