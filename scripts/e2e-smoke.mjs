@@ -2,7 +2,7 @@
 // E2E_BASE_URL, against a live deployment.
 // Usage: npm run build && npm run test:e2e
 //        E2E_BASE_URL=https://bestcardsforme.com npm run test:e2e
-// Optional: SCREENSHOT_DIR=path saves mobile screenshots of key pages.
+// Optional: SCREENSHOT_DIR=path saves key pages and mobile and desktop owned-card screenshots.
 // In live mode analytics calls are intercepted, never sent, so production
 // data stays clean; events are confirmed in the page instead of the server log.
 //
@@ -114,6 +114,16 @@ async function checkPages(browser, paths) {
   }
 }
 
+async function checkOwnedCardLayout(page, panel, name) {
+  await panel.waitFor();
+  for (const [device, viewport] of Object.entries(viewports)) {
+    await page.setViewportSize(viewport);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    if (overflow > 1) fail(`quiz: ${name} at ${device} width overflows by ${overflow}px`);
+    if (screenshotDir) await panel.screenshot({ path: path.join(screenshotDir, `owned-${name}-${device}.png`) });
+  }
+}
+
 async function checkQuiz(browser) {
   const context = await browser.newContext({ viewport: viewports.mobile });
   await context.addInitScript(trackEvents());
@@ -140,24 +150,37 @@ async function checkQuiz(browser) {
       await page.locator("main button[aria-pressed]").first().click();
       await searchCards.waitFor();
       if (!(await ownedCard.isChecked())) fail("quiz: owned selection lost after going back");
+      await searchCards.fill("Blue Cash Everyday");
+      await page.getByRole("checkbox", { name: /Blue Cash Everyday/i }).press("Space");
+      await searchCards.fill("Blue Cash");
+      await checkOwnedCardLayout(page, page.locator("fieldset"), "selector");
       await page.getByRole("button", { name: "Continue to results" }).click();
       ownedCardSelected = true;
       break;
     }
     const option = page.locator("main button[type=button]").filter({ hasNotText: /back|restart/i }).first();
     if (!(await option.count())) break;
-    await option.click();
+    const feeChoice = page.getByRole("button", { name: "$100-$400", exact: true });
+    const spendChoice = page.getByRole("button", { name: "$3,000-$6,000", exact: true });
+    if (await feeChoice.count()) await feeChoice.click();
+    else if (await spendChoice.count()) await spendChoice.click();
+    else await option.click();
     await page.waitForTimeout(150);
   }
 
   const recommended = await page.locator('a[href^="/cards/"]').evaluateAll((links) =>
     links.map((link) => link.getAttribute("href")),
   );
-  if (ownedCardSelected && !(await page.getByText(/estimate based on \$9,000 in annual purchases/i).count())) {
-    fail("quiz: portfolio comparison assumptions are missing");
-  }
-  if (ownedCardSelected && recommended.some((href) => href?.includes("citi-double-cash"))) {
-    fail("quiz: recommended an owned card");
+  if (ownedCardSelected) {
+    const heading = page.getByRole("heading", { name: "Cards you already have", exact: true });
+    const portfolio = heading.locator("..");
+    await checkOwnedCardLayout(page, portfolio, "comparison");
+    if (!(await portfolio.getByText(/Blue Cash Preferred could add about \$145 per year after its fee/i).count())) {
+      fail("quiz: expected incremental portfolio value is missing");
+    }
+    if (recommended.some((href) => ["/cards/citi-double-cash", "/cards/blue-cash-everyday"].includes(href))) {
+      fail("quiz: recommended an owned card");
+    }
   }
   if (recommended.length < 3) fail(`quiz: expected 3+ card links on results, found ${recommended.length}`);
   if (recommended.some((href) => href?.includes("bilt-mastercard"))) fail("quiz: recommended discontinued Bilt Mastercard");
