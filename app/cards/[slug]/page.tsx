@@ -154,7 +154,12 @@ function getProfileSections(profile: CreditCardProfile): ProductProfileSection[]
 
   const sections: ProductProfileSection[] = [];
 
-  if (profile.scoreStatus === "withheld") {
+  if (profile.factCheck.flags.some((flag) => flag.status === "discontinued")) {
+    sections.push({
+      title: "Profile status: retired",
+      body: "This profile records a discontinued product. It is closed to new applications.",
+    });
+  } else if (profile.scoreStatus === "withheld") {
     sections.push({
       title: "Profile status: under re-review",
       body: "This card changed materially and we have not yet verified the replacement terms, so we are not publishing a score or value estimate. The facts we could confirm are below.",

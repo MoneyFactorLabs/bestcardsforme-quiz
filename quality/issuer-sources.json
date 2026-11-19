@@ -62,11 +62,10 @@
       ]
     },
     "bilt-mastercard": {
-      "issuerUrl": "https://www.bilt.com/card",
+      "issuerUrl": "https://support.biltrewards.com/hc/en-us/articles/40834037331085-Bilt-Card-2-0-Transition",
       "discontinued": true,
       "secondary": [
-        { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-credit-card", "checkedAt": "2026-10-29", "covers": "Wells Fargo Bilt Mastercard discontinued (Oct 2025)" },
-        { "publisher": "Doctor of Credit", "url": "https://www.doctorofcredit.com/three-brand-new-bilt-2-0-cards-blue-obsidian-palladium/", "checkedAt": "2026-10-29", "covers": "Bilt Blue/Obsidian/Palladium fees and earn rates" }
+        { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-credit-card", "checkedAt": "2026-10-29", "covers": "Legacy Wells Fargo Bilt Mastercard closed to applications" }
       ]
     },
     "hilton-aspire": {

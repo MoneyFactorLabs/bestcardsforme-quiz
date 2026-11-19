@@ -447,7 +447,7 @@ export const cards: CreditCard[] = [
   },
   {
     id: "bilt-mastercard",
-    name: "Bilt Mastercard",
+    name: "Wells Fargo Bilt Mastercard (legacy)",
     annualFee: 0,
     valueEstimateLow: 150,
     valueEstimateHigh: 600,
@@ -455,7 +455,7 @@ export const cards: CreditCard[] = [
     bestFor: "Renters who want transferable points without paying an annual fee",
     realisticAnnualValue: "$150-$600 depending on rent and redemption behavior",
     avoidIf: "You do not rent or do not want to manage points redemptions",
-    currentPublicOffer: "Current public offer varies; verify current issuer terms before applying",
+    currentPublicOffer: "Retired after February 6, 2026. Closed to new applications.",
     affiliateSlug: "bilt-mastercard",
     affiliateDestinationUrl: "/cards/bilt-mastercard#issuer-terms",
     issuerTermsUrl: "#issuer-terms",
