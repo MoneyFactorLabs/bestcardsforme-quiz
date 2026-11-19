@@ -68,6 +68,18 @@
         { "publisher": "NerdWallet", "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-credit-card", "checkedAt": "2026-10-29", "covers": "Legacy Wells Fargo Bilt Mastercard closed to applications" }
       ]
     },
+    "bilt-blue": {
+      "issuerUrl": "https://www.bilt.com/card",
+      "secondary": []
+    },
+    "bilt-obsidian": {
+      "issuerUrl": "https://www.bilt.com/card",
+      "secondary": []
+    },
+    "bilt-palladium": {
+      "issuerUrl": "https://www.bilt.com/card",
+      "secondary": []
+    },
     "hilton-aspire": {
       "issuerUrl": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
       "secondary": []

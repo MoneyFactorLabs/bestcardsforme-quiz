@@ -1,3 +1,4 @@
+import { cards } from "@/data/cards";
 import type { CardProfileSpec } from "@/lib/cardProfileBuilder";
 
 const CHECKED_AT = "2026-10-29";
@@ -7,7 +8,69 @@ const CHECK_METHOD =
 // Card profiles generated from structured facts. Every figure the value model
 // uses is stated in `valueModel`; anything we could not confirm is listed in
 // `factCheck.flags` and left out of the math rather than guessed.
+const biltReviewedAt = "2026-11-19";
+const biltProfileDetails = [
+  {
+    slug: "bilt-blue",
+    credits: "The annual comparison counts purchase points only.",
+    perks: "Bilt lists no foreign transaction fee.",
+    scores: { rewardsValue: 5, feeJustification: 10, travelUtility: 4, everydayUse: 5, beginnerFriendliness: 6 },
+    spend: [{ category: "Eligible everyday purchases", annualSpend: 24000, earnRate: 1 }],
+  },
+  {
+    slug: "bilt-obsidian",
+    credits: "Before the refresh, qualifying Bilt Travel hotel bookings can earn up to $100 in statement credits, split into two $50 periods. Refreshed accounts receive an annual $100 Bilt Cash credit.",
+    perks: "Earn 2x on eligible travel. The 3x grocery choice applies to the first $25,000 in eligible grocery spend per year.",
+    scores: { rewardsValue: 7, feeJustification: 6, travelUtility: 6, everydayUse: 7, beginnerFriendliness: 5 },
+    spend: [{ category: "Eligible dining or grocery", annualSpend: 6000, earnRate: 3 }, { category: "Other eligible purchases", annualSpend: 18000, earnRate: 1 }],
+  },
+  {
+    slug: "bilt-palladium",
+    credits: "Before the refresh, qualifying Bilt Travel hotel bookings can earn up to $400 in credits, split into two $200 periods, plus $200 in annual Bilt Cash. Refreshed accounts receive $600 in annual Bilt Cash and can redeem up to $200 of it twice a year for eligible hotel bookings.",
+    perks: "Bilt lists Priority Pass. Estimate its value using the visits you would make and any membership you already have.",
+    scores: { rewardsValue: 7, feeJustification: 4, travelUtility: 8, everydayUse: 7, beginnerFriendliness: 4 },
+    spend: [{ category: "Eligible everyday purchases", annualSpend: 24000, earnRate: 2 }],
+  },
+];
+
+const biltProfiles: CardProfileSpec[] = biltProfileDetails.map((detail) => {
+  const card = cards.find((item) => item.id === detail.slug);
+  if (!card) throw new Error(`Missing Bilt catalog entry: ${detail.slug}`);
+
+  return {
+    slug: card.id,
+    cardName: card.name,
+    issuer: "Column N.A. (serviced by Cardless)",
+    annualFee: card.annualFee,
+    scoringCategory: "travel",
+    headline: "Bilt purchase and housing rewards",
+    bestFor: card.bestFor,
+    rewardsSummary: "For eligible rent or mortgage paid through Bilt, the housing-only earn rate depends on qualifying non-housing spend in the same billing cycle. Before the refresh, eligible accounts may instead choose Flexible Bilt Cash and redeem it to unlock housing points.",
+    earnRates: card.keyPerks,
+    creditsSummary: detail.credits + " The refresh starts for new accounts on January 1, 2027. Earlier accounts generally switch on their first anniversary in 2027 unless they opt out in advance. Our estimate excludes all credits.",
+    travelPerks: detail.perks,
+    transferPartners: "Bilt Points can be transferred to participating partners. Our comparison assumes 1¢ per Bilt Point in a redemption you can use.",
+    recommendedUserTypes: [card.bestFor],
+    skipIf: [card.avoidIf],
+    marketingOverstates: card.marketingOverstates,
+    alternatives: biltProfileDetails.filter((other) => other.slug !== detail.slug).map((other) => ({
+      slug: other.slug,
+      reason: "Compare annual fees, qualifying purchase rewards and usable benefits.",
+    })),
+    relatedArticleSlugs: ["best-no-annual-fee-credit-card-2026", "best-credit-card-for-travel-points-beginners-2026"],
+    reviewedAt: biltReviewedAt,
+    factCheck: {
+      checkedAt: biltReviewedAt,
+      method: "Checked against Bilt’s October 27, 2026 Card Offer Terms and current program overview.",
+      flags: [{ status: "verified", note: "Annual fee and standard purchase rates verified with Bilt. The value example excludes housing, credits and partner bonuses." }],
+    },
+    scores: detail.scores,
+    valueModel: { currency: "biltPoints", spend: detail.spend, credits: [] },
+  };
+});
+
 export const cardProfileSpecs: CardProfileSpec[] = [
+  ...biltProfiles,
   {
     slug: "citi-double-cash",
     cardName: "Citi Double Cash",

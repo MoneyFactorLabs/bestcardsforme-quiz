@@ -9,6 +9,7 @@ export const pointValuations = {
   amexMembershipRewards: { centsPerPoint: 1.7, label: "Amex Membership Rewards point", published: true },
   citiThankYou: { centsPerPoint: 1.5, label: "Citi ThankYou point", published: true },
   capitalOneMiles: { centsPerPoint: 1.4, label: "Capital One mile", published: true },
+  biltPoints: { centsPerPoint: 1, label: "Bilt Point", published: false },
   unitedMiles: { centsPerPoint: 1.2, label: "United MileagePlus mile", published: false },
   southwestPoints: { centsPerPoint: 1.3, label: "Southwest Rapid Rewards point", published: false },
 } as const;

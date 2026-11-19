@@ -110,10 +110,14 @@ export function ResultsCard({ recommendation, rank }: ResultsCardProps) {
       <details className="border-t border-line bg-surface/60 px-5 py-3 text-sm sm:px-7">
         <summary className="cursor-pointer font-semibold text-navy">How this estimate works</summary>
         <p className="mt-2 max-w-3xl leading-6 text-mid-navy/80">
-          We start from the middle of this card&apos;s typical yearly value range ({money(card.valueEstimateLow)}–{money(card.valueEstimateHigh)} in
+          {card.purchasePoints ? (
+            "This estimate assumes 1¢ per Bilt Point, uses a representative spend amount from your answer, and models a quarter of that spend in your top category. On Obsidian, the dining or grocery estimate assumes you select that category. Housing points, partner bonuses, credits, perks, and welcome offers are excluded. The annual fee is deducted."
+          ) : (
+            <>We start from the middle of this card&apos;s typical yearly value range ({money(card.valueEstimateLow)}–{money(card.valueEstimateHigh)} in
           rewards and credits a household realistically uses), scale it by how well your spending, goals, travel, lounge and reward-style answers match the
           card, and subtract the annual fee. It is an estimate for comparing cards, not a guarantee; welcome bonuses are not included. The full
-          review shows the line-by-line math.
+          review shows the line-by-line math.</>
+          )}
         </p>
       </details>
     </article>
