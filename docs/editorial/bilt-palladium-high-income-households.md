@@ -30,6 +30,17 @@ The refreshed terms apply to new accounts from January 1, 2027. Earlier accounts
 
 For an eligible $3,000 rent or mortgage payment with $1,500 of qualifying everyday spend in the same billing cycle, the housing-only option earns 2,250 points at 0.75x. At 1¢ per point that is $22.50 for that cycle. Those points can also be earned with Blue or Obsidian if the same conditions are met. Compare the rewards on the $1,500 of purchases against what your current card already earns. If that card earns 3% in the relevant categories, routing the full $1,500 to Palladium at 2x costs $15 in purchase rewards under the same valuation.
 
-Palladium is a poor fit if you mainly want a higher housing multiplier, already cover your lounge visits, cannot replace existing spending with eligible credits, or already earn better purchase rewards than 2x at your redemption value. Compare the [Palladium profile](/cards/bilt-palladium) with [Obsidian](/cards/bilt-obsidian), [Venture X](/cards/capital-one-venture-x), and the [high-income household card guide](/articles/best-credit-card-high-income-households-2026) before adding another fee.
+## Add Palladium or replace Venture X?
 
-[Bilt Card Offer Terms](https://www.bilt.com/terms/bilt-card-offer-terms) · [Bilt Card 2.0 Program Overview](https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview)
+[Capital One Venture X](/cards/capital-one-venture-x) charges $395 and earns 2 miles per dollar on ordinary purchases. At an illustrative 1¢ per Bilt Point and 1¢ per Capital One mile, the ordinary purchase rewards tie. Ignore welcome offers and portal multipliers, and assume your current housing payment earns zero rewards. If the $3,000 housing and $1,500 qualifying spend example repeats for 12 billing cycles, Palladium’s housing points are worth $270 for the year.
+
+| Decision | How much usable Palladium benefit would cover the gap? |
+| --- | --- |
+| Keep Venture X and add Palladium | $225. Palladium adds a $495 fee and $270 in housing rewards. Count only new benefits, since you keep Venture X either way. |
+| Replace Venture X at renewal | $30 if you would give up $200 of usable Venture X benefits. Palladium adds $100 in annual fees and $270 in housing rewards, while replacing the $200 in benefits. |
+
+The $200 is an example of the value the household actually gets from Venture X each year. Include lounge visits or other perks only to the extent the decision changes their value. If you already earn housing rewards, use the difference in housing value. If Blue or Obsidian could earn the same housing points for less, compare that option too.
+
+Palladium is a poor fit if you mainly want a higher housing multiplier, already cover your lounge visits, cannot replace existing spending with eligible credits, or already earn better purchase rewards than 2x at your redemption value. Compare the [Palladium profile](/cards/bilt-palladium) with [Obsidian](/cards/bilt-obsidian) and the [high-income household card guide](/articles/best-credit-card-high-income-households-2026) before adding another fee. Use the [card-fit quiz](/#quiz) to compare eligible purchase rewards and annual fees across more cards.
+
+[Bilt Card Offer Terms](https://www.bilt.com/terms/bilt-card-offer-terms) · [Bilt Card 2.0 Program Overview](https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview) · [Capital One Venture X terms and earn rates](https://www.capitalone.com/credit-cards/venture-x/)
