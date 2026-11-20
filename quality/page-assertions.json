@@ -15,7 +15,7 @@
       "absent": ["upgraded boardings", "Annual fee $149"]
     },
     "/cards/bilt-mastercard": {
-      "contains": ["Profile status: under re-review", "Bilt Blue ($0)"]
+      "contains": ["Profile status: retired", "Bilt Blue ($0)"]
     },
     "/cards": {
       "contains": ["Under review"],

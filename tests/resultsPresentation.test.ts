@@ -24,10 +24,13 @@ test("displayed net value is the figure the engine's own explanation quotes", ()
       assert.ok(Number.isInteger(recommendation.estimatedNetValue));
       const quoted = recommendation.explanationBullets.join(" ").match(/clears the annual fee by about \$(\d+)/);
       if (quoted) assert.equal(Number(quoted[1]), recommendation.estimatedNetValue, recommendation.card.id);
-      // The breakdown on the page: captured value = net + fee, and it never exceeds the published range ceiling by more than the engine's 8% cap.
+      // Purchase-rate estimates use a modeled spend range. The other estimates use a capped multiplier.
       const captured = recommendation.estimatedNetValue + recommendation.card.annualFee;
       assert.ok(captured >= 0, `${recommendation.card.id} captured value`);
-      assert.ok(captured <= Math.ceil(((recommendation.card.valueEstimateLow + recommendation.card.valueEstimateHigh) / 2) * 1.08) + 1);
+      const ceiling = recommendation.card.purchasePoints
+        ? recommendation.card.valueEstimateHigh
+        : Math.ceil(((recommendation.card.valueEstimateLow + recommendation.card.valueEstimateHigh) / 2) * 1.08) + 1;
+      assert.ok(captured <= ceiling, recommendation.card.id);
     }
   }
 });
@@ -50,4 +53,15 @@ test("homepage example is a real engine result for the stated sample profile", (
   assert.ok(EXAMPLE_PROFILE_LABEL.includes(option("travelFrequency").replace(" trips/year", "")), "travel frequency matches");
   assert.equal(EXAMPLE_ANSWERS.mainGoal, "travel");
   assert.equal(EXAMPLE_ANSWERS.topCategory, "dining");
+});
+
+
+test("Bilt estimates include only modeled purchase points less the annual fee", () => {
+  const [sample] = samples(1);
+  const answers: QuizAnswers = { ...sample, monthlySpend: "3000to6000", topCategory: "groceries" };
+  const bilt = getRankedRecommendations(answers).filter(({ card }) => card.id.startsWith("bilt-"));
+  assert.deepEqual(
+    bilt.map(({ card, estimatedNetValue }) => [card.id, card.annualFee, estimatedNetValue]).sort(),
+    [["bilt-blue", 0, 540], ["bilt-obsidian", 95, 715], ["bilt-palladium", 495, 585]],
+  );
 });

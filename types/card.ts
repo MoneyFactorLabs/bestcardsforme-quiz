@@ -41,7 +41,11 @@ export type CreditCard = {
   categoryFit: SpendingCategory[];
   travelFit: TravelFrequency[];
   simplicityFit: SimplicityPreference[];
-  minimumCreditScore: CreditScoreRange;
+  minimumCreditScore?: CreditScoreRange;
+  purchasePoints?: {
+    base: number;
+    topCategoryRates?: Partial<Record<SpendingCategory, number>>;
+  };
   loungeValue: "high" | "medium" | "low";
   businessOnly?: boolean;
   // Query parameter the affiliate network uses for a sub-ID (e.g. CJ's "sid"),
