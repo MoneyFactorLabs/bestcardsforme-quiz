@@ -1127,7 +1127,7 @@ export const articleBatch15To19: EditorialArticle[] = [
         "body": [
           "Households earning $200,000 or more annually should think in terms of premium card stacks, not single-card decisions. The structural reality is that high-income spending volume justifies premium-tier fees and benefits — and that no single card captures the full breadth of an affluent household's spending pattern.",
           "The three strongest stacks for 2026:",
-          "If you want a profile-specific stack recommendation matched to your actual spending and travel pattern, take [the BestCardsForMe quiz](/)."
+          "If you want a profile-specific stack recommendation matched to your actual spending and travel pattern, take [the BestCardsForMe quiz](/#quiz)."
         ],
         "bullets": [
           "**Amex Gold + Platinum** — highest captured value, deepest engagement, $1,220 combined fee",
