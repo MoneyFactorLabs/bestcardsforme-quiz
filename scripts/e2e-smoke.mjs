@@ -152,6 +152,18 @@ async function checkQuiz(browser) {
       if (!(await ownedCard.isChecked())) fail("quiz: owned selection lost after going back");
       await searchCards.fill("Blue Cash Everyday");
       await page.getByRole("checkbox", { name: /Blue Cash Everyday/i }).press("Space");
+      const removeCiti = page.getByRole("button", { name: "Remove Citi Double Cash", exact: true });
+      await removeCiti.press("Enter");
+      if (await removeCiti.count()) fail("quiz: removed card still appears in the selection");
+      if (!(await searchCards.evaluate((input) => input === document.activeElement))) {
+        fail("quiz: removing a selected card did not return focus to search");
+      }
+      if (!(await page.getByRole("checkbox", { name: /Blue Cash Everyday/i }).isChecked())) {
+        fail("quiz: removing one card changed another selection");
+      }
+      await searchCards.fill("Citi Double Cash");
+      if (await ownedCard.isChecked()) fail("quiz: removed card is still checked");
+      await ownedCard.press("Space");
       await searchCards.fill("Blue Cash");
       await checkOwnedCardLayout(page, page.locator("fieldset"), "selector");
       await page.getByRole("button", { name: "Continue to results" }).click();

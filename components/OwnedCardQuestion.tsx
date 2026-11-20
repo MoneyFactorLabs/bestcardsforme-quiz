@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { cards } from "@/data/cards";
 
 type Props = {
@@ -11,6 +11,7 @@ type Props = {
 
 export function OwnedCardQuestion({ selectedIds, onChange, hasUnlistedCard, onUnlistedChange, onContinue }: Props) {
   const [search, setSearch] = useState("");
+  const searchInput = useRef<HTMLInputElement>(null);
   const query = search.trim().toLowerCase();
   const matches = cards.filter((card) => card.name.toLowerCase().includes(query));
   const selected = cards.filter((card) => selectedIds.includes(card.id));
@@ -22,6 +23,7 @@ export function OwnedCardQuestion({ selectedIds, onChange, hasUnlistedCard, onUn
       <label className="block text-sm font-semibold text-navy">
         Search cards
         <input
+          ref={searchInput}
           type="search"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
@@ -31,7 +33,20 @@ export function OwnedCardQuestion({ selectedIds, onChange, hasUnlistedCard, onUn
       {selected.length > 0 && (
         <ul aria-label="Selected cards" className="flex flex-wrap gap-2">
           {selected.map((card) => (
-            <li key={card.id} className="rounded-full bg-surface px-3 py-1 text-sm text-navy">{card.name}</li>
+            <li key={card.id}>
+              <button
+                type="button"
+                aria-label={`Remove ${card.name}`}
+                onClick={() => {
+                  onChange(selectedIds.filter((id) => id !== card.id));
+                  searchInput.current?.focus();
+                }}
+                className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-full bg-surface px-3 text-left text-sm text-navy"
+              >
+                {card.name}
+                <span aria-hidden="true" className="text-base">×</span>
+              </button>
+            </li>
           ))}
         </ul>
       )}
