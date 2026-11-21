@@ -61,7 +61,7 @@ export function OwnedCardQuestion({ selectedIds, onChange, hasUnlistedCard, onUn
                 : selectedIds.filter((id) => id !== card.id))}
               className="focus-ring accent-accent-ink"
             />
-            <span>{card.name}{card.availability === "discontinued" ? " (legacy)" : ""}</span>
+            <span>{card.name}{card.availability === "discontinued" ? " — no longer offered" : ""}</span>
           </label>
         ))}
         {matches.length === 0 && <p role="status" className="p-2 text-sm">No matching cards.</p>}

@@ -141,6 +141,11 @@ async function checkQuiz(browser) {
     if ((await resultLinks.count()) >= 3 && !(await page.locator("[aria-pressed]").count())) break;
     const searchCards = page.getByRole("searchbox", { name: "Search cards" });
     if (await searchCards.count()) {
+      await searchCards.fill("Bilt Mastercard");
+      const retiredBilt = page.getByRole("checkbox", { name: /Bilt Mastercard(?: \(legacy\))? — no longer offered$/i });
+      await retiredBilt.waitFor();
+      if (await retiredBilt.isChecked()) fail("quiz: retired Bilt is selected by default");
+
       await searchCards.fill("Citi Double Cash");
       const ownedCard = page.getByRole("checkbox", { name: /Citi Double Cash/i });
       await ownedCard.focus();
