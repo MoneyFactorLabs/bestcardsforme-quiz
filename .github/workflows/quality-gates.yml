@@ -32,3 +32,11 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Browser smoke test (mobile + desktop, quiz, events, /go/ redirects)
         run: npm run test:e2e
+        env:
+          SCREENSHOT_DIR: ${{ runner.temp }}/bcfm-smoke-screenshots
+      - name: Upload owned-card screenshots
+        uses: actions/upload-artifact@v6
+        with:
+          name: owned-card-screenshots
+          path: ${{ runner.temp }}/bcfm-smoke-screenshots/owned-*.png
+          if-no-files-found: ignore

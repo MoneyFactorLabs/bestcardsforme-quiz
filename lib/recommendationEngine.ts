@@ -404,13 +404,14 @@ function withNormalizedFitScores(
   });
 }
 
-export function getRecommendations(answers: QuizAnswers): RecommendedCard[] {
-  return getRankedRecommendations(answers).slice(0, 3);
+export function getRecommendations(answers: QuizAnswers, ownedCardIds: readonly string[] = []): RecommendedCard[] {
+  return getRankedRecommendations(answers, ownedCardIds).slice(0, 3);
 }
 
-export function getRankedRecommendations(answers: QuizAnswers): RecommendedCard[] {
+export function getRankedRecommendations(answers: QuizAnswers, ownedCardIds: readonly string[] = []): RecommendedCard[] {
+  const ownedIds = new Set(ownedCardIds);
   const rankedRecommendations = cards
-    .filter((card) => card.availability !== "discontinued")
+    .filter((card) => card.availability !== "discontinued" && !ownedIds.has(card.id))
     .map((card) => ({
       card,
       rawScore: scoreCard(card, answers),
@@ -424,8 +425,8 @@ export function getRankedRecommendations(answers: QuizAnswers): RecommendedCard[
   return withNormalizedFitScores(rankedRecommendations);
 }
 
-export function getPopularNonFits(answers: QuizAnswers): RecommendedCard[] {
-  const winners = new Set(getRecommendations(answers).map((recommendation) => recommendation.card.id));
+export function getPopularNonFits(answers: QuizAnswers, ownedCardIds: readonly string[] = []): RecommendedCard[] {
+  const winners = new Set(getRecommendations(answers, ownedCardIds).map((recommendation) => recommendation.card.id));
   const recognizableOrder = [
     "amex-platinum",
     "chase-sapphire-reserve",
@@ -435,7 +436,7 @@ export function getPopularNonFits(answers: QuizAnswers): RecommendedCard[] {
     "chase-freedom-unlimited",
   ];
 
-  return getRankedRecommendations(answers)
+  return getRankedRecommendations(answers, ownedCardIds)
     .filter((recommendation) => !winners.has(recommendation.card.id))
     .sort((a, b) => {
       const aIndex = recognizableOrder.indexOf(a.card.id);
