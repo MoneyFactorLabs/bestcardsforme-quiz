@@ -181,6 +181,39 @@ async function checkCardTracking(browser) {
   await context.close();
 }
 
+async function checkArticleQuizEntry(browser) {
+  const article = "/articles/best-credit-card-high-income-households-2026";
+
+  for (const [name, viewport] of Object.entries(viewports)) {
+    const context = await browser.newContext({ viewport });
+    try {
+      await context.addInitScript(trackEvents());
+      await blockLiveAnalytics(context);
+      const page = await context.newPage();
+      await page.goto(origin + article, { waitUntil: "load" });
+
+      const link = page.getByRole("link", { name: "the BestCardsForMe quiz", exact: true });
+      const destination = await link.getAttribute("href");
+      if (destination !== "/#quiz") {
+        fail(`${name} article quiz entry: expected /#quiz, got ${destination}`);
+        continue;
+      }
+
+      await link.click();
+      await page.waitForURL(origin + "/#quiz");
+      const start = page.locator("#quiz").getByRole("button", { name: "Start quiz", exact: true });
+      await start.waitFor();
+      if (screenshotDir) await page.screenshot({ path: path.join(screenshotDir, `article-quiz-entry-${name}.png`) });
+
+      await start.click();
+      await page.getByRole("heading", { name: "What is your estimated credit score range?", exact: true }).waitFor();
+      if (screenshotDir) await page.screenshot({ path: path.join(screenshotDir, `article-quiz-question-${name}.png`) });
+    } finally {
+      await context.close();
+    }
+  }
+}
+
 async function checkAffiliateRedirects() {
   const source = fs.readFileSync(path.join(process.cwd(), "data/cards.ts"), "utf8");
   const slugs = [...source.matchAll(/affiliateSlug: "([^"]+)"/g)].map((match) => match[1]);
@@ -221,6 +254,7 @@ try {
   await checkPages(browser, paths);
   await checkQuiz(browser);
   await checkCardTracking(browser);
+  await checkArticleQuizEntry(browser);
   await checkAffiliateRedirects();
 
   warnings.forEach((warning) => console.warn(`WARN ${warning}`));
