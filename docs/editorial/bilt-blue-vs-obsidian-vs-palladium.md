@@ -1,6 +1,6 @@
 # Bilt Blue vs. Obsidian vs. Palladium
 
-**Editorial draft · Terms checked November 19, 2026**
+**Editorial draft · Terms checked November 21, 2026**
 
 Bilt Blue is the lowest-cost way to try the housing rewards program. Obsidian can make sense if one of its two 3x categories captures a large share of your card spend. Palladium needs substantial spending outside Obsidian’s bonus categories, useful premium benefits, or both. All three use the same housing tiers under the housing-only option, so a higher annual fee alone buys no higher housing multiplier.
 
@@ -45,8 +45,19 @@ Palladium’s 2x on ordinary purchases adds 1 point per dollar over Blue. At 1¢
 
 ## Check which terms apply to you
 
-Accounts opened on or after January 1, 2027 enter refreshed housing-only rewards. Earlier accounts generally move at their first anniversary in 2027. Bilt describes an opt-out before that anniversary for cardholders who want to keep Flexible Bilt Cash and existing credits. Flexible Bilt Cash earns 4% in Bilt Cash on qualifying everyday purchases and can be used to unlock up to 1x housing points at $30 Bilt Cash per 1,000 points. Count the Bilt Cash once. If you use it to unlock points, it is no longer available for other redemptions.
+Accounts opened on or after January 1, 2027 enter refreshed housing-only rewards. Earlier accounts generally move at their first anniversary in 2027. If Flexible Bilt Cash is your active option, you can elect to keep it and your existing credits in the Bilt app before that anniversary. After making that election, you can move to the refreshed terms later, effective the next billing cycle. That move is permanent. Compare each version’s annual credits using purchases you already plan to make.
+
+### Compare the two options before your anniversary
+
+Take the same $2,000 eligible rent payment and $1,000 in qualifying purchases. Hold the card and purchases constant, so the usual purchase points and annual fee cancel out. Assume no starting Bilt Cash balance and set aside the different annual credits above.
+
+| Option | Rewards from the example | Estimated value at 1¢ per point |
+| --- | --- | ---: |
+| Housing-only | 1,500 housing points at the 50% spending threshold | $15 |
+| Flexible Bilt Cash, redeemed for housing points | $40 Bilt Cash earned at 4%. At 3¢ Bilt Cash per point, redeem $39.99 for 1,333 housing points. | $13.33, with 1¢ Bilt Cash left |
+
+If you use the $40 for other eligible redemptions, those redemptions need to replace at least $15 of planned spending to match the housing-only example. That is 37.5¢ of real value per dollar of Bilt Cash. Count the balance once. Any Bilt Cash spent to unlock housing points is no longer available for other redemptions.
 
 Start with the [Bilt Blue](/cards/bilt-blue), [Obsidian](/cards/bilt-obsidian), and [Palladium](/cards/bilt-palladium) profiles. Use the [card quiz](/#quiz) for a broader comparison of purchase rewards and fees.
 
-[Bilt Card Offer Terms](https://www.bilt.com/terms/bilt-card-offer-terms) · [Bilt Card 2.0 Program Overview](https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview)
+[Bilt Card Offer Terms](https://www.bilt.com/terms/bilt-card-offer-terms) · [Bilt Card 2.0 Program Overview](https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview) · [Bilt Cash redemption rules](https://support.biltrewards.com/hc/en-us/articles/40132420650509-Bilt-Cash)
