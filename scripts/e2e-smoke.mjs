@@ -63,7 +63,7 @@ const loggedCount = (name) => serverLog.split(`not configured: ${name}`).length 
 async function waitForEvent(page, name, sinceCount, timeoutMs = 5000) {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
-    const sentByPage = await page.evaluate((eventName) => window.__bcfmEvents?.includes(eventName), name).catch(() => false);
+    const sentByPage = await page.evaluate((eventName) => window.__bcfmEvents?.some((event) => event.eventName === eventName), name).catch(() => false);
     if (sentByPage && (liveBase || loggedCount(name) > sinceCount)) return true;
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
@@ -76,7 +76,7 @@ const trackEvents = () =>
   const originalBeacon = navigator.sendBeacon?.bind(navigator);
   navigator.sendBeacon = (url, data) => {
     if (String(url).endsWith("/api/events") && data instanceof Blob) {
-      data.text().then((text) => window.__bcfmEvents.push(JSON.parse(text).eventName)).catch(() => {});
+      data.text().then((text) => window.__bcfmEvents.push(JSON.parse(text))).catch(() => {});
     }
     if (${Boolean(liveBase)}) return true;
     return originalBeacon ? originalBeacon(url, data) : true;
@@ -188,6 +188,8 @@ async function checkQuiz(browser) {
   const recommended = await page.locator('a[href^="/cards/"]').evaluateAll((links) =>
     links.map((link) => link.getAttribute("href")),
   );
+  const selectedCardIds = ["citi-double-cash", "blue-cash-everyday"];
+  if (!ownedCardSelected) fail("quiz: ownership selector was not exercised");
   if (ownedCardSelected) {
     const heading = page.getByRole("heading", { name: "Cards you already have", exact: true });
     const portfolio = heading.locator("..");
@@ -195,13 +197,20 @@ async function checkQuiz(browser) {
     if (!(await portfolio.getByText(/Blue Cash Preferred could add about \$145 per year after its fee/i).count())) {
       fail("quiz: expected incremental portfolio value is missing");
     }
-    if (recommended.some((href) => ["/cards/citi-double-cash", "/cards/blue-cash-everyday"].includes(href))) {
+    if (recommended.some((href) => selectedCardIds.some((id) => href === `/cards/${id}`))) {
       fail("quiz: recommended an owned card");
     }
   }
   if (recommended.length < 3) fail(`quiz: expected 3+ card links on results, found ${recommended.length}`);
   if (recommended.some((href) => href?.includes("bilt-mastercard"))) fail("quiz: recommended discontinued Bilt Mastercard");
-  if (!(await waitForEvent(page, "quiz_completed", completedBefore))) fail("quiz: quiz_completed event not received");
+  if (!(await waitForEvent(page, "quiz_completed", completedBefore))) {
+    fail("quiz: quiz_completed event not received");
+  } else if (ownedCardSelected) {
+    const completion = await page.evaluate(() => window.__bcfmEvents.find((event) => event.eventName === "quiz_completed"));
+    if (completion.metadata?.used_owned_card_selector !== true) fail("quiz: selector usage flag missing");
+    const payload = JSON.stringify(completion);
+    if (selectedCardIds.some((id) => payload.includes(id))) fail("quiz: completion event contains an owned card ID");
+  }
   await context.close();
 }
 
