@@ -1,3 +1,4 @@
+import { cards } from "@/data/cards";
 import type { CardProfileSpec } from "@/lib/cardProfileBuilder";
 
 const CHECKED_AT = "2026-10-29";
@@ -7,7 +8,69 @@ const CHECK_METHOD =
 // Card profiles generated from structured facts. Every figure the value model
 // uses is stated in `valueModel`; anything we could not confirm is listed in
 // `factCheck.flags` and left out of the math rather than guessed.
+const biltReviewedAt = "2026-11-19";
+const biltProfileDetails = [
+  {
+    slug: "bilt-blue",
+    credits: "The annual comparison counts purchase points only.",
+    perks: "Bilt lists no foreign transaction fee.",
+    scores: { rewardsValue: 5, feeJustification: 10, travelUtility: 4, everydayUse: 5, beginnerFriendliness: 6 },
+    spend: [{ category: "Eligible everyday purchases", annualSpend: 24000, earnRate: 1 }],
+  },
+  {
+    slug: "bilt-obsidian",
+    credits: "Before the refresh, qualifying Bilt Travel hotel bookings can earn up to $100 in statement credits, split into two $50 periods. Refreshed accounts receive an annual $100 Bilt Cash credit.",
+    perks: "Earn 2x on eligible travel. The 3x grocery choice applies to the first $25,000 in eligible grocery spend per year.",
+    scores: { rewardsValue: 7, feeJustification: 6, travelUtility: 6, everydayUse: 7, beginnerFriendliness: 5 },
+    spend: [{ category: "Eligible dining or grocery", annualSpend: 6000, earnRate: 3 }, { category: "Other eligible purchases", annualSpend: 18000, earnRate: 1 }],
+  },
+  {
+    slug: "bilt-palladium",
+    credits: "Before the refresh, qualifying Bilt Travel hotel bookings can earn up to $400 in credits, split into two $200 periods, plus $200 in annual Bilt Cash. Refreshed accounts receive $600 in annual Bilt Cash and can redeem up to $200 of it twice a year for eligible hotel bookings.",
+    perks: "Bilt lists Priority Pass. Estimate its value using the visits you would make and any membership you already have.",
+    scores: { rewardsValue: 7, feeJustification: 4, travelUtility: 8, everydayUse: 7, beginnerFriendliness: 4 },
+    spend: [{ category: "Eligible everyday purchases", annualSpend: 24000, earnRate: 2 }],
+  },
+];
+
+const biltProfiles: CardProfileSpec[] = biltProfileDetails.map((detail) => {
+  const card = cards.find((item) => item.id === detail.slug);
+  if (!card) throw new Error(`Missing Bilt catalog entry: ${detail.slug}`);
+
+  return {
+    slug: card.id,
+    cardName: card.name,
+    issuer: "Column N.A. (serviced by Cardless)",
+    annualFee: card.annualFee,
+    scoringCategory: "travel",
+    headline: "Bilt purchase and housing rewards",
+    bestFor: card.bestFor,
+    rewardsSummary: "For eligible rent or mortgage paid through Bilt, the housing-only earn rate depends on qualifying non-housing spend in the same billing cycle. Before the refresh, eligible accounts may instead choose Flexible Bilt Cash and redeem it to unlock housing points.",
+    earnRates: card.keyPerks,
+    creditsSummary: detail.credits + " The refresh starts for new accounts on January 1, 2027. Earlier accounts generally switch on their first anniversary in 2027 unless they opt out in advance. Our estimate excludes all credits.",
+    travelPerks: detail.perks,
+    transferPartners: "Bilt Points can be transferred to participating partners. Our comparison assumes 1¢ per Bilt Point in a redemption you can use.",
+    recommendedUserTypes: [card.bestFor],
+    skipIf: [card.avoidIf],
+    marketingOverstates: card.marketingOverstates,
+    alternatives: biltProfileDetails.filter((other) => other.slug !== detail.slug).map((other) => ({
+      slug: other.slug,
+      reason: "Compare annual fees, qualifying purchase rewards and usable benefits.",
+    })),
+    relatedArticleSlugs: ["best-no-annual-fee-credit-card-2026", "best-credit-card-for-travel-points-beginners-2026"],
+    reviewedAt: biltReviewedAt,
+    factCheck: {
+      checkedAt: biltReviewedAt,
+      method: "Checked against Bilt’s October 27, 2026 Card Offer Terms and current program overview.",
+      flags: [{ status: "verified", note: "Annual fee and standard purchase rates verified with Bilt. The value example excludes housing, credits and partner bonuses." }],
+    },
+    scores: detail.scores,
+    valueModel: { currency: "biltPoints", spend: detail.spend, credits: [] },
+  };
+});
+
 export const cardProfileSpecs: CardProfileSpec[] = [
+  ...biltProfiles,
   {
     slug: "citi-double-cash",
     cardName: "Citi Double Cash",
@@ -709,57 +772,47 @@ export const cardProfileSpecs: CardProfileSpec[] = [
   },
   {
     slug: "bilt-mastercard",
-    cardName: "Bilt Mastercard",
-    issuer: "Bilt (new cards issued by Column N.A.)",
+    cardName: "Wells Fargo Bilt Mastercard (legacy)",
+    issuer: "Wells Fargo",
     annualFee: 0,
-    annualFeeNote: "Original card $0; 2026 lineup $0–$495",
     scoringCategory: "travel",
-    headline: "rent rewards card in transition to the 2026 Bilt lineup",
-    bestFor: "Renters who want rewards on rent payments without a transaction fee",
+    headline: "retired Wells Fargo card",
+    bestFor: "Former Wells Fargo Bilt cardholders looking for the current lineup",
     rewardsSummary:
-      "The original Bilt Mastercard issued by Wells Fargo stopped accepting applications in October 2025. Bilt relaunched in February 2026 with three cards (Bilt Blue at $0, Bilt Obsidian at $95, and Bilt Palladium at $495), all paying rent and mortgage with no transaction fee. Their everyday earn rates are reported consistently, but the rules for earning points on rent are described differently across sources, so this profile is not scored yet.",
+      "The Wells Fargo Bilt Mastercard was retired after February 6, 2026. Bilt Card 2.0 launched February 7 with three separate cards issued by Column N.A. and serviced by Cardless.",
     earnRates: [
-      "Bilt Blue ($0): 1x points on everyday spending",
-      "Bilt Obsidian ($95): 3x on dining or groceries (your choice; groceries capped at $25,000 a year), 2x on travel, 1x elsewhere",
-      "Bilt Palladium ($495): 2x on all non-housing spending",
-      "All three: 4% back in Bilt Cash on everyday spending, and rent or mortgage payments through Bilt with no transaction fee",
-      "Rent and mortgage points (up to 1.25x) now depend on how much you also spend on the card; sources describe the mechanics differently, so we have not modeled them",
+      "Bilt Blue ($0): 1x points on eligible everyday purchases",
+      "Bilt Obsidian ($95): 3x on dining or grocery by choice (up to $25,000 a year for the grocery bonus), 2x on eligible travel and 1x on other everyday purchases",
+      "Bilt Palladium ($495): 2x points on eligible everyday purchases",
+      "All three current cards support eligible rent or mortgage payments through Bilt with no transaction fee. Points depend on the applicable rewards setting and qualifying non-housing spend.",
     ],
     creditsSummary:
-      "Benefits differ by tier in the 2026 lineup and are being verified; none are counted here.",
+      "Annual benefits depend on the current card and its account opening date. See Bilt’s current card offer terms before valuing credits.",
     travelPerks:
-      "Travel benefits of the 2026 tiers are not yet verified.",
+      "Travel benefits vary across the three current Bilt cards.",
     transferPartners:
-      "Bilt Rewards points have historically transferred to airline and hotel partners; confirm current partners and ratios on Bilt's site.",
+      "Bilt Rewards maintains its own transfer-partner list and redemption rules.",
     recommendedUserTypes: [
-      "Renters who want to earn rewards on rent without a payment fee",
-      "Existing Bilt members deciding which 2026 card to move to",
+      "Former Wells Fargo Bilt Mastercard cardholders checking which product they now have",
     ],
     skipIf: [
-      "You do not pay rent or a mortgage through Bilt",
-      "You need a fully verified profile before choosing: check back after our re-review",
+      "This historical card no longer accepts applications or transactions.",
     ],
     marketingOverstates: [
-      "Rent rewards are only fee-free when payments run through Bilt's own system.",
-      "Tier comparisons depend on benefits we have not yet verified; do not rely on older reviews of the Wells Fargo card.",
+      "The current Bilt cards follow their own terms. The old Wells Fargo card’s earn rules do not carry over.",
     ],
-    alternatives: [
-      { slug: "citi-double-cash", reason: "A verified no-fee 2% card for everyday spending while the Bilt lineup is re-reviewed." },
-      { slug: "chase-sapphire-preferred", reason: "Verified transferable points for travel-focused households." },
-    ],
+    alternatives: [],
     relatedArticleSlugs: [
       "best-no-annual-fee-credit-card-2026",
       "best-credit-card-for-travel-points-beginners-2026",
     ],
-    reviewedAt: CHECKED_AT,
+    reviewedAt: "2026-11-19",
     factCheck: {
-      checkedAt: CHECKED_AT,
-      method: CHECK_METHOD,
+      checkedAt: "2026-11-19",
+      method: "Checked against Bilt’s official transition notes and current Card Offer Terms.",
       flags: [
-        { status: "discontinued", note: "The Wells Fargo-issued Bilt Mastercard stopped accepting applications in October 2025." },
-        { status: "changed", note: "Bilt Card 2.0 launched February 7, 2026: Bilt Blue ($0), Bilt Obsidian ($95), and Bilt Palladium ($495), issued by Column N.A." },
-        { status: "verified", note: "2026 everyday earn rates: Blue 1x; Obsidian 3x dining or groceries and 2x travel; Palladium 2x on everything; 4% Bilt Cash on all three (multiple 2026 reviews)." },
-        { status: "unverified", note: "How rent and mortgage payments earn points (spend thresholds vs. unlocking with Bilt Cash) is described inconsistently; the score is withheld until confirmed." },
+        { status: "discontinued", note: "Bilt lists February 6, 2026 as the final day to use the Wells Fargo Bilt Mastercard." },
+        { status: "changed", note: "The three current Bilt cards launched February 7, 2026 under a new issuer." },
       ],
     },
     scores: "withheld",

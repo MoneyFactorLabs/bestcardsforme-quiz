@@ -1,4 +1,5 @@
 import { cards } from "@/data/cards";
+import { pointValuations } from "@/lib/cardValueModel";
 import type { CreditCard, RecommendedCard } from "@/types/card";
 import type {
   AnnualFeeComfort,
@@ -16,6 +17,8 @@ const creditScoreRank: Record<CreditScoreRange, number> = {
   good: 2,
   excellent: 3,
 };
+
+const purchaseEstimateMonthlySpend = { under1500: 750, "1500to3000": 2250, "3000to6000": 4500, "6000plus": 6000 };
 
 const spendScore: Record<MonthlySpend, number> = {
   under1500: 0,
@@ -66,6 +69,14 @@ function isPlainCashBackCard(card: CreditCard) {
 }
 
 function getCapturedAnnualValue(card: CreditCard, answers: QuizAnswers) {
+  if (card.purchasePoints) {
+    const { base, topCategoryRates } = card.purchasePoints;
+    const topRate = topCategoryRates?.[answers.topCategory] ?? base;
+    const spend = purchaseEstimateMonthlySpend[answers.monthlySpend] * 12;
+    const points = spend * (base * 0.75 + topRate * 0.25);
+    return Math.round(points * pointValuations.biltPoints.centsPerPoint / 100 - card.annualFee);
+  }
+
   const midpoint = (card.valueEstimateLow + card.valueEstimateHigh) / 2;
   let captureRate = 0.48;
 
@@ -268,9 +279,9 @@ function buildLowerFitReason(card: CreditCard, answers: QuizAnswers) {
 function buildProfileCaution(card: CreditCard, answers: QuizAnswers) {
   const capturedValue = getCapturedAnnualValue(card, answers);
   const userCreditRank = creditScoreRank[answers.creditScore];
-  const requiredCreditRank = creditScoreRank[card.minimumCreditScore];
+  const requiredCreditRank = card.minimumCreditScore && creditScoreRank[card.minimumCreditScore];
 
-  if (userCreditRank < requiredCreditRank) {
+  if (requiredCreditRank !== undefined && userCreditRank < requiredCreditRank) {
     return `Your stated credit range may be below this card's typical approval profile, so verify eligibility before treating it as a near-term option.`;
   }
 
@@ -367,11 +378,9 @@ function scoreCard(card: CreditCard, answers: QuizAnswers) {
   }
 
   const userCreditRank = creditScoreRank[answers.creditScore];
-  const requiredCreditRank = creditScoreRank[card.minimumCreditScore];
-  if (userCreditRank >= requiredCreditRank) {
-    score += 12;
-  } else {
-    score -= (requiredCreditRank - userCreditRank) * 22;
+  const requiredCreditRank = card.minimumCreditScore && creditScoreRank[card.minimumCreditScore];
+  if (requiredCreditRank !== undefined) {
+    score += userCreditRank >= requiredCreditRank ? 12 : -(requiredCreditRank - userCreditRank) * 22;
   }
 
   if (
