@@ -1,6 +1,6 @@
 # Bilt Blue vs. Obsidian vs. Palladium
 
-**Editorial draft · Terms checked November 21, 2026**
+**Editorial draft · Terms checked November 24, 2026**
 
 Bilt Blue is the lowest-cost way to try the housing rewards program. Obsidian can make sense if one of its two 3x categories captures a large share of your card spend. Palladium needs substantial spending outside Obsidian’s bonus categories, useful premium benefits, or both. All three use the same housing tiers under the housing-only option, so a higher annual fee alone buys no higher housing multiplier.
 
@@ -16,19 +16,26 @@ Palladium also includes Priority Pass. Value it based on visits you expect to us
 
 ## How to compare housing points with your current card
 
-Eligible rent and mortgage payments through Bilt draw from a linked bank account. They carry no transaction fee with the card. Under the housing-only option, the same billing cycle’s qualifying everyday spend sets the rate on the eligible housing payment.
+Eligible rent and mortgage payments through Bilt draw from a linked bank account. They carry no transaction fee with the card. Under the housing-only option, qualifying everyday purchases that post in the same billing cycle as the housing payment set the rate.
 
 | Qualifying spend as a share of housing payment | Housing points |
 | --- | ---: |
-| Below 25% | 250 points |
+| Below 25% | 250-point floor per eligible billing cycle |
 | 25% to under 50% | 0.5x |
 | 50% to under 75% | 0.75x |
 | 75% to under 100% | 1x |
 | 100% or more | 1.25x |
 
-For example, $1,000 of qualifying spending and a $2,000 eligible rent payment produce 1,500 housing points in the housing-only option. At an illustrative 1¢ per point, that is $15. Moving the $1,000 from a 2% card to Blue at 1x costs $10 in purchase rewards. The incremental gain is $5 for that cycle versus the 2% card and a housing payment earning zero. A household that already earns housing points should subtract those as well.
+If you already have Bilt Blue and pay $2,000 in eligible rent through Bilt, start with what you would earn by keeping your purchases on your existing 2% card. With Blue in good standing, the primary cardholder can earn a 250-point housing floor for that billing cycle, worth $2.50 at an illustrative 1¢ per point. Assume no other spending qualifies toward the tier.
 
-The same math applies to an eligible mortgage. A larger mortgage increases the spending needed to reach a given tier. For a $4,000 mortgage, keeping the same $1,000 in qualifying card spend reaches 0.5x and earns 2,000 housing points. Moving another $1,000 to reach 0.75x raises housing rewards by 1,000 points. At 1¢ per point, the extra $10 just offsets the additional $10 lost by switching from 2% cash back to Blue.
+| Purchases moved from 2% cash back to Blue at 1x | Housing points earned on $2,000 rent | Purchase rewards given up | Net gain over the 250-point floor |
+| --- | ---: | ---: | ---: |
+| $500 | 1,000 at 0.5x | $5 | $2.50 |
+| $1,000 | 1,500 at 0.75x | $10 | $2.50 |
+
+At these rates, moving an extra $500 buys $5 of housing points and gives up $5 of purchase rewards. If your alternative is a rent payment earning zero with no Bilt Card, the same two choices each add $5 per cycle.
+
+For an eligible $4,000 mortgage, $1,000 in qualifying Blue purchases reaches 0.5x and earns 2,000 housing points. Moving $2,000 reaches 0.75x and earns 3,000. At the same valuation, each move adds $7.50 over the 250-point floor after giving up $10 or $20 in purchase rewards, respectively. Compare the added housing points with the rewards you lose on each spending tier before changing where you put your purchases.
 
 ## When Obsidian or Palladium earns its fee
 
