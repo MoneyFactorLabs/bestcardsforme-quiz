@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { cards } from "@/data/cards";
 import { quizQuestions as questions } from "@/data/questions";
-import { getRecommendations } from "@/lib/recommendationEngine";
+import { getPopularNonFits, getRankedRecommendations, getRecommendations } from "@/lib/recommendationEngine";
+import { compareOwnedPortfolio } from "@/lib/ownedPortfolio";
 import type { QuizAnswers } from "@/types/quiz";
 
 const baseAnswers: QuizAnswers = {
@@ -31,6 +32,18 @@ function* answerSamples(count: number) {
 }
 
 describe("quiz recommendations", () => {
+  it("excludes exact owned variants and keeps the default ranking for unknown cards", () => {
+    const owned = ["chase-sapphire-reserve", "amex-platinum", "bilt-mastercard"];
+    assert.deepEqual(getRecommendations(baseAnswers, []), getRecommendations(baseAnswers));
+    assert.deepEqual(getRecommendations(baseAnswers, ["unknown"]), getRecommendations(baseAnswers));
+    assert.deepEqual(getRecommendations(baseAnswers, [...owned, owned[0]]), getRecommendations(baseAnswers, owned));
+    const remaining = getRankedRecommendations(baseAnswers, owned).map(({ card }) => card.id);
+    assert.ok(owned.every((id) => !remaining.includes(id)));
+    assert.ok(remaining.includes("chase-sapphire-preferred"));
+    assert.ok(getPopularNonFits(baseAnswers, owned).every(({ card }) => !owned.includes(card.id)));
+    assert.deepEqual(getRecommendations(baseAnswers, cards.map(({ id }) => id)), []);
+  });
+
   it("never recommend a discontinued card and always return three valid cards", () => {
     const discontinued = new Set(cards.filter((card) => card.availability === "discontinued").map((card) => card.id));
     assert.ok(discontinued.size > 0, "fixture expects at least one discontinued card");
@@ -67,5 +80,31 @@ describe("quiz recommendations", () => {
     const recommendations = getRecommendations({ ...baseAnswers, mainGoal: "business", businessCards: "yes" });
 
     assert.ok(recommendations.some((item) => item.card.businessOnly || item.card.type.startsWith("business")));
+  });
+});
+
+describe("owned-card rewards comparison", () => {
+  it("routes grocery spend to the best available rate and charges only the new fee", () => {
+    const answers = { ...baseAnswers, topCategory: "groceries" } as const;
+    const result = compareOwnedPortfolio(answers, ["citi-double-cash", "blue-cash-everyday", "blue-cash-everyday"]);
+    assert.equal(result.kind, "compared");
+    if (result.kind !== "compared") return;
+    assert.equal(result.annualSpend, 54000);
+    // First $6k moves from 3% to 6%. The portfolio still uses Everyday
+    // on the next $6k and the 2% card for the rest.
+    assert.deepEqual(result.additions.map(({ card, annualGain }) => [card.id, annualGain]), [
+      ["blue-cash-preferred", 145],
+    ]);
+  });
+
+  it("applies the fee preference and does not assume rewards for unlisted cards", () => {
+    const answers = { ...baseAnswers, topCategory: "groceries", annualFeeComfort: "zero" } as const;
+    const result = compareOwnedPortfolio(answers, ["citi-double-cash", "blue-cash-everyday"]);
+    assert.equal(result.kind, "compared");
+    if (result.kind === "compared") assert.deepEqual(result.additions, []);
+    assert.equal(compareOwnedPortfolio(answers, ["citi-double-cash"], true).kind, "unavailable");
+    assert.equal(compareOwnedPortfolio(answers, ["bilt-mastercard"]).kind, "unavailable");
+    assert.equal(compareOwnedPortfolio(answers, ["unknown"]).kind, "unavailable");
+    assert.equal(compareOwnedPortfolio(answers, []).kind, "skipped");
   });
 });

@@ -2,7 +2,7 @@
 // E2E_BASE_URL, against a live deployment.
 // Usage: npm run build && npm run test:e2e
 //        E2E_BASE_URL=https://bestcardsforme.com npm run test:e2e
-// Optional: SCREENSHOT_DIR=path saves mobile screenshots of key pages.
+// Optional: SCREENSHOT_DIR=path saves key pages and mobile and desktop owned-card screenshots.
 // In live mode analytics calls are intercepted, never sent, so production
 // data stays clean; events are confirmed in the page instead of the server log.
 //
@@ -63,7 +63,7 @@ const loggedCount = (name) => serverLog.split(`not configured: ${name}`).length 
 async function waitForEvent(page, name, sinceCount, timeoutMs = 5000) {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
-    const sentByPage = await page.evaluate((eventName) => window.__bcfmEvents?.includes(eventName), name).catch(() => false);
+    const sentByPage = await page.evaluate((eventName) => window.__bcfmEvents?.some((event) => event.eventName === eventName), name).catch(() => false);
     if (sentByPage && (liveBase || loggedCount(name) > sinceCount)) return true;
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
@@ -76,7 +76,7 @@ const trackEvents = () =>
   const originalBeacon = navigator.sendBeacon?.bind(navigator);
   navigator.sendBeacon = (url, data) => {
     if (String(url).endsWith("/api/events") && data instanceof Blob) {
-      data.text().then((text) => window.__bcfmEvents.push(JSON.parse(text).eventName)).catch(() => {});
+      data.text().then((text) => window.__bcfmEvents.push(JSON.parse(text))).catch(() => {});
     }
     if (${Boolean(liveBase)}) return true;
     return originalBeacon ? originalBeacon(url, data) : true;
@@ -114,6 +114,16 @@ async function checkPages(browser, paths) {
   }
 }
 
+async function checkOwnedCardLayout(page, panel, name) {
+  await panel.waitFor();
+  for (const [device, viewport] of Object.entries(viewports)) {
+    await page.setViewportSize(viewport);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    if (overflow > 1) fail(`quiz: ${name} at ${device} width overflows by ${overflow}px`);
+    if (screenshotDir) await panel.screenshot({ path: path.join(screenshotDir, `owned-${name}-${device}.png`) });
+  }
+}
+
 async function checkQuiz(browser) {
   const context = await browser.newContext({ viewport: viewports.mobile });
   await context.addInitScript(trackEvents());
@@ -124,22 +134,93 @@ async function checkQuiz(browser) {
   await page.goto(origin, { waitUntil: "load" });
   await page.getByRole("button", { name: /start quiz/i }).first().click();
 
+  let ownedCardSelected = false;
   // Each answer advances the quiz; pick the first option until results render.
   for (let step = 0; step < 20; step += 1) {
     const resultLinks = page.locator('a[href^="/cards/"]');
     if ((await resultLinks.count()) >= 3 && !(await page.locator("[aria-pressed]").count())) break;
+    const searchCards = page.getByRole("searchbox", { name: "Search cards" });
+    if (await searchCards.count()) {
+      const ownershipPrompt = page.locator("legend").filter({ hasText: "Which credit cards do you already have?" });
+      await page.waitForFunction(() => document.activeElement?.matches("legend"));
+      if (!(await ownershipPrompt.evaluate((element) => element === document.activeElement))) {
+        fail("quiz: entering the owned-card step did not focus the ownership prompt");
+      }
+      await page.keyboard.press("Tab");
+      if (!(await searchCards.evaluate((element) => element === document.activeElement))) {
+        fail("quiz: Tab from the ownership prompt did not focus card search");
+      }
+      await searchCards.fill("Bilt Mastercard");
+      const retiredBilt = page.getByRole("checkbox", { name: /Bilt Mastercard(?: \(legacy\))? — no longer offered$/i });
+      await retiredBilt.waitFor();
+      if (await retiredBilt.isChecked()) fail("quiz: retired Bilt is selected by default");
+
+      await searchCards.fill("Citi Double Cash");
+      const ownedCard = page.getByRole("checkbox", { name: /Citi Double Cash/i });
+      await ownedCard.focus();
+      await ownedCard.press("Space");
+      if (!(await ownedCard.isChecked())) fail("quiz: keyboard selection failed");
+      await page.getByRole("button", { name: /back/i }).click();
+      await page.locator("main button[aria-pressed]").first().click();
+      await searchCards.waitFor();
+      if (!(await ownedCard.isChecked())) fail("quiz: owned selection lost after going back");
+      await searchCards.fill("Blue Cash Everyday");
+      await page.getByRole("checkbox", { name: /Blue Cash Everyday/i }).press("Space");
+      const removeCiti = page.getByRole("button", { name: "Remove Citi Double Cash", exact: true });
+      await removeCiti.press("Enter");
+      if (await removeCiti.count()) fail("quiz: removed card still appears in the selection");
+      if (!(await searchCards.evaluate((input) => input === document.activeElement))) {
+        fail("quiz: removing a selected card did not return focus to search");
+      }
+      if (!(await page.getByRole("checkbox", { name: /Blue Cash Everyday/i }).isChecked())) {
+        fail("quiz: removing one card changed another selection");
+      }
+      await searchCards.fill("Citi Double Cash");
+      if (await ownedCard.isChecked()) fail("quiz: removed card is still checked");
+      await ownedCard.press("Space");
+      await searchCards.fill("Blue Cash");
+      await checkOwnedCardLayout(page, page.locator("fieldset"), "selector");
+      await page.getByRole("button", { name: "Continue to results" }).press("Enter");
+      await page.waitForFunction(() => document.activeElement?.matches("#results h1"));
+      ownedCardSelected = true;
+      break;
+    }
     const option = page.locator("main button[type=button]").filter({ hasNotText: /back|restart/i }).first();
     if (!(await option.count())) break;
-    await option.click();
+    const feeChoice = page.getByRole("button", { name: "$100-$400", exact: true });
+    const spendChoice = page.getByRole("button", { name: "$3,000-$6,000", exact: true });
+    if (await feeChoice.count()) await feeChoice.click();
+    else if (await spendChoice.count()) await spendChoice.click();
+    else await option.click();
     await page.waitForTimeout(150);
   }
 
   const recommended = await page.locator('a[href^="/cards/"]').evaluateAll((links) =>
     links.map((link) => link.getAttribute("href")),
   );
+  const selectedCardIds = ["citi-double-cash", "blue-cash-everyday"];
+  if (!ownedCardSelected) fail("quiz: ownership selector was not exercised");
+  if (ownedCardSelected) {
+    const heading = page.getByRole("heading", { name: "Cards you already have", exact: true });
+    const portfolio = heading.locator("..");
+    await checkOwnedCardLayout(page, portfolio, "comparison");
+    if (!(await portfolio.getByText(/Blue Cash Preferred could add about \$145 per year after its fee/i).count())) {
+      fail("quiz: expected incremental portfolio value is missing");
+    }
+    if (recommended.some((href) => selectedCardIds.some((id) => href === `/cards/${id}`))) {
+      fail("quiz: recommended an owned card");
+    }
+  }
   if (recommended.length < 3) fail(`quiz: expected 3+ card links on results, found ${recommended.length}`);
   if (recommended.some((href) => href?.includes("bilt-mastercard"))) fail("quiz: recommended discontinued Bilt Mastercard");
-  if (!(await waitForEvent(page, "quiz_completed", completedBefore))) fail("quiz: quiz_completed event not received");
+  if (!(await waitForEvent(page, "quiz_completed", completedBefore))) {
+    fail("quiz: quiz_completed event not received");
+  } else if (ownedCardSelected) {
+    const completion = await page.evaluate(() => window.__bcfmEvents.find((event) => event.eventName === "quiz_completed"));
+    if (completion.metadata?.used_owned_card_selector !== true) fail("quiz: selector usage flag missing");
+    const payload = JSON.stringify(completion);
+    if (selectedCardIds.some((id) => payload.includes(id))) fail("quiz: completion event contains an owned card ID");
+  }
   await context.close();
 }
 
