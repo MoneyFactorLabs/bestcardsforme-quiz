@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cards } from "@/data/cards";
 
 type Props = {
@@ -11,14 +11,18 @@ type Props = {
 
 export function OwnedCardQuestion({ selectedIds, onChange, hasUnlistedCard, onUnlistedChange, onContinue }: Props) {
   const [search, setSearch] = useState("");
+  const question = useRef<HTMLLegendElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    question.current?.focus();
+  }, []);
   const query = search.trim().toLowerCase();
   const matches = cards.filter((card) => card.name.toLowerCase().includes(query));
   const selected = cards.filter((card) => selectedIds.includes(card.id));
 
   return (
     <fieldset className="space-y-4">
-      <legend className="text-2xl font-semibold text-navy">Which credit cards do you already have?</legend>
+      <legend ref={question} tabIndex={-1} className="text-2xl font-semibold text-navy">Which credit cards do you already have?</legend>
       <p className="text-sm text-mid-navy">Optional. Your selections stay in this quiz session.</p>
       <label className="block text-sm font-semibold text-navy">
         Search cards

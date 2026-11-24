@@ -141,6 +141,15 @@ async function checkQuiz(browser) {
     if ((await resultLinks.count()) >= 3 && !(await page.locator("[aria-pressed]").count())) break;
     const searchCards = page.getByRole("searchbox", { name: "Search cards" });
     if (await searchCards.count()) {
+      const ownershipPrompt = page.locator("legend").filter({ hasText: "Which credit cards do you already have?" });
+      await page.waitForFunction(() => document.activeElement?.matches("legend"));
+      if (!(await ownershipPrompt.evaluate((element) => element === document.activeElement))) {
+        fail("quiz: entering the owned-card step did not focus the ownership prompt");
+      }
+      await page.keyboard.press("Tab");
+      if (!(await searchCards.evaluate((element) => element === document.activeElement))) {
+        fail("quiz: Tab from the ownership prompt did not focus card search");
+      }
       await searchCards.fill("Bilt Mastercard");
       const retiredBilt = page.getByRole("checkbox", { name: /Bilt Mastercard(?: \(legacy\))? — no longer offered$/i });
       await retiredBilt.waitFor();
@@ -171,7 +180,8 @@ async function checkQuiz(browser) {
       await ownedCard.press("Space");
       await searchCards.fill("Blue Cash");
       await checkOwnedCardLayout(page, page.locator("fieldset"), "selector");
-      await page.getByRole("button", { name: "Continue to results" }).click();
+      await page.getByRole("button", { name: "Continue to results" }).press("Enter");
+      await page.waitForFunction(() => document.activeElement?.matches("#results h1"));
       ownedCardSelected = true;
       break;
     }

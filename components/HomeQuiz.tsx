@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Disclaimer } from "@/components/Disclaimer";
 import { EmailCapture } from "@/components/EmailCapture";
 import { Footer } from "@/components/Footer";
@@ -30,12 +30,14 @@ export function HomeQuiz() {
   const [screen, setScreen] = useState<Screen>("landing");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Partial<QuizAnswers>>({});
+  const resultsHeading = useRef<HTMLHeadingElement>(null);
 
   // Each screen opens at its own top: otherwise a phone lands mid-page (e.g. on the
   // email form below the results) wherever the previous screen was scrolled to.
   useEffect(() => {
     if (screen === "landing") return;
     document.getElementById(screen === "quiz" ? "quiz" : "results")?.scrollIntoView({ block: "start" });
+    if (screen === "results") resultsHeading.current?.focus({ preventScroll: true });
   }, [screen]);
 
   const [ownedCardIds, setOwnedCardIds] = useState<string[]>([]);
@@ -164,7 +166,7 @@ export function HomeQuiz() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-sm font-semibold text-accent-bright">Your personalized card shortlist</p>
-                  <h1 className="mt-2 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+                  <h1 ref={resultsHeading} tabIndex={-1} className="mt-2 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
                     Cards ranked for your actual spending life.
                   </h1>
                   {profileSummary ? (
